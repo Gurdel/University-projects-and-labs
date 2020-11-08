@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\bin\Debug\26_presents.exe.config
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\bin\Debug\26_presents.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\bin\Debug\26_presents.pdb
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\obj\Debug\26_presents.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\obj\Debug\26_presents.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\obj\Debug\26_presents.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\26_presents\26_presents\obj\Debug\26_presents.pdb

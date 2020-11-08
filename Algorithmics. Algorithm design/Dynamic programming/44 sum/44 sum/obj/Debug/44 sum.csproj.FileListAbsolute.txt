@@ -1,0 +1,7 @@
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\bin\Debug\44 sum.exe.config
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\bin\Debug\44 sum.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\bin\Debug\44 sum.pdb
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\obj\Debug\44 sum.csprojAssemblyReference.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\obj\Debug\44 sum.csproj.CoreCompileInputs.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\obj\Debug\44 sum.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\44 sum\44 sum\obj\Debug\44 sum.pdb

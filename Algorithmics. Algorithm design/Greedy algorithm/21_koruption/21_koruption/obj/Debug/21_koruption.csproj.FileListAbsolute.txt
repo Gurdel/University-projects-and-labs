@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\bin\Debug\21_koruption.exe.config
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\bin\Debug\21_koruption.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\bin\Debug\21_koruption.pdb
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\obj\Debug\21_koruption.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\obj\Debug\21_koruption.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\obj\Debug\21_koruption.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\21_koruption\21_koruption\obj\Debug\21_koruption.pdb

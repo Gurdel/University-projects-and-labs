@@ -1,0 +1,7 @@
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\bin\Debug\5855 max sum.exe.config
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\bin\Debug\5855 max sum.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\bin\Debug\5855 max sum.pdb
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\obj\Debug\5855 max sum.csprojAssemblyReference.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\obj\Debug\5855 max sum.csproj.CoreCompileInputs.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\obj\Debug\5855 max sum.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\5855 max sum\5855 max sum\obj\Debug\5855 max sum.pdb

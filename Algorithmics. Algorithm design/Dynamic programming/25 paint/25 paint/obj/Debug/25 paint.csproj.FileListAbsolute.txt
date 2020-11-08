@@ -1,0 +1,7 @@
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\bin\Debug\25 paint.exe.config
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\bin\Debug\25 paint.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\bin\Debug\25 paint.pdb
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\obj\Debug\25 paint.csprojAssemblyReference.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\obj\Debug\25 paint.csproj.CoreCompileInputs.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\obj\Debug\25 paint.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\25 paint\25 paint\obj\Debug\25 paint.pdb

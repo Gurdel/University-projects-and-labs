@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\bin\Debug\609_water.exe.config
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\bin\Debug\609_water.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\bin\Debug\609_water.pdb
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\obj\Debug\609_water.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\obj\Debug\609_water.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\obj\Debug\609_water.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\609_water\609_water\obj\Debug\609_water.pdb

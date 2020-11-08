@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\bin\Debug\138_bankomat.exe.config
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\bin\Debug\138_bankomat.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\bin\Debug\138_bankomat.pdb
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\obj\Debug\138_bankomat.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\obj\Debug\138_bankomat.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\obj\Debug\138_bankomat.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\138_bankomat\138_bankomat\obj\Debug\138_bankomat.pdb

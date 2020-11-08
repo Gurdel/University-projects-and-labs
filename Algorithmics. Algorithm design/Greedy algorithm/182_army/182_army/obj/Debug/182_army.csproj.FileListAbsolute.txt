@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\bin\Debug\182_army.exe.config
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\bin\Debug\182_army.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\bin\Debug\182_army.pdb
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\obj\Debug\182_army.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\obj\Debug\182_army.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\obj\Debug\182_army.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\182_army\182_army\obj\Debug\182_army.pdb

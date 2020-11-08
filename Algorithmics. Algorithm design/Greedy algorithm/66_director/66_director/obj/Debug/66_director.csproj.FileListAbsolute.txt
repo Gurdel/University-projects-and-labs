@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\bin\Debug\66_director.exe.config
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\bin\Debug\66_director.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\bin\Debug\66_director.pdb
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\obj\Debug\66_director.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\obj\Debug\66_director.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\obj\Debug\66_director.exe
+C:\Users\Admin\Desktop\Жадібні алгоритми\66_director\66_director\obj\Debug\66_director.pdb

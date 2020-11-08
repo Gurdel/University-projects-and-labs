@@ -1,0 +1,7 @@
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\bin\Debug\991 shablon.exe.config
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\bin\Debug\991 shablon.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\bin\Debug\991 shablon.pdb
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\obj\Debug\991 shablon.csprojAssemblyReference.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\obj\Debug\991 shablon.csproj.CoreCompileInputs.cache
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\obj\Debug\991 shablon.exe
+E:\1A_KNU\Алгоритміка\Динамічне програмування\991 shablon\991 shablon\obj\Debug\991 shablon.pdb
