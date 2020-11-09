@@ -1,0 +1,178 @@
+﻿  Speed.cpp
+c:\users\admin\desktop\speed\speed\speed.cpp(78): warning C4244: инициализация: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(209): note: выполняется компиляция ссылки на экземпляр шаблон функции "float sum<int>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(79): warning C4244: инициализация: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(111): warning C4244: инициализация: преобразование "double" в "T1", возможна потеря данных
+          with
+          [
+              T1=int
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(210): note: выполняется компиляция ссылки на экземпляр шаблон функции "float min<int>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(112): warning C4244: инициализация: преобразование "double" в "T1", возможна потеря данных
+          with
+          [
+              T1=int
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(144): warning C4244: инициализация: преобразование "double" в "T2", возможна потеря данных
+          with
+          [
+              T2=int
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(211): note: выполняется компиляция ссылки на экземпляр шаблон функции "float mult<int>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(145): warning C4244: инициализация: преобразование "double" в "T2", возможна потеря данных
+          with
+          [
+              T2=int
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(177): warning C4244: инициализация: преобразование "double" в "T3", возможна потеря данных
+          with
+          [
+              T3=int
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(212): note: выполняется компиляция ссылки на экземпляр шаблон функции "float divis<int>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(178): warning C4244: инициализация: преобразование "double" в "T3", возможна потеря данных
+          with
+          [
+              T3=int
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(78): warning C4244: инициализация: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=long
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(213): note: выполняется компиляция ссылки на экземпляр шаблон функции "float sum<long>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(79): warning C4244: инициализация: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=long
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(111): warning C4244: инициализация: преобразование "double" в "T1", возможна потеря данных
+          with
+          [
+              T1=long
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(214): note: выполняется компиляция ссылки на экземпляр шаблон функции "float min<long>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(112): warning C4244: инициализация: преобразование "double" в "T1", возможна потеря данных
+          with
+          [
+              T1=long
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(144): warning C4244: инициализация: преобразование "double" в "T2", возможна потеря данных
+          with
+          [
+              T2=long
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(215): note: выполняется компиляция ссылки на экземпляр шаблон функции "float mult<long>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(145): warning C4244: инициализация: преобразование "double" в "T2", возможна потеря данных
+          with
+          [
+              T2=long
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(177): warning C4244: инициализация: преобразование "double" в "T3", возможна потеря данных
+          with
+          [
+              T3=long
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(216): note: выполняется компиляция ссылки на экземпляр шаблон функции "float divis<long>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(178): warning C4244: инициализация: преобразование "double" в "T3", возможна потеря данных
+          with
+          [
+              T3=long
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(78): warning C4305: инициализация: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(217): note: выполняется компиляция ссылки на экземпляр шаблон функции "float sum<float>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(79): warning C4305: инициализация: усечение из "double" в "T"
+          with
+          [
+              T=float
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(111): warning C4305: инициализация: усечение из "double" в "T1"
+          with
+          [
+              T1=float
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(218): note: выполняется компиляция ссылки на экземпляр шаблон функции "float min<float>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(112): warning C4305: инициализация: усечение из "double" в "T1"
+          with
+          [
+              T1=float
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(144): warning C4305: инициализация: усечение из "double" в "T2"
+          with
+          [
+              T2=float
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(219): note: выполняется компиляция ссылки на экземпляр шаблон функции "float mult<float>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(145): warning C4305: инициализация: усечение из "double" в "T2"
+          with
+          [
+              T2=float
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(177): warning C4305: инициализация: усечение из "double" в "T3"
+          with
+          [
+              T3=float
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(220): note: выполняется компиляция ссылки на экземпляр шаблон функции "float divis<float>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(178): warning C4305: инициализация: усечение из "double" в "T3"
+          with
+          [
+              T3=float
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(78): warning C4244: инициализация: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=char
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(225): note: выполняется компиляция ссылки на экземпляр шаблон функции "float sum<char>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(79): warning C4244: инициализация: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=char
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(111): warning C4244: инициализация: преобразование "double" в "T1", возможна потеря данных
+          with
+          [
+              T1=char
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(226): note: выполняется компиляция ссылки на экземпляр шаблон функции "float min<char>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(112): warning C4244: инициализация: преобразование "double" в "T1", возможна потеря данных
+          with
+          [
+              T1=char
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(144): warning C4244: инициализация: преобразование "double" в "T2", возможна потеря данных
+          with
+          [
+              T2=char
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(227): note: выполняется компиляция ссылки на экземпляр шаблон функции "float mult<char>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(145): warning C4244: инициализация: преобразование "double" в "T2", возможна потеря данных
+          with
+          [
+              T2=char
+          ]
+c:\users\admin\desktop\speed\speed\speed.cpp(177): warning C4244: инициализация: преобразование "double" в "T3", возможна потеря данных
+          with
+          [
+              T3=char
+          ]
+  c:\users\admin\desktop\speed\speed\speed.cpp(228): note: выполняется компиляция ссылки на экземпляр шаблон функции "float divis<char>(void)"
+c:\users\admin\desktop\speed\speed\speed.cpp(178): warning C4244: инициализация: преобразование "double" в "T3", возможна потеря данных
+          with
+          [
+              T3=char
+          ]
+  Speed.vcxproj -> C:\Users\Admin\Desktop\Speed\Debug\Speed.exe
