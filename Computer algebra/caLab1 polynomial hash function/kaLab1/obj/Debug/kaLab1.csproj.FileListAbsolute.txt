@@ -1,0 +1,21 @@
+C:\Users\Admin\Desktop\kaLab1\kaLab1\bin\Debug\kaLab1.exe.config
+C:\Users\Admin\Desktop\kaLab1\kaLab1\bin\Debug\kaLab1.exe
+C:\Users\Admin\Desktop\kaLab1\kaLab1\bin\Debug\kaLab1.pdb
+C:\Users\Admin\Desktop\kaLab1\kaLab1\obj\Debug\kaLab1.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\kaLab1\kaLab1\obj\Debug\kaLab1.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\kaLab1\kaLab1\obj\Debug\kaLab1.exe
+C:\Users\Admin\Desktop\kaLab1\kaLab1\obj\Debug\kaLab1.pdb
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\bin\Debug\kaLab1.exe.config
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\bin\Debug\kaLab1.exe
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\bin\Debug\kaLab1.pdb
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.exe
+C:\Users\Admin\Desktop\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.pdb
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\bin\Debug\kaLab1.exe.config
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\bin\Debug\kaLab1.exe
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\bin\Debug\kaLab1.pdb
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.csprojAssemblyReference.cache
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.csproj.CoreCompileInputs.cache
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.exe
+E:\1A_KNU\Комп'ютерна алгебра\kaLab1\kaLab1\obj\Debug\kaLab1.pdb
