@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<!-- saved from url=(0086)https://help.xlstat.com/s/article/pearson-correlation-coefficient-in-excel?language=en -->
+<html dir="ltr" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Pearson correlation coefficient in Excel | XLSTAT Support Center</title><meta http-equiv="Content-Security-Policy" content="default-src &#39;self&#39;; script-src &#39;self&#39; &#39;unsafe-eval&#39; &#39;unsafe-inline&#39; https://service.force.com/embeddedservice/ https://xlstat-web-test.s3.amazonaws.com https://www.xlstat.com https://staging.xlstat.com https://d.la1-c1-par.salesforceliveagent.com http://addinsoft.my.salesforce.com http://static.xlstat.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://d.la1-c1-frf.salesforceliveagent.com https://xlstat.com https://xlstat.com/uploads/media https://help.xlstat.com https://cdn.xlstat.com https://addinsoft--c.visualforce.com https://xlstat2.force.com https://xlstat2.force.com/helpcenter/file-asset/ https://cdn.xlstat.com/helpcentersfdc/; object-src &#39;self&#39; www.google.com; style-src &#39;self&#39; &#39;unsafe-inline&#39; https://static3.xlstat.com https://static4.xlstat.com https://xlstat2.force.com http://www.youtube.com https://scmt.herokuapp.com https://fonts.googleapis.com https://preview.xlstat.com https://xlstat-web-test.s3.amazonaws.com http://cdn.xlstat.com https://fonts.gstatic.com https://static.xlstat.com https://static2.xlstat.com https://help2.xlstat.com http://addinsoft.my.salesforce.com http://static.xlstat.com https://dc.ads.linkedin.com https://ipmcdn.avast.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://help.xlstat.com https://xlstat.com https://www.google.com https://assistly-production.s3.amazonaws.com https://addinsoft--c.visualforce.com https://support.desk.com; img-src &#39;self&#39; data: blob: https://addinsoft.my.salesforce.com http://addinsoft--c.documentforce.com https://img.youtube.com https://i.ytimg.com https://i.vimeocdn.com https://login.salesforce.com/icons/ https://eu15.salesforce.com/icons/ https://static3.xlstat.com https://static4.xlstat.com https://xlstat2.force.com http://www.youtube.com https://scmt.herokuapp.com https://fonts.googleapis.com https://preview.xlstat.com https://xlstat-web-test.s3.amazonaws.com http://cdn.xlstat.com https://fonts.gstatic.com https://static.xlstat.com https://static2.xlstat.com https://help2.xlstat.com http://addinsoft.my.salesforce.com http://static.xlstat.com https://dc.ads.linkedin.com https://ipmcdn.avast.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://help.xlstat.com https://xlstat.com https://www.google.com https://assistly-production.s3.amazonaws.com https://addinsoft--c.visualforce.com https://support.desk.com; media-src &#39;self&#39; blob: https://static3.xlstat.com https://static4.xlstat.com https://xlstat2.force.com http://www.youtube.com https://scmt.herokuapp.com https://fonts.googleapis.com https://preview.xlstat.com https://xlstat-web-test.s3.amazonaws.com http://cdn.xlstat.com https://fonts.gstatic.com https://static.xlstat.com https://static2.xlstat.com https://help2.xlstat.com http://addinsoft.my.salesforce.com http://static.xlstat.com https://dc.ads.linkedin.com https://ipmcdn.avast.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://help.xlstat.com https://xlstat.com https://www.google.com https://assistly-production.s3.amazonaws.com https://addinsoft--c.visualforce.com https://support.desk.com; frame-src &#39;self&#39; https://service.force.com/embeddedservice/ https://eu15.salesforce.com https://sfdc-link-preview-staging.sfdc.sh https://sfdc-link-preview.hk.salesforce.com https://cdn.embedly.com https://www.youtube.com https://player.vimeo.com https://play.vidyard.com https://*.a.forceusercontent.com/lightningmaps/ https://static3.xlstat.com https://static4.xlstat.com https://xlstat2.force.com http://www.youtube.com https://scmt.herokuapp.com https://fonts.googleapis.com https://preview.xlstat.com https://xlstat-web-test.s3.amazonaws.com http://cdn.xlstat.com https://fonts.gstatic.com https://static.xlstat.com https://static2.xlstat.com https://help2.xlstat.com http://addinsoft.my.salesforce.com http://static.xlstat.com https://dc.ads.linkedin.com https://ipmcdn.avast.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://help.xlstat.com https://xlstat.com https://www.google.com https://assistly-production.s3.amazonaws.com https://addinsoft--c.visualforce.com https://support.desk.com; font-src &#39;self&#39; data: https://static3.xlstat.com https://static4.xlstat.com https://xlstat2.force.com http://www.youtube.com https://scmt.herokuapp.com https://fonts.googleapis.com https://preview.xlstat.com https://xlstat-web-test.s3.amazonaws.com http://cdn.xlstat.com https://fonts.gstatic.com https://static.xlstat.com https://static2.xlstat.com https://help2.xlstat.com http://addinsoft.my.salesforce.com http://static.xlstat.com https://dc.ads.linkedin.com https://ipmcdn.avast.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://help.xlstat.com https://xlstat.com https://www.google.com https://assistly-production.s3.amazonaws.com https://addinsoft--c.visualforce.com https://support.desk.com; connect-src &#39;self&#39; https://static3.xlstat.com https://static4.xlstat.com https://xlstat2.force.com http://www.youtube.com https://scmt.herokuapp.com https://fonts.googleapis.com https://preview.xlstat.com https://xlstat-web-test.s3.amazonaws.com http://cdn.xlstat.com https://fonts.gstatic.com https://static.xlstat.com https://static2.xlstat.com https://help2.xlstat.com http://addinsoft.my.salesforce.com http://static.xlstat.com https://dc.ads.linkedin.com https://ipmcdn.avast.com http://static2.xlstat.com https://addinsoft--c.eu5.visual.force.com https://www.google-analytics.com https://stats.g.doubleclick.net https://help.xlstat.com https://xlstat.com https://www.google.com https://assistly-production.s3.amazonaws.com https://addinsoft--c.visualforce.com https://support.desk.com"><link rel="shortcut icon" href="https://addinsoft--c.visualforce.com/resource/1568739641000/favicon?v=1"><meta content="initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, minimal-ui" name="viewport">
+<link rel="preload" href="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/app.css" as="style">
+<link rel="preload" href="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/aura_prod.js.завантаження" as="script">
+<link rel="preload" href="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/app.js.завантаження" as="script">
+<style>
+        .auraMsgMask, #auraErrorMask, body .auraLoadingBox {
+            display: none;
+        }
+
+        .spaError {
+            padding: 10px;
+        }
+
+        .spaErrorLink {
+            padding: 10px 0;
+            display: block
+        }
+    
+        #auraAppcacheProgress{display:none;position:absolute;width:120px;height:26px;top:-10px;left:50%;margin-left:-60px;background-color:gray;border-radius:5px;overflow:hidden;z-index:9999}#auraAppcacheProgress .progressBox{position:absolute;top:14px;left:10px;width:100px;height:6px;overflow:hidden;background-color:white;border-style:solid;border-color:#999;border-width:1px}#auraAppcacheProgress .progressBar{width:1px;height:8px;overflow:hidden;background-color:blue;border-style:solid;border-color:black;border-width:1px}#auraAppcacheProgress.error .progressBar{border-color:red;background-color:pink}
+    </style><link data-href="/s/sfsites/l/%7B%22mode%22%3A%22PROD%22%2C%22app%22%3A%22siteforce%3AcommunityApp%22%2C%22loaded%22%3A%7B%22APPLICATION%40markup%3A%2F%2Fsiteforce%3AcommunityApp%22%3A%22vc87DBrWuhFjIBDb5BvCxQ%22%7D%2C%22styleContext%22%3A%7B%22c%22%3A%22webkit%22%2C%22x%22%3A%5B%22isDesktop%22%5D%2C%22tokens%22%3A%5B%22markup%3A%2F%2Fsiteforce%3AserializedTokens%22%2C%22markup%3A%2F%2Fforce%3AsldsTokens%22%2C%22markup%3A%2F%2Fsiteforce%3AcommunityTokens%22%2C%22markup%3A%2F%2Fforce%3AformFactorLarge%22%2C%22markup%3A%2F%2Fsiteforce%3AcommunityFormFactorLarge%22%2C%22markup%3A%2F%2Fsiteforce%3AauraDynamicTokens%22%2C%22markup%3A%2F%2Fsiteforce%3AsldsFontOverride%22%5D%2C%22tuid%22%3A%22ADONe5vzaOP2vJ7P3sB3Mw%22%2C%22cuid%22%3A1506526419%7D%2C%22pathPrefix%22%3A%22%22%7D/app.css" class="auraCss" rel="stylesheet" type="text/css" href="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/app.css">
+<link href="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/fonts.css" type="text/css" rel="stylesheet" id="siteforce_fontStyleSheet">
+<style id="themeCSS"></style><style id="customCSS">/* Global */
+@font-face {
+    font-family: "Poppins";
+    src: url("/helpcenter/s/sfsites/c/resource/Poppins_Font") format("woff2")
+}
+
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+body {
+    margin: 0;
+    font-family: "Poppins", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;font-family: "Poppins", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #6c757d;
+    text-align: left;
+    background-color: #fff; }
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1rem; 
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 1rem;
+    font-weight: 500 !important;
+    line-height: 1.2; }
+
+h1, .h1 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    
+}
+
+h2, .h2 {
+    font-size: 1.3rem !important;
+    color: #E9782E;
+    margin-top:1rem;
+}
+
+h3, .h3 {
+    font-size: 1.2rem !important;
+    color: #329999;
+    margin-top:1rem;
+    font-weight:bold;
+}
+
+.siteforceServiceBody .cHeaderOverlay{
+    background: transparent !important;
+}
+
+.cBrandingLogo{
+    display: none !important;
+}
+
+.text-uppercase{
+    text-transform: uppercase !important;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #5D5551;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.forceCommunityHeadline .headlineInfo{
+    font-weight: 400 !important;
+    font-size: 1.2rem;
+    line-height: 1.1rem;
+    margin-bottom: 1.8rem !important;
+}
+@media only screen and (min-aspect-ratio: 4/3) and (min-width: 48em), only screen and (min-width: 64.0625em){
+    .forceCommunityHeadline .headlineTitle {
+        padding: 2em 0 0 0 !important;
+    }
+}
+.forceCommunityHeadline .headlineTitle{
+    margin-bottom: 1rem !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    font-size: 1.8rem !important;
+    text-transform: uppercase;
+}
+
+.text-primary{
+    color: #E9782E !important;
+}
+
+.text-center, .popover-header {
+    text-align: center !important;
+}
+
+/* -- Login button */
+.login{
+    text-align: right !important;
+}
+.login-link{
+    display: inline-block;
+    font-weight: 400;
+    color: #5D5551;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    border-color: #E9782E;
+    text-shadow: none;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+}
+.login-link:hover{
+    text-decoration: none;
+    color: #fff !important;
+    background-color: #E9782E;
+}
+.linkLabel{
+    text-shadow: none !important;
+    color: #E9782E !important;
+    font-weight: 400 !important;
+}
+.linkLabel:hover{
+    color: #fff !important;
+}
+
+.salesforceIdentityLoginForm2 .inverseTextColor {
+    color: #E9782E !important;
+}
+
+/* -- Global Search input */
+.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input, .siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input::placeholder, .siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper .slds-input__icon{
+    color: #E9782E !important;
+}
+.forceCommunitySearchBox .search-field{
+    border: 1px solid #E9782E !important;
+    border-radius: 0.25rem !important;
+    color: #E9782E !important;
+    font-size: 18px;
+    padding-right: 40px !important;
+}
+.forceCommunitySearchBox .search-field:focus{
+    border-color: #f5c3a1;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(233, 120, 46, 0.25);
+}
+.forceCommunityGlobalSearchInput{
+    border: solid #E9782E;
+}
+.forceCommunitySearchBox .search-field::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #E9782E;
+    opacity: 1;
+    font-size: 18px;
+    line-height: 18px;
+}
+.forceCommunitySearchBox .search-field:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #E9782E;
+}
+.forceCommunitySearchBox .search-field::-ms-input-placeholder { /* Microsoft Edge */
+    color: #E9782E;
+}
+
+@media(min-width: 47.9375em){
+    .forceCommunitySearchBox .mobile-search-icon{
+        display: inline !important;
+        width: 46px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #E9782E !important;
+        line-height: 2.8rem !important;
+    }
+    .forceCommunitySearchBox .mobile-search-icon, .forceCommunitySearchBox .mobile-search-icon:hover, .forceCommunitySearchBox .mobile-search-icon:active, .forceCommunitySearchBox .mobile-search-icon:focus{
+        background-color: transparent !important;
+        border-color: transparent;
+        box-shadow: none;
+    }
+    .forceCommunitySearchBox .mobile-search-icon .slds-button__icon{
+        width: 18px;
+        height: 18px;
+    }
+    .slds-select{
+        border-color: #E9782E;
+        border-width: 3px;
+        color: #E9782E;
+    }
+    .slds-text-color_default, .slds-text-color--default{
+        color:#333;
+    }  
+    .forceCommunitySearchBox .search-button{
+        display: none !important;
+    }
+}
+@media only screen and (min-width: 48em){
+    .forceCommunitySearchBox .search-field {
+        font-size: 18px !important;
+    }
+}
+.forceCommunityAskCommunity.askCommunityBtn, .selfServiceContactSupport.communityBtn, .forceCommunityFollow .button, .loadmore, .forceCommunityContactSupportForm .contactSupportButton{
+    background-color: transparent !important;
+    color: #E9782E !important;
+    border: 1px solid #E9782E !important;
+    border-radius: 0.25rem !important;
+}
+.forceCommunityAskCommunity.askCommunityBtn:hover, .selfServiceContactSupport.communityBtn:hover, .forceCommunityFollow .button:hover, .loadmore:hover, .forceCommunityContactSupportForm .contactSupportButton:hover{
+    color: #fff !important;
+    background-color: #E9782E !important;
+    border-color: #E9782E !important;
+}
+
+/* -- Profile name */
+.forceCommunityTileMenuItem .tileLabel {background-color: #e9782e !important;}
+
+.selfServiceProfileMenuTrigger .profileName{
+    text-transform: none !important;
+    font-weight: 500 !important;
+    line-height: 0rem;
+
+}
+.siteforceServiceBody .cProfileCon a.trigger-link{
+    color: #6c757d !important;
+    text-shadow: none !important;
+    line-height: 0rem;
+}
+@media only screen and (min-aspect-ratio: 4/3) and (min-width: 48em), only screen and (min-width: 64.0625em){
+    .selfServiceProfileMenuTrigger .trigger-link:focus {
+        box-shadow: none !important;
+        border-radius: none !important;
+        line-height: 0rem;
+        padding: 0 0 0 0;
+    }
+}
+.selfServiceProfileMenuTrigger .trigger-link {padding: 0px;}
+.profile.uiMenuItem{
+    display: none;
+}
+.cNotifications{
+    padding-left: 5px;
+}
+
+/* -- Navigation menu */
+.forceCommunityGlobalNavigation{
+    display: none !important;
+    background-color: #fefefe !important;
+    position: -webkit-sticky;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1020;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+}
+.forceCommunityGlobalNavigation .slds-grid{
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+}
+.forceCommunityGlobalNavigation .slds-list__item a, .forceCommunityGlobalNavigation .slds-list__item button{
+    color: #6c757d;
+    display: block;
+    padding: 0.5rem 1rem !important;
+    font-size: 16px !important;
+}
+.forceCommunityGlobalNavigation .slds-list__item a:hover, .forceCommunityGlobalNavigation .slds-list__item button:hover,
+.forceCommunityGlobalNavigation .slds-list__item a:focus, .forceCommunityGlobalNavigation .slds-list__item button:focus {
+    color: rgba(0, 0, 0, 0.7);
+}
+.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>a:hover, .forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>a.slds-is-active:not([data-type="home"]),
+.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>button:hover,
+.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>button.slds-is-active:not([data-type="home"]) {
+    background-color: inherit !important;
+}
+.forceCommunityGlobalNavigation ul{
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+@media (min-width: 992px){
+    .forceCommunityGlobalNavigation{
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+    }
+    .forceCommunityGlobalNavigation .slds-grid{
+        display: flex !important;
+        flex-basis: auto;
+    }
+    .forceCommunityGlobalNavigation ul{
+        flex-direction: row;
+    }
+    .forceCommunityGlobalNavigation .slds-list__item a, .forceCommunityGlobalNavigation .slds-list__item button{
+        padding-right: 0.5rem !important;
+        padding-left: 0.5rem !important;
+    }
+}
+
+.forceCommunityRichText .navbar ol, .forceCommunityRichText .navbar ul{
+    padding-left: 0;
+}
+.forceCommunityRichText .navbar ul>li:before{
+    display: none;
+}
+.forceCommunityRichText .navbar ul>li{
+    padding-left: 0;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; }
+
+@media (min-width: 1200px){
+    .container {
+        max-width: 1140px;
+    }
+}
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+img {
+  display: block;
+  margin: 1rem auto 1rem auto;
+  padding: 0;
+
+}
+
+.img-fluid{
+    height: auto;
+    max-width: 100%;
+}
+
+iframe {
+  border:none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1rem 1rem 1rem;
+}   
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem; 
+    font-weight: 500;}
+.nav-link:hover, .nav-link:focus {
+    text-decoration: none !important; }
+.nav-link.disabled {
+    color: #6c757d;
+    pointer-events: none;
+    cursor: default; }
+
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6; }
+.nav-tabs .nav-item {
+    margin-bottom: -1px; }
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem; }
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+    border-color: #e9ecef #e9ecef #dee2e6; }
+.nav-tabs .nav-link.disabled {
+    color: #6c757d;
+    background-color: transparent;
+    border-color: transparent; }
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff; }
+.nav-tabs .dropdown-menu {
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; }
+
+.nav-pills .nav-link {
+    border-radius: 0.25rem; }
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #E9782E; }
+
+.nav-fill .nav-item {
+    flex: 1 1 auto;
+    text-align: center; }
+
+.nav-justified .nav-item {
+    flex-basis: 0;
+    flex-grow: 1;
+    text-align: center; }
+
+.tab-content > .tab-pane {
+    display: none; }
+
+.tab-content > .active {
+    display: block; }
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem; }
+.navbar > .container,
+.navbar > .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; }
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 2rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap; }
+.navbar-brand:hover, .navbar-brand:focus {
+    text-decoration: none; }
+
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; }
+.navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0; }
+.navbar-nav .dropdown-menu {
+    position: static;
+    float: none; }
+
+.navbar-text {
+    display: inline-block;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; }
+
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center; }
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 0.25rem; }
+.navbar-toggler:hover, .navbar-toggler:focus {
+    text-decoration: none; }
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%; }
+
+@media (max-width: 575.98px) {
+    .navbar-expand-sm > .container,
+    .navbar-expand-sm > .container-fluid {
+        padding-right: 0;
+        padding-left: 0; } }
+
+@media (min-width: 576px) {
+    .navbar-expand-sm {
+        flex-flow: row nowrap;
+        justify-content: flex-start; }
+    .navbar-expand-sm .navbar-nav {
+        flex-direction: row; }
+    .navbar-expand-sm .navbar-nav .dropdown-menu {
+        position: absolute; }
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem; }
+    .navbar-expand-sm > .container,
+    .navbar-expand-sm > .container-fluid {
+        flex-wrap: nowrap; }
+    .navbar-expand-sm .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto; }
+    .navbar-expand-sm .navbar-toggler {
+        display: none; } }
+
+@media (max-width: 767.98px) {
+    .navbar-expand-md > .container,
+    .navbar-expand-md > .container-fluid {
+        padding-right: 0;
+        padding-left: 0; } }
+
+@media (min-width: 768px) {
+    .navbar-expand-md {
+        flex-flow: row nowrap;
+        justify-content: flex-start; }
+    .navbar-expand-md .navbar-nav {
+        flex-direction: row; }
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        position: absolute; }
+    .navbar-expand-md .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem; }
+    .navbar-expand-md > .container,
+    .navbar-expand-md > .container-fluid {
+        flex-wrap: nowrap; }
+    .navbar-expand-md .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto; }
+    .navbar-expand-md .navbar-toggler {
+        display: none; } }
+
+@media (max-width: 991.98px) {
+    .navbar-expand-lg > .container,
+    .navbar-expand-lg > .container-fluid {
+        padding-right: 0;
+        padding-left: 0; } }
+
+@media (min-width: 992px) {
+    .navbar-expand-lg {
+        flex-flow: row nowrap;
+        justify-content: flex-start; }
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row; }
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute; }
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem; }
+    .navbar-expand-lg > .container,
+    .navbar-expand-lg > .container-fluid {
+        flex-wrap: nowrap; }
+    .navbar-expand-lg .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto; }
+    .navbar-expand-lg .navbar-toggler {
+        display: none; } }
+
+@media (max-width: 1199.98px) {
+    .navbar-expand-xl > .container,
+    .navbar-expand-xl > .container-fluid {
+        padding-right: 0;
+        padding-left: 0; } }
+
+@media (min-width: 1200px) {
+    .navbar-expand-xl {
+        flex-flow: row nowrap;
+        justify-content: flex-start; }
+    .navbar-expand-xl .navbar-nav {
+        flex-direction: row; }
+    .navbar-expand-xl .navbar-nav .dropdown-menu {
+        position: absolute; }
+    .navbar-expand-xl .navbar-nav .nav-link {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem; }
+    .navbar-expand-xl > .container,
+    .navbar-expand-xl > .container-fluid {
+        flex-wrap: nowrap; }
+    .navbar-expand-xl .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto; }
+    .navbar-expand-xl .navbar-toggler {
+        display: none; } }
+
+.navbar-expand {
+    flex-flow: row nowrap;
+    justify-content: flex-start; }
+.navbar-expand > .container,
+.navbar-expand > .container-fluid {
+    padding-right: 0;
+    padding-left: 0; }
+.navbar-expand .navbar-nav {
+    flex-direction: row; }
+.navbar-expand .navbar-nav .dropdown-menu {
+    position: absolute; }
+.navbar-expand .navbar-nav .nav-link {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem; }
+.navbar-expand > .container,
+.navbar-expand > .container-fluid {
+    flex-wrap: nowrap; }
+.navbar-expand .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto; }
+.navbar-expand .navbar-toggler {
+    display: none; }
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, 0.9); }
+.navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
+    color: rgba(0, 0, 0, 0.9); }
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.5); }
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(0, 0, 0, 0.7); }
+.navbar-light .navbar-nav .nav-link.disabled {
+    color: rgba(0, 0, 0, 0.3); }
+
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color: rgba(0, 0, 0, 0.9); }
+
+.navbar-light .navbar-toggler {
+    color: rgba(0, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0); }
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23E9782E' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+
+.navbar-light .navbar-text {
+    color: rgba(0, 0, 0, 0.5); }
+.navbar-light .navbar-text a {
+    color: rgba(0, 0, 0, 0.9); }
+.navbar-light .navbar-text a:hover, .navbar-light .navbar-text a:focus {
+    color: rgba(0, 0, 0, 0.9); }
+
+.navbar-light .navbar-nav .order-button {
+    color: #E9782E;
+    border-color: #E9782E;}
+
+.navbar-light .navbar-nav .order-button:hover, .navbar-light .navbar-nav .order-button:focus {
+    color: #fff;
+    background-color: #E9782E; }
+
+/* -- Footer */
+.forceCommunityRichText ul.nav, .forceCommunityRichText ul.nav {
+    padding-left: 0;
+}
+.forceCommunityRichText .nav>li:before{
+    display: none;
+}
+.forceCommunityRichText ul.nav>li{
+    padding-left: 0;
+}
+
+.btn-social a {
+    background-repeat: no-repeat;
+    text-indent: -9999px;
+    background-size: contain;
+    display: inherit;
+    width: 72px;
+    height: 34px;
+    margin-right: .7rem;
+}
+
+@media (min-width: 768px){
+    .footer {
+        margin-top: 3rem !important;
+    }
+}
+
+.line{
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+.line::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+.line .left{
+    float: left;
+}
+.line .right{
+    float: right;
+}
+
+.btn-footer{
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    text-transform: uppercase !important;
+    border: 1px solid transparent;
+    color: #E9782E;
+    border-color: #E9782E;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-bottom: 0.5rem !important;
+    padding-top: 0.5rem !important;
+}
+.footer .btn-footer:first-child{
+    margin-right: 2rem !important;
+}
+.btn-footer:hover{
+    color: #fff !important;
+    background-color: #E9782E !important;
+    border-color: #E9782E !important;
+    text-decoration: none !important;
+}
+
+#footer_legal_terms>li{
+    padding: 0 0.4rem;
+}
+#footer_legal_terms>li a{
+    text-decoration: none !important;
+}
+#footer_legal_terms>li:before{
+    display: none;
+}
+#footer_legal_terms .uppercase_link:not(:last-child){
+    border-right: 1px solid #E9782E;
+}
+
+/* -- Headline */
+@media only screen and (min-aspect-ratio: 4/3) and (min-width: 48em), only screen and (min-width: 64.0625em){
+    .forceCommunityHeadline .headlineTitle {
+        padding-top: 3em !important;
+    }
+}
+
+/* Home page */
+.contentTitle{
+    font-size: 1.2rem !important;
+}
+
+/* -- Featured Topics */
+.forceTopicFeaturedTopics .topicList{
+    margin-right: -15px !important;
+    margin-left: -15px !important;
+    overflow: inherit !important;
+    display: flex;
+}
+.forceTopicFeaturedTopics .topicList .topicItem{
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+}
+.forceTopicFeaturedTopics .topicList .topicItem .topicLink{
+    border: 1px solid #E9782E;
+    border-radius: .4rem !important;
+}
+.forceTopicFeaturedTopics .topicList .topicItem .topicLink:hover {
+    border-color: #f5c3a1;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(233, 120, 46, 0.25);
+}
+.forceTopicFeaturedTopics .topicList .topicItem .topicLink .topicLabel{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.forceTopicFeaturedTopics {
+    margin-top: 0 !important;
+}
+.forceTopicFeaturedTopicItem.topicItem{
+    float: none !important;
+}
+
+/* Search results */
+/* -- Articles list */
+.selfServiceArticleListItem .article-head{
+    color: #E9782E !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+}
+
+.selfServiceArticleListItem .footer{
+    font-weight: 400 !important;
+    color: #6c757d !important;
+}
+.selfServiceTopicArticleList .selfServiceArticleListItem .article-summary{
+    color: #6c757d !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+}
+
+/* -- Tabs */
+.uiTabset--default > div{
+    text-align: center;
+    border-top: 1px solid #373737;
+}
+.uiTabset--default .tabs__nav{
+    border-bottom: none !important;
+    display: inline-flex;
+}
+.forceCommunityResultsList.uiTabset .uiTabBar .uiTabItem{
+    max-width: 100% !important;
+}
+.uiTabset--default .tabs__item>a, .uiTabset--default .uiTabOverflowMenuItem a{
+    color: #373737 !important;
+    font-weight: 500 !important;
+}
+.uiTabset--default .tabs__item.active>a{
+    border-color: #373737 !important;
+}
+.uiTabset--default [id= "7183ba4e-ea63-49fd-8d09-eb2a835af1d8"] {
+    visibility: hidden;
+}
+
+/* Article detail */
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #E9782E;
+  padding: 5px;
+  margin-top:1rem;
+  margin-bottom:1rem;
+}
+
+#feature-included-solutions {display:none;}
+.forceCommunityContactSupportButton.contactSupportButton{
+    border-width: 1px !important;
+}
+.forceCommunityContactSupportButton.contactSupportButton:not(:hover){
+    background-color: transparent;
+    color: #E9782E;
+}
+.forceCommunityContactSupportButton.contactSupportButton:hover, .forceCommunityContactSupportButton.contactSupportButton:focus{
+    background-color: #E9782E !important;
+}
+
+.article-title{
+    color: #E9782E;
+}
+
+.article-detail ul, .article-summary ul, .article-summary ol, .article-detail ol{
+    list-style: initial;
+    padding-left: 40px;
+}
+
+.content {
+    position: relative;
+}
+
+.article-files {
+	list-style: none;    
+    display: inline-flex;
+}
+
+.download-link{
+	background-image: url(https://cdn.xlstat.com/helpcentersfdc/download.png);
+    display: block;
+    background-repeat: no-repeat;
+    background-size: unset;
+    width: 200px;
+    height: 100px;
+    background-position-x: 40px;
+    background-position-y: 20px;
+}
+
+/* Topic detail */
+.forceCommunityHeadline .headlineTitle{
+    color: #E9782E !important;
+}
+
+/* Hiding Knowledge/view count in the search results*/
+.footer .view-count{
+    display: none;
+}
+
+.footer .article-type{
+    display: none;
+}
+.footer .dot{
+    display: none;
+}
+
+/*Hiding Knowledge article view count in the article detail page*/
+.slds-p-left_xx-small .slds-text-body_small{
+    display: none;
+}
+
+/* User settings */
+.forceCommunityUserSettingsCustomizable h1.texttitle{
+    color: #E9782E !important;
+}
+
+/* Footer */
+.footer{
+    font-family: "Poppins", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+.first_line{
+    text-align: center;
+}
+.second_line_left{
+    text-align: left;
+}
+.social_media{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.facebook{
+    background: rgba(0, 0, 0, 0) url("https://cdn.xlstat.com/dist/assets/img/ui/fb.svg") no-repeat scroll 0% 0% / contain padding-box border-box;
+    text-transform: uppercase;
+    display: inline;
+}
+.twitter{
+    background: rgba(0, 0, 0, 0) url("https://cdn.xlstat.com/dist/assets/img/ui/twitter.svg") no-repeat scroll 0% 0% / contain padding-box border-box;
+    display: inline;
+}
+.linkedin{
+    background: rgba(0, 0, 0, 0) url("https://cdn.xlstat.com/dist/assets/img/ui/linkedin.svg") no-repeat scroll 0% 0% / contain padding-box border-box;
+    display: inline;
+}
+.youtube{
+    background: rgba(0, 0, 0, 0) url("https://cdn.xlstat.com/dist/assets/img/ui/yt.svg") no-repeat scroll 0% 0% / contain padding-box border-box;
+    display: inline;
+
+}
+.third_line{
+    display: inline-block;
+}
+.third_line_right{
+    text-align: right;    
+}
+.uppercase_link{
+    display: inline;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+}
+/* Footer : END */
+
+/* Chat */
+.embeddedServiceSidebarHeader{
+    background-color: #E9782E !important;
+}
+
+/* Contact Support */
+.selfServiceArticleLayout .slds-form-element__label{
+    display: none;
+}
+.selfServiceArticleLayout .slds-form .forcePageBlockSectionRow:nth-child(1), .selfServiceArticleLayout .slds-form .forcePageBlockSectionRow:nth-child(2),
+.selfServiceArticleLayout .article-summary, .selfServiceArticleLayout .meta{
+    display: none;
+}
+
+/* Case detail */
+.slds-feed__item-comments{
+    display: none;
+}
+.cuf-commentLink{
+    display: none;
+}</style><style>.siteforceContentArea .comm-layout-column .ui-widget:not(:last-child),.siteforceContentArea .cb-section_column .ui-widget:not(:last-child){margin-bottom:1.5rem}.siteforceContentArea .comm-layout-column:not(:empty){padding-top:.75rem;padding-bottom:.75rem}</style><style type="text/css" id="hoverPrototypeStyle"></style><style type="text/css">.forceSkipLink{position:absolute;top:0;left:0;height:1px;width:1px;overflow:hidden;clip:rect(1px, 1px, 1px, 1px);clip:rect(1px, 1px, 1px, 1px);padding:6px 12px;color:#3c3d3d;background:hsla(0, 0%, 100%, .98)}.forceSkipLink:focus{width:auto;height:auto;clip:auto;z-index:1000}</style><style type="text/css">.uiOutputRichText em{font-style:italic}.uiOutputRichText strong{font-weight:bold}</style><style type="text/css">.forceCommunityRichText{word-wrap:break-word}.forceCommunityRichText img.sfdcCbImage{max-width:100%;height:auto!important}.forceCommunityRichText .sfdcCbVideoContainer{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%}.forceCommunityRichText .sfdcCbVideoContainer iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none}.forceCommunityRichText a{color:#d35b0e}.forceCommunityRichText a:focus,.forceCommunityRichText a:hover{text-decoration:underline}.forceCommunityRichText a:hover{color:#ad4a0b}.forceCommunityRichText a:focus,.forceCommunityRichText a:active{color:#ad4a0b}.forceCommunityRichText ol,.forceCommunityRichText ul{padding-left:1.5em}.forceCommunityRichText ol>li,.forceCommunityRichText ul>li{list-style-type:none}.forceCommunityRichText ul>li:before{content:'\2022'}.forceCommunityRichText ul[data-checked=true],.forceCommunityRichText ul[data-checked=false]{pointer-events:none}.forceCommunityRichText ul[data-checked=true]>li:before,.forceCommunityRichText ul[data-checked=false]>li:before{color:#777;cursor:pointer;pointer-events:all}.forceCommunityRichText ul[data-checked=true]>li:before{content:'\2611'}.forceCommunityRichText ul[data-checked=false]>li:before{content:'\2610'}.forceCommunityRichText li:before{display:inline-block;margin-right:.3em;text-align:right;white-space:nowrap;width:1.2em}.forceCommunityRichText li:not(.ql-direction-rtl):before{margin-left:-1.5em}.forceCommunityRichText ol li,.forceCommunityRichText ul li{padding-left:1.5em}.forceCommunityRichText ol li{counter-reset:list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9;counter-increment:list-num}.forceCommunityRichText ol li:before{content:counter(list-num, decimal) '. '}.forceCommunityRichText ol li.ql-indent-1{counter-increment:list-1}.forceCommunityRichText ol li.ql-indent-1:before{content:counter(list-1, lower-alpha) '. '}.forceCommunityRichText ol li.ql-indent-1{counter-reset:list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9}.forceCommunityRichText ol li.ql-indent-2{counter-increment:list-2}.forceCommunityRichText ol li.ql-indent-2:before{content:counter(list-2, lower-roman) '. '}.forceCommunityRichText ol li.ql-indent-2{counter-reset:list-3 list-4 list-5 list-6 list-7 list-8 list-9}.forceCommunityRichText ol li.ql-indent-3{counter-increment:list-3}.forceCommunityRichText ol li.ql-indent-3:before{content:counter(list-3, decimal) '. '}.forceCommunityRichText ol li.ql-indent-3{counter-reset:list-4 list-5 list-6 list-7 list-8 list-9}.forceCommunityRichText ol li.ql-indent-4{counter-increment:list-4}.forceCommunityRichText ol li.ql-indent-4:before{content:counter(list-4, lower-alpha) '. '}.forceCommunityRichText ol li.ql-indent-4{counter-reset:list-5 list-6 list-7 list-8 list-9}.forceCommunityRichText ol li.ql-indent-5{counter-increment:list-5}.forceCommunityRichText ol li.ql-indent-5:before{content:counter(list-5, lower-roman) '. '}.forceCommunityRichText ol li.ql-indent-5{counter-reset:list-6 list-7 list-8 list-9}.forceCommunityRichText ol li.ql-indent-6{counter-increment:list-6}.forceCommunityRichText ol li.ql-indent-6:before{content:counter(list-6, decimal) '. '}.forceCommunityRichText ol li.ql-indent-6{counter-reset:list-7 list-8 list-9}.forceCommunityRichText ol li.ql-indent-7{counter-increment:list-7}.forceCommunityRichText ol li.ql-indent-7:before{content:counter(list-7, lower-alpha) '. '}.forceCommunityRichText ol li.ql-indent-7{counter-reset:list-8 list-9}.forceCommunityRichText ol li.ql-indent-8{counter-increment:list-8}.forceCommunityRichText ol li.ql-indent-8:before{content:counter(list-8, lower-roman) '. '}.forceCommunityRichText ol li.ql-indent-8{counter-reset:list-9}.forceCommunityRichText ol li.ql-indent-9{counter-increment:list-9}.forceCommunityRichText ol li.ql-indent-9:before{content:counter(list-9, decimal) '. '}.forceCommunityRichText .ql-indent-1:not(.ql-direction-rtl){padding-left:3em}.forceCommunityRichText li.ql-indent-1:not(.ql-direction-rtl){padding-left:4.5em}.forceCommunityRichText .ql-indent-1.ql-direction-rtl.ql-align-right{padding-right:3em}.forceCommunityRichText li.ql-indent-1.ql-direction-rtl.ql-align-right{padding-right:4.5em}.forceCommunityRichText .ql-indent-2:not(.ql-direction-rtl){padding-left:6em}.forceCommunityRichText li.ql-indent-2:not(.ql-direction-rtl){padding-left:7.5em}.forceCommunityRichText .ql-indent-2.ql-direction-rtl.ql-align-right{padding-right:6em}.forceCommunityRichText li.ql-indent-2.ql-direction-rtl.ql-align-right{padding-right:7.5em}.forceCommunityRichText .ql-indent-3:not(.ql-direction-rtl){padding-left:9em}.forceCommunityRichText li.ql-indent-3:not(.ql-direction-rtl){padding-left:10.5em}.forceCommunityRichText .ql-indent-3.ql-direction-rtl.ql-align-right{padding-right:9em}.forceCommunityRichText li.ql-indent-3.ql-direction-rtl.ql-align-right{padding-right:10.5em}.forceCommunityRichText .ql-indent-4:not(.ql-direction-rtl){padding-left:12em}.forceCommunityRichText li.ql-indent-4:not(.ql-direction-rtl){padding-left:13.5em}.forceCommunityRichText .ql-indent-4.ql-direction-rtl.ql-align-right{padding-right:12em}.forceCommunityRichText li.ql-indent-4.ql-direction-rtl.ql-align-right{padding-right:13.5em}.forceCommunityRichText .ql-indent-5:not(.ql-direction-rtl){padding-left:15em}.forceCommunityRichText li.ql-indent-5:not(.ql-direction-rtl){padding-left:16.5em}.forceCommunityRichText .ql-indent-5.ql-direction-rtl.ql-align-right{padding-right:15em}.forceCommunityRichText li.ql-indent-5.ql-direction-rtl.ql-align-right{padding-right:16.5em}.forceCommunityRichText .ql-indent-6:not(.ql-direction-rtl){padding-left:18em}.forceCommunityRichText li.ql-indent-6:not(.ql-direction-rtl){padding-left:19.5em}.forceCommunityRichText .ql-indent-6.ql-direction-rtl.ql-align-right{padding-right:18em}.forceCommunityRichText li.ql-indent-6.ql-direction-rtl.ql-align-right{padding-right:19.5em}.forceCommunityRichText .ql-indent-7:not(.ql-direction-rtl){padding-left:21em}.forceCommunityRichText li.ql-indent-7:not(.ql-direction-rtl){padding-left:22.5em}.forceCommunityRichText .ql-indent-7.ql-direction-rtl.ql-align-right{padding-right:21em}.forceCommunityRichText li.ql-indent-7.ql-direction-rtl.ql-align-right{padding-right:22.5em}.forceCommunityRichText .ql-indent-8:not(.ql-direction-rtl){padding-left:24em}.forceCommunityRichText li.ql-indent-8:not(.ql-direction-rtl){padding-left:25.5em}.forceCommunityRichText .ql-indent-8.ql-direction-rtl.ql-align-right{padding-right:24em}.forceCommunityRichText li.ql-indent-8.ql-direction-rtl.ql-align-right{padding-right:25.5em}.forceCommunityRichText .ql-indent-9:not(.ql-direction-rtl){padding-left:27em}.forceCommunityRichText li.ql-indent-9:not(.ql-direction-rtl){padding-left:28.5em}.forceCommunityRichText .ql-indent-9.ql-direction-rtl.ql-align-right{padding-right:27em}.forceCommunityRichText li.ql-indent-9.ql-direction-rtl.ql-align-right{padding-right:28.5em}.forceCommunityRichText h1{font-size:1.5rem}.forceCommunityRichText h2{font-size:1.125rem;font-weight:700}.forceCommunityRichText h3{font-size:1.125rem}.forceCommunityRichText h4{font-size:.875rem;font-weight:700}.forceCommunityRichText h5{font-size:.875rem}.forceCommunityRichText h6{font-size:.75rem;font-weight:700}</style><style type="text/css">.forceCommunityHtmlBlock ol{counter-reset:list-num list-1 list-2 list-3 list-4 list-5 list-6 list-7 list-8 list-9}.forceCommunityHtmlBlock .uiOutputRichText p{max-width:100%}</style><style type="text/css">.forceCommunityPlaceholder.forcePlaceholder .placeholder .text.text-thicker{height:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .flex-row{padding:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .col--padded{padding-right:14px;padding-left:14px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .grid--pull-padded{margin-right:-14px;margin-left:-14px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .border-top{border-top:1px solid #f4f4f4}.forceCommunityPlaceholder.forcePlaceholder .placeholder .p-around--medium{padding:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .p-bottom--small{padding-bottom:14px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .p-top--small{padding-top:14px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .p-top--medium{padding-top:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .p-bottom--large{padding-bottom:1.25rem}.forceCommunityPlaceholder.forcePlaceholder .placeholder .text.text-headerthick{height:30px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .text-dot{width:6px;margin:0 8px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .text-thick.text-dot{width:6px;height:6px;margin:10px 8px 0 8px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .text.text-last{margin-bottom:0}.forceCommunityPlaceholder.forcePlaceholder .placeholder .dark{background-color:rgb(242, 242, 243)}.forceCommunityPlaceholder.forcePlaceholder .simple_list_with_icon,.forceCommunityPlaceholder.forcePlaceholder .simple_list,.forceCommunityPlaceholder.forcePlaceholder .form_body,.forceCommunityPlaceholder.forcePlaceholder .userProfileStats{overflow:hidden}.forceCommunityPlaceholder.forcePlaceholder .form_body .text{margin-bottom:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder.simple_list_with_icon .field{padding:14px 18px}.forceCommunityPlaceholder.forcePlaceholder .userProfileStats .placeholder.detail .field{display:block;overflow:hidden}.forceCommunityPlaceholder.forcePlaceholder .userProfileStats .placeholder.detail .text{float:left;margin:0}.forceCommunityPlaceholder.forcePlaceholder .userProfileStats .placeholder.detail .text:last-child{float:right}.forceCommunityPlaceholder.forcePlaceholder .placeholder.topicCatalog .col--padded .text{margin-top:.5rem;margin-bottom:1.625rem}.forceCommunityPlaceholder.forcePlaceholder .placeholder.topicCatalog .size--1-of-1{width:100%}.forceCommunityPlaceholder.forcePlaceholder .button{background-color:rgb(233, 234, 236);border-radius:.125rem;padding:18px;font-size:1rem}.forceCommunityPlaceholder.forcePlaceholder .button .text{border-radius:15rem;height:14px;width:45%}.forceCommunityPlaceholder.forcePlaceholder .button .text.text-white{background-color:rgb(255, 255, 255)}.forceCommunityPlaceholder.forcePlaceholder .placeholder.groupHeadline .body{border:1px solid rgb(242, 242, 243);border-radius:.25rem}.forceCommunityPlaceholder.forcePlaceholder .placeholder.groupHeadline .group-photo{width:150px;height:150px;background-color:rgb(233, 234, 236);border-radius:.25rem;margin-right:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder.groupHeadline .align-right{justify-content:flex-end}.forceCommunityPlaceholder .singleArticleView .text{margin-bottom:1.125rem}.forceCommunityPlaceholder.forcePlaceholder .placeholder.singleArticleView .flex-grow{margin-top:1.125rem}.forceCommunityPlaceholder .languagePicker .anchor,.forceCommunityPlaceholder .caseHighlights .anchor{padding:18px}.forceCommunityPlaceholder.forcePlaceholder .placeholder .profile-photo{width:80%;max-width:200px;height:110px;background-color:rgb(233, 234, 236);border-radius:.25rem;display:inline-block}.forceCommunityPlaceholder .placeholder.tabs .body{padding-bottom:.5rem}.forceCommunityPlaceholder .placeholder.tabs .border-bottom{border-bottom:4px solid #f4f4f4}.forceCommunityPlaceholder .placeholder.blank_box{height:25rem}.forceCommunityPlaceholder .placeholder.blank_box_small{height:12rem}.forceCommunityPlaceholder .placeholder .button.button-custom-carousel{width:8rem}.forceCommunityPlaceholder .placeholder .title{background-color:rgb(233, 234, 236);width:80%}.forceCommunityPlaceholder .placeholder .item{width:65%}.forceCommunityPlaceholder .placeholder .view-all{width:30%}.forceCommunityPlaceholder .placeholder .text{margin-bottom:28px}.forceCommunityPlaceholder .placeholder .text:last-child{margin-bottom:18px}.forceCommunityPlaceholder .placeholder .banner{background-color:rgb(233, 234, 236);width:100%;height:185px}.forceCommunityPlaceholder .placeholder .userProfileContent{margin:-90px 80px 0;min-height:500px;background-color:rgb(242, 242, 243)}.forceCommunityPlaceholder .userProfileContent.desktopContainer{display:flex;flex:1}.forceCommunityPlaceholder .placeholder .leftNav{top:0;bottom:0;width:12rem;min-width:12rem;padding-top:18px}.forceCommunityPlaceholder .placeholder .leftNav .tab{background-color:rgb(233, 234, 236);margin:14px;width:70%}.forceCommunityPlaceholder .placeholder .userProfileContent.desktopContainer .tabContentContainer{width:100%;padding:18px 6rem 18px 28px;border-left:1px solid #f4f4f4}.forceCommunityPlaceholder .placeholder .tabContentContainer .title{margin:14px 0;width:45%}.forceCommunityPlaceholder .placeholder .tabContentContainer .subtitle{display:inline-block;margin-right:18px;width:10%}.forceCommunityPlaceholder .placeholder .detail .col{padding-right:6rem}.forceCommunityPlaceholder .placeholder .detail .section{padding:7px;border-bottom:1px solid #f4f4f4}.forceCommunityPlaceholder .placeholder .detail .section .upper{width:30%;margin:14px 0}.forceCommunityPlaceholder .placeholder .detail .section .lower{background-color:rgb(233, 234, 236);width:80%}.forceCommunityPlaceholder .placeholder .banner.mobile{height:70px}.forceCommunityPlaceholder .placeholder .userProfileContent.mobile .tabsContainer{border-bottom:1px solid #f4f4f4}.forceCommunityPlaceholder .placeholder .userProfileContent.mobile .tab{display:inline-block;width:20%;margin-bottom:2px}.forceCommunityPlaceholder .placeholder .userProfileContent.mobile{margin:-35px 20px 0;min-height:400px}.forceCommunityPlaceholder .placeholder .userProfileContent.mobile{padding:18px}.forceCommunityPlaceholder .placeholder .userProfileContent.mobile .tabContentContainer .title{width:50%}.forceCommunityPlaceholder .placeholder .userProfileContent.mobile .tabContentContainer .subtitle{width:28%;margin-bottom:14px}@media only screen and (min-width:48em){.forceCommunityPlaceholder.forcePlaceholder .placeholder.topicCatalog .size-medium--1-of-2{width:50%}}@media only screen and (min-width:64.0625em){.forceCommunityPlaceholder.forcePlaceholder .placeholder.topicCatalog .size-large--1-of-3{width:33%}}</style><style type="text/css">.forceCommunityHeadline .headlineTitle{clear:right;color:#333;display:inline-block;font-family:Poppins,sans-serif;font-size:28px;font-weight:700;line-height:1.5;padding-top:1em;text-align:center;text-transform:uppercase;width:100%;margin:0;word-wrap:break-word}.forceCommunityHeadline .headlineIcon.forceIcon .slds-icon{width:30px;height:30px}.forceCommunityHeadline .headlineIcon{color:rgb(107, 109, 112);padding-right:.5em;display:inline}@media only screen and (min-width:48em){.forceCommunityHeadline .headlineTitle{padding:1em 0 0 0}}@media only screen and (min-width:48em) and (min-aspect-ratio:4/3),only screen and (min-width:64.0625em){.forceCommunityHeadline .headlineTitle{font-size:1.25rem}}.forceCommunityHeadline .headlineInfo{color:#696969;text-align:center;font-weight:300;margin:.5em 0}.forceCommunityHeadline .error{text-align:center}</style><style type="text/css">.uiInputTextForAutocomplete.autocompleteButton{background:transparent;border:none;outline:none;box-shadow:none}</style><style type="text/css">.forceCommunitySearchBox.big-search-container{position:relative;width:100%}.forceCommunitySearchBox .curtain-blur{position:fixed;top:0;left:0;width:100%;height:100%;z-index:100;background:black;opacity:0;visibility:hidden;transition:visibility 0s ease-in-out 400ms,opacity 400ms}.forceCommunitySearchBox .curtain-blur.enabled{opacity:.5;visibility:visible;transition:visibility 0s ease-in-out 0s,opacity 400ms}.forceCommunitySearchBox .curtain-blur-link{height:1px;width:1px;position:absolute;overflow:hidden;top:-10px}.forceCommunitySearchBox .body-search,.forceCommunitySearchBox .search-wrapper,.forceCommunitySearchBox .post-container{z-index:5000}.forceCommunitySearchBox ::-webkit-input-placeholder,.forceCommunitySearchBox :-moz-placeholder,.forceCommunitySearchBox ::-moz-placeholder,.forceCommunitySearchBox :-ms-input-placeholder{color:#696969;text-overflow:ellipsis}.forceCommunitySearchBox .search-field:focus::-webkit-input-placeholder,.forceCommunitySearchBox .search-field:focus:-moz-placeholder,.forceCommunitySearchBox .search-field:focus::-moz-placeholder,.forceCommunitySearchBox .search-field:focus:-ms-input-placeholder{opacity:0}.forceCommunitySearchBox .search-wrapper,.forceCommunitySearchBox .post-container{position:relative;padding:0;text-align:center}.forceCommunitySearchBox .forceCommunityDeflection .continue-post-wrapper{text-align:center}.forceCommunitySearchBox .search-field{height:3rem;font-size:.75rem;padding:0 3rem;width:100%;text-align:center;border:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:none;box-sizing:border-box;color:#333;border-radius:3px;-webkit-backface-visibility:hidden}.forceCommunitySearchBox .has-input .search-field,.forceCommunitySearchBox .search-field:focus{text-align:left;padding-left:14px}.forceCommunitySearchBox .search-input-group{position:relative;display:inline-block;width:100%}.forceCommunitySearchBox .search-field-group{position:relative}.forceCommunitySearchBox .search-button{display:inline;width:46px;position:absolute;right:0;top:0;border:none;box-shadow:none;text-shadow:none;text-transform:uppercase;border-radius:0 2px 2px 0;cursor:default}.forceCommunitySearchBox .search-button.focus{cursor:pointer}.forceCommunitySearchBox .search-field:focus{padding-left:14px;text-align:left;opacity:1;border-radius:3px 3px 0 0}.forceCommunitySearchBox .search-field::-ms-clear{display:none}.forceCommunitySearchBox .hidden-autocompleteInput{display:none}.forceCommunitySearchBox .close-button.slds-button{display:none}.forceCommunitySearchBox .search-hint{display:none}.forceCommunitySearchBox .has-input .search-hint{display:inline;position:absolute;right:100px;line-height:50px;font-size:.875em;color:#ccc}.forceCommunitySearchBox .continue-post-wrapper{background-color:#f2f2f2;padding:24px 14px;border-top:1px solid #f4f4f4;border-bottom:1px solid #f4f4f4}.forceCommunitySearchBox .continue-post-label{color:#333}.forceCommunitySearchBox .continue-post-action a{padding-left:14px;font-weight:700;color:#cb5c12}.forceCommunitySearchBox .continue-post-action a:active,.forceCommunitySearchBox .continue-post-action a:focus,.forceCommunitySearchBox .continue-post-action a:hover{color:#9c470e}.forceCommunitySearchBox .result-container{display:none}.forceCommunitySearchBox.show-result .result-container{display:block;border-top:1px solid #f4f4f4;background-color:#ffffff}.forceCommunitySearchBox .articleIcon{display:none}.forceCommunitySearchBox .uiAbstractList .listContent{min-height:0}.forceCommunitySearchBox .uiMenuList{border-top:1px solid #f4f4f4;box-shadow:0 1px 5px rgba(0, 0, 0, .75)}.forceCommunitySearchBox .topic-selector-wrapper{text-align:left;background-color:#ffffff}.forceCommunitySearchBox .topic-selector{display:inline-block;padding:24px 14px;width:calc(100% - 100px)}.forceCommunitySearchBox .topic-selector.showWarning{padding:21px 14px;border:3px solid rgb(194, 57, 52)}.forceCommunitySearchBox .body-search{max-width:1190px;margin:0 auto}.forceCommunitySearchBox .clear-omni-box{float:right;padding:24px;border-left:1px solid #f4f4f4;color:#696969}.forceCommunitySearchBox .topic-menu-item a{padding:14px;white-space:nowrap;color:#333;box-sizing:content-box;outline:0}.forceCommunitySearchBox .support-lock{padding:0 7px 0 14px}.forceCommunitySearchBox .support-lock,.forceCommunitySearchBox .support-private{font-size:.9em}.forceCommunitySearchBox div.uiMenuList{margin:24px 0 1px -14px;border-radius:0}.forceCommunitySearchBox .topic-menu-item a:hover,.forceCommunitySearchBox .topic-menu-item a:focus,.forceCommunitySearchBox .topic-menu-item a:active{text-decoration:none;background-color:rgba(203, 92, 18, 0.05);border-radius:0;color:#333}.forceCommunitySearchBox .post-wrapper{box-shadow:0 0 10px rgba(0, 0, 0, 0.1)}.forceCommunitySearchBox .post-wrapper{border:1px solid #f4f4f4}.forceCommunitySearchBox .search-button,.forceCommunitySearchBox .has-input .search-field,.forceCommunitySearchBox .search-field,.forceCommunitySearchBox .search-field:focus{border-radius:0}.forceCommunitySearchBox .mobile-search-icon{display:none}.forceCommunitySearchBox .post-form{background-color:rgb(242, 242, 243);min-height:200px}.forceCommunitySearchBox .forceCommunityQuestionPostCommunities.form-block-section{margin:0}.forceCommunitySearchBox .forceCommunityQuestionPostCommunities .input-section{padding:0}.forceCommunitySearchBox .forceCommunityQuestionPostCommunities .cuf-publisherTextArea{padding:14px}.forceCommunitySearchBox .input-section{padding:14px;margin:0;border-top:1px solid #f4f4f4}.forceCommunitySearchBox .inputField,.forceCommunitySearchBox .inputTextArea{border:0;padding:0;font-size:1em}.forceCommunitySearchBox .forceCommunityQuestionPostCommunities .input-section:not(:first-child){margin:0}.forceCommunitySearchBox .zero-state-panel{display:none}.forceCommunitySearchBox .search-field{text-align:left;padding-left:14px;text-overflow:ellipsis;padding-right:142px}.forceCommunitySearchBox .search-button{width:128px;height:100%}.forceCommunitySearchBox .search-button:focus{outline:0}.forceCommunitySearchBox .error-message{text-align:left;color:rgb(194, 57, 52);padding:14px}.forceCommunitySearchBox .forceCommunityDeflectionOption .search-icon .lightningPrimitiveIcon>svg{width:1rem;height:1rem}@media only screen and (min-width:48em) and (min-aspect-ratio:4/3),only screen and (min-width:64.0625em){.forceCommunitySearchBox .search-field{font-size:1rem}.forceCommunitySearchBox .has-input .search-hint{right:120px}}@media only screen and (min-width:48em){.forceCommunitySearchBox .search-field{font-size:.8125rem}.forceCommunitySearchBox .search-input-group{-webkit-backface-visibility:hidden}.forceCommunitySearchBox.show-result .result-container{background-color:#f9fafb}.forceCommunitySearchBox .result-container{position:absolute;width:100%}}@media only screen and (max-width:47.9375em){.forceCommunitySearchBox .has-input .search-hint{display:none}.forceCommunitySearchBox .search-button{display:none}.forceCommunitySearchBox .mobile-search-icon{background-color:transparent;border:1px solid transparent;display:block;padding:0}.forceCommunitySearchBox .mobile-search-icon .slds-button__icon{width:1.25rem;height:1.25rem;margin:0}.forceCommunitySearchBox .search-field-wrapper{display:none}.forceCommunitySearchBox .search-field-wrapper.smallOnlyDisplay{display:inline-block}.forceCommunitySearchBox .search-container{border-radius:40px}.forceCommunitySearchBox.focused{position:static}.forceCommunitySearchBox.focused .mobile-search-icon{display:none}.forceCommunitySearchBox.focused .search-field,.forceCommunitySearchBox.focused .has-input .search-field,.forceCommunitySearchBox.focused .search-field:focus{padding-left:14px}.forceCommunitySearchBox.focused .search-field{padding-right:80px;border-bottom:1px solid #f4f4f4}.forceCommunitySearchBox.focused .search-wrapper,.forceCommunitySearchBox.focused .post-wrapper{padding:7px;height:100%}.forceCommunitySearchBox.focused .search-container{height:100%;border:1px solid #f4f4f4;box-shadow:none;margin:0;border-radius:0}.forceCommunitySearchBox.focused .topic-selector.showWarning{padding:21px 11px;vertical-align:middle}.forceCommunitySearchBox .curtain-blur{background:black;transition:none}.forceCommunitySearchBox.focused .curtain-blur,.forceCommunitySearchBox .curtain-blur.enabled{background:black;opacity:.5;visibility:visible;transition:none}.forceCommunitySearchBox.focused .body-search{position:absolute;top:0;left:0;z-index:8000;background:rgb(255, 255, 255);width:100%;padding:0}.forceCommunitySearchBox.focused .close-button.slds-button{color:#696969;display:inline;position:absolute;right:0;border:none;border-left:1px solid #f4f4f4;text-shadow:none;padding:0;margin:0;border-radius:0 2px 2px 0;background:transparent;cursor:pointer;top:auto;width:60px;height:48px;outline:0}.forceCommunitySearchBox.focused .zero-state-panel{line-height:28px;display:block;height:100%;padding-top:14px;padding-bottom:14px;background-color:#f9f9f9}.forceCommunitySearchBox.focused .zero-state-panel .zero-state-icon{font-size:1.25em;margin-right:8px}.forceCommunitySearchBox.focused .zero-state-panel-label,.forceCommunitySearchBox.focused .empty-state-panel-label{padding-top:14px;font-size:.8125em}.forceCommunitySearchBox.focused .empty-result.show{padding:14px}.forceCommunitySearchBox.focused.show-result .search-wrapper,.forceCommunitySearchBox.focused.show-result .post-wrapper,.forceCommunitySearchBox.focused.show-result .search-container{height:auto}.forceCommunitySearchBox.focused.show-result .zero-state-panel{display:none}.forceCommunitySearchBox.focused .continue-post-label,.forceCommunitySearchBox.focused .continue-post-action{display:block;line-height:28px}.forceCommunitySearchBox.focused .continue-post-action a{padding-left:0}.forceCommunitySearchBox.focused .continue-post-wrapper{background-color:#f2f2f2;border-top:1px solid #f4f4f4}.forceCommunitySearchBox.focused .post-container,.forceCommunitySearchBox.focused .post-wrapper{padding:0;box-shadow:none}.forceCommunitySearchBox.focused .topic-selector-wrapper{background-color:#ffffff}.forceCommunitySearchBox.focused .topic-selector{width:calc(100% - 95px)}.forceCommunitySearchBox.focused .clear-omni-box{float:none;display:inline-block}.forceCommunitySearchBox.focused div.uiMenuList{width:calc(100% + 65px)}.forceCommunitySearchBox.focused.show-result .result-container{border-top:none;margin-top:8px}}</style><style type="text/css">.forceCommunityGlobalNavigation{min-height:33px;color:rgb(255, 255, 255)}.forceCommunityGlobalNavigation>*{max-width:1140px}.forceCommunityGlobalNavigation{background-color:rgba(255, 255, 255, 0.75)}.forceCommunityGlobalNavigation .slds-list_vertical{background-color:rgb(255, 255, 255)}.forceCommunityGlobalNavigation .slds-list__item a,.forceCommunityGlobalNavigation .slds-list__item button{font-weight:400;font-size:.875rem;font-family:Poppins,sans-serif;line-height:normal;padding:.5rem .75rem}.forceCommunityGlobalNavigation .slds-is-nested .slds-list__item a,.forceCommunityGlobalNavigation .slds-is-nested .slds-list__item button{font-weight:300}.forceCommunityGlobalNavigation .slds-list__item a:hover,.forceCommunityGlobalNavigation .slds-list__item a.slds-is-active:not([data-type="home"]),.forceCommunityGlobalNavigation .slds-list__item button:not([disabled]):hover,.forceCommunityGlobalNavigation .slds-list__item button:not([disabled]).slds-is-active:not([data-type="home"]){background-color:rgba(0,0,0,.2)}.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>a:hover,.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>a.slds-is-active:not([data-type="home"]),.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>button:hover,.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>button.slds-is-active:not([data-type="home"]){background-color:rgba(0,0,0,.2)}.forceCommunityGlobalNavigation .slds-list_horizontal .slds-is-nested a,.forceCommunityGlobalNavigation .slds-list_horizontal .slds-is-nested button{padding:.5rem 1.5rem}.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>.slds-list_vertical>.slds-list__item+.slds-list__item>.comm-navigation__item>a,.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>.slds-list_vertical>.slds-list__item+.slds-list__item>.comm-navigation__item>button{border-top:1px solid rgba(255, 255, 255, 0.2)}.forceCommunityGlobalNavigation .slds-is-fixed>.slds-list_vertical>.slds-list__item>.comm-navigation__item>a,.forceCommunityGlobalNavigation .slds-is-fixed>.slds-list_vertical>.slds-list__item>.comm-navigation__item>button:not(.slds-is-open),.forceCommunityGlobalNavigation .slds-is-fixed .slds-is-nested{border-bottom:1px solid rgba(255, 255, 255, 0.2)}.forceCommunityGlobalNavigation>*{display:block;margin:0 auto}.forceCommunityGlobalNavigation a{text-decoration:none}.forceCommunityGlobalNavigation .slds-list_vertical.slds-is-absolute{z-index:7000}.forceCommunityGlobalNavigation .slds-list_horizontal .slds-list_vertical.right-align{right:0}.forceCommunityGlobalNavigation .slds-list__item.slds-hidden{pointer-events:none;position:absolute;right:0;z-index:-1}.forceCommunityGlobalNavigation .slds-is-nested{margin-left:0}.forceCommunityGlobalNavigation .slds-is-fixed{top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.1);z-index:7000}.forceCommunityGlobalNavigation .slds-is-fixed>.slds-list_vertical{height:100%;width:80%;overflow-y:scroll}.forceCommunityGlobalNavigation .slds-is-fixed .slds-list__item button:not(.slds-is-open) .slds-icon{transform:rotate(-90deg)}.forceCommunityGlobalNavigation>*,.forceCommunityGlobalNavigation>*>.slds-grid{min-height:inherit}.forceCommunityGlobalNavigation svg{fill:currentColor}.forceCommunityGlobalNavigation a,.forceCommunityGlobalNavigation button{display:block}.forceCommunityGlobalNavigation *,.forceCommunityGlobalNavigation button,.forceCommunityGlobalNavigation button:focus,.forceCommunityGlobalNavigation button[disabled],.forceCommunityGlobalNavigation button:hover,.forceCommunityGlobalNavigation a:focus,.forceCommunityGlobalNavigation a:hover{color:inherit}.forceCommunityGlobalNavigation .slds-list__item a,.forceCommunityGlobalNavigation .slds-list__item button{text-transform:uppercase;border-radius:0;white-space:nowrap}.forceCommunityGlobalNavigation .slds-is-fixed>.slds-list_vertical .slds-icon_container{width:18px;text-align:right}.forceCommunityGlobalNavigation .slds-is-fixed>.slds-list_vertical a *{padding-left:28px}.forceCommunityGlobalNavigation .slds-list_horizontal .slds-is-nested .slds-is-nested a *{padding-left:18px}.forceCommunityGlobalNavigation .slds-list_horizontal>.slds-list__item>.comm-navigation__item>.slds-is-nested{min-width:100%;border-radius:.125rem;box-shadow:0 2px 4px rgba(0, 0, 0, 0.07)}.forceCommunityGlobalNavigation .slds-icon-waffle_container:not(:hover):not(:focus) [class*=slds-r]{background-color:currentColor}</style><style type="text/css">.siteforceServiceBody{position:relative;z-index:1}.siteforceServiceBody .siteforceContentArea{background:rgb(255, 255, 255)}.siteforceServiceBody .cCurtainContainer{display:none;position:fixed;left:0;right:0;top:0;bottom:0;z-index:10;opacity:0}.siteforceServiceBody .cHeaderPanel{width:100%;position:relative;transition:background .8s ease;background-image:url();background-repeat:no-repeat;background-position:center;background-size:cover}.siteforceServiceBody .cHeaderOverlay{height:inherit;background:rgba(0, 0, 0, 0.2)}.siteforceServiceBody .cHeaderLine{padding:1rem .5rem 1rem .5rem;max-width:1140px;margin:0 auto}.siteforceServiceBody .cCenterPanel{max-width:1140px;margin-left:auto;margin-right:auto}.siteforceServiceBody .cCenterPanel:focus{outline:none}.siteforceServiceBody .cFooterPanel .forceCommunityLanguagePicker .languagePickerMenu{bottom:30px}.siteforceServiceBody .cAltToggleNav{display:none}.siteforceServiceBody .cAltToggleNav .slds-button__icon{color:rgba(250,250,250,.9)}.siteforceServiceBody .cTopLeftCon{line-height:3rem;text-align:center;min-width:2rem}.siteforceServiceBody .cNavBarCon{position:absolute;bottom:0;width:100%}.siteforceServiceBody .cBrandingProfile{width:25%;text-align:center}.siteforceServiceBody .cBrandingLogo{background-image:url(/file-asset/logo_xlstat_mini?v=1);background-position:center;background-repeat:no-repeat;background-size:contain;position:relative;display:block;outline:0;width:80%;height:3rem}.siteforceServiceBody .cBrandingLogo:focus{box-shadow:0 0 0 1px #cb5c12}.siteforceServiceBody .cSearchPublisher{min-width:2rem}.siteforceServiceBody .cSearchPublisher .mobile-search-icon{line-height:3rem;color:rgba(250,250,250,.9)}.siteforceServiceBody .cNotifications{line-height:3rem;position:relative;text-align:center}.siteforceServiceBody .cNotifications .unsNotificationsCounter{color:rgba(250,250,250,.9)}.siteforceServiceBody .cProfileCon{line-height:3rem;height:3rem}.siteforceServiceBody .cProfileCon a.trigger-link{color:rgb(255, 255, 255);text-shadow:0 0 4px #000}.siteforceServiceBody .cProfileCon a.trigger-link .profileName{text-decoration:inherit}.siteforceServiceBody .cProfileCon .login .linkLabel{color:rgb(255, 255, 255);text-shadow:0 0 4px #000}.siteforceServiceBody.bodyMenuMobile{left:0;position:absolute}@media only screen and (min-width:48em){.siteforceServiceBody .cTopLeftCon{min-width:0}.siteforceServiceBody .search-wrapper,.siteforceServiceBody .post-container{margin:0 auto}.siteforceServiceBody .cBrandingProfile{width:15%}.siteforceServiceBody .cProfileCon{width:10%}.siteforceServiceBody .cSearchPublisher{height:3rem;overflow:visible;z-index:10;width:70%}.siteforceServiceBody .cNotifications{width:5%;text-align:right}.siteforceServiceBody .cHeaderLine{padding:2rem 1rem 4rem 1rem}}@media only screen and (min-width:64.0625em){.siteforceServiceBody .cNotifications{width:5%}.siteforceServiceBody .cProfileCon{width:15%}}@media only screen and (max-width:47.9375em){.siteforceServiceBody .cProfileCon{min-width:2rem;max-width:25%;margin:0 .25rem}.siteforceServiceBody .cBrandingLogo{background-position-x:left;margin-left:.5rem}.siteforceServiceBody .cAltToggleNav{display:block}.siteforceServiceBody .comm-navigation{height:0;min-height:0;overflow:hidden}.siteforceServiceBody.bodyMenuMobile{position:fixed;top:0;left:80%;overflow:visible;width:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;transition:transform ease .35s,left ease .35s,top ease .35s,box-shadow ease .35s,right ease .35s}}.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input,.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input::-webkit-input-placeholder,.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper .slds-input__icon{color:rgba(250,250,250,.9)}.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input,.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input:-ms-input-placeholder,.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper .slds-input__icon{color:rgba(250,250,250,.9)}.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input,.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop input::placeholder,.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper .slds-input__icon{color:rgba(250,250,250,.9)}.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop .contentWrapper{border-color:rgba(255,255,255,.7)}.siteforceServiceBody .cSearchPublisher .forceCommunityGlobalSearchInput .forceSearchInputDesktop{margin-top:.5rem;margin-bottom:.5rem}.siteforceServiceBody .forceRelatedListCardDesktop .card-header .card-header-right .small.oneActionsRibbon a,.siteforceServiceBody .forceRelatedListCardDesktop .card-body a.textUnderline.forceOutputLookup,.siteforceServiceBody .forceRelatedListCardDesktop .card-footer a{color:#d35b0e}.siteforceServiceBody .analyticsEmbeddedChart .loadingPanel{background:transparent url(/projRes/analytics-platform/img/spinner_triangle.gif) no-repeat}</style><style type="text/css">_:-ms-lang(x)[lightning-primitiveIcon_primitiveIcon],svg[lightning-primitiveIcon_primitiveIcon]{pointer-events:none}</style><style type="text/css">.selfServiceUserProfileMenu{font-family:Poppins,sans-serif;position:relative}.selfServiceUserProfileMenu .selfServiceProfileMenuTrigger{text-align:center;height:auto;padding:0}.selfServiceUserProfileMenu .selfServiceProfileMenuTrigger .profileIcon{float:none}.selfServiceUserProfileMenu .uiMenuList{height:0;display:none;overflow:hidden;transition:height .5s}.selfServiceUserProfileMenu .uiMenuList.visible{height:auto;transition:height .5s}.selfServiceUserProfileMenu li.uiMenuItem a{padding:1rem 1.5rem;height:19px;text-transform:none;box-sizing:content-box}.selfServiceUserProfileMenu .uiMenuItem{line-height:normal;font-family:Poppins,sans-serif}.selfServiceUserProfileMenu .menuList{border:none;border-radius:0;right:0;z-index:1001;text-align:left}.selfServiceUserProfileMenu .menuList ul{white-space:nowrap}.selfServiceUserProfileMenu .uiMenuItem a.selectable{color:#333;border-radius:0;text-decoration:none;outline:0}.selfServiceUserProfileMenu .uiMenuItem .selectable:hover,.selfServiceUserProfileMenu .uiMenuItem .selectable:focus,.selfServiceUserProfileMenu .uiMenuItem .selectable:active{background-color:rgba(203, 92, 18, 0.05)}.selfServiceUserProfileMenu .login{text-align:center}.selfServiceUserProfileMenu .login .linkLabel{display:block;overflow:hidden;text-overflow:ellipsis;color:rgb(255, 255, 255);text-transform:uppercase;font-weight:700;font-size:.75rem}.selfServiceUserProfileMenu .login .login-link:focus{text-decoration:none}.selfServiceUserProfileMenu .androidOnly.trigger-link:focus,.selfServiceUserProfileMenu .androidOnly.trigger-link:active{-webkit-tap-highlight-color:transparent}.selfServiceUserProfileMenu .profileName,.selfServiceUserProfileMenu .down-arrow{display:none}@media only screen and (min-width:48em){.selfServiceUserProfileMenu .login .linkLabel{font-size:1rem}}@media only screen and (min-width:48em) and (min-aspect-ratio:4/3),only screen and (min-width:64.0625em){.selfServiceUserProfileMenu .menuList{width:auto}.selfServiceUserProfileMenu .uiMenuList{display:none;transition:none}.selfServiceUserProfileMenu .uiMenuList.visible{height:auto;transition:none;min-width:200px}.selfServiceUserProfileMenu li.uiMenuItem a{height:auto}}@media only screen and (min-width:64.0625em){.selfServiceUserProfileMenu .profileName,.selfServiceUserProfileMenu .down-arrow{display:inline-block}.selfServiceUserProfileMenu .menuList ul{max-height:32rem}}</style><style id="forceCommunityAskCommunity_39:100;a" type="text/css">.forceCommunityAskCommunity.askCommunityBtn.stylingOverrideHook_39100a { border-radius: 0px }
+.forceCommunityAskCommunity.askCommunityBtn.stylingOverrideHook_39100a { width: 100% }
+.forceCommunityAskCommunity.askCommunityBtn.stylingOverrideHook_39100a { margin: 0 auto }
+</style><style id="siteforceNapiliFooter_31:100;a" type="text/css">.siteforceNapiliFooter .askCommunityButton.stylingOverrideHook_31100a .askCommunityBtn { border-radius: 0px }
+.siteforceNapiliFooter .contactSupportButton.stylingOverrideHook_31100a .selfServiceContactSupport { border-radius: 0px }
+</style><style type="text/css">.forceCommunityAskCommunity.askCommunityBtn{text-transform:uppercase;font-size:.8125rem;color:rgb(255, 255, 255);background-color:#cb5c12;border-color:#cb5c12;display:block;border-width:2px;border-style:solid;padding:5px 24px;min-width:135px;transition:all .2s}.forceCommunityAskCommunity.askCommunityBtn:hover,.forceCommunityAskCommunity.askCommunityBtn:focus{color:rgb(255, 255, 255);background-color:#9c470e}</style><style type="text/css">.selfServiceContactSupport{margin:0}.selfServiceContactSupport *{font-family:Poppins,sans-serif;font-size:.8125rem}.selfServiceContactSupport .sFooterText{font-size:.75rem;padding-right:10px;color:#696969;display:none}.selfServiceContactSupport .sButton{margin:14px;text-align:center}.selfServiceContactSupport .contactSupport{background-color:#cb5c12;border:none;padding:0;color:rgb(255, 255, 255);border-radius:3px;font-size:.75rem;font-weight:600;width:100%;text-align:center;height:50px;transition:border .25s linear,color .25s linear,background-color .25s linear}.selfServiceContactSupport button.contactSupport:active{background-color:#9c470e}.selfServiceContactSupport button.contactSupport:hover,.selfServiceContactSupport button.contactSupport:focus{background-color:#9c470e}.selfServiceContactSupport .sHeader{font-size:.75rem;text-transform:uppercase;font-weight:700;padding:18px 30px;border-top:1px solid #f4f4f4;border-bottom:1px solid #f4f4f4}.selfServiceContactSupport.communityBtn{text-transform:uppercase;font-size:.8125rem;color:rgb(255, 255, 255);background-color:#cb5c12;border-color:#cb5c12;width:70%;display:block;margin:0 auto;border-width:2px;border-style:solid;padding:5px 24px;min-width:135px;transition:all .2s}.selfServiceContactSupport.communityBtn:focus,.selfServiceContactSupport .contactSupport:focus,.selfServiceContactSupport.communityBtn:hover,.selfServiceContactSupport .contactSupport:hover{color:rgb(255, 255, 255);background-color:#9c470e}@media only screen and (min-width:48em){.selfServiceContactSupport .sButton{margin:30px 50px;text-align:left;text-align:start}.selfServiceContactSupport .sHeader{font-size:1rem;padding:26px 50px}.selfServiceContactSupport .contactSupport{font-size:1rem;width:292px}}@media only screen and (min-width:48em) and (min-aspect-ratio:4/3),only screen and (min-width:64.0625em){.selfServiceContactSupport .sButton{margin:30px 0}.selfServiceContactSupport .sHeader{font-size:1.75em;padding:30px 0;border-top:0;border-bottom:1px solid #333}.selfServiceContactSupport .contactSupport{font-size:.8125rem;width:220px}}</style><style type="text/css">.siteforceNapiliFooter .cta_header{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;display:inline-block;line-height:1.2em;font-weight:300}.siteforceNapiliFooter .askCommunityButton .askCommunityBtn:hover,.siteforceNapiliFooter .askCommunityButton .askCommunityBtn:focus,.siteforceNapiliFooter .contactSupportButton .selfServiceContactSupport:hover,.siteforceNapiliFooter .contactSupportButton .selfServiceContactSupport:focus{color:rgb(255, 255, 255);background-color:#9c470e}.siteforceNapiliFooter .selfServiceContactSupport h2.sHeader{border-bottom:hidden}.siteforceNapiliFooter .cta-btn{margin:14px 18px}.siteforceNapiliFooter .cta-btn button.askCommunityBtn,.siteforceNapiliFooter .cta-btn button.contactSupportButton{width:70%;min-width:fit-content}.siteforceNapiliFooter .contact-con{margin:10px auto}.siteforceNapiliFooter .ctaPanel{float:left;width:100%}@media only screen and (min-width:48em){.siteforceNapiliFooter .cta-btn{margin:14px 0}}@media only screen and (min-width:48em) and (min-aspect-ratio:4/3),only screen and (min-width:64.0625em){.siteforceNapiliFooter .cta-btn{width:285px;display:inline-block;margin:14px -10px}.siteforceNapiliFooter .contact-con{text-align:center}}@media only screen and (max-width:47.9375em){.siteforceNapiliFooter .selfServiceContactSupport,.siteforceNapiliFooter .forceCommunityAskCommunity{font-size:.8125rem}}</style><meta name="description" content="This tutorial shows how to compute and interpret Pearson correlation coefficients in Excel using XLSTAT." data-owner="setSEOProperties"><script>(function(){(function injection() {
+  var pageLang = 'en';
+  var userLang = 'uk';
+
+  var uid = '1E07F158C6FA4460B352973E9693B329';
+  var teId = 'TE_' + uid;
+  var cbId = 'TECB_' + uid;
+
+  function show() {
+    window.setTimeout(function() {
+      window[teId].showBanner(true);
+    }, 10);
+  }
+
+  function newElem() {
+    var elem = new google.translate.TranslateElement({
+      autoDisplay: false,
+      floatPosition: 0,
+      multilanguagePage: true,
+      pageLanguage: pageLang
+    });
+    return elem;
+  }
+
+  if (window[teId]) {
+    show();
+  } else {
+    if (!window.google || !google.translate ||
+        !google.translate.TranslateElement) {
+      if (!window[cbId]) {
+        window[cbId] = function() {
+          window[teId] = newElem();
+          show();
+        };
+      }
+      var s = document.createElement('script');
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=' +
+              encodeURIComponent(cbId) + '&client=tee&hl=' + userLang;
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }
+  }
+})();})();</script><script src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/f.txt"></script></head><body class="null comm-page-article"><div id="auraAppcacheProgress"><div class="progressBox"><div class="progressBar"></div></div></div><div class="auraMsgBox auraLoadingBox" id="auraLoadingBox"><div class="logo"></div><div class="spinner"></div><span>Loading</span></div><div class="" id="auraErrorMask"><div class="auraErrorBox" id="auraError"><span><a class="close" id="dismissError">×</a>Sorry to interrupt</span><div id="auraErrorMessage">CSS Error</div><div id="auraErrorStack"></div><div class="auraErrorFooter"><a href="https://help.xlstat.com/s/article/pearson-correlation-coefficient-in-excel?nocache=https%3A%2F%2Fhelp.xlstat.com%2Fs%2Farticle%2Fpearson-correlation-coefficient-in-excel%3Flanguage%3Den" id="auraErrorReload">Refresh</a></div></div></div><!--"'--><script async="" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/analytics.js.завантаження"></script><script type="text/javascript" nonce="">
+        (function() {
+            document.cookie = "cookieTest=x";
+            var cookieEnabled = document.cookie.indexOf("cookieTest=") != -1;
+            document.cookie = "cookieTest=x; expires=Thu, 01-Jan-1970 00:00:01 GMT;";
+                
+            if (!cookieEnabled) {
+                var cookieMessage = document.createElement("div");
+                cookieMessage.innerHTML = "<section role='alertdialog' tabindex='-1' aria-labelledby='prompt-heading-id' aria-describedby='prompt-message-wrapper'         class='slds-modal slds-fade-in-open slds-modal_prompt' aria-modal='true' style='color: rgb(62, 62, 60);'>   <div class='slds-modal__container'>       <header class='slds-modal__header slds-theme_info slds-theme_alert-texture'>           <h2 class='slds-text-heading_medium' id='prompt-heading-id'>{0}</h2>       </header>       <div class='slds-modal__content slds-p-around_medium' id='prompt-message-wrapper'>           <p>{1}</p>       </div>   </div></section><div class='slds-backdrop slds-backdrop_open'></div>".replace("{0}", "Technical Stuff").replace("{1}", "To view this site, enable cookies in your browser.");
+                document.body.appendChild(cookieMessage);
+            }
+        }());
+    </script><!--"'--><script type="text/javascript" nonce="">
+        (function() {
+            var templateType = "home";
+            var doNotShowUnsupportedBrowserModal = true;
+            
+            if (templateType === "login") {
+                return;
+            }
+                        
+            if (!doNotShowUnsupportedBrowserModal) {
+                var browserNotSupportedMessage = document.createElement("div");
+                browserNotSupportedMessage.id = "community-browser-not-support-message";
+                browserNotSupportedMessage.innerHTML = "<section role='alertdialog' tabindex='-1' aria-labelledby='prompt-heading-id' aria-describedby='prompt-message-wrapper'         class='slds-modal slds-fade-in-open slds-modal_prompt' aria-modal='true' style='color: rgb(62, 62, 60);'>   <div class='slds-modal__container'>       <header class='slds-modal__header slds-theme_info slds-theme_alert-texture'>           <h2 class='slds-text-heading_medium' id='prompt-heading-id'>{0}</h2>       </header>       <div class='slds-modal__content slds-p-around_medium' id='prompt-message-wrapper'>           <p>{1}</p>       </div>   <footer class='slds-modal__footer slds-theme_default'>               <button class='slds-button slds-button_neutral'>{GOT_IT_LABEL}</button>           </footer></div></section><div class='slds-backdrop slds-backdrop_open'></div>".replace("{0}", "Your browser isn't supported")
+                                                                                              .replace("{1}", "This browser won't play nicely with some features on this site. For the best experience, update your browser to the latest version, or switch to another browser.")
+                                                                                              .replace("{GOT_IT_LABEL}", "Got It");
+                document.body.appendChild(browserNotSupportedMessage);
+                var okButton = document.querySelector("#community-browser-not-support-message .slds-modal__footer .slds-button");
+                okButton.addEventListener("click", function() {
+                    closeModal();
+                });
+            }
+            
+            function closeModal() {
+                var modal = document.getElementById("community-browser-not-support-message");
+                if (modal) {
+                    document.body.removeChild(modal);   
+                }                
+            }
+        }());
+    </script><!--"'--><script type="text/javascript" nonce="">
+        // keep this variable here, because users do window.picassoSPA in order to check if in PSSC.
+        var picassoSPA = {};
+    </script><!--"'--><script nonce="">
+(function () {
+    window.pageStartTime = (new Date()).getTime();
+    window.Aura || (window.Aura = {});
+    window.Aura.bootstrap || (window.Aura.bootstrap = {});
+    
+
+    var time = window.performance && window.performance.now ? window.performance.now.bind(performance) : function(){return Date.now();};
+    window.Aura.bootstrap.execInlineJs = time();
+
+    window.Aura.inlineJsLoaded = true;
+
+    var auraConfig = {"cssVariables":{"lwc-colorTextInverseShadow":"#000","lwc-colorTextIconDefault":"rgb(107, 109, 112)","lwc-colorTextContextBarActionTrigger":"rgba(255, 255, 255, 0.4)","lwc-colorBackgroundUtilityBarHover":"rgb(233, 234, 236)","lwc-colorBackgroundPathWon":"rgb(4, 132, 75)","lwc-colorBackgroundButtonSuccessActive":"rgb(4, 132, 75)","lwc-colorBorderButtonBrand":"#cb5c12","lwc-colorTextDestructiveHover":"rgb(161, 43, 43)","lwc-colorBorderCustomer":"rgb(255, 154, 60)","lwc-brandHeaderContrastWeakActive":"rgb(129, 129, 129)","lwc-colorBackgroundDockedPanel":"rgb(255, 255, 255)","lwc-varSpacingLarge":"1.5rem","lwc-colorTextSecondary":"rgb(107, 109, 112)","lwc-colorBackgroundContextBarShadow":"linear-gradient(to bottom, rgba(0, 0, 0, 0.25) 0, rgba(0, 0, 0, 0) 100%)","lwc-brandTextLink":"#d35b0e","lwc-fontSizeHeadingXLarge":"1.75rem","lwc-colorTextInverseWeak":"rgb(171, 173, 176)","lwc-buttonIconBoundaryTouch":"2.75rem","lwc-colorBackgroundGuidance":"rgb(255, 255, 255)","lwc-componentSpacingPadding":"1rem","lwc-cardFooterPadding":"0 1rem 0.75rem","lwc-colorBackgroundPathCurrentHover":"rgb(255, 255, 255)","lwc-varSpacingXSmall":"0.5rem","lwc-colorBackgroundPathComplete":"rgb(75, 202, 129)","lwc-colorBackgroundDark":"rgb(233, 234, 236)","lwc-salesforceSansLightWoff":"","lwc-welcomeMatSpacingInfo":"7.75rem","lwc-colorBorderRowSelected":"rgb(0, 112, 210)","lwc-avatarGroupColorBackgroundLightest":"rgb(255, 255, 255)","lwc-colorBackgroundContextBarInverseItemHover":"rgba(255, 255, 255, 0.2)","lwc-colorBackgroundPathStepActionActive":"rgb(6, 28, 63)","lwc-heightContextBar":"2.5rem","lwc-splitViewColorBackground":"rgb(250, 250, 249)","lwc-colorBackgroundNotificationBadgeHover":"rgb(0, 95, 178)","lwc-colorBackgroundError":"#C23934","lwc-brandLightActive":"rgb(227, 229, 237)","lwc-colorBackgroundButtonBrandActive":"#9c470e","lwc-gridGroupingColor":"#FFFFFF","lwc-colorTextIconDefaultHintBorderless":"rgb(233, 234, 236)","lwc-colorBackgroundBackdrop":"rgba(255, 255, 255, 0.75)","lwc-cardHeaderPadding":"0.75rem 1rem 0","lwc-shadowReminder":"0 2px 3px 0 rgba(0, 0, 0, 0.20)","lwc-sliderHandleShadow":"rgba(0, 0, 0, 0.16) 0 2px 3px","lwc-colorBackgroundModal":"rgb(255, 255, 255)","lwc-sliderTrackHeight":"4px","lwc-tableBorderRadius":"0","lwc-pageHeaderShadow":"none","lwc-borderStrokeWidthThick":"2px","lwc-lineHeightButtonSmall":"1.75rem","lwc-shadowLinkFocusInverse":"0 0 3px #E9EAEC","lwc-fontSizeTextLarge":"1.125rem","lwc-progressRingWidth":"0.1875rem","lwc-buttonColorBorderBrandPrimary":"#cb5c12","lwc-colorTextStageLeft":"rgb(233, 234, 236)","lwc-heightPill":"1.625rem","lwc-zIndexDocked":"4","lwc-borderWidthThick":"2px","lwc-colorTextLinkPrimaryActive":"rgb(0, 57, 107)","lwc-buttonColorBackgroundSecondary":"rgba(255, 255, 255, 0.8)","lwc-sliderTrackWidth":"100%","lwc-navigationItemHorizontalPadding":{"exprType":"PROPERTY","byValue":false,"path":"spacingSmall"},"lwc-brandBandColorBackgroundPrimaryTransparent":"rgba(0, 0, 0, 0)","lwc-colorBackgroundPrimary":"rgb(255, 255, 255)","lwc-colorBackgroundIndicatorDot":"rgb(22, 50, 92)","lwc-progressBarColorBackground":"rgb(221, 219, 218)","lwc-colorBackgroundScrollbarTrack":"rgb(196, 198, 202)","lwc-colorBorderError":"rgb(194, 57, 52)","lwc-colorTextIconDefaultDisabled":"rgb(217, 219, 221)","lwc-colorBackgroundWarningDark":"rgb(255, 158, 44)","lwc-squareIconMediumBoundary":"2rem","lwc-colorBorderBrandDark":"rgb(0, 112, 210)","lwc-colorBorderSeparator":"rgb(249, 249, 250)","lwc-colorBackgroundDestructive":"rgb(194, 57, 52)","lwc-navigationFontSize":{"exprType":"PROPERTY","byValue":false,"path":"fontSizeHeadingSmall"},"lwc-navigationFontFamily":{"exprType":"PROPERTY","byValue":false,"path":"fontFamily"},"lwc-colorBackgroundToggleHover":"rgb(145, 146, 151)","lwc-colorBorderHint":"#696969","lwc-colorBackground":"#FFFFFF","lwc-colorBackgroundSelection":"rgb(216, 237, 255)","lwc-durationImmediately":"0.05s","lwc-colorBorderSuccessDark":"rgb(4, 132, 75)","lwc-salesforceSansBoldItalicWoff2":"url(/_slds/fonts/v2.3.0/SalesforceSans-BoldItalic.woff2)","lwc-brandBackgroundDarkTransparent":"rgba(221, 219, 218, 0)","lwc-colorBackgroundPathActiveHover":"rgb(0, 57, 107)","lwc-colorBackgroundSuccessDarker":"rgb(0, 74, 41)","lwc-brandContrastActive":"rgb(13, 14, 18)","lwc-colorTextLinkInverseDisabled":"rgba(255, 255, 255, 0.15)","lwc-sizeLarge":"25rem","lwc-brandHeaderContrast":"rgb(94, 94, 94)","lwc-fontSizeXLargeA":"1.57rem","lwc-colorBackgroundInverseLight":"rgb(22, 50, 92)","lwc-colorBackgroundContextBar":"rgb(255, 255, 255)","lwc-colorBorderPathDivider":"rgb(255, 255, 255)","lwc-heightFooter":"3.75rem","lwc-buttonLineHeightTouch":"2.65rem","lwc-colorBackgroundOffline":"rgb(62, 64, 65)","lwc-splitViewWidth":"25rem","lwc-colorTextIconInverseActive":"rgb(255, 255, 255)","lwc-colorTextPlaceholder":"#696969","lwc-tableColorBackgroundHeaderHover":"rgb(250, 250, 249)","lwc-colorBackgroundPathCompleteHover":"rgb(4, 132, 75)","lwc-colorTextBrandPrimary":"rgb(255, 255, 255)","lwc-badgeColorBackgroundLightest":"rgb(255, 255, 255)","lwc-userDefaultAvatarMedium":"url(/_slds/images/profile_avatar_160.png?cache=d866ea6e)","lwc-inputReadonlyFontWeight":"400","lwc-cardSpacingMargin":"1rem","lwc-fontSizeTextXLarge":"1.25rem","lwc-globalHeaderColorBackground":"rgb(255, 255, 255)","lwc-colorBackgroundToggleDisabled":"rgb(171, 173, 176)","lwc-navigationBarNestedItemVerticalPadding":{"exprType":"PROPERTY","byValue":false,"path":"navigationItemVerticalPadding"},"lwc-colorBorderSeparatorAlt2":"rgb(196, 198, 202)","lwc-buttonColorBackgroundPrimary":"rgb(255, 255, 255)","lwc-shadowSoftPrimary":"none","lwc-shadowImage":"0 1px 1px rgba(0, 0, 0, 0.16)","lwc-progressColorBorderHover":"rgb(0, 112, 210)","lwc-varSpacingVerticalSmall":"0.75rem","lwc-einsteinHeaderBackgroundColor":"rgb(149, 203, 252)","lwc-progressBarColorBackgroundFillSuccess":"rgb(75, 202, 129)","lwc-brandHeaderIcon":"rgb(145, 145, 145)","lwc-lineHeightText":"1.5","lwc-colorTextPathCurrent":"rgb(0, 95, 178)","lwc-colorTextLinkFocus":"rgb(0, 95, 178)","lwc-pageHeaderColorBorder":"rgba(0, 0, 0, 0)","lwc-colorTextButtonDefault":"rgb(0, 112, 210)","lwc-colorBorderContextBarThemeDefaultAlt":"rgb(243, 242, 242)","lwc-colorBackgroundToggleActiveHover":"rgb(0, 95, 178)","lwc-brandHeaderIconActive":"rgb(129, 129, 129)","lwc-fontSizeSmall":"0.75rem","lwc-colorBackgroundContextBarItemActive":"rgb(255, 255, 255)","lwc-fontFamilyHeader":"Poppins, sans-serif","lwc-LoginBackgroundImage":"","lwc-colorTextIconInverseHover":"rgb(255, 255, 255)","lwc-colorBorderButtonInverseDisabled":"rgba(255, 255, 255, 0.15)","lwc-lineHeightTab":"2.5rem","lwc-colorTextButtonDefaultActive":"rgb(0, 112, 210)","lwc-pageHeaderColorBackground":"rgb(250, 250, 249)","lwc-fontWeightRegular":"400","lwc-navigationNestedItemFontWeight":{"exprType":"PROPERTY","byValue":false,"path":"fontWeightLight"},"lwc-brandHeaderIconDisabled":"rgba(145, 145, 145, 0.25)","lwc-squareTappable":"2.75rem","lwc-popoverWalkthroughHeaderColorBackground":"rgb(22, 50, 92)","lwc-colorBackgroundContextBarBrandAccent":"rgb(0, 161, 223)","lwc-colorStrokeBrand":"rgb(0, 112, 210)","lwc-colorTextTabLabelActive":"rgb(0, 57, 107)","lwc-mqLarge":"only screen and (min-width: 64.0625em)","lwc-buttonColorTextPrimary":"rgb(255, 255, 255)","lwc-zIndexSticky":"100","lwc-colorBackgroundPathIncomplete":"rgb(236, 235, 234)","lwc-salesforceSansBoldItalicWoff":"url(/_slds/fonts/v2.3.0/SalesforceSans-BoldItalic.woff)","lwc-elevationInverseShadow3Below":"0 -3px 3px 0 rgba(0, 0, 0, 0.16) inset","lwc-colorBorder":"#F4F4F4","lwc-colorTextBrand":"#cb5c12","lwc-squareTappableXSmall":"1.5rem","lwc-colorGray10":"rgb(81, 79, 77)","lwc-cardBodyPadding":"0 1rem","lwc-colorGray11":"rgb(62, 62, 60)","lwc-colorBackgroundActionbarIconUtility":"rgb(107, 109, 112)","lwc-brandAccessibleActive":"#9c470e","lwc-colorGray12":"rgb(43, 40, 38)","lwc-colorGray13":"#333","lwc-elevation16":"16","lwc-colorBackgroundBrandPrimaryFocus":"rgb(0, 95, 178)","lwc-illustrationEmptyStateEvents":"url(/_slds/images/illustrations/empty-state-events.svg?cache=ce47a72d)","lwc-illustrationColorPrimary":"rgb(140, 211, 248)","lwc-heightDockedBar":"2.5rem","lwc-colorTextLinkActive":"#ad4a0b","lwc-shadowHeader":"0 2px 4px rgba(0, 0, 0, 0.07)","lwc-colorBackgroundChromeMobile":"rgb(0, 112, 210)","lwc-colorBorderBrandPrimaryFocus":"rgb(0, 112, 210)","lwc-fontFamilyStrong":"Poppins, sans-serif","lwc-colorForegroundPrimary":"rgb(255, 255, 255)","lwc-brandBandImageHeightLarge":"18.75rem","lwc-fontWeightLight":"300","lwc-colorTextLabel":"#696969","lwc-colorTextInverseHover":"rgb(171, 173, 176)","lwc-colorTextPlaceholderInverse":"rgb(233, 234, 236)","lwc-fontSizeXLarge":"1.25rem","lwc-brandBandColorBackgroundSecondary":"rgba(0, 0, 0, 0)","lwc-colorTextTabLabelSelected":"#cb5c12","lwc-spacingLarge":"1.5rem","lwc-colorBackgroundNotification":"rgb(255, 255, 255)","lwc-colorBackgroundReminderHover":"rgb(255, 255, 255)","lwc-colorBorderButtonBrandDisabled":"rgba(0, 0, 0, 0)","lwc-colorTextToast":"rgb(233, 234, 236)","lwc-colorTextLinkInverseHover":"rgba(255, 255, 255, 0.75)","lwc-squareIconMedium":"2rem","lwc-ssLineHeightText":"1.5","lwc-elevation32":"32","lwc-welcomeMatTextColorInfo":"rgb(0, 57, 107)","lwc-badgeColorBackgroundInverse":"rgb(112, 110, 107)","lwc-colorBackgroundModalBrand":"rgb(0, 112, 210)","lwc-colorBackgroundButtonDefaultFocus":"rgb(244, 246, 249)","lwc-varLineHeightText":"1.5","lwc-varSpacingVerticalXSmall":"0.5rem","lwc-colorBorderPrimary":"rgb(217, 219, 221)","lwc-colorBackgroundPayload":"rgb(249, 249, 250)","lwc-fillHeaderButtonHover":"#cb5c12","lwc-cardColorBorder":"#F4F4F4","lwc-colorBackgroundBackdropTint":"rgb(249, 249, 250)","lwc-varSpacingSmall":"0.75rem","lwc-colorBackgroundContextBarInverseItemActive":"rgba(255, 255, 255, 0.4)","lwc-buttonIconColorBorderPrimary":"rgb(255, 255, 255)","lwc-squareIconXxSmallBoundary":"1rem","lwc-colorBackgroundAlt":"rgb(255, 255, 255)","lwc-colorPickerRangeHeight":"5rem","lwc-colorBorderSeparatorInverse":"rgb(42, 66, 108)","lwc-popoverWalkthroughColorBackground":"rgb(6, 28, 63)","lwc-varSpacingHorizontalXxLarge":"3rem","lwc-shadowOverlay":"0 -2px 4px rgba(0, 0, 0, 0.07)","lwc-colorTextModalButton":"rgb(107, 109, 112)","lwc-colorBorderInput":"#F4F4F4","lwc-fontFamilyBody":"Poppins, sans-serif","lwc-buttonColorBorderPrimary":"#F4F4F4","lwc-popoverWalkthroughColorBackgroundAlt":"rgb(0, 112, 210)","lwc-varSpacingMedium":"1rem","lwc-colorBorderInputCheckboxSelectedCheckmark":"rgb(255, 255, 255)","lwc-brandPrimaryTransparent40":"rgba(21, 137, 238, 0.4)","lwc-mqMediumLandscape":"only screen and (min-width: 48em) and (min-aspect-ratio: 4/3)","lwc-componentSpacingMargin":"0","lwc-brandPrimary":"#cb5c12","lwc-carouselIndicatorWidth":"1rem","lwc-neutrafaceDisplayWoff":"url(/_slds/fonts/NeutrafaceDisplay.woff?cache=2.9.0)","lwc-squareIconXxSmallContent":".875rem","lwc-salesforceSansBoldWoff2":"","lwc-colorBorderCanvasElementSelectionHover":"rgb(0, 95, 178)","lwc-colorBorderSelectionHover":"rgb(21, 137, 238)","lwc-elevation3Inset":"-3","lwc-colorBackgroundToggle":"rgb(171, 173, 176)","lwc-durationSlowly":"0.4s","lwc-colorBackgroundAnchor":"rgba(255, 255, 255, 0.0)","lwc-sliderColorBackgroundDisabled":"rgb(236, 235, 234)","lwc-colorTextLinkDisabled":"rgb(22, 50, 92)","lwc-welcomeMatCheckSize":"0.625rem","lwc-shadowDocked":"0 -2px 2px 0 rgba(0, 0, 0, 0.16)","lwc-userDefaultAvatar":"url(/_slds/images/profile_avatar_200.png?cache=d3fa48f8)","lwc-shadowSoftPrimaryActive":"none","lwc-shadowInlineEdit":"0 2px 4px 4px rgba(0, 0, 0, 0.16)","lwc-chatMessageColorBackgroundInbound":"rgb(242, 242, 243)","lwc-squareIconMediumContent":"1rem","lwc-fillBrandHover":"rgb(0, 95, 178)","lwc-typingIconDotColorBackgroundGray":"rgb(221, 219, 218)","lwc-gridGrandTotalBgColor":"#FFFFFF","lwc-colorTextBrandHover":"#9c470e","lwc-durationToastShort":"4.8s","lwc-varSpacingVerticalLarge":"1.5rem","lwc-maxWidthActionOverflowMenu":"512px","lwc-colorTextSuccess":"rgb(2, 126, 70)","lwc-colorBackgroundButtonIcon":"rgba(0, 0, 0, 0)","lwc-welcomeMatBackgroundImageInfo":"url(/_slds/images/welcome-mat/bg-info@2x.png?cache=c6c31d65)","lwc-colorBorderContextBarThemeDefault":"rgb(0, 161, 223)","lwc-colorBackgroundBrandPrimaryActive":"#9c470e","lwc-squareIconLargeBoundary":"3rem","lwc-dropZoneSlotHeight":"0.25rem","lwc-typingIconDotColorBackgroundGrayDark":"rgb(201, 199, 197)","lwc-squareIconLargeContent":"2rem","lwc-fontSizeTextXSmall":"0.75rem","lwc-panelDockedLeftShadow":"1px 0 3px rgba(0,0,0,0.25)","lwc-colorBackgroundPathActive":"rgb(0, 95, 178)","lwc-cardSpacingSmall":"0.75rem","lwc-durationPaused":"3.2s","lwc-colorBorderIconInverseHint":"rgba(255, 255, 255, 0.5)","lwc-fontSizeHeadingXxSmall":"0.625rem","lwc-colorBackgroundScrollbar":"rgb(233, 234, 236)","lwc-colorBorderContextBarInverseItem":"rgba(255, 255, 255, 0.2)","lwc-colorBackgroundPathLost":"rgb(194, 57, 52)","lwc-globalActionFillHover":"rgb(0, 112, 210)","lwc-colorBackgroundModalButton":"rgba(0, 0, 0, 0.07)","lwc-pageHeaderColorBackgroundAlt":"rgb(255, 255, 255)","lwc-heightHeader":"3.125rem","lwc-colorTextButtonDefaultDisabled":"rgb(217, 219, 221)","lwc-widthStageLeftExpanded":"15rem","lwc-sizeXxxSmall":"3rem","lwc-borderStrokeWidthThin":"1px","lwc-colorPageBackground":"#FFFFFF","lwc-fillBrandActive":"rgb(22, 50, 92)","lwc-colorTextLinkPrimaryFocus":"rgb(0, 112, 210)","lwc-colorBackgroundInfo":"rgb(107, 109, 112)","lwc-welcomeMatWidth":"52.0625rem","lwc-ssFontSizeXLarge":"1.25rem","lwc-navigationFontWeight":{"exprType":"PROPERTY","byValue":false,"path":"fontWeightRegular"},"lwc-colorBackgroundOrgSwitcherArrow":"rgb(6, 28, 63)","lwc-sliderTrackColorBackgroundFill":"rgb(21, 137, 238)","lwc-tableCellSpacing":"0.5rem","lwc-squareIconSmallBoundary":"1.5rem","lwc-varSpacingXLarge":"2rem","lwc-progressColorBorder":"rgb(255, 255, 255)","lwc-panelDockedRightShadow":"-1px 0 3px 0 rgba(0,0,0,0.25)","lwc-colorTextIconDefaultActive":"#ad4a0b","lwc-tableColorBackgroundStripes":"rgb(250, 250, 249)","lwc-colorBorderErrorDark":"rgb(234, 130, 136)","lwc-colorTextDestructive":"rgb(194, 57, 52)","lwc-brandHeaderContrastCoolActive":"rgb(0, 85, 131)","lwc-zIndexReminder":"8500","lwc-brandHeaderContrastWarm":"rgb(191, 2, 1)","lwc-shadowSoftPrimaryHover":"none","lwc-colorTextButtonInverse":"rgb(233, 234, 236)","lwc-sizeSmall":"15rem","lwc-shadowDropDown":"0 2px 3px 0 rgba(0, 0, 0, 0.16)","lwc-colorTextLinkInverse":"rgb(255, 255, 255)","lwc-colorTextContextBarInverse":"rgb(255, 255, 255)","lwc-borderRadiusLarge":"0.5rem","lwc-colorBackgroundButtonBrandDisabled":"rgb(224, 229, 238)","lwc-sizeXxSmall":"6rem","lwc-spacingXLarge":"2rem","lwc-chatMessageColorBackgroundOutboundAgent":"rgb(107, 109, 112)","lwc-gridHeaderBgColor":"#FFFFFF","lwc-fontSizeXSmall":"0.625rem","lwc-colorBackgroundInputSearch":"rgba(0, 0, 0, 0.16)","lwc-welcomeMatColorIconComplete":"rgb(201, 199, 197)","lwc-groupDefaultAvatarMedium":"url(/_slds/images/group_avatar_160.png?cache=8f8281d0)","lwc-borderWidthThin":"1px","lwc-colorTextInverse":"rgb(255, 255, 255)","lwc-navigationLineHeight":"normal","lwc-notificationColorBackgroundInverse":"rgb(112, 110, 107)","lwc-lineHeightReset":"1","lwc-colorBorderTabSelected":"rgb(0, 112, 210)","lwc-colorBackgroundTempModal":"rgba(126, 140, 153, 0.8)","lwc-fillHeaderButton":"rgb(255, 255, 255)","lwc-zIndexToast":"10000","lwc-templateProfileGutters":"0","lwc-zIndexDeepdive":"-99999","lwc-colorTextButtonBrandHover":"rgb(255, 255, 255)","lwc-colorBackgroundHover":"rgba(203, 92, 18, 0.05)","lwc-sliderHandleColorBackgroundFocus":"rgb(0, 112, 210)","lwc-navigationBarNestedItemHorizontalPadding":{"exprType":"PROPERTY","byValue":false,"path":"spacingLarge"},"lwc-spinnerSizeSmall":"1.25rem","lwc-fontSizeTextSmall":"0.8125rem","lwc-colorTextButtonInverseDisabled":"rgba(255, 255, 255, 0.15)","lwc-fcFontSizeSmall":"0.75rem","lwc-elevationShadow3Below":"0 3px 3px 0 rgba(0, 0, 0, 0.16) inset","lwc-mqSingleColumnRecordLayout":"(max-width: 599px)","lwc-pageHeaderIconSize":"2.25rem","lwc-chatMessageColorBackgroundStatus":"rgb(255, 255, 255)","lwc-cardFooterMargin":"0.75rem","lwc-colorBackgroundInputDisabled":"rgb(233, 234, 236)","lwc-colorBackgroundBrowser":"rgb(107, 109, 112)","lwc-borderRadiusMedium":"0.25rem","lwc-widthPathBorderCurrent":"0.125rem","lwc-colorTextIconInverseDisabled":"rgba(255, 255, 255, 0.15)","lwc-elevationInverseShadow32":"0 -32px 32px 0 rgba(0, 0, 0, 0.16)","lwc-zIndexDropdown":"7000","lwc-colorTextIconDefaultHint":"rgb(171, 173, 176)","lwc-colorBorderButtonFocusInverse":"rgb(233, 234, 236)","lwc-fontWeightBold":"700","lwc-fontSizeTextXxSmall":"0.625rem","lwc-colorTextActionLabel":"#696969","lwc-brandTextLinkActive":"#ad4a0b","lwc-colorPickerThumbWidth":"0.375rem","lwc-colorBackgroundSecondary":"rgb(249, 249, 250)","lwc-colorBorderErrorAlt":"rgb(234, 130, 136)","lwc-colorBackgroundChromeDesktop":"rgb(255, 255, 255)","lwc-colorBorderSeparatorAlt":"#F4F4F4","lwc-colorBorderRowSelectedHover":"rgb(21, 137, 238)","lwc-spacingSmall":"0.75rem","lwc-elevationInverseShadow16":"0 -16px 16px 0 rgba(0, 0, 0, 0.16)","lwc-colorBackgroundStencil":"rgb(242, 242, 243)","lwc-varFontSize1":"0.625rem","lwc-fontSize11":"2.625rem","lwc-salesforceSansRegularWoff2":"","lwc-brandPrimaryTransparent10":"rgba(21, 137, 238, 0.1)","lwc-fontSize10":"2rem","lwc-brandHeaderContrastInverse":"rgb(255, 255, 255)","lwc-sliderHandleSize":"1rem","lwc-formLabelFontSize":"0.75rem","lwc-brandHeader":"#cb5c12","lwc-varFontSize9":"1.75rem","lwc-brandHeaderContrastActive":"rgb(80, 80, 80)","lwc-varFontSize8":"1.5rem","lwc-varFontSize7":"1.25rem","lwc-varFontSize6":"1.125rem","lwc-varFontSize5":"1rem","lwc-varFontSize4":"0.875rem","lwc-varFontSize3":"0.8125rem","lwc-varFontSize2":"0.75rem","lwc-durationPromptly":"0.2s","lwc-salesforceSansLightWoff2":"","lwc-brandAccessible":"#cb5c12","lwc-colorTextContextBar":"rgb(62, 62, 60)","lwc-brandNavigationItemBackgroundColorHover":"rgba(0,0,0,.2)","lwc-brandDarkActive":"rgb(37, 48, 69)","lwc-colorBrandDark":"rgb(0, 112, 210)","lwc-colorBackgroundSpinnerDot":"rgb(171, 173, 176)","lwc-buttonColorBackgroundBrandPrimary":"rgb(0, 112, 210)","lwc-colorBackgroundPageHeader":"rgba(255, 255, 255, 0.0)","lwc-zIndexSpinner":"9050","lwc-CardBackgroundColor":"rgba(255, 255, 255, 0)","lwc-elevationShadow2":"0 2px 2px 0 rgba(0, 0, 0, 0.16)","lwc-elevationShadow0":"none","lwc-cardColorBackground":"rgb(255, 255, 255)","lwc-elevationShadow4":"0 4px 4px 0 rgba(0, 0, 0, 0.16)","lwc-shadowHardPrimary":"none","lwc-varSpacingHorizontalXSmall":"0.5rem","lwc-elevationShadow8":"0 8px 8px 0 rgba(0, 0, 0, 0.16)","lwc-colorTextButtonDefaultHover":"rgb(0, 112, 210)","lwc-colorBorderTabActive":"rgb(255, 255, 255)","lwc-illustrationEmptyStateAssistant":"url(/_slds/images/illustrations/empty-state-assistant.svg?cache=568ec6b3)","lwc-colorBorderBrandHover":"#9c470e","lwc-gridTextColor":"#333","lwc-widthStageLeftCollapsed":"4rem","lwc-colorBackgroundButtonInverseActive":"rgba(0, 0, 0, 0.24)","lwc-shadowButtonFocus":"0 0 3px #0070D2","lwc-pageHeaderSpacingMargin":"0","lwc-fontFamily":"Poppins, sans-serif","lwc-brandHeaderContrastWeak":"rgb(145, 145, 145)","lwc-lineHeightSalespath":"1.5rem","lwc-colorBackgroundRowSelected":"rgba(203, 92, 18, 0.05)","lwc-colorBorderBrandPrimaryHover":"rgb(0, 112, 210)","lwc-colorBorderBrandPrimaryActive":"rgb(0, 57, 107)","lwc-colorBorderContextBarItem":"rgba(0, 0, 0, 0.2)","lwc-salesforceSansLightItalicWoff2":"","lwc-colorBackgroundBrandPrimary":"#cb5c12","lwc-navigationItemDividerWidth":{"exprType":"PROPERTY","byValue":false,"path":"borderWidthThin"},"lwc-colorPickerSliderHeight":"1.5rem","lwc-spacingMedium":"1rem","lwc-spinnerSizeLarge":"2.75rem","lwc-utilityBarColorBackgroundNotificationFocus":"rgb(201, 199, 197)","lwc-cardWrapperSpacing":"1rem","lwc-fontSizeTextMedium":"1rem","lwc-squareIconXSmallBoundary":"1.25rem","lwc-carouselIndicatorColorBackgroundFocus":"rgb(0, 95, 178)","lwc-colorTextTertiary":"rgb(107, 109, 112)","lwc-brandPrimaryTransparent":"rgba(21, 137, 238, 0.1)","lwc-colorTextIconInverseHintHover":"rgba(255, 255, 255, 0.75)","lwc-elevation0":"0","lwc-colorBackgroundRowHover":"rgba(203, 92, 18, 0.05)","lwc-elevation2":"2","lwc-globalnavigationItemHeightAccentActive":"3px","lwc-elevation4":"4","lwc-varSpacingVerticalXxLarge":"3rem","lwc-colorTextPill":"rgb(0, 112, 210)","lwc-borderRadiusSmall":"0.125rem","lwc-colorBackgroundFeaturedBrandHover":"#9c470e","lwc-colorBorderContextBarDivider":"rgba(255, 255, 255, 0.2)","lwc-cardFontWeight":"400","lwc-colorBackgroundInputCheckboxDisabled":"rgb(217, 219, 221)","lwc-neutrafaceDisplayWoff2":"url(/_slds/fonts/NeutrafaceDisplay.woff2?cache=2.9.0)","lwc-fillBrand":"rgb(0, 112, 210)","lwc-elevation8":"8","lwc-colorStrokeBrandActive":"rgb(22, 50, 92)","lwc-squareIconUtilitySmall":"1rem","lwc-fillHeaderButtonFocus":"rgb(0, 112, 210)","lwc-squareIconMediumContentAlt":"0.875rem","lwc-colorPickerSliderThumbBorderColor":"rgb(81, 79, 77)","lwc-tableColorBackgroundHeaderFocus":"rgb(255, 255, 255)","lwc-colorTextButtonBrandDisabled":"rgb(255, 255, 255)","lwc-colorBorderWarning":"rgb(255, 183, 93)","lwc-varSpacingXxSmall":"0.25rem","lwc-cardHeaderMargin":"0 0 0.75rem","lwc-pageHeaderSpacingRow":"0.75rem 1rem","lwc-tabsFontWeight":"400","lwc-colorBackgroundPathExpanded":"rgb(255, 255, 255)","lwc-durationInstantly":"0s","lwc-ssFontSizeMedium":"0.8125rem","lwc-verticalNavigationColorBackgroundShadeRowHover":"rgb(243, 242, 242)","lwc-colorGray9":"rgb(112, 110, 107)","lwc-varSpacingHorizontalXxSmall":"0.25rem","lwc-brandNavigationColorText":"rgb(255, 255, 255)","lwc-colorGray4":"rgb(236, 235, 234)","lwc-colorGray3":"rgb(243, 242, 242)","lwc-colorGray2":"rgb(250, 250, 249)","lwc-colorBackgroundButtonBrand":"#cb5c12","lwc-colorGray1":"rgb(255, 255, 255)","lwc-colorGray8":"rgb(150, 148, 146)","lwc-verticalNavigationColorBackgroundShadeRowActive":"rgb(236, 235, 234)","lwc-colorGray7":"rgb(176, 173, 171)","lwc-colorBackgroundButtonDefaultActive":"rgb(238, 241, 246)","lwc-colorGray6":"rgb(201, 199, 197)","lwc-colorGray5":"rgb(221, 219, 218)","lwc-colorBackgroundSuccessDark":"rgb(4, 132, 75)","lwc-salesforceSansRegularWoff":"","lwc-squareIconSmall":"1rem","lwc-navigationBarItemBackgroundColorHover":{"exprType":"PROPERTY","byValue":false,"path":"brandNavigationItemBackgroundColorHover"},"lwc-ErrorTextColor":"#ff9e9e","lwc-salesforceSansLightItalicWoff":"","lwc-brandDisabled":"rgb(201, 199, 197)","lwc-colorBackgroundTempModalTintAlt":"rgba(255, 255, 255, 0.75)","lwc-progressColorBackgroundShade":"rgb(250, 250, 249)","lwc-navigationMaxWidth":"1140px","lwc-colorBackgroundStencilAlt":"rgb(233, 234, 236)","lwc-heightSalesPath":"2rem","lwc-colorTextDefault":"#333","lwc-colorTextButtonBrand":"rgb(255, 255, 255)","lwc-colorTextIconInverseHint":"rgba(255, 255, 255, 0.5)","lwc-colorStrokeBrandHover":"rgb(0, 112, 210)","lwc-zIndexDefault":"1","lwc-colorTextIconBrand":"rgb(0, 112, 210)","lwc-colorTextError":"rgb(194, 57, 52)","lwc-colorBorderContextBarThemeDefaultActive":"rgb(243, 242, 242)","lwc-colorBorderDestructive":"rgb(194, 57, 52)","lwc-colorTextBrowser":"rgb(255, 255, 255)","lwc-squareIconLarge":"3.125rem","lwc-colorTextIconInverse":"rgb(255, 255, 255)","lwc-fontSizeHeadingLarge":"1.5rem","lwc-carouselIndicatorColorBackgroundActive":"rgb(0, 112, 210)","lwc-brandBandColorBackgroundSecondaryTransparent":"rgba(0, 0, 0, 0)","lwc-splitViewColorBorder":"rgb(221, 219, 218)","lwc-durationToastMedium":"9.6s","lwc-colorTextPathCurrentHover":"rgb(0, 57, 107)","lwc-varSpacingXxLarge":"3rem","lwc-colorBackgroundToast":"rgb(107, 109, 112)","lwc-pageHeaderTitleFontSize":"1.125rem","lwc-sizeXSmall":"12rem","lwc-brandDark":"rgb(24, 35, 55)","lwc-colorBorderBrandPrimary":"rgb(21, 137, 238)","lwc-borderRadiusCircle":"50%","lwc-colorContrastPrimary":"rgb(249, 249, 250)","lwc-colorTextTabLabelDisabled":"rgb(233, 234, 236)","lwc-durationQuickly":"0.1s","lwc-spacingXxLarge":"3rem","lwc-colorBackgroundProgressRingContent":"rgb(255, 255, 255)","lwc-brandBandColorBackgroundPrimary":"rgba(0, 0, 0, 0)","lwc-colorTextSuccessInverse":"rgb(75, 202, 129)","lwc-colorBackgroundInputActive":"rgb(255, 255, 255)","lwc-colorBackgroundImageOverlay":"rgba(0, 0, 0, 0.4)","lwc-colorBackgroundShade":"rgba(203, 92, 18, 0.05)","lwc-progressColorBackground":"rgb(255, 255, 255)","lwc-varSpacingVerticalXxxSmall":"0.125rem","lwc-tableColorTextHeader":"rgb(81, 79, 77)","lwc-colorBrandDarker":"#9c470e","lwc-colorBackgroundToastSuccess":"rgb(4, 132, 75)","lwc-colorBackgroundInput":"rgb(255, 255, 255)","lwc-einsteinHeaderTextShadow":"#9EDAFF","lwc-brandBandDefaultImage":"","lwc-brandNavigationBarBackgroundColor":"rgba(255, 255, 255, 0.75)","lwc-welcomeMatColorBackgroundProgressBar":"rgb(255, 255, 255)","lwc-fcFontSizeLarge":"1rem","lwc-colorPickerInputCustomHexFontSize":"0.75rem","lwc-colorBackgroundBrandPrimaryHover":"#9c470e","lwc-colorBackgroundModalButtonActive":"rgba(0, 0, 0, 0.16)","lwc-colorTextTabLabelHover":"rgb(0, 95, 178)","lwc-colorBackgroundButtonIconDisabled":"rgb(255, 255, 255)","lwc-brandHeaderContrastWeakDisabled":"rgba(166, 166, 166, 0.25)","lwc-buttonBorderRadius":".25rem","lwc-elevationInverseShadow2":"0 -2px 2px 0 rgba(0, 0, 0, 0.16)","lwc-elevationInverseShadow0":"none","lwc-elevationInverseShadow4":"0 -4px 4px 0 rgba(0, 0, 0, 0.16)","lwc-colorPickerRangeIndicatorSize":"0.75rem","lwc-squareIconLargeBoundaryAlt":"5rem","lwc-colorBackgroundInputCheckboxSelected":"rgb(21, 137, 238)","lwc-fontSizeMedium":"0.8125rem","lwc-inputStaticFontWeight":"400","lwc-colorBorderContextBarThemeDefaultHover":"rgb(11, 35, 153)","lwc-cardShadow":"none","lwc-welcomeMatWidthProgressBar":"12.5rem","lwc-elevationInverseShadow8":"0 -8px 8px 0 rgba(0, 0, 0, 0.16)","lwc-colorBackgroundInputError":"rgb(255, 221, 225)","lwc-colorBackgroundErrorAlt":"rgb(234, 130, 136)","lwc-varSpacingXxxSmall":"0.125rem","lwc-brandHeaderContrastInverseActive":"rgb(238, 238, 238)","lwc-groupDefaultAvatar":"url(/_slds/images/group_avatar_200.png?cache=3f3dcd14)","lwc-welcomeMatColorActionShadow":"rgba(0, 0, 0, 0.05)","lwc-colorBackgroundToastError":"rgb(194, 57, 52)","lwc-squareTappableSmall":"2rem","lwc-colorBorderDestructiveHover":"rgb(166, 26, 20)","lwc-popoverWalkthroughAltImage":"","lwc-colorBorderLinkFocusInverse":"rgb(233, 234, 236)","lwc-colorTextLink":"#d35b0e","lwc-welcomeMatMinHeight":"25rem","lwc-navigationItemVerticalPadding":{"exprType":"PROPERTY","byValue":false,"path":"spacingXSmall"},"lwc-fontSizeMediumA":"0.875rem","lwc-popoverWalkthroughHeaderImage":"","lwc-bannerUserDefaultImage":"","lwc-colorBackgroundDestructiveActive":"rgb(135, 5, 0)","lwc-brandBandScrimHeight":"3.125rem","lwc-colorBackgroundReminder":"rgb(244, 246, 249)","lwc-carouselColorBackground":"rgb(255, 255, 255)","lwc-varSpacingVerticalXxSmall":"0.25rem","lwc-salesforceSansItalicWoff2":"","lwc-brandBackgroundPrimaryTransparent":"rgba(250, 250, 249, 0)","lwc-colorTextLinkHover":"#ad4a0b","lwc-brandLight":"rgb(244, 246, 254)","lwc-colorBackgroundWarning":"rgb(255, 183, 93)","lwc-colorBackgroundButtonSuccessHover":"rgb(4, 132, 75)","lwc-pageHeaderJoinedColorBorder":"#F4F4F4","lwc-illustrationEmptyStateTasks":"url(/_slds/images/illustrations/empty-state-tasks.svg?cache=ba3662c1)","lwc-colorBackgroundRowActive":"rgb(242, 242, 243)","lwc-colorBorderDestructiveActive":"rgb(135, 5, 0)","lwc-colorBorderSelection":"#cb5c12","lwc-colorBackgroundButtonInverseDisabled":"rgba(0, 0, 0, 0)","lwc-sizeXxLarge":"60rem","lwc-colorBackgroundNotificationBadgeFocus":"rgb(0, 95, 178)","lwc-popoverColorText":"rgb(217, 219, 221)","lwc-salesforceSansItalicWoff":"","lwc-ssFontSizeSmall":"0.75rem","lwc-pageHeaderTitleFontWeight":"400","lwc-colorBackgroundAlt2":"rgb(242, 242, 243)","lwc-colorTextModal":"rgb(255, 255, 255)","lwc-utilityBarColorBackgroundNotificationBadge":"rgb(212, 80, 76)","lwc-colorBackgroundPathIncompleteHover":"rgb(221, 219, 218)","lwc-colorBackgroundButtonIconHover":"rgb(244, 246, 249)","lwc-zIndexPopup":"5000","lwc-colorBorderCanvasElementSelection":"rgb(94, 180, 255)","lwc-colorPickerSelectorWidth":"14rem","lwc-lineHeightToggle":"1.3rem","lwc-colorBackgroundButtonDefault":"rgb(255, 255, 255)","lwc-varSpacingHorizontalLarge":"1.5rem","lwc-templateGutters":"0","lwc-colorPickerSwatchesWidth":"13.3rem","lwc-heightInput":"1.875rem","lwc-colorTextToggleDisabled":"rgb(217, 219, 221)","lwc-spinnerSizeXxSmall":"0.5rem","lwc-welcomeMatMaxHeight":"37.5rem","lwc-brandBandImageHeightSmall":"6rem","lwc-heightTappable":"2.75rem","lwc-colorBackgroundSuccess":"rgb(75, 202, 129)","lwc-colorTextIconUtility":"rgb(171, 173, 176)","lwc-userDefaultAvatarSmall":"url(/_slds/images/profile_avatar_96.png?cache=ff996dba)","lwc-varSpacingVerticalXLarge":"2rem","lwc-brandBackgroundPrimary":"rgb(250, 250, 249)","lwc-colorTextWeak":"#696969","lwc-progressBarHeight":"0.125rem","lwc-squareIconUtilityLarge":"1.5rem","lwc-colorBackgroundShadeDark":"rgb(217, 219, 221)","lwc-squareToggleSlider":"1.25rem","lwc-colorBackgroundCustomer":"rgb(255, 154, 60)","lwc-welcomeMatCompleteIconSize":"1.25rem","lwc-varSpacingHorizontalSmall":"0.75rem","lwc-colorTextActionLabelActive":"#cb5c12","lwc-fontSizeHeadingSmall":"0.875rem","lwc-squareIconGlobalIdentityIcon":"1.25rem","lwc-colorPickerSwatchSize":"1.25rem","lwc-varSquareIconMediumBoundary":"2rem","lwc-colorBorderOffline":"rgb(62, 64, 65)","lwc-colorBorderInverse":"rgb(6, 28, 63)","lwc-varSpacingHorizontalMedium":"1rem","lwc-brandContrast":"rgb(26, 27, 30)","lwc-fontSize9":"1.75rem","lwc-colorBorderToggleChecked":"rgb(255, 255, 255)","lwc-fontSize7":"1.25rem","lwc-colorBackgroundDropDownBrandHover":"rgba(203, 92, 18, 0.05)","lwc-fontSize8":"1.5rem","lwc-fontSize5":"1rem","lwc-fontSize6":"1.125rem","lwc-fontSize3":"0.8125rem","lwc-fontSize4":"0.875rem","lwc-fontSize1":"0.625rem","lwc-siteContextPath":"","lwc-fontSize2":"0.75rem","lwc-colorBackgroundButtonDefaultHover":"rgba(203, 92, 18, 0.05)","lwc-sliderTrackColorBackground":"rgb(236, 235, 234)","lwc-navigationMinHeight":"33px","lwc-shadowButtonFocusInverse":"0 0 3px #E9EAEC","lwc-colorBorderIconInverseHintHover":"rgba(255, 255, 255, 0.75)","lwc-brandPrimaryActive":"rgb(0, 122, 221)","lwc-mqSmall":"only screen and (max-width: 47.9375em)","lwc-spacingNone":"0","lwc-welcomeMatBackgroundColorInfo":"rgb(202, 230, 241)","lwc-colorBackgroundHighlightSearch":"rgb(255, 240, 63)","lwc-colorBackgroundButtonIconFocus":"rgb(244, 246, 249)","lwc-shadowButton":"0 1px 1px 0 rgba(0, 0, 0, 0.05)","lwc-brandBandImageHeightMedium":"12.5rem","lwc-splitViewColorBackgroundRowHover":"rgb(255, 255, 255)","lwc-colorBorderBrand":"#cb5c12","lwc-pageHeaderBorderRadius":"0","lwc-colorBackgroundPill":"rgb(255, 255, 255)","lwc-fontFamilyMonospace":"Consolas, Menlo, Monaco, Courier, monospace","lwc-tableColorBackgroundHeader":"rgb(255, 255, 255)","lwc-colorBorderPathCurrentHover":"rgb(0, 57, 107)","lwc-carouselIndicatorColorBackground":"rgb(255, 255, 255)","lwc-textTransform":"uppercase","lwc-spinnerSizeXSmall":"1rem","lwc-sliderHandleColorBackgroundActive":"rgb(0, 112, 210)","lwc-sliderHandleColorBackground":"rgb(21, 137, 238)","lwc-colorBackgroundPathCurrent":"rgb(255, 255, 255)","lwc-varSpacingHorizontalXLarge":"2rem","lwc-colorTextLinkPrimaryHover":"rgb(0, 112, 210)","lwc-colorTextButtonDefaultHint":"rgb(171, 173, 176)","lwc-colorBackgroundErrorDark":"rgb(194, 57, 52)","lwc-lineHeightHeading":"1.25","lwc-colorTextTabLabel":"rgb(22, 50, 92)","lwc-globalnavigationItemHeightAccentFocus":"4px","lwc-salesforceSansBoldWoff":"","lwc-colorTextTabLabelFocus":"rgb(0, 95, 178)","lwc-shadowDrag":"0 2px 4px 0 rgba(0, 0, 0, 0.40)","lwc-squareTappableXxSmall":"1.25rem","lwc-colorBackgroundNotificationBadgeActive":"rgb(0, 57, 107)","lwc-borderRadiusPill":"15rem","lwc-progressColorBorderShade":"rgb(250, 250, 249)","lwc-colorBackgroundPathStepActionCurrent":"rgb(0, 95, 178)","lwc-colorTextLinkInverseActive":"rgba(255, 255, 255, 0.5)","lwc-colorBackgroundIconWaffle":"rgb(255, 255, 255)","lwc-colorBackgroundPost":"rgb(249, 249, 250)","lwc-colorTextHint":"#696969","lwc-colorBackgroundTempModalTint":"rgba(126, 140, 153, 0.8)","lwc-colorPickerSliderThumbColorBackground":"rgb(250, 250, 249)","lwc-fcFontSizeMedium":"0.8125rem","lwc-colorBackgroundButtonBrandHover":"#9c470e","lwc-colorContrastSecondary":"rgb(255, 255, 255)","lwc-progressColorBorderActive":"rgb(21, 137, 238)","lwc-brandNavigationBackgroundColor":"rgb(255, 255, 255)","lwc-brandHeaderContrastWarmActive":"rgb(172, 0, 0)","lwc-spacingXSmall":"0.5rem","lwc-colorBorderInfo":"rgb(107, 109, 112)","lwc-colorBorderInputDisabled":"rgb(196, 198, 202)","lwc-illustrationColorSecondary":"rgb(194, 232, 255)","lwc-fontSizeHeadingXSmall":"0.75rem","lwc-colorBackgroundAltInverse":"rgb(22, 50, 92)","lwc-varSpacingHorizontalXxxSmall":"0.125rem","lwc-colorTextWarningAlt":"rgb(132, 72, 0)","lwc-einsteinHeaderBackground":"url(/_slds/images/einstein-headers/einstein-header-background.svg?cache=3655c827)","lwc-heightToggle":"1.5rem","lwc-headerImageUrl":"","lwc-colorBackgroundUtilityBarActive":"rgb(21, 137, 238)","lwc-zIndexDialog":"6000","lwc-fontFamilyHeading":"'Salesforce Sans', Arial, sans-serif","lwc-heightTappableSmall":"2rem","lwc-colorBackgroundInverse":"rgb(6, 28, 63)","lwc-fontSizeXxLarge":"1.75rem","lwc-brandNavigationItemDividerColor":"rgba(255, 255, 255, 0.2)","lwc-colorBorderPathCurrent":"rgb(0, 95, 178)","lwc-fontSizeHeadingMedium":"1.125rem","lwc-cardFooterColorBorder":"rgba(0, 0, 0, 0)","lwc-colorBackgroundDestructiveHover":"rgb(166, 26, 20)","lwc-shadowFocusInset":"0 0 2px 2px #1589EE inset","lwc-colorTextBrowserActive":"rgba(0, 0, 0, 0.4)","lwc-varSpacingVerticalMedium":"1rem","lwc-feedMaxWidth":"100%","lwc-colorTextRequired":"rgb(194, 57, 52)","lwc-sizeMedium":"20rem","lwc-elevationShadow32":"0 32px 32px 0 rgba(0, 0, 0, 0.16)","lwc-colorBrand":"#cb5c12","lwc-cardSpacingLarge":"1.5rem","lwc-widthToggle":"3rem","lwc-opacity5":"0.5","lwc-colorBorderSuccess":"rgb(75, 202, 129)","lwc-LoginBackgroundColor":"rgb(255, 255, 255)","lwc-fontSizeLarge":"1rem","lwc-colorPickerSwatchShadow":"inset 0 0 1px rgba(0,0,0,0.4)","lwc-groupDefaultAvatarSmall":"url(/_slds/images/group_avatar_96.png?cache=53195edf)","lwc-spinnerSizeMedium":"2rem","lwc-colorTextInverseActive":"rgb(94, 180, 255)","lwc-colorTextWarning":"rgb(255, 183, 93)","lwc-colorTextButtonBrandActive":"rgb(255, 255, 255)","lwc-colorBackgroundRowNew":"rgb(217, 255, 223)","lwc-colorBackgroundContextTabBarItem":"rgb(255, 255, 255)","lwc-pathButtonWidthFixed":"13rem","lwc-lineHeightButton":"1.875rem","lwc-fcFontSizeXLarge":"1.25rem","lwc-buttonColorBorderSecondary":"rgba(255, 255, 255, 0.8)","lwc-colorBorderButtonDefault":"#F4F4F4","lwc-mqMedium":"only screen and (min-width: 48em)","lwc-progressBarColorBackgroundFill":"rgb(94, 180, 255)","lwc-sliderHandleColorBackgroundHover":"rgb(0, 112, 210)","lwc-colorTextInputIcon":"rgb(171, 173, 176)","lwc-mqHighRes":"only screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2),screen and (min-resolution: 192dpi),screen and (min-resolution: 2dppx)","lwc-spacingXxxSmall":"0.125rem","lwc-inputStaticColor":"#333","lwc-ssFontSizeLarge":"1rem","lwc-welcomeMatFontSizeInfoTitle":"2.625rem","lwc-varFontSize11":"2.625rem","lwc-squareIconUtilityMedium":"1.25rem","lwc-varFontSize10":"2rem","lwc-carouselIndicatorColorBackgroundHover":"rgb(250, 250, 249)","lwc-fontFamilyText":"'Salesforce Sans', Arial, sans-serif","lwc-colorBackgroundButtonIconActive":"rgb(238, 241, 246)","lwc-colorBackgroundNotificationNew":"rgb(249, 249, 250)","lwc-colorBackgroundButtonSuccess":"rgb(75, 202, 129)","lwc-colorTextLinkPrimary":"rgb(0, 112, 210)","lwc-colorBackgroundContextBarActionHighlight":"rgba(255, 255, 255, 0.2)","lwc-fcLineHeightText":"1.5","lwc-sizeXLarge":"40rem","lwc-einsteinHeaderFigure":"url(/_slds/images/einstein-headers/einstein-figure.svg?cache=c929d5fa)","lwc-bannerGroupDefaultImage":"","lwc-spacingXxSmall":"0.25rem","lwc-colorTextIconDefaultHover":"#ad4a0b","lwc-colorBorderReminder":"rgb(236, 235, 234)","lwc-colorBackgroundButtonInverse":"rgba(0, 0, 0, 0)","lwc-colorStrokeHeaderButton":"rgb(171, 173, 176)","lwc-colorBackgroundToggleActive":"rgb(0, 112, 210)","lwc-nubbinSizeDefault":"1rem","lwc-colorBackgroundLight":"rgb(255, 255, 255)","lwc-colorStrokeDisabled":"rgb(233, 234, 236)","lwc-colorBackgroundNotificationBadge":"rgb(194, 57, 52)","lwc-pageHeaderSpacingPadding":"1rem","lwc-opacity8":"0.8","lwc-chatMessageColorBackgroundOutbound":"rgb(0, 95, 178)","lwc-globalActionIconSize":"1.5rem","lwc-colorTextInputFocusInverse":"rgb(22, 50, 92)","lwc-colorBackgroundHighlight":"rgb(250, 255, 189)","lwc-colorBackgroundButtonDefaultDisabled":"rgb(255, 255, 255)","lwc-coreUrlPrefix":"","lwc-colorBackgroundInputCheckbox":"rgb(255, 255, 255)","lwc-filesZIndexHover":"5","lwc-colorBackgroundContextBarItemHover":"rgb(255, 255, 255)","lwc-squareIconXSmallContent":"0.5rem","lwc-inputStaticFontSize":"0.8125rem","lwc-colorTextInputDisabled":"rgb(107, 109, 112)","lwc-colorBorderSelectionActive":"rgb(249, 249, 250)","lwc-radioButtonGroupLineHeightTouch":"2.69rem","lwc-popoverWalkthroughAltNubbinColorBackground":"rgb(0, 112, 210)","lwc-colorBackgroundDockedPanelHeader":"rgb(255, 255, 255)","lwc-brandBackgroundDark":"rgb(232, 232, 232)","lwc-squareIconMediumBoundaryAlt":"2.25rem","lwc-colorBorderInputActive":"rgb(21, 137, 238)","lwc-zIndexModal":"9000","lwc-colorTextCustomer":"rgb(255, 154, 60)","lwc-pageColorBackgroundPrimary":"rgb(255, 255, 255)","lwc-cardFooterTextAlign":"right","lwc-brandLogoImage":"url(/file-asset/logo_xlstat_mini?v=1)","lwc-squareIconSmallContent":"0.75rem","lwc-shadowActionOverflowFooter":"0 -2px 4px #F9F9FA","lwc-avatarGroupColorBackgroundInverse":"rgb(112, 110, 107)","lwc-brandHeaderContrastCool":"rgb(0, 85, 131)","lwc-zIndexOverlay":"8000","lwc-elevationShadow16":"0 16px 16px 0 rgba(0, 0, 0, 0.16)","lwc-colorTextPrimary":"#333","lwc-colorPickerInputCustomHexWidth":"4.2rem","lwc-typingIconDotSize":".5rem"},"deftype":"APPLICATION","ns":{"internal":["adminui","aloha_sales_forecasting","aloha_sales_opptysplit","aloha_sales_tm2","analytics","analyticsHome","appexUi","appexUiDev","assistantFramework","assistantFrameworkModules","assistant_builder","aura","auraStorage","auradev","auradocs","auraplat","b2b_buyer_builder","b2b_buyer_data","b2b_buyer_dataNamespace","b2b_search_builder","b2b_search_builderNamespace","b2b_search_management","b2b_search_managementNamespace","builder_communities_nba","builder_framework_editor","builder_industries_healthcare","builder_industries_insurance","builder_industries_survey","builder_industries_utilizationmanagement","builder_platform_blockchain","builder_platform_interaction","builder_platform_process","builder_platform_usage","builder_service_chatbots","calendar","chatbots","clients","cmsAuthor","commerce","commerce_catalog","commerce_console","communitySetup","community_article","community_builder","community_case","community_cms","community_content","community_deflection","community_designtime","community_layout","community_login","community_navigation","community_reputation","community_runtime","community_setup","community_topic","componentReference","console","contentPage","conversation","cooper","cordaDashboards","dashboards","dataImporter","ddcProspector","desktopDashboards","eamobile","einstein_discovery","einsteinbuilder","einsteinconduit","emailStream","emailui","embeddedService","environmenthub","essentials_trialassistant","externalServicesSetup","flexipage","flexipageEditor","flowruntime","folder","force","forceChatter","forceCommunity","forceContent","forceDiscovery","forceGenerated","forceHelp","forceKnowledge","forceSearch","forceTopic","formula","frameworkEditor","googleConnector","hammerSetup","healthcloud","home","hybrid","industries_common","industries_manufacturing","industries_mfg_forecast","instrumentation","interop","iot","knowledgeone","laf","lbpm","lcwizard","lightning","lightningInbox","lightningcommunity","lightningcomponentdemo","lightningdocs","lightningsnapin","liveAgent","lst","ltng","ltngtools","ltngx","macros","mcdm","myday","native","notes","objectManager","offline","omni","onboarding","onboardingTest","one","onesetup","opencti","packagingSetupUI","platformencryption","process_home","processui","processuiappr","processuicommon","processuimgnt","processuirule","processuitest","records","reports","runtime_all_walkthroughs","runtime_all_walkthroughsTest","runtime_all_walkthroughsinternal","runtime_all_walkthroughsinternalTest","runtime_appointmentbooking","runtime_approval_process","runtime_cdp","runtime_commerce_entitlements","runtime_commerce_oms","runtime_commerce_pricing","runtime_commerce_store","runtime_communities_nba","runtime_einstein_discovery","runtime_essential_checkout","runtime_industries_actionplan","runtime_industries_fsc","runtime_industries_healthcare","runtime_industries_insurance","runtime_industries_lending","runtime_industries_referralscoring","runtime_industries_retailexecution","runtime_industries_utilizationmanagement","runtime_journeys","runtime_ladybug","runtime_marketing_btobma","runtime_mc2","runtime_platform_actions","runtime_platform_optimizer","runtime_platform_sfdx","runtime_platform_testhistory","runtime_platformservices_condBuilder","runtime_platformservices_transactionSecurity","runtime_quip","runtime_retail_runtime","runtime_rtc","runtime_rtc_spark","runtime_sales_activities","runtime_sales_ade","runtime_sales_billingpayments","runtime_sales_cadence","runtime_sales_cadencebuilder","runtime_sales_campaign","runtime_sales_commerce","runtime_sales_dedupe","runtime_sales_emailtemplateui","runtime_sales_forecasting","runtime_sales_hvs","runtime_sales_insights","runtime_sales_lead","runtime_sales_leadiq","runtime_sales_merge","runtime_sales_pathassistant","runtime_sales_pipelineboard","runtime_sales_quotes","runtime_sales_see","runtime_sales_skype","runtime_sales_social","runtime_sales_templatebuilder","runtime_sales_xclean","runtime_search_federated","runtime_service_fieldservice","runtime_service_liveagent","runtime_service_livemessage","runtime_service_objectlinking","runtime_service_omnichannel","runtime_service_predictions","runtime_service_scs","runtime_service_trials","s1wizard","salesforceIdentity","securityHealth","securityHub","securitycentral","selfService","serviceCommunity","setup","setupAssistant","setup_cdp","setup_einstein_assistant","setup_einstein_shared","setup_industries_insurance","setup_industries_objectdetection","setup_industries_referralscoring","setup_lightning_visualforce","setup_mc2","setup_mobile_appclone","setup_platformServices_eventManager","setup_platform_a2","setup_platform_a2Namespace","setup_platform_adoptionapps","setup_platform_adoptionappsNamespace","setup_platform_api_wsdl","setup_platform_cdc","setup_platform_integration","setup_platform_ltngbolt","setup_platform_notifications","setup_platform_optimizer","setup_platform_optimizerNamespace","setup_platform_perms","setup_platform_sfdx","setup_platformservices_customplatform","setup_sales_einsteinForecasting","setup_sales_forecasting","setup_sales_insights","setup_sales_leadiq","setup_sales_pardot","setup_sales_pathassistant","setup_sales_spark","setup_service","setup_service_entityarchiving","setup_service_fieldservice","setup_service_intents","setup_service_livemessage","setup_service_messenger","setup_service_objectlinking","setup_service_omnichannel","setup_service_predictions","setup_service_scs","setup_service_smb","setup_suggested_articles","setupnav","setupwizard","sfa","siteforce","siteforceBuilder","support","survey","talon","talondesign","templatesetup","today","ui","uiExamples","universal_container","uns","userProvisioningUI","visualEditor","voice","wave","waveapps","webresources","wfm","wits","work","workAloha"],"privileged":["FSC","FSC1","FSC10gs0","FSC11","FSC12","FSC13","FSC14","FSC15","FSC2","FSC3","FSC4","FSC5","FSC6gs0","FSC7gs0","FSC8gs0","FSC9gs0","FSC_RB","FinServ","FinServWaveExt","FinServ_CB","FinServ_CB_Pre","FinServ_CB_SB","FinServ_INS_Pre","FinServ_INS_SB","FinServ_RB","FinServ_RB_Pre","FinServ_RB_SB","FinServ_SB","FinServ_WM","FinServ_WM_SB","HC10gs0","HC11","HC12","HC13","HC14","HC15","HC4","HC4a","HC5","HC6","HC6gs0","HC7","HC7gs0","HC8","HC8gs0","HC9","HC9gs0","HealthCloudGA","HealthCloud_SB","einsteinservice","et4ae5","fsc1_r1","fsc2_r1","fsc3_r1","fscfma","fscmainstgpu","fscmainstguat","fscprerelease","fscr1pu","fscr1uat","fscsbpu","fscsbuat","fscwealth","fscwealthE","fscwealthfuture","fscwealthpatch","fscwmmain","hc1_r1","hc2_r1","hc3_r1","hcfma","hcmainstgpu","hcmainstguat","hcperf","hcr1pu","hcr1uat","hcsbpu","hcsbuat","iqinbox","mcdm_15","mcdm_21","mcdm_22","mcdm_23","mcdm_24","mcdm_25","mcdm_26","mcdm_27","mcdm_28","mcdm_29","mcdm_3","mcdm_30","mcdm_8","mcsocsel","mcsocsel_1","mcsocsel_10","mcsocsel_2","mcsocsel_3","mcsocsel_4","mcsocsel_5","mcsocsel_6","mcsocsel_7","mcsocsel_8","mcsocsel_9","relateiq","wealthone","wealthoneblitz","wealthonep"]},"bootstrapInlined":false,"descriptor":"markup://siteforce:communityApp","pathPrefix":"","host":"/s/sfsites","context":{"mode":"PROD","app":"siteforce:communityApp","fwuid":"3uHUkqaEy5o9m3W8DAEYIw","loaded":{"APPLICATION@markup://siteforce:communityApp":"vc87DBrWuhFjIBDb5BvCxQ"},"apce":1,"apck":"XbRBB3jfOwvJwjEu1oliww","mlr":1,"contextPath":"/s/sfsites","pathPrefix":"","dns":"c","ls":1,"mna":{"lightning":"interop"},"lv":"47","uad":0},"attributes":{"schema":"Published","brandingSetId":"763c2c0a-65d0-4b83-af40-35cef4848ced","authenticated":"false","ac":"","formFactor":"LARGE","publishedChangelistNum":"185","viewType":"Published","themeLayoutType":"Inner","language":"en_US","isHybrid":"false","pageId":"04f2759e-2340-4899-af70-6b6f08a2a29e"},"cssVarsTransformEnabled":false,"MaxParallelXHRCount":6,"XHRExclusivity":false,"applyCssVarPolyfill":false};
+    auraConfig.context.styleContext = {"c":"webkit","x":["isDesktop"],"tokens":["markup://siteforce:serializedTokens","markup://force:sldsTokens","markup://siteforce:communityTokens","markup://force:formFactorLarge","markup://siteforce:communityFormFactorLarge","markup://siteforce:auraDynamicTokens","markup://siteforce:sldsFontOverride"],"tuid":"ADONe5vzaOP2vJ7P3sB3Mw","cuid":1506526419};
+
+    function auraPreInitBlock () {
+        
+            $A.storageService.setIsolation("00D24000000JEMS0DB1p0000008PiY0051p00000BKHsAen_US763c2c0a-65d0-4b83-af40-35cef4848cedBLM157071973700000439704779");
+            $A.storageService.setVersion("47.0");
+            $A.storageService.setPartition("communityApp ~ /s ~ 0DB1p0000008PiY");
+        (function(debug, key){
+function setCryptoKey(key) {
+    var buffer, view;
+    if (Array.isArray(key) && (key.length === 32 || key.length === 16)) {
+        try {
+            buffer = new ArrayBuffer(key.length);
+            view = new Uint8Array(buffer);
+            view.set(key);
+        } catch (ignored) {}
+    }
+    CryptoAdapter.setKey(buffer);
+}
+debug && $A.log('CryptoAdapter registering');
+var CryptoAdapter = $A.storageService.CryptoAdapter;
+CryptoAdapter.register();
+if (!$A.storageService.isRegisteredAdapter(CryptoAdapter.NAME)) {
+    $A.log('CryptoAdapter was not registered');
+    return;
+}
+setCryptoKey(key);
+
+}(true,[114, 15, 25, -8, 100, -75, -28, 34, 108, -93, -63, 58, 8, 58, -107, -20, -67, -58, -41, 93, -54, -124, 84, 42, -73, -102, 0, -4, 46, 105, -72, 24]));$A.storageService.initStorage({name: 'actions', persistent: true, secure: true, maxSize: 10485760, expiration: 900, autoRefreshInterval: 30, debugLogging: false, clearOnInit: false, version: ''});
+$A.storageService.initStorage({name: 'ComponentDefStorage', persistent: true, secure: false, maxSize: 41943040, expiration: 900, autoRefreshInterval: 900, debugLogging: false, clearOnInit: false, version: ''});
+
+    }
+
+    function initFramework () {
+        window.Aura = window.Aura || {};
+        window.Aura.app = auraConfig["context"]["app"];
+        window.Aura.beforeFrameworkInit = Aura.beforeFrameworkInit || [];
+        window.Aura.beforeFrameworkInit.push(auraPreInitBlock);
+        window.Aura.inlineJsReady = time();
+
+        if (!window.Aura.frameworkJsReady) {
+            window.Aura.initConfig = auraConfig;
+        } else {
+	
+	        // Set a data attribute on document.body to signal engine to bypass global patching
+			if (auraConfig.context && !!auraConfig.context['dpbp']) {
+				document.body.setAttribute('data-global-patching-bypass', 'temporary-bypass');
+			}
+	
+            // LockerService must be initialized before scripts can be executed.
+            $A.lockerService.initialize(auraConfig.context);
+
+            // scripts inside custom templates with Locker active are stored
+            // until now since we need LockerService before running
+
+            var scripts = window.Aura.inlineJsLocker;
+            if (scripts) {
+                for (var i = 0; i < scripts.length; i++) {
+                    $A.lockerService.runScript(scripts[i]["callback"], scripts[i]["namespace"]);
+                }
+                delete window.Aura.inlineJsLocker;
+            }
+
+            if (true) {
+                $A.initAsync(auraConfig);
+            } else if (false) {
+                $A.initConfig(auraConfig);
+            }
+        }
+    }
+
+    // Error msg
+    var x = document.getElementById('dismissError');
+    if (x) {
+        x.addEventListener("click", function () {
+            var auraErrorMask = document.getElementById('auraErrorMask');
+            if (window['$A']) {
+                $A.util.removeClass(auraErrorMask, 'auraForcedErrorBox');
+                $A.util.removeClass($A.util.getElement('auraErrorReload'), 'show');
+            } else {
+                document.body.removeChild(auraErrorMask);
+            }
+        });
+    }
+
+    setTimeout(initFramework, 0); // ensure async
+
+    
+
+    var appCssLoadingCount = 0;
+    function onLoadStyleSheets(event) {
+        var element = event.target;
+        element.removeEventListener('load',onLoadStyleSheets);
+        element.removeEventListener('error',onLoadStyleSheets);
+        window.Aura.bootstrap.appCssLoading = (--appCssLoadingCount) > 0;
+        if (!window.Aura.bootstrap.appCssLoading) {
+            if (typeof window.Aura.bootstrap.appCssLoadedCallback === "function") {
+                window.Aura.bootstrap.appCssLoadedCallback();
+                window.Aura.bootstrap.appCssLoadedCallback = undefined;
+            }
+        }
+    }
+
+
+
+    var auraCss = document.getElementsByClassName('auraCss');
+    var current;
+    window.Aura.bootstrap.appCssLoading = auraCss.length > 0;
+    for (var c=0,length=auraCss.length;c<length;c++) {
+        current = auraCss[c];
+        appCssLoadingCount++;
+        current.addEventListener('load',onLoadStyleSheets);
+        current.addEventListener('error',onLoadStyleSheets);
+        if(auraConfig.applyCssVarPolyfill) {
+            loadViaAjax(current, auraConfig.cssVariables);
+        } else {
+            current.href = current.getAttribute("data-href");
+        }
+    }
+
+    function rewriteCssVars(css, varLookup) {
+        var VAR_BEGINNING = 'var(--';
+        var VAR_PATTERN = /var\(--lwc\w*(.*?)\)/g;
+        var startIndex = 0;
+        var output = [];
+        var result;
+
+        function processInContext(css, start, delimiter) {
+            while( start++ && start < css.length) {
+                if(css[start] === delimiter) {
+                    return start;
+                }
+            }
+        }
+
+        function findVarEnd(css) {
+            for(var idx = VAR_BEGINNING.length; idx < css.length; idx++) {
+                switch(css[idx]) {
+                    case '\'':
+                        idx = processInContext(css, idx, '\'');
+                        break;
+                    case '"':
+                        idx = processInContext(css, idx, '"');
+                        break;
+                    case '(':
+                        idx = processInContext(css, idx, ')');
+                        break;
+                    case ')':
+                        //end of var
+                        return idx + 1;
+                    default:
+                    //continue
+                }
+            }
+        }
+
+        function extractValue(declaration, lookup) {
+            var parts = declaration.split(',');
+            // try to get value from the lookup
+            if(lookup) {
+                var match = /var\(--(.*)(?:$|\))/.exec(parts[0]);
+                if(match && match.length > 1) {
+                    var value = lookup[match[1]];
+                    if(value) {
+                        return value;
+                    }
+                }
+            }
+            // get hard coded fallback value
+            if(parts.length > 1) {
+                var val = declaration.substring(declaration.indexOf(',') + 1);
+                return val.substring(0, val.length-1);
+            }
+        }
+
+        function replaceBlobUrlSubresources(css) {
+            var anchor = document.createElement('a');
+            return css.replace(/\b(url\s*\(\s*['"]?)([^)"']+)(['"]?\))/g, function (match, left, url, right) {
+                anchor.href = url;
+                return left + anchor.href + right;
+            });
+        }
+
+        while ( (result = VAR_PATTERN.exec(css)) ) {
+
+            output.push(css.substring(startIndex, result.index));
+            startIndex = result.index;
+
+            var endIndex = startIndex + findVarEnd(css.substring(startIndex));
+            var declaration = css.substring(startIndex, endIndex);
+            var value = extractValue(declaration, varLookup);
+
+            if(value) {
+                output.push(value);
+            } else {
+                output.push(declaration);
+            }
+            startIndex = endIndex;
+        }
+
+        if(startIndex === 0) {
+            return replaceBlobUrlSubresources(css);
+        }
+
+        output.push(css.substring(startIndex));
+
+        return replaceBlobUrlSubresources(output.join(''));
+    }
+
+    function injectStyles(linkEl, css) {
+        var blob = new Blob([css], { type: 'text/css' });
+        var newLink = document.createElement('link');
+        newLink.setAttribute('rel', 'stylesheet');
+        newLink.setAttribute('href', URL.createObjectURL(blob));
+        linkEl.parentElement.insertBefore(newLink, linkEl);
+    }
+
+    function rewriteAndInjectCss(linkEl, source, varLookup) {
+        var css = rewriteCssVars(source, varLookup);
+        injectStyles(linkEl, css);
+
+    }
+
+    function loadViaAjax(linkEl, cssVariables) {
+        var url = linkEl.getAttribute("data-href");
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url);
+        xhr.addEventListener('error', onLoadStyleSheets);
+        xhr.addEventListener('load', function (e) {
+            if (this.status === 200) {
+                rewriteAndInjectCss(linkEl, xhr.responseText, cssVariables);
+            }
+            onLoadStyleSheets(e);
+        });
+        xhr.send();
+    }
+
+    window.Aura.rewriteCssVars = rewriteCssVars;
+
+}());
+
+    </script><script data-src="/jslibrary/1572034790000/canvas/CanvasRendering.js"></script><script data-src="/jslibrary/1572034790000/ui-analytics-reporting/EclairNG.js"></script><!--"'--><script nonce="">;(function() { window.Aura = window.Aura || {}; window.Aura.beforeFrameworkInit = Aura.beforeFrameworkInit || []; window.Aura.beforeFrameworkInit.push(function() { /*
+ * This code is for Internal Salesforce use only, and subject to change without notice.
+ * Customers shouldn't reference this file in any web pages.
+ */
+var ContentAssetGlobalValueProvider=function(a,b){this.orgId=a;this.contentDomainUrl=b};ContentAssetGlobalValueProvider.prototype.merge=function(){};ContentAssetGlobalValueProvider.prototype.isStorable=function(){return!1};ContentAssetGlobalValueProvider.prototype.get=function(a){var b="";if(!a||0===a.length)return null;b=a+"?oid\x3d"+this.orgId+"\x26";a="/file-asset/"+b;var b=$A.get("$SfdcSite.pathPrefix"),c=$A.get("$Absolute.url");return b?[c||b||"",a].join(""):[this.contentDomainUrl||"",a].join("")};
+
+//# sourceMappingURL=/javascript/1571992377000/ui-sfdc-javascript-impl/source/ContentAssetGVP.js.map
+
+$A.addValueProvider('$ContentAsset', new ContentAssetGlobalValueProvider('00D24000000JEMS',''))
+ ; }); window.Aura.beforeFrameworkInit.push(function() { /*
+ * This code is for Internal Salesforce use only, and subject to change without notice.
+ * Customers shouldn't reference this file in any web pages.
+ */
+var RecordGlobalValueProvider=function(a,b,c,d,e){this._cmp=null;this.configs={refresh:1E3*a,expiration:1E3*b,maxSize:c,version:d,previousVersion:e,minSaveToStorageInterval:3E3};Object.freeze(this.configs)};RecordGlobalValueProvider.prototype.getValues=function(){return{}};RecordGlobalValueProvider.prototype.merge=function(a){$A.util.isEmpty(a)||(this._createCmp(),this._cmp.helper.recordLib.records._receiveFrom$RecordGvp(a))};
+RecordGlobalValueProvider.prototype.get=function(a,b){if("configs"===a)return this.configs;this._requestFromServer(a)};RecordGlobalValueProvider.prototype._requestFromServer=function(a){if(this._createCmp()){var b=this._cmp.get("c.getRecord");b.setParams({recordDescriptor:a});b.setCallback(this,$A.getCallback(function(b){"INCOMPLETE"===b.getState()&&this._cmp.helper.handleIncomplete.call(this._cmp.helper,a)}));$A.enqueueAction(b);$A.run(function(){},"RecordGlobalValueProvider._requestFromServer")}};
+RecordGlobalValueProvider.prototype._createCmp=function(){this._cmp||(this._cmp=$A.createComponentFromConfig({descriptor:"markup://force:recordGlobalValueProvider",attributes:null}));return!$A.util.isUndefinedOrNull(this._cmp)};
+
+//# sourceMappingURL=/javascript/1571992377000/ui-sfdc-javascript-impl/source/RecordGVP.js.map
+
+$A.addValueProvider('$Record', new RecordGlobalValueProvider(30, 1800, 5120, '47.0', '46.0')) ; });  }());</script><script src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/resources.js.завантаження"></script><script src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/aura_prod.js.завантаження"></script><script src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/app.js.завантаження"></script><script src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/bootstrap.js.завантаження"></script><!--render facet: 83:0--><!--render facet: 88:0--><!--render facet: 91:0--><!--render facet: 93:0--><!--render facet: 95:0--><!--render facet: 96:0--><!--render facet: 99:0--><!--render facet: 101:0--><div class="cViewPanel siteforceServiceBody" id="ServiceCommunityTemplate" data-aura-rendered-by="302:0" data-aura-class="siteforceServiceBody"><a data-aura-rendered-by="307:0" href="javascript:void(0);" class="forceSkipLink" data-aura-class="forceSkipLink">Skip to Navigation</a><a data-aura-rendered-by="312:0" href="javascript:void(0);" class="forceSkipLink" data-aura-class="forceSkipLink">Skip to Main Content</a><div data-region-name="customHeader" data-item-id="feb08eb0-e2bb-4d91-bfd3-3b22c5841220" data-aura-rendered-by="195:0"><div class="ui-widget" data-item-id="f9dbdb27-d302-427f-a2f8-eca573f312e6" data-priority="" data-aura-rendered-by="159:0"><div data-aura-rendered-by="150:0" class="forceCommunityRichText forceCommunityHtmlBlock" data-aura-class="forceCommunityRichText forceCommunityHtmlBlock"><div dir="ltr" data-aura-rendered-by="154:0" class="uiOutputRichText" data-aura-class="uiOutputRichText"><div class="navbar navbar-default navbar-expand-lg sticky-top navbar-light bg-light" data-aura-rendered-by="155:0"> 
+ <div class="container"> 
+  <a href="https://help.xlstat.com/" class="navbar-brand"> <img alt="XLSTAT-Logo" class="img-fluid" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/logo.svg"> </a> 
+  <div id="navbarCollapse" class="navbar-collapse collapse"> 
+   <ul class="navbar-nav"> 
+    <li class="nav-item"> <a data-toggle="dropdown" class="nav-link text-uppercase" href="https://xlstat.com/en/solutions"> Products </a> </li> 
+    <li class="nav-item"> <a data-toggle="dropdown" class="nav-link text-uppercase" href="https://xlstat.com/en/training"> Training </a> </li> 
+    <li class="nav-item"> <a class="nav-link text-uppercase" href="https://xlstat.com/en/download"> Trial </a> </li> 
+    <li class="nav-item"> <a class="nav-link text-uppercase" href="https://ideas.xlstat.com/"> Ideas </a> </li> 
+    <li class="nav-item"> <a class="nav-link text-uppercase" href="https://www.youtube.com/channel/UCHvhQQxGqVepBRELIUeGZew"> Videos </a> </li> 
+    <li class="nav-item"> <a class="btn btn-outline-primary mr-2 order-button nav-link text-uppercase" href="https://xlstat.com/en/#order-cart"> Order </a> </li> 
+   </ul> 
+   <ul style="margin-left: auto;" class="navbar-nav"> 
+   </ul> 
+  </div> 
+ </div> 
+</div><!--render facet: 155:0--></div><div class="clear" data-aura-rendered-by="156:0"></div></div></div><div class="ui-widget" data-item-id="6cfa5c77-80cc-4ca2-9ec2-e844c61d7f49" data-priority="" data-aura-rendered-by="192:0"><section data-aura-rendered-by="164:0" class="forceCommunityHeadline" data-aura-class="forceCommunityHeadline"><h1 class="headlineTitle" data-aura-rendered-by="174:0"><!--render facet: 175:0--><!--render facet: 176:0--><span class="headlineTitleText" data-aura-rendered-by="177:0"><span data-aura-rendered-by="180:0" class="uiOutputText" data-aura-class="uiOutputText">XLSTAT Support Center</span></span></h1><!--render facet: 181:0--><p class="headlineInfo" data-aura-rendered-by="182:0"><div dir="ltr" data-aura-rendered-by="187:0" class="uiOutputRichText" data-aura-class="uiOutputRichText">Need a hand? All the help you want just a few clicks away</div></p></section></div></div><div class="cHeaderPanel slds-container--fluid" id="header" data-aura-rendered-by="316:0"><div class="cHeaderOverlay" id="header-overlay" data-aura-rendered-by="317:0"><div class="cHeaderLine slds-grid" data-aura-rendered-by="318:0"><div class="cTopLeftCon" data-aura-rendered-by="319:0"><community_navigation-global-navigation-trigger class="cAltToggleNav slds-global-header__icon" data-aura-rendered-by="320:0"><lightning-button-icon><button title="Toggle SideBar" type="button" class="slds-button slds-button_icon slds-button_icon-bare"><lightning-primitive-icon lightning-primitiveicon_primitiveicon-host=""><svg lightning-primitiveIcon_primitiveIcon="" focusable="false" data-key="rows" aria-hidden="true" class="slds-button__icon slds-button__icon_large"><use lightning-primitiveIcon_primitiveIcon="" xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#rows"></use></svg></lightning-primitive-icon><span class="slds-assistive-text">Toggle SideBar</span></button></lightning-button-icon><community_navigation-back-navigation-button></community_navigation-back-navigation-button></community_navigation-global-navigation-trigger></div><div class="cBrandingProfile" data-aura-rendered-by="321:0"><div data-aura-rendered-by="323:0"><a class="cBrandingLogo" href="javascript:void(0);" title="XLSTAT Support Center" data-aura-rendered-by="324:0"><span class="assistiveText" data-aura-rendered-by="325:0">XLSTAT Support Center</span></a></div></div><div class="slds-col_bump-left" data-aura-rendered-by="327:0"></div><div class="cSearchPublisher" data-aura-rendered-by="328:0"><div data-region-name="search" data-item-id="f1e68963-e420-4035-8cfc-e6d9b7601408" data-aura-rendered-by="284:0"><div class="ui-widget" data-item-id="b5d649d2-1657-49c1-a787-39f8a4d677fd" data-priority="" data-aura-rendered-by="281:0"><!--render facet: 206:0--><div class="big-search-container forceCommunitySearchBox" data-aura-rendered-by="207:0" data-aura-class="forceCommunitySearchBox"><div class="curtain-blur" data-aura-rendered-by="208:0"><a class="curtain-blur-link" href="javascript:void(0);" data-aura-rendered-by="209:0">Close</a></div><div class="body-search" data-aura-rendered-by="211:0"><form class="search-wrapper" type="search" data-aura-rendered-by="212:0"><div class="search-container" data-aura-rendered-by="213:0"><span class="search-input-group" data-aura-rendered-by="214:0"><span class="search-field-group" data-aura-rendered-by="215:0"><label class="uiLabel" for="224:0" data-aura-rendered-by="218:0" data-aura-class="uiLabel"><span class="assistiveText" data-aura-rendered-by="219:0">Have a Question? Ask or enter a search term here.</span><!--render facet: 221:0--><!--render facet: 222:0--></label><div class="search-field-wrapper slds-size_1-of-1" data-aura-rendered-by="223:0"><input class="search-field input uiInput uiInputTextForAutocomplete uiInput--default uiInput--input" maxlength="255" role="combobox" id="224:0" aria-expanded="false" aria-autocomplete="list" type="text" aria-describedby="" aria-haspopup="true" placeholder="Have a Question? Ask or enter a search term here." aria-activedescendant="" data-aura-rendered-by="228:0" data-aura-class="uiInput uiInputTextForAutocomplete uiInput--default uiInput--input" data-interactive-lib-uid="2"><!--render facet: 229:0--><!--render facet: 232:0--></div></span><button class="slds-button slds-button_brand search-button" type="button" title="Search" data-aura-rendered-by="235:0"><!--render facet: 236:0-->Search<!--render facet: 239:0--></button><button class="slds-button slds-button_neutral mobile-search-icon" type="button" title="Search" data-aura-rendered-by="244:0"><lightning-primitive-icon data-data-rendering-service-uid="57" data-aura-rendered-by="246:0" lightning-primitiveicon_primitiveicon-host=""><svg lightning-primitiveIcon_primitiveIcon="" focusable="false" data-key="search" aria-hidden="true" class="slds-button__icon slds-button__icon_left"><use lightning-primitiveIcon_primitiveIcon="" xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#search"></use></svg></lightning-primitive-icon><span class="assistiveText" data-aura-rendered-by="241:0">Search</span><!--render facet: 249:0--></button><button class="slds-button slds-button_neutral close-button" type="button" title="Close" data-aura-rendered-by="252:0"><!--render facet: 253:0-->Close<!--render facet: 256:0--></button></span><div class="result-container" data-aura-rendered-by="257:0"><!--render facet: 259:0--></div><div class="zero-state-panel" data-aura-rendered-by="271:0"><lightning-icon class="zero-state-icon slds-button__icon slds-icon-utility-search slds-icon_container forceIcon" data-data-rendering-service-uid="58" data-aura-rendered-by="274:0" data-aura-class="forceIcon"><lightning-primitive-icon lightning-primitiveicon_primitiveicon-host=""><svg lightning-primitiveIcon_primitiveIcon="" focusable="false" data-key="search" aria-hidden="true" class="slds-icon slds-icon_xx-small"><use lightning-primitiveIcon_primitiveIcon="" xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#search"></use></svg></lightning-primitive-icon></lightning-icon><span class="zero-state-panel-label" data-aura-rendered-by="275:0">Have a Question? Ask or enter a search term here.</span></div></div></form></div><span class="assistiveText" data-aura-rendered-by="277:0">End of Search Dialog</span></div></div></div></div><div class="cNotifications" data-aura-rendered-by="331:0"><!--render facet: 332:0--></div><div class="cProfileCon" data-aura-rendered-by="334:0"><div data-region-name="profileMenu" data-item-id="08a86865-1897-41b3-92b2-a8f8ec20c96a" data-aura-rendered-by="299:0"><div class="ui-widget" data-item-id="b9f3917c-c42b-4770-b9ab-ce2f44bf7c99" data-priority="" data-aura-rendered-by="296:0"><!--render facet: 292:0--><div class="login-wrapper selfServiceUserProfileMenu" data-aura-rendered-by="2:71;a" data-aura-class="selfServiceUserProfileMenu"><div class="login" data-aura-rendered-by="3:71;a"><a class="login-link" title="My profile" data-aura-rendered-by="4:71;a" href="javascript:void(0);"><span class="linkLabel" data-aura-rendered-by="5:71;a">My profile</span></a></div></div></div></div></div></div><div class="cNavBarCon" tabindex="-1" data-aura-rendered-by="336:0"><div data-region-name="navBar" data-item-id="455f258e-75d6-4498-a91b-459b457e6289" data-aura-rendered-by="143:0"><div class="ui-widget" data-item-id="f3d3afda-0382-48d3-bd39-491765bfa27b" data-priority="" data-aura-rendered-by="140:0"><div class="comm-navigation forceCommunityGlobalNavigation" data-aura-rendered-by="130:0" data-aura-class="forceCommunityGlobalNavigation"><community_navigation-global-navigation-list data-aura-rendered-by="131:0"><div class="slds-grid slds-grid_vertical-align-center slds-p-horizontal--x-small"><nav role="navigation" class="slds-has-flexi-truncate"><ul class="comm-navigation__list slds-list_horizontal slds-has-flexi-truncate"><li class="slds-is-relative slds-list__item"><community_navigation-global-navigation-item class="comm-navigation__item"><a href="https://help.xlstat.com/s/" title="Home" data-type="home" class="slds-container_fluid slds-truncate"><span>Home</span></a></community_navigation-global-navigation-item></li><li class="slds-is-relative slds-list__item"><community_navigation-global-navigation-item class="comm-navigation__item"><a href="https://staging.xlstat.com/en/solutions" title="Products" class="slds-container_fluid slds-truncate"><span>Products</span></a></community_navigation-global-navigation-item></li><li class="slds-is-relative slds-list__item"><community_navigation-global-navigation-item class="comm-navigation__item"><a href="https://staging.xlstat.com/en/training" title="Training" class="slds-container_fluid slds-truncate"><span>Training</span></a></community_navigation-global-navigation-item></li><li class="slds-is-relative slds-list__item"><community_navigation-global-navigation-item class="comm-navigation__item"><a href="https://staging.xlstat.com/en/download" title="Trial" class="slds-container_fluid slds-truncate"><span>Trial</span></a></community_navigation-global-navigation-item></li><li class="slds-is-relative slds-list__item"><community_navigation-global-navigation-item class="comm-navigation__item"><a href="https://staging.xlstat.com/en/#order-cart" title="Order" class="slds-container_fluid slds-truncate"><span>Order</span></a></community_navigation-global-navigation-item></li><li class="slds-hidden overflowContainer slds-is-relative slds-list__item"><community_navigation-global-navigation-item class="comm-navigation__item"><button aria-expanded="false" class="slds-container_fluid slds-button slds-button--reset slds-truncate">More<lightning-icon class="slds-icon-utility-chevrondown slds-button__icon--right slds-icon_container"><lightning-primitive-icon lightning-primitiveicon_primitiveicon-host=""><svg lightning-primitiveIcon_primitiveIcon="" focusable="false" data-key="chevrondown" aria-hidden="true" class="slds-icon slds-icon_xx-small"><use lightning-primitiveIcon_primitiveIcon="" xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg?cache=9.28.0#chevrondown"></use></svg></lightning-primitive-icon></lightning-icon></button><ul class="slds-list_vertical slds-is-nested slds-hide slds-is-absolute right-align"></ul></community_navigation-global-navigation-item></li></ul></nav></div></community_navigation-global-navigation-list></div><!--render facet: 135:0--><!--render facet: 136:0--></div></div></div></div></div><!--render facet: 338:0--><div class="cCenterPanel" tabindex="-1" style="" data-aura-rendered-by="339:0"><!--render facet: 3:99;a--><div data-aura-rendered-by="44:99;a" class="siteforceSldsOneColLayout siteforceContentArea" data-aura-class="siteforceSldsOneColLayout siteforceContentArea"><div class="slds-col--padded comm-content-header comm-layout-column" data-aura-rendered-by="45:99;a"><!--render facet: 46:99;a--></div><div class="slds-col--padded contentRegion comm-layout-column" data-aura-rendered-by="47:99;a"><div data-region-name="content" data-item-id="9d0058f8-9d1e-4226-a769-3b497392c1cc" data-aura-rendered-by="31:99;a"><div class="ui-widget" data-item-id="4efc7d9e-1eaa-4dea-b899-e53a2449ee40" data-priority="2" data-aura-rendered-by="25:99;a"><div class="content" data-aura-rendered-by="17:99;a"><h1 class="article-title" data-aura-rendered-by="18:99;a">Pearson correlation coefficient in Excel</h1><div class="files" data-aura-rendered-by="1:112;a"><h2 id="dataset" data-aura-rendered-by="2:112;a">Dataset</h2><ul class="article-files" data-aura-rendered-by="4:112;a"><li class="article-file" data-aura-rendered-by="6:112;a"><a class="download-link" href="https://cdn.xlstat.com/helpcentersfdc/demoCorPearson.xls" data-aura-rendered-by="7:112;a">Download data (1)</a></li></ul></div><div class="article-detail" data-aura-rendered-by="21:99;a">This tutorial shows how to compute and interpret&nbsp;<a href="https://www.xlstat.com/en/solutions/features/correlation-tests" target="_blank" data-aura-rendered-by="22:99;a">Pearson correlation coefficients&nbsp;</a>in&nbsp;Excel&nbsp;using XLSTAT.
+<h2 data-aura-rendered-by="22:99;a">Dataset for computing Pearson correlation coefficients</h2>
+An Excel sheet with both the data and the results can be downloaded by clicking on the link above.<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">The data represents a sample of customers from an online shoe shop.&nbsp; Rows correspond to customers and columns to the money they spent as well as several other characteristics (e.g. shoe size, weight…).
+<h2 data-aura-rendered-by="22:99;a">Goal of this tutorial</h2>
+
+<p data-aura-rendered-by="22:99;a">The goal here is to compute the correlations between the money spent on the online shoe store and the different attributes. A correlation coefficient depicts the strength of the link between two quantitative variables, whether positive or negative. Our data consist of continuous variables so we will use the <strong>Pearson correlation coefficient</strong>. &nbsp;We will also test the <strong>significance</strong> of the correlations.</p>
+
+<p data-aura-rendered-by="22:99;a">Finally, we will generate two types of graphs:</p>
+
+<ul data-aura-rendered-by="22:99;a"><li>A <strong>correlation map </strong>to visually explore correlations and</li><li>A <strong>matrix of scatter plots</strong> to visualize the relationships among all possible pairs of variables.</li></ul>
+
+<h2 data-aura-rendered-by="22:99;a">Setting up a Pearson correlation coefficient computation in XLSTAT</h2>
+1. Once XLSTAT is open, select the&nbsp;<strong data-aura-rendered-by="22:99;a">Correlation /Association</strong> <strong data-aura-rendered-by="22:99;a">tests</strong> <strong data-aura-rendered-by="22:99;a">/</strong> <strong data-aura-rendered-by="22:99;a">Correlation</strong> <strong data-aura-rendered-by="22:99;a">tests</strong>&nbsp;command as shown below.<br data-aura-rendered-by="22:99;a"><img alt="XLSTAT Command for Correlation test" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-77838001_EN.PNG" style="width: 293px;height: 231px;" title="XLSTAT Command for Correlation test" data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">&nbsp;2. The <strong data-aura-rendered-by="22:99;a">Correlation</strong> <strong data-aura-rendered-by="22:99;a">tests</strong> dialog box appears.
+
+<h2 data-aura-rendered-by="22:99;a"><img alt="Set up a Pearson correlation test with XLSTAT, general tab" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-84832202_EN.PNG" title="Set up a Pearson correlation test with XLSTAT, general tab"></h2>
+3. In the <strong data-aura-rendered-by="22:99;a">General</strong> tab, select columns A-E in the <strong data-aura-rendered-by="22:99;a">Observations/Quantitative variables</strong> field. Then choose the <strong data-aura-rendered-by="22:99;a">Pearson correlation coefficient </strong>from the drop-down list. As the first row of the table corresponds to headers, we leave the&nbsp;<strong data-aura-rendered-by="22:99;a">Variable labels</strong>&nbsp;option checked.<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">4. In the <strong data-aura-rendered-by="22:99;a">Outputs</strong> tab, activate the following options.<br data-aura-rendered-by="22:99;a"><img alt="Set up a Pearson correlation test with XLSTAT, outputs tab" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-87098503_EN.PNG" style="width: 455px;height: 344px;" title="Set up a Pearson correlation test with XLSTAT, outputs tab" data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">The <strong data-aura-rendered-by="22:99;a">p-values</strong> will be computed for each coefficient in order to test the null hypothesis that the correlation coefficients are equal to 0.<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">The <strong data-aura-rendered-by="22:99;a">coefficients of determination</strong> correspond to the squared correlation coefficients. They measure the strength of the correlation, whether it was negative or positive. using the&nbsp;<strong data-aura-rendered-by="22:99;a">filter</strong> <strong data-aura-rendered-by="22:99;a">variables</strong> option, we choose to display only the 4 variables for which the sum of R2 with other variables is the highest.<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">We finally sort the variables using the <strong data-aura-rendered-by="22:99;a">BEA (Bond Energy Algorithm)</strong>. This method applies a permutation on rows and columns of a square matrix in a way that columns having similar values on rows are close to each other. The&nbsp;FPC (First Principal Component) is also available.&nbsp;<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">The (1-alpha)100 %&nbsp;<strong data-aura-rendered-by="22:99;a">confidence intervals </strong>will be also computed. One table will display the upper bounds and another the lower bounds. We can also display both bounds in a single table.&nbsp;<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">5. In the <strong data-aura-rendered-by="22:99;a">Charts</strong> tab, activate the following options.
+
+<h2 data-aura-rendered-by="22:99;a"><img alt="Set up a Pearson correlation test with XLSTAT, charts tab" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-84832404_EN.PNG" style="width: 457px;height: 344px;" title="Set up a Pearson correlation test with XLSTAT, charts tab"></h2>
+
+<p data-aura-rendered-by="22:99;a">In the <strong>Image </strong>tab, we can&nbsp;choose to display the correlation matrix as an image.&nbsp;This option can be very useful when correlation matrices contain a high number of variables in order to see quickly which variables have the same structure. &nbsp;</p>
+
+<h2 data-aura-rendered-by="22:99;a">Interpreting the results for Pearson correlation coefficients</h2>
+The first results are the descriptive statistics for all variables (mean, std.deviation, etc). The correlation matrix is then displayed followed by the 95% lower and upper confidence bounds for the correlation coefficients :<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a"><img alt="Pearson correlation matrix with XLSTAT" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-84832505_EN.PNG" style="width: 448px;height: 158px;" title="Pearson correlation matrix with XLSTAT" data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a"><img alt="" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-870991CI.PNG" data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">Correlation coefficients vary between -1 and 1. Negative values indicate negative correlation, and positive values indicate positive correlations. Values close to zero reflect the absence of correlation.<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">The correlations between the <em data-aura-rendered-by="22:99;a">Invoice amount</em> and the attributes <em data-aura-rendered-by="22:99;a">Height</em> and <em data-aura-rendered-by="22:99;a">Weight</em> are positive and strong (close to 1). On the other hand, we observe a negative correlation between the <em data-aura-rendered-by="22:99;a">Time spent</em> and the <em data-aura-rendered-by="22:99;a">Invoice amount</em> suggesting that the more time customers spend on the website the less money they spend.<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">All the coefficients appear to be significant at a 0.05 significance level (values in bold). In other words, the risk of rejecting the null hypothesis (coefficient =0) while this is true is less than 5%. This is confirmed by the table of the p-values below (p-values &lt; 0.0001).<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">Note that the shoe size is not displayed in the correlation matrix. This variable was excluded because it has the lowest sum of R2 among all the variables.&nbsp;<br data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a"><img alt="P-values for Pearson correlation coefficients with XLSTAT" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-84832606_EN.PNG" title="P-values for Pearson correlation coefficients with XLSTAT" data-aura-rendered-by="22:99;a"><br data-aura-rendered-by="22:99;a">The next graph is a <strong data-aura-rendered-by="22:99;a">correlation</strong> <strong data-aura-rendered-by="22:99;a">map</strong> that uses a blue-red (cold-hot) scale to display the correlations. The blue color corresponds to a correlation close to -1 (e.g. Time spent on site vs Invoice amount) and the red color corresponds to a correlation close to 1 (e.g. Height vs Invoice amount). &nbsp;
+
+<p data-aura-rendered-by="22:99;a"><img alt="Correlation map with XLSTAT" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-84832807_EN.PNG" title="Correlation map with XLSTAT"><br>The following graph is a <strong>matrix of plots</strong>. A histogram is displayed for each variable (diagonal) and a scatter plot for all combinations of variables.<br><br>The color of the data points in the scatter plots reveals whether there is a positive (red) or negative correlation (blue). &nbsp;The patterns found in the scatter plots indicate the type but also the strength of the relationship between the two variables. For example, s<em>hoe size</em> looks like it is poorly linked to all other attributes (last column or last row of the matrix) implying correlations close to zero.</p>
+
+<p data-aura-rendered-by="22:99;a"><img alt="Matrix of scatter plots and histograms" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/Article-Inline-77840208_EN.PNG" title="Matrix of scatter plots and histograms"></p>
+
+<h2 data-aura-rendered-by="22:99;a">What’s next: exploring quantitative variables with Principal Component Analysis</h2>
+<a href="https://help.xlstat.com/s/article/principal-component-analysis-pca-in-excel?language=en_US" target="_blank" data-aura-rendered-by="22:99;a">Principal Component Analysis (PCA)</a> is a multivariate analysis method that will allow us to explore further the relationships between the variables and relate customers to variables and to one another.&nbsp;<!--render facet: 22:99;a--></div></div></div><div class="ui-widget" data-item-id="1f734b3e-dd23-48ff-a532-bdbb5126abd7" data-priority="0" data-aura-rendered-by="119:100;a"><div class="slds-align_absolute-center slds-size_1-of-4 cLC_SwitchLanguageTutorial" data-aura-rendered-by="90:100;a" data-aura-class="cLC_SwitchLanguageTutorial"><div class="slds-form-element" data-aura-rendered-by="94:100;a"><label class="slds-form-element__label" for="91:100;a" data-aura-rendered-by="95:100;a"><!--render facet: 96:100;a--><span class="" data-aura-rendered-by="97:100;a"></span></label><div class="slds-form-element__control slds-grow" data-aura-rendered-by="99:100;a"><div class="slds-select_container" data-aura-rendered-by="100:100;a"><select class="slds-select" id="91:100;a" data-aura-rendered-by="101:100;a" name="localisedArticles"><option value="" data-aura-rendered-by="3:169;a">English</option><option value="coefficient-de-correlation-de-pearson-dans-excel" data-aura-rendered-by="6:169;a">French</option><option value="pearson-correlation-coefficient-in-excel1" data-aura-rendered-by="9:169;a">German</option><option value="excel27" data-aura-rendered-by="12:169;a">Japanese</option><option value="pearson-correlation-coefficient-in-excel" data-aura-rendered-by="15:169;a">Spanish</option></select></div></div><!--render facet: 103:100;a--></div></div></div></div></div><div class="slds-col--padded comm-content-footer comm-layout-column" data-aura-rendered-by="49:99;a"><div data-region-name="footer" data-item-id="acecc241-db8c-43c8-890c-bd1eeac1b7de" data-aura-rendered-by="41:99;a"><div class="ui-widget" data-item-id="d372ebcc-9032-4f15-9d47-819f6c739aad" data-priority="0" data-aura-rendered-by="115:100;a"><div data-aura-rendered-by="19:100;a" class="forceCommunityRichText forceCommunityHtmlBlock" data-aura-class="forceCommunityRichText forceCommunityHtmlBlock"><div dir="ltr" data-aura-rendered-by="23:100;a" class="uiOutputRichText" data-aura-class="uiOutputRichText"><br data-aura-rendered-by="24:100;a">
+<br data-aura-rendered-by="24:100;a"><!--render facet: 24:100;a--></div><div class="clear" data-aura-rendered-by="25:100;a"></div></div></div><div class="ui-widget" data-item-id="b18b35ab-3290-43e9-addc-632f81578afc" data-priority="0" data-aura-rendered-by="117:100;a"><div class="ctaPanel siteforceNapiliFooter" data-aura-rendered-by="33:100;a" data-aura-class="siteforceNapiliFooter"><div class="cta_header" id="cta_header" style="text-align: center;" data-aura-rendered-by="34:100;a"><span class="cta_header" id="cta_header_span" data-aura-rendered-by="35:100;a">Don't see what you're looking for?</span></div><div class="contact-con" data-aura-rendered-by="37:100;a"><div class="cta-btn askCommunityButton stylingOverrideHook_31100a" id="askCommunity" data-aura-rendered-by="38:100;a"><button class="askCommunityBtn slds-button stylingOverrideHook_39100a forceCommunityAskCommunity" data-aura-rendered-by="41:100;a" data-aura-class="forceCommunityAskCommunity">Ask a Question</button></div><div class="cta-btn contactSupportButton stylingOverrideHook_31100a" id="contactSupport" data-aura-rendered-by="43:100;a"><button class="communityBtn slds-button selfServiceContactSupport" data-aura-rendered-by="47:100;a" data-aura-class="selfServiceContactSupport">Contact Support</button></div></div></div></div></div></div></div></div><div class="cFooterPanel" id="footer" data-aura-rendered-by="341:0"><div data-region-name="footer" data-item-id="00a14824-9855-4b2f-97c9-4664d5fe92d3" data-aura-rendered-by="124:0"><div class="ui-widget" data-item-id="c581324e-d0c8-4929-8afa-1ed55d388866" data-priority="" data-aura-rendered-by="121:0"><div data-aura-rendered-by="112:0" class="forceCommunityRichText forceCommunityHtmlBlock" data-aura-class="forceCommunityRichText forceCommunityHtmlBlock"><div dir="ltr" data-aura-rendered-by="116:0" class="uiOutputRichText" data-aura-class="uiOutputRichText"><div class="footer" data-aura-rendered-by="117:0"> 
+ <div class="container"> 
+  <div class="line text-center"> 
+   <a href="https://help.xlstat.com/" rel="noopener"><img alt="XLSTAT by Addinsoft" src="./Pearson correlation coefficient in Excel _ XLSTAT Support Center_files/logo.svg"></a> 
+   <p><br></p> 
+   <p>A complete statistical add-in for Microsoft Excel.</p> 
+  </div> 
+  <div class="line"> 
+   <div class="left"> 
+    <ul class="social_media nav"> 
+     <li class="btn-social nav-item"> <a class="facebook nav-link" alt="Facebook" target="_blank" href="https://www.facebook.com/Xlstat" rel="noopener"></a> </li> 
+     <li class="btn-social nav-item"> <a class="twitter nav-link" alt="Twitter" target="_blank" href="https://twitter.com/XLSTAT" rel="noopener"></a> </li> 
+     <li class="btn-social nav-item"> <a class="linkedin nav-link" alt="LinkedIn" target="_blank" href="https://www.linkedin.com/company/addinsoft/" rel="noopener"></a> </li> 
+     <li class="btn-social nav-item"> <a class="youtube nav-link" alt="Youtube" target="_blank" href="https://www.youtube.com/user/XLSTAT" rel="noopener"></a> </li> 
+    </ul> 
+   </div> 
+   <div class="right"> 
+    <a class="btn-footer" href="https://xlstat.com/en/contact" rel="noopener">Contact us</a> 
+    <a style="border: 0;" class="btn-footer" href="https://xlstat.com/en/company/about-us" rel="noopener">About us</a> 
+   </div> 
+  </div> 
+  <div class="line"> 
+   <div class="left"> 
+    <p style="font-size: 13px;" class="text-primary">Copyright © 2019 Addinsoft. All Rights Reserved.</p> 
+   </div> 
+   <div class="right"> 
+    <ul id="footer_legal_terms"> 
+     <li class="uppercase_link"> <a href="https://xlstat.com/en/legal/legal-mentions" rel="noopener">Legal mentions</a> </li> 
+     <li class="uppercase_link"> <a class="uppercase_link" href="https://xlstat.com/en/legal/use-of-cookies" rel="noopener">Use of cookies</a> </li> 
+     <li class="uppercase_link"> <a class="uppercase_link" href="https://xlstat.com/en/legal/privacy-policy" rel="noopener">Privacy policy</a> </li> 
+     <li class="uppercase_link"> <a class="uppercase_link" href="https://xlstat.com/en/legal/terms-of-use" rel="noopener">Terms of use</a> </li> 
+     <li class="uppercase_link"> <a class="uppercase_link" href="https://xlstat.com/en/legal/terms-of-sale" rel="noopener">Terms of sale</a> </li> 
+    </ul> 
+   </div> 
+  </div>
+ </div>
+</div></div><div class="clear" data-aura-rendered-by="118:0"></div></div></div></div></div><div class="cCurtainContainer" data-aura-rendered-by="343:0"></div></div><!--render facet: 349:0--><!--render facet: 354:0--><!--render facet: 357:0--><!--render facet: 359:0--><!--render facet: 360:0--><!--render facet: 3:0--><!--render facet: 7:0--><div class="forceCommunityToastManager forceToastManager--default forceToastManager" aria-live="assertive" data-aura-rendered-by="11:0" data-aura-class="forceToastManager--default forceToastManager"><div data-aura-rendered-by="15:0" class="forceVisualMessageQueue" data-aura-class="forceVisualMessageQueue"><!--render facet: 13:0--><!--render facet: 17:0--></div><!--render facet: 18:0--></div><div data-aura-rendered-by="25:0" class="forceHoverPrototype" data-aura-class="forceHoverPrototype" style="top: 0px; left: -1500px; position: fixed;"><div class="scrollableContainer" data-aura-rendered-by="26:0"></div></div><!--render facet: 29:0--><!--render facet: 31:0--><div class="hideEl siteforceSpinnerManager siteforcePanelsContainer" data-aura-rendered-by="36:0" data-aura-class="siteforceSpinnerManager siteforcePanelsContainer"><div class="mask" data-aura-rendered-by="37:0"></div><div class="loadingCon global siteforceLoadingBalls" data-aura-rendered-by="40:0" data-aura-class="siteforceLoadingBalls"><span class="loadingBall first" data-aura-rendered-by="41:0"></span><span class="loadingBall second" data-aura-rendered-by="42:0"></span><span class="loadingBall third" data-aura-rendered-by="43:0"></span><span class="assistiveText" data-aura-rendered-by="44:0">Loading</span></div></div><!--render facet: 51:0--><div class="DESKTOP comm-panels-container uiContainerManager siteforcePanelsContainer" data-aura-rendered-by="54:0" data-aura-class="uiContainerManager siteforcePanelsContainer"></div><!--render facet: 59:0--><!--render facet: 61:0--><!--render facet: 63:0--><!--render facet: 65:0--><div at-magnifier-wrapper=""><div class="at-theme-light"><div class="at-base notranslate" translate="no"></div></div></div><div at-web-push-wrapper=""><div class="at-theme-light"><div class="at-base notranslate" translate="no"><div class="_3c_-y"><div class="_10_dh"></div></div></div></div></div></body></html>

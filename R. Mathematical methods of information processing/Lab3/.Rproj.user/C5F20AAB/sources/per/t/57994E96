@@ -1,0 +1,33 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1572456377731.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "57994E96",
+    "lastKnownWriteTime" : 3702628823875069235,
+    "last_content_update" : 1572456377731,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "6FDDF27D",
+        "caption" : "motorcars",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=motorcars&cache_key=6FDDF27D",
+        "displayedObservations" : "32",
+        "environment" : "",
+        "expression" : "motorcars",
+        "object" : "motorcars",
+        "preview" : "0",
+        "totalObservations" : "32",
+        "variables" : "12"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

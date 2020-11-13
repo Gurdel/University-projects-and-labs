@@ -1,0 +1,1097 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0087)https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" style="height: 100%;" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    
+    <title>Использование R для анализа временных рядов - документация временного ряда 0.2</title>
+    <link rel="stylesheet" href="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/sphinxdoc.css" type="text/css">
+    <link rel="stylesheet" href="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/pygments.css" type="text/css">
+    <link rel="stylesheet" href="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/badge_only.css" type="text/css">
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/documentation_options.js.завантаження"></script>
+    <script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/jquery-2.0.3.min.js.завантаження"></script>
+    <script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/jquery-migrate-1.2.1.min.js.завантаження"></script>
+    <script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/underscore.js.завантаження"></script>
+    <script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/doctools.js.завантаження"></script>
+    <script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/readthedocs-doc-embed.js.завантаження"></script>
+    <link rel="index" title="Показатель" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/genindex.html">
+    <link rel="search" title="Поиск" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/search.html">
+    <link rel="prev" title="Как установить R" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/installr.html"> 
+  
+<!-- RTD Extra Head -->
+
+<!-- 
+Always link to the latest version, as canonical.
+http://docs.readthedocs.org/en/latest/canonical.html
+-->
+<link rel="canonical" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html">
+
+<link rel="stylesheet" href="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/readthedocs-doc-embed.css" type="text/css">
+
+<script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/readthedocs-data.js.завантаження"></script>
+
+<!-- Add page-specific data, which must exist in the page js, not global -->
+<script type="text/javascript">
+READTHEDOCS_DATA['page'] = 'src/timeseries'
+READTHEDOCS_DATA['source_suffix'] = '.rst'
+</script>
+
+<script type="text/javascript" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/readthedocs-analytics.js.завантаження"></script>
+
+<!-- end RTD <extrahead> -->
+<script>(function(){(function injection() {
+  var pageLang = 'en';
+  var userLang = 'uk';
+
+  var uid = '1E07F158C6FA4460B352973E9693B329';
+  var teId = 'TE_' + uid;
+  var cbId = 'TECB_' + uid;
+
+  function show() {
+    window.setTimeout(function() {
+      window[teId].showBanner(true);
+    }, 10);
+  }
+
+  function newElem() {
+    var elem = new google.translate.TranslateElement({
+      autoDisplay: false,
+      floatPosition: 0,
+      multilanguagePage: true,
+      pageLanguage: pageLang
+    });
+    return elem;
+  }
+
+  if (window[teId]) {
+    show();
+  } else {
+    if (!window.google || !google.translate ||
+        !google.translate.TranslateElement) {
+      if (!window[cbId]) {
+        window[cbId] = function() {
+          window[teId] = newElem();
+          show();
+        };
+      }
+      var s = document.createElement('script');
+      s.src = 'https://translate.google.com/translate_a/element.js?cb=' +
+              encodeURIComponent(cbId) + '&client=tee&hl=' + userLang;
+      document.getElementsByTagName('head')[0].appendChild(s);
+    }
+  }
+})();})();</script><script src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/f.txt"></script><link type="text/css" rel="stylesheet" charset="UTF-8" href="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/main_uk.js.завантаження"></script><script type="text/javascript" charset="UTF-8" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/element_main.js.завантаження"></script></head><body style="position: relative; min-height: 100%; top: 40px;"><div class="skiptranslate" style=""><iframe id=":0.container" class="goog-te-banner-frame skiptranslate" frameborder="0" src="javascript:&#39;&#39;" style="visibility:visible" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/saved_resource.html"></iframe></div>
+    <div class="related" role="navigation" aria-label="связанная навигация">
+      <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">навигация</font></font></h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/genindex.html" title="Общий индекс" accesskey="I"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">показатель</font></font></a></li>
+        <li class="right">
+          <a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/installr.html" title="Как установить R" accesskey="P"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">предыдущая</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> |</font></font></li>
+        <li class="nav-item nav-item-0"><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Документация временного ряда 0.2</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> »</font></font></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="главная навигация">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оглавление</font></font></a></h3>
+  <ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Использование R для анализа временных рядов</font></font></a><ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#time-series-analysis"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Анализ временных рядов</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#reading-time-series-data"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтение данных временного ряда</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#plotting-time-series"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Построение временных рядов</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#decomposing-time-series"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение временных рядов</font></font></a><ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#decomposing-non-seasonal-data"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение несезонных данных</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#decomposing-seasonal-data"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение сезонных данных</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#seasonally-adjusting"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Сезонная корректировка</font></font></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#forecasts-using-exponential-smoothing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Прогнозы с использованием экспоненциального сглаживания</font></font></a><ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#simple-exponential-smoothing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Простое экспоненциальное сглаживание</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#holt-s-exponential-smoothing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание Холта</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#holt-winters-exponential-smoothing"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание по Холту-Уинтерсу</font></font></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#arima-models"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ARIMA Модели</font></font></a><ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#differencing-a-time-series"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Различение временного ряда</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#selecting-a-candidate-arima-model"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выбор модели кандидата ARIMA</font></font></a><ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#example-of-the-ages-at-death-of-the-kings-of-england"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример эпохи смерти королей Англии</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#example-of-the-volcanic-dust-veil-in-the-northern-hemisphere"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример вулканической пылевой завесы в северном полушарии</font></font></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#forecasting-using-an-arima-model"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Прогнозирование с использованием модели ARIMA</font></font></a><ul>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#id2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример эпохи смерти королей Англии</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#id3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример вулканической пылевой завесы в северном полушарии</font></font></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#links-and-further-reading"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ссылки и дальнейшее чтение</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#acknowledgements"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Подтверждения</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">контакт</font></font></a></li>
+<li><a class="reference internal" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#license"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Лицензия</font></font></a></li>
+</ul>
+</li>
+</ul>
+
+  <h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Предыдущая тема</font></font></h4>
+  <p class="topless"><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/installr.html" title="предыдущая глава"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как установить R</font></font></a></p>
+  <div role="note" aria-label="ссылка на источник">
+    <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Эта страница</font></font></h3>
+    <ul class="this-page-menu">
+      <li><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/_sources/src/timeseries.rst.txt" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Показать источник</font></font></a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="" role="search">
+  <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Быстрый поиск</font></font></h3>
+    <div class="searchformwrapper">
+    <form class="search" action="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/search.html" method="get">
+      <input type="text" name="q">
+      <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="Идти"></font></font>
+      <input type="hidden" name="check_keywords" value="yes">
+      <input type="hidden" name="area" value="default">
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-r-for-time-series-analysis">
+<h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Использование R для анализа временных рядов </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#using-r-for-time-series-analysis" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h1>
+<div class="section" id="time-series-analysis">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Анализ временных рядов </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#time-series-analysis" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В этом буклете объясняется, как использовать статистическое программное обеспечение R для проведения простых анализов, которые часто используются при анализе данных временных рядов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В этом буклете предполагается, что читатель имеет некоторые базовые знания по анализу временных рядов, и основной целью буклета является не объяснение анализа временных рядов, а скорее объяснение того, как проводить этот анализ с использованием R.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если вы новичок в анализе временных рядов и хотите узнать больше о любой из представленных здесь концепций, я настоятельно рекомендую книгу Открытого университета «Временные ряды» (код продукта M249 / 02), которую можно приобрести </font></font><a class="reference external" href="http://www.ouw.co.uk/store/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">в магазине Открытого университета</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В этой брошюре я буду использовать наборы данных временных рядов, которые были любезно предоставлены Робом Хиндманом в его библиотеке данных временных рядов по адресу
+ </font></font><a class="reference external" href="http://robjhyndman.com/TSDL/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://robjhyndman.com/TSDL/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PDF-версия этой брошюры доступна по адресу
+ </font></font><a class="reference external" href="https://media.readthedocs.org/pdf/a-little-book-of-r-for-time-series/latest/a-little-book-of-r-for-time-series.pdf"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://media.readthedocs.org/pdf/a-little-book-of-r-for-time-series/latest/a-little-book-of-r- for-time-series.pdf</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если вам нравится этот буклет, вы можете также ознакомиться с моим буклетом об использовании R для биомедицинской статистики,
+ </font></font><a class="reference external" href="http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , и моим буклетом об использовании R для многомерного анализа,
+ </font></font><a class="reference external" href="http://little-book-of-r-for-multivariate-analysis.readthedocs.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://little-book-of-r-for-multivariate-analysis.readthedocs.org/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+</div>
+<div class="section" id="reading-time-series-data">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтение данных временного ряда </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#reading-time-series-data" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Первое, что вы захотите сделать для анализа данных временных рядов, это прочитать их в R и построить временные ряды. </font><font class="" style="vertical-align: inherit;">Вы можете считывать данные в R с помощью функции scan (), которая предполагает, что ваши данные для последовательных моментов времени находятся в простом текстовом файле с одним столбцом.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, файл </font></font><a class="reference external" href="http://robjhyndman.com/tsdldata/misc/kings.dat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://robjhyndman.com/tsdldata/misc/kings.dat</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> содержит данные о возрасте смерти последовательных королей Англии, начиная с Вильгельма Завоевателя (первоисточник: Hipel and Mcleod, 1994).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Набор данных выглядит так:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span>Age of Death of Successive Kings of England
+<span class="c1">#starting with William the Conqueror</span>
+<span class="c1">#Source: McNeill, "Interactive Data Analysis"</span>
+<span class="m">60</span>
+<span class="m">43</span>
+<span class="m">67</span>
+<span class="m">50</span>
+<span class="m">56</span>
+<span class="m">42</span>
+<span class="m">50</span>
+<span class="m">65</span>
+<span class="m">68</span>
+<span class="m">43</span>
+<span class="m">65</span>
+<span class="m">34</span>
+<span class="kc">...</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Только первые несколько строк файла были показаны. </font><font style="vertical-align: inherit;">Первые три строки содержат некоторый комментарий к данным, и мы хотим игнорировать это, когда читаем данные в R. Мы можем использовать это, используя параметр «skip» функции scan (), который указывает, сколько строк в начало файла, чтобы игнорировать. </font><font style="vertical-align: inherit;">Чтобы прочитать файл в R, игнорируя первые три строки, набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> kings <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="s">"http://robjhyndman.com/tsdldata/misc/kings.dat"</span><span class="p">,</span>skip<span class="o">=</span><span class="m">3</span><span class="p">)</span>
+  Read <span class="m">42</span> items
+<span class="o">&gt;</span> kings
+  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">60</span> <span class="m">43</span> <span class="m">67</span> <span class="m">50</span> <span class="m">56</span> <span class="m">42</span> <span class="m">50</span> <span class="m">65</span> <span class="m">68</span> <span class="m">43</span> <span class="m">65</span> <span class="m">34</span> <span class="m">47</span> <span class="m">34</span> <span class="m">49</span> <span class="m">41</span> <span class="m">13</span> <span class="m">35</span> <span class="m">53</span> <span class="m">56</span> <span class="m">16</span> <span class="m">43</span> <span class="m">69</span> <span class="m">59</span> <span class="m">48</span>
+  <span class="p">[</span><span class="m">26</span><span class="p">]</span> <span class="m">59</span> <span class="m">86</span> <span class="m">55</span> <span class="m">68</span> <span class="m">51</span> <span class="m">33</span> <span class="m">49</span> <span class="m">67</span> <span class="m">77</span> <span class="m">81</span> <span class="m">67</span> <span class="m">71</span> <span class="m">81</span> <span class="m">68</span> <span class="m">70</span> <span class="m">77</span> <span class="m">56</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В этом случае возраст смерти 42 последовательных королей Англии был зачитан в переменную «короли».</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">После того, как вы прочитали данные временного ряда в R, следующим шагом будет сохранение данных в объекте временного ряда в R, чтобы вы могли использовать множество функций R для анализа данных временного ряда. </font><font style="vertical-align: inherit;">Чтобы сохранить данные в объекте временного ряда, мы используем функцию ts () в R. Например, чтобы сохранить данные в переменной 'kings' как объект временного ряда в R, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> kingstimeseries <span class="o">&lt;-</span> ts<span class="p">(</span>kings<span class="p">)</span>
+<span class="o">&gt;</span> kingstimeseries
+  Time Series<span class="o">:</span>
+  Start <span class="o">=</span> <span class="m">1</span>
+  End <span class="o">=</span> <span class="m">42</span>
+  Frequency <span class="o">=</span> <span class="m">1</span>
+  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">60</span> <span class="m">43</span> <span class="m">67</span> <span class="m">50</span> <span class="m">56</span> <span class="m">42</span> <span class="m">50</span> <span class="m">65</span> <span class="m">68</span> <span class="m">43</span> <span class="m">65</span> <span class="m">34</span> <span class="m">47</span> <span class="m">34</span> <span class="m">49</span> <span class="m">41</span> <span class="m">13</span> <span class="m">35</span> <span class="m">53</span> <span class="m">56</span> <span class="m">16</span> <span class="m">43</span> <span class="m">69</span> <span class="m">59</span> <span class="m">48</span>
+  <span class="p">[</span><span class="m">26</span><span class="p">]</span> <span class="m">59</span> <span class="m">86</span> <span class="m">55</span> <span class="m">68</span> <span class="m">51</span> <span class="m">33</span> <span class="m">49</span> <span class="m">67</span> <span class="m">77</span> <span class="m">81</span> <span class="m">67</span> <span class="m">71</span> <span class="m">81</span> <span class="m">68</span> <span class="m">70</span> <span class="m">77</span> <span class="m">56</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Иногда ваш набор временных рядов может собираться через регулярные промежутки времени, которые составляли менее одного года, например, ежемесячно или ежеквартально. </font><font style="vertical-align: inherit;">В этом случае вы можете указать количество раз, когда данные собирались за год, с помощью параметра частоты в функции ts (). </font><font style="vertical-align: inherit;">Для ежемесячных данных временных рядов вы устанавливаете частоту = 12, а для квартальных данных временных рядов - частоту = 4.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы также можете указать первый год, когда были собраны данные, и первый интервал в этом году, используя параметр start в функции ts (). </font><font style="vertical-align: inherit;">Например, если первая точка данных соответствует второму кварталу 1986 года, вы должны установить start = c (1986,2).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Примером является набор данных о количестве рождений в месяц в Нью-Йорке с января 1946 года по декабрь 1959 года (первоначально собранный Ньютоном). </font><font style="vertical-align: inherit;">Эти данные доступны в файле </font></font><a class="reference external" href="http://robjhyndman.com/tsdldata/data/nybirths.dat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://robjhyndman.com/tsdldata/data/nybirths.dat.</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+Мы можем прочитать данные в R и сохранить их как объект временного ряда, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> births <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="s">"http://robjhyndman.com/tsdldata/data/nybirths.dat"</span><span class="p">)</span>
+  Read <span class="m">168</span> items
+<span class="o">&gt;</span> birthstimeseries <span class="o">&lt;-</span> ts<span class="p">(</span>births<span class="p">,</span> frequency<span class="o">=</span><span class="m">12</span><span class="p">,</span> start<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1946</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="o">&gt;</span> birthstimeseries
+    Jan    Feb    Mar    Apr    May    Jun    Jul    Aug    Sep    Oct    Nov    Dec
+  <span class="m">1946</span> <span class="m">26.663</span> <span class="m">23.598</span> <span class="m">26.931</span> <span class="m">24.740</span> <span class="m">25.806</span> <span class="m">24.364</span> <span class="m">24.477</span> <span class="m">23.901</span> <span class="m">23.175</span> <span class="m">23.227</span> <span class="m">21.672</span> <span class="m">21.870</span>
+  <span class="m">1947</span> <span class="m">21.439</span> <span class="m">21.089</span> <span class="m">23.709</span> <span class="m">21.669</span> <span class="m">21.752</span> <span class="m">20.761</span> <span class="m">23.479</span> <span class="m">23.824</span> <span class="m">23.105</span> <span class="m">23.110</span> <span class="m">21.759</span> <span class="m">22.073</span>
+  <span class="m">1948</span> <span class="m">21.937</span> <span class="m">20.035</span> <span class="m">23.590</span> <span class="m">21.672</span> <span class="m">22.222</span> <span class="m">22.123</span> <span class="m">23.950</span> <span class="m">23.504</span> <span class="m">22.238</span> <span class="m">23.142</span> <span class="m">21.059</span> <span class="m">21.573</span>
+  <span class="m">1949</span> <span class="m">21.548</span> <span class="m">20.000</span> <span class="m">22.424</span> <span class="m">20.615</span> <span class="m">21.761</span> <span class="m">22.874</span> <span class="m">24.104</span> <span class="m">23.748</span> <span class="m">23.262</span> <span class="m">22.907</span> <span class="m">21.519</span> <span class="m">22.025</span>
+  <span class="m">1950</span> <span class="m">22.604</span> <span class="m">20.894</span> <span class="m">24.677</span> <span class="m">23.673</span> <span class="m">25.320</span> <span class="m">23.583</span> <span class="m">24.671</span> <span class="m">24.454</span> <span class="m">24.122</span> <span class="m">24.252</span> <span class="m">22.084</span> <span class="m">22.991</span>
+  <span class="m">1951</span> <span class="m">23.287</span> <span class="m">23.049</span> <span class="m">25.076</span> <span class="m">24.037</span> <span class="m">24.430</span> <span class="m">24.667</span> <span class="m">26.451</span> <span class="m">25.618</span> <span class="m">25.014</span> <span class="m">25.110</span> <span class="m">22.964</span> <span class="m">23.981</span>
+  <span class="m">1952</span> <span class="m">23.798</span> <span class="m">22.270</span> <span class="m">24.775</span> <span class="m">22.646</span> <span class="m">23.988</span> <span class="m">24.737</span> <span class="m">26.276</span> <span class="m">25.816</span> <span class="m">25.210</span> <span class="m">25.199</span> <span class="m">23.162</span> <span class="m">24.707</span>
+  <span class="m">1953</span> <span class="m">24.364</span> <span class="m">22.644</span> <span class="m">25.565</span> <span class="m">24.062</span> <span class="m">25.431</span> <span class="m">24.635</span> <span class="m">27.009</span> <span class="m">26.606</span> <span class="m">26.268</span> <span class="m">26.462</span> <span class="m">25.246</span> <span class="m">25.180</span>
+  <span class="m">1954</span> <span class="m">24.657</span> <span class="m">23.304</span> <span class="m">26.982</span> <span class="m">26.199</span> <span class="m">27.210</span> <span class="m">26.122</span> <span class="m">26.706</span> <span class="m">26.878</span> <span class="m">26.152</span> <span class="m">26.379</span> <span class="m">24.712</span> <span class="m">25.688</span>
+  <span class="m">1955</span> <span class="m">24.990</span> <span class="m">24.239</span> <span class="m">26.721</span> <span class="m">23.475</span> <span class="m">24.767</span> <span class="m">26.219</span> <span class="m">28.361</span> <span class="m">28.599</span> <span class="m">27.914</span> <span class="m">27.784</span> <span class="m">25.693</span> <span class="m">26.881</span>
+  <span class="m">1956</span> <span class="m">26.217</span> <span class="m">24.218</span> <span class="m">27.914</span> <span class="m">26.975</span> <span class="m">28.527</span> <span class="m">27.139</span> <span class="m">28.982</span> <span class="m">28.169</span> <span class="m">28.056</span> <span class="m">29.136</span> <span class="m">26.291</span> <span class="m">26.987</span>
+  <span class="m">1957</span> <span class="m">26.589</span> <span class="m">24.848</span> <span class="m">27.543</span> <span class="m">26.896</span> <span class="m">28.878</span> <span class="m">27.390</span> <span class="m">28.065</span> <span class="m">28.141</span> <span class="m">29.048</span> <span class="m">28.484</span> <span class="m">26.634</span> <span class="m">27.735</span>
+  <span class="m">1958</span> <span class="m">27.132</span> <span class="m">24.924</span> <span class="m">28.963</span> <span class="m">26.589</span> <span class="m">27.931</span> <span class="m">28.009</span> <span class="m">29.229</span> <span class="m">28.759</span> <span class="m">28.405</span> <span class="m">27.945</span> <span class="m">25.912</span> <span class="m">26.619</span>
+  <span class="m">1959</span> <span class="m">26.076</span> <span class="m">25.286</span> <span class="m">27.660</span> <span class="m">25.951</span> <span class="m">26.398</span> <span class="m">25.565</span> <span class="m">28.865</span> <span class="m">30.000</span> <span class="m">29.261</span> <span class="m">29.012</span> <span class="m">26.992</span> <span class="m">27.897</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Аналогичным образом, файл </font></font><a class="reference external" href="http://robjhyndman.com/tsdldata/data/fancy.dat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://robjhyndman.com/tsdldata/data/fancy.dat</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> содержит ежемесячные продажи сувенирного магазина в курортном городке на пляже в Квинсленде, Австралия, за январь 1987 года - декабрь 1993 года (оригинальные данные Уилрайта и Хиндмана, 1998). </font><font style="vertical-align: inherit;">Мы можем прочитать данные в R, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> souvenir <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="s">"http://robjhyndman.com/tsdldata/data/fancy.dat"</span><span class="p">)</span>
+  Read <span class="m">84</span> items
+<span class="o">&gt;</span> souvenirtimeseries <span class="o">&lt;-</span> ts<span class="p">(</span>souvenir<span class="p">,</span> frequency<span class="o">=</span><span class="m">12</span><span class="p">,</span> start<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1987</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="o">&gt;</span> souvenirtimeseries
+  Jan       Feb       Mar       Apr       May       Jun       Jul       Aug       Sep       Oct       Nov       Dec
+  <span class="m">1987</span>   <span class="m">1664.81</span>   <span class="m">2397.53</span>   <span class="m">2840.71</span>   <span class="m">3547.29</span>   <span class="m">3752.96</span>   <span class="m">3714.74</span>   <span class="m">4349.61</span>   <span class="m">3566.34</span>   <span class="m">5021.82</span>   <span class="m">6423.48</span>   <span class="m">7600.60</span>  <span class="m">19756.21</span>
+  <span class="m">1988</span>   <span class="m">2499.81</span>   <span class="m">5198.24</span>   <span class="m">7225.14</span>   <span class="m">4806.03</span>   <span class="m">5900.88</span>   <span class="m">4951.34</span>   <span class="m">6179.12</span>   <span class="m">4752.15</span>   <span class="m">5496.43</span>   <span class="m">5835.10</span>  <span class="m">12600.08</span>  <span class="m">28541.72</span>
+  <span class="m">1989</span>   <span class="m">4717.02</span>   <span class="m">5702.63</span>   <span class="m">9957.58</span>   <span class="m">5304.78</span>   <span class="m">6492.43</span>   <span class="m">6630.80</span>   <span class="m">7349.62</span>   <span class="m">8176.62</span>   <span class="m">8573.17</span>   <span class="m">9690.50</span>  <span class="m">15151.84</span>  <span class="m">34061.01</span>
+  <span class="m">1990</span>   <span class="m">5921.10</span>   <span class="m">5814.58</span>  <span class="m">12421.25</span>   <span class="m">6369.77</span>   <span class="m">7609.12</span>   <span class="m">7224.75</span>   <span class="m">8121.22</span>   <span class="m">7979.25</span>   <span class="m">8093.06</span>   <span class="m">8476.70</span>  <span class="m">17914.66</span>  <span class="m">30114.41</span>
+  <span class="m">1991</span>   <span class="m">4826.64</span>   <span class="m">6470.23</span>   <span class="m">9638.77</span>   <span class="m">8821.17</span>   <span class="m">8722.37</span>  <span class="m">10209.48</span>  <span class="m">11276.55</span>  <span class="m">12552.22</span>  <span class="m">11637.39</span>  <span class="m">13606.89</span>  <span class="m">21822.11</span>  <span class="m">45060.69</span>
+  <span class="m">1992</span>   <span class="m">7615.03</span>   <span class="m">9849.69</span>  <span class="m">14558.40</span>  <span class="m">11587.33</span>   <span class="m">9332.56</span>  <span class="m">13082.09</span>  <span class="m">16732.78</span>  <span class="m">19888.61</span>  <span class="m">23933.38</span>  <span class="m">25391.35</span>  <span class="m">36024.80</span>  <span class="m">80721.71</span>
+  <span class="m">1993</span>  <span class="m">10243.24</span>  <span class="m">11266.88</span>  <span class="m">21826.84</span>  <span class="m">17357.33</span>  <span class="m">15997.79</span>  <span class="m">18601.53</span>  <span class="m">26155.15</span>  <span class="m">28586.52</span>  <span class="m">30505.41</span>  <span class="m">30821.33</span>  <span class="m">46634.38</span> <span class="m">104660.67</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="plotting-time-series">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Построение временного ряда </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#plotting-time-series" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">После того, как вы прочитали временной ряд в R, следующим шагом обычно является построение графика данных временного ряда, что вы можете сделать с помощью функции plot.ts () в R.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, для построения временного ряда возраста смерти 42 последовательных королей Англии мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>kingstimeseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image1" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image1.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из графика времени видно, что этот временной ряд, вероятно, можно описать с использованием аддитивной модели, поскольку случайные флуктуации в данных имеют примерно постоянный размер во времени.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Аналогично, чтобы построить временной ряд числа рождений в месяц в Нью-Йорке, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>birthstimeseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image2" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image2.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из этого временного ряда видно, что количество рождений в месяц, по-видимому, зависит от сезона: пик каждое лето, а впадина - каждую зиму. </font><font style="vertical-align: inherit;">Опять же, кажется, что этот временной ряд, вероятно, можно описать с использованием аддитивной модели, поскольку сезонные колебания примерно постоянны по размеру во времени и, по-видимому, не зависят от уровня временных рядов, и случайные колебания также, по-видимому, примерно постоянный размер с течением времени.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Точно так же, чтобы построить временные ряды ежемесячных продаж сувенирного магазина в курортном городке в Квинсленде, Австралия, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>souvenirtimeseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image4" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image4.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В этом случае оказывается, что аддитивная модель не подходит для описания этого временного ряда, поскольку размер сезонных колебаний и случайных колебаний, по-видимому, увеличивается с уровнем временного ряда. </font><font style="vertical-align: inherit;">Таким образом, нам может понадобиться преобразовать временной ряд, чтобы получить преобразованный временной ряд, который можно описать с использованием аддитивной модели. </font><font style="vertical-align: inherit;">Например, мы можем преобразовать временной ряд, рассчитав натуральный логарифм исходных данных:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> logsouvenirtimeseries <span class="o">&lt;-</span> <span class="kp">log</span><span class="p">(</span>souvenirtimeseries<span class="p">)</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>logsouvenirtimeseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image5" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image5.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Здесь мы можем видеть, что размер сезонных колебаний и случайных колебаний в лог-преобразованных временных рядах, по-видимому, примерно постоянен во времени и не зависит от уровня временных рядов. </font><font style="vertical-align: inherit;">Таким образом, лог-преобразованный временной ряд, вероятно, может быть описан с использованием аддитивной модели.</font></font></p>
+</div>
+<div class="section" id="decomposing-time-series">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение временных рядов </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#decomposing-time-series" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение временного ряда означает разделение его на составляющие компоненты, которые обычно являются компонентом тренда и нерегулярным компонентом, а если это сезонный временной ряд, сезонным компонентом.</font></font></p>
+<div class="section" id="decomposing-non-seasonal-data">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение несезонных данных </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#decomposing-non-seasonal-data" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Несезонный временной ряд состоит из компонента тренда и нерегулярного компонента. </font><font style="vertical-align: inherit;">Разложение временных рядов включает в себя попытку разделить временные ряды на эти компоненты, то есть оценить компонент тренда и нерегулярный компонент.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы оценить компонент тренда несезонного временного ряда, который может быть описан с использованием аддитивной модели, обычно используется метод сглаживания, такой как вычисление простого скользящего среднего временного ряда.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Функция SMA () в пакете «TTR» R может использоваться для сглаживания данных временных рядов с использованием простого скользящего среднего. </font><font style="vertical-align: inherit;">Чтобы использовать эту функцию, нам сначала нужно установить R-пакет «TTR» (инструкции по установке R-пакета см. В разделе « </font></font><a class="reference external" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/installr.html#how-to-install-an-r-package"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как установить R-пакет»</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ). </font><font style="vertical-align: inherit;">После установки пакета «TTR» R вы можете загрузить пакет «TTR» R, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kn">library</span><span class="p">(</span><span class="s">"TTR"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Затем вы можете использовать функцию «SMA ()» для сглаживания данных временных рядов. </font><font style="vertical-align: inherit;">Чтобы использовать функцию SMA (), вам нужно указать порядок (диапазон) простого скользящего среднего, используя параметр «n». </font><font style="vertical-align: inherit;">Например, чтобы вычислить простое скользящее среднее порядка 5, мы устанавливаем n = 5 в функции SMA ().</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, как обсуждалось выше, временные ряды возраста смерти 42 последовательных королей Англии выглядят несезонными и, вероятно, могут быть описаны с использованием аддитивной модели, поскольку случайные колебания в данных примерно одинаковы по размеру в течение время:</font></font></p>
+<p><img alt="image1" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image1.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Таким образом, мы можем попытаться оценить компонент тренда этого временного ряда путем сглаживания с использованием простого скользящего среднего. </font><font style="vertical-align: inherit;">Чтобы сгладить временной ряд с помощью простого скользящего среднего порядка 3 и построить сглаженные данные временного ряда, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> kingstimeseriesSMA3 <span class="o">&lt;-</span> SMA<span class="p">(</span>kingstimeseries<span class="p">,</span>n<span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>kingstimeseriesSMA3<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image6" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image6.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Кажется, что во временных рядах, сглаженных с использованием простого скользящего среднего порядка 3, все еще остается довольно много случайных колебаний. Таким образом, для более точной оценки компонента тренда, мы могли бы попытаться сгладить данные с помощью простого скользящего среднего значения более высокого порядка. </font><font style="vertical-align: inherit;">Это займет немного проб и ошибок, чтобы найти правильное количество сглаживания. </font><font style="vertical-align: inherit;">Например, мы можем попробовать использовать простое скользящее среднее порядка 8:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> kingstimeseriesSMA8 <span class="o">&lt;-</span> SMA<span class="p">(</span>kingstimeseries<span class="p">,</span>n<span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>kingstimeseriesSMA8<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image7" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image7.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Данные, сглаженные с помощью простого скользящего среднего порядка 8, дают более четкую картину компонента тренда, и мы можем видеть, что возраст смерти английских королей, по-видимому, уменьшился с 55 до 38 лет во время правления из первых 20 королей, а затем увеличилось до 73 лет к концу правления 40-го короля во временном ряду.</font></font></p>
+</div>
+<div class="section" id="decomposing-seasonal-data">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Разложение сезонных данных </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#decomposing-seasonal-data" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Сезонный временной ряд состоит из компонента тренда, сезонного компонента и нерегулярного компонента. </font><font style="vertical-align: inherit;">Разложение временного ряда означает разделение временного ряда на эти три компонента: то есть оценку этих трех компонентов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы оценить компонент тренда и сезонный компонент сезонного временного ряда, который можно описать с помощью аддитивной модели, мы можем использовать функцию «декомпозировать ()» в R. Эта функция оценивает трендовый, сезонный и нерегулярный компоненты временного ряда. это можно описать с помощью аддитивной модели.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Функция «degpose ()» возвращает объект списка в качестве результата, где оценки сезонного компонента, компонента тренда и нерегулярного компонента хранятся в именованных элементах объектов этого списка, которые называются «сезонный», «тренд» и «случайный». »Соответственно.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, как обсуждалось выше, временной ряд числа рождений в месяц в городе Нью-Йорке является сезонным с пиком каждое лето и минимально каждую зиму и, вероятно, может быть описан с использованием аддитивной модели, поскольку сезонные и случайные колебания, по-видимому, быть примерно постоянным по размеру во времени:</font></font></p>
+<p><img alt="image2" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image2.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы оценить трендовую, сезонную и нерегулярную составляющие этого временного ряда, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> birthstimeseriescomponents <span class="o">&lt;-</span> decompose<span class="p">(</span>birthstimeseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оценочные значения сезонных, трендовых и нерегулярных компонентов теперь хранятся в переменных $ сезонные, периоды рождения, компоненты серии $, тренды и серии времени рождения $ случайные. </font><font style="vertical-align: inherit;">Например, мы можем распечатать оценочные значения сезонного компонента, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> birthstimeseriescomponents<span class="o">$</span>seasonal <span class="c1"># get the estimated values of the seasonal component</span>
+       Jan        Feb        Mar        Apr        May        Jun        Jul        Aug        Sep        Oct        Nov        Dec
+ <span class="m">1946</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1947</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1948</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1949</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1950</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1951</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1952</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1953</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1954</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1955</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1956</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1957</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1958</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+ <span class="m">1959</span> <span class="m">-0.6771947</span> <span class="m">-2.0829607</span>  <span class="m">0.8625232</span> <span class="m">-0.8016787</span>  <span class="m">0.2516514</span> <span class="m">-0.1532556</span>  <span class="m">1.4560457</span>  <span class="m">1.1645938</span>  <span class="m">0.6916162</span>  <span class="m">0.7752444</span> <span class="m">-1.1097652</span> <span class="m">-0.3768197</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Расчетные сезонные факторы приведены для месяцев январь-декабрь и одинаковы для каждого года. </font><font style="vertical-align: inherit;">Самый большой сезонный фактор приходится на июль (около 1,46), а самый низкий - на февраль (около -2,08), что указывает на то, что в июле, как представляется, наблюдается пик рождаемости и минимальная рождаемость в феврале каждого года.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем построить график предполагаемого тренда, сезонных и нерегулярных компонентов временного ряда, используя функцию plot (), например:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot<span class="p">(</span>birthstimeseriescomponents<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image8" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image8.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">На графике выше показаны исходный временной ряд (вверху), предполагаемый компонент тренда (секунда сверху), предполагаемый сезонный компонент (третий сверху) и предполагаемый нерегулярный компонент (внизу). </font><font style="vertical-align: inherit;">Мы видим, что оценочный компонент тренда показывает небольшое снижение с примерно 24 в 1947 году до примерно 22 в 1948 году, после чего наблюдается устойчивый рост с того времени до примерно 27 в 1959 году.</font></font></p>
+</div>
+<div class="section" id="seasonally-adjusting">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Сезонная корректировка </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#seasonally-adjusting" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если у вас есть сезонные временные ряды, которые можно описать с помощью аддитивной модели, вы можете сезонно корректировать временные ряды, оценивая сезонный компонент и вычитая оцененный сезонный компонент из исходного временного ряда. </font><font style="vertical-align: inherit;">Мы можем сделать это, используя оценку сезонной составляющей, вычисляемую функцией «декомпозировать ()».</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, чтобы сезонно корректировать временные ряды числа рождений в месяц в Нью-Йорке, мы можем оценить сезонный компонент, используя «декомпозировать ()», а затем вычесть сезонный компонент из исходного временного ряда:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> birthstimeseriescomponents <span class="o">&lt;-</span> decompose<span class="p">(</span>birthstimeseries<span class="p">)</span>
+<span class="o">&gt;</span> birthstimeseriesseasonallyadjusted <span class="o">&lt;-</span> birthstimeseries <span class="o">-</span> birthstimeseriescomponents<span class="o">$</span>seasonal
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Затем мы можем построить сезонно скорректированные временные ряды, используя функцию plot (), набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot<span class="p">(</span>birthstimeseriesseasonallyadjusted<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image9" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image9.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы можете видеть, что сезонные колебания были удалены из сезонно скорректированных временных рядов. </font><font style="vertical-align: inherit;">С учетом сезонных колебаний временной ряд теперь содержит только компонент тренда и нерегулярный компонент.</font></font></p>
+</div>
+</div>
+<div class="section" id="forecasts-using-exponential-smoothing">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Прогнозы с использованием экспоненциального сглаживания </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#forecasts-using-exponential-smoothing" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание может использоваться для создания краткосрочных прогнозов для данных временных рядов.</font></font></p>
+<div class="section" id="simple-exponential-smoothing">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Простое экспоненциальное сглаживание </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#simple-exponential-smoothing" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если у вас есть временной ряд, который можно описать с использованием аддитивной модели с постоянным уровнем и без сезонности, вы можете использовать простое экспоненциальное сглаживание для создания краткосрочных прогнозов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Простой метод экспоненциального сглаживания позволяет оценить уровень в текущий момент времени. </font><font style="vertical-align: inherit;">Сглаживание контролируется параметром альфа; </font><font class="" style="vertical-align: inherit;">для оценки уровня в текущий момент времени. </font><font style="vertical-align: inherit;">Значение альфа; </font><font class="" style="vertical-align: inherit;">лежит между 0 и 1. Значения альфа, близкие к 0, означают, что при самых последних наблюдениях при прогнозировании будущих значений уделяется мало внимания.</font></font></p>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Например, файл </font></font><a class="reference external" href="http://robjhyndman.com/tsdldata/hurst/precip1.dat"><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">http://robjhyndman.com/tsdldata/hurst/precip1.dat</font></font></a><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;"> содержит общее годовое количество осадков в дюймах для Лондона за 1813-1912 гг. (Оригинальные данные Hipel and McLeod, 1994). </font><font style="vertical-align: inherit;">Мы можем прочитать данные в R и построить их, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> rain <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="s">"http://robjhyndman.com/tsdldata/hurst/precip1.dat"</span><span class="p">,</span>skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+  Read <span class="m">100</span> items
+<span class="o">&gt;</span> rainseries <span class="o">&lt;-</span> ts<span class="p">(</span>rain<span class="p">,</span>start<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1813</span><span class="p">))</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>rainseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image10" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image10.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из графика видно, что уровень примерно постоянен (среднее значение остается постоянным на уровне около 25 дюймов). </font><font style="vertical-align: inherit;">Случайные колебания во временных рядах кажутся примерно постоянными по размеру во времени, поэтому, вероятно, целесообразно описать данные с использованием аддитивной модели. </font><font style="vertical-align: inherit;">Таким образом, мы можем делать прогнозы, используя простое экспоненциальное сглаживание.</font></font></p>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Чтобы делать прогнозы с использованием простого экспоненциального сглаживания в R, мы можем подобрать простую модель экспоненциального сглаживания с использованием функции «HoltWinters ()» в R. Чтобы использовать HoltWinters () для простого экспоненциального сглаживания, нам нужно установить параметры beta = FALSE и gamma = FALSE в функции HoltWinters () (параметры beta и gamma используются для экспоненциального сглаживания Холта или экспоненциального сглаживания Холта-Винтерса, как описано ниже).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Функция HoltWinters () возвращает переменную списка, которая содержит несколько именованных элементов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, чтобы использовать простое экспоненциальное сглаживание для составления прогнозов для временных рядов годовых осадков в Лондоне, мы вводим:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> rainseriesforecasts <span class="o">&lt;-</span> HoltWinters<span class="p">(</span>rainseries<span class="p">,</span> beta<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> gamma<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="o">&gt;</span> rainseriesforecasts
+  Smoothing parameters<span class="o">:</span>
+  alpha<span class="o">:</span>  <span class="m">0.02412151</span>
+  beta <span class="o">:</span>  <span class="kc">FALSE</span>
+  <span class="kp">gamma</span><span class="o">:</span>  <span class="kc">FALSE</span>
+  Coefficients<span class="o">:</span>
+    <span class="p">[,</span><span class="m">1</span><span class="p">]</span>
+  a <span class="m">24.67819</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выходные данные HoltWinters () говорят нам, что предполагаемое значение альфа-параметра составляет около 0,024. </font><font style="vertical-align: inherit;">Это очень близко к нулю, что говорит нам о том, что прогнозы основаны как на недавних, так и на менее недавних наблюдениях (хотя некоторые недавние наблюдения имеют больший вес).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">По умолчанию HoltWinters () просто делает прогнозы на тот же период времени, охватываемый нашим исходным временным рядом. </font><font style="vertical-align: inherit;">В этом случае наш первоначальный временной ряд включал количество осадков в Лондоне в 1813-1912 гг., Поэтому прогнозы также относятся к 1813-1912 гг.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В приведенном выше примере мы сохранили выходные данные функции HoltWinters () в переменной списка «rainseriesforecasts». </font><font style="vertical-align: inherit;">Прогнозы, сделанные HoltWinters (), хранятся в именованном элементе этой переменной списка, называемом «подогнанный», поэтому мы можем получить их значения, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> rainseriesforecasts<span class="o">$</span>fitted
+  Time Series<span class="o">:</span>
+  Start <span class="o">=</span> <span class="m">1814</span>
+  End <span class="o">=</span> <span class="m">1912</span>
+  Frequency <span class="o">=</span> <span class="m">1</span>
+     xhat    level
+  <span class="m">1814</span> <span class="m">23.56000</span> <span class="m">23.56000</span>
+  <span class="m">1815</span> <span class="m">23.62054</span> <span class="m">23.62054</span>
+  <span class="m">1816</span> <span class="m">23.57808</span> <span class="m">23.57808</span>
+  <span class="m">1817</span> <span class="m">23.76290</span> <span class="m">23.76290</span>
+  <span class="m">1818</span> <span class="m">23.76017</span> <span class="m">23.76017</span>
+  <span class="m">1819</span> <span class="m">23.76306</span> <span class="m">23.76306</span>
+  <span class="m">1820</span> <span class="m">23.82691</span> <span class="m">23.82691</span>
+  <span class="kc">...</span>
+  <span class="m">1905</span> <span class="m">24.62852</span> <span class="m">24.62852</span>
+  <span class="m">1906</span> <span class="m">24.58852</span> <span class="m">24.58852</span>
+  <span class="m">1907</span> <span class="m">24.58059</span> <span class="m">24.58059</span>
+  <span class="m">1908</span> <span class="m">24.54271</span> <span class="m">24.54271</span>
+  <span class="m">1909</span> <span class="m">24.52166</span> <span class="m">24.52166</span>
+  <span class="m">1910</span> <span class="m">24.57541</span> <span class="m">24.57541</span>
+  <span class="m">1911</span> <span class="m">24.59433</span> <span class="m">24.59433</span>
+  <span class="m">1912</span> <span class="m">24.59905</span> <span class="m">24.59905</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем построить исходный временной ряд против прогнозов, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot<span class="p">(</span>rainseriesforecasts<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image11" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image11.png"></p>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Сюжет показывает исходный временной ряд черным цветом, а прогнозы - красной линией. </font><font style="vertical-align: inherit;">Временной ряд прогнозов гораздо более плавный, чем временной ряд исходных данных здесь.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В качестве меры точности прогнозов мы можем рассчитать сумму квадратов ошибок для ошибок прогноза в выборке, то есть ошибок прогноза для периода времени, охватываемого нашим исходным временным рядом. </font><font style="vertical-align: inherit;">Сумма квадратов ошибок хранится в именованном элементе переменной списка «rainseriesforecasts» под названием «SSE», поэтому мы можем получить его значение, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> rainseriesforecasts<span class="o">$</span>SSE
+  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1828.855</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">То есть здесь сумма квадратов ошибок составляет 1828,855.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В простом экспоненциальном сглаживании обычно используется первое значение во временном ряду в качестве начального значения для уровня. </font><font style="vertical-align: inherit;">Например, во временном ряду для осадков в Лондоне первое значение составляет 23,56 (дюймов) для осадков в 1813 году. Вы можете указать начальное значение для уровня в функции HoltWinters () с помощью параметра «l.start». </font><font style="vertical-align: inherit;">Например, чтобы делать прогнозы с начальным значением уровня 23,56, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> HoltWinters<span class="p">(</span>rainseries<span class="p">,</span> beta<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> gamma<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> l.start<span class="o">=</span><span class="m">23.56</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как объяснено выше, по умолчанию HoltWinters () просто делает прогнозы на период времени, охватываемый исходными данными, который является 1813-1912 для временного ряда осадков. </font><font style="vertical-align: inherit;">Мы можем делать прогнозы на дальнейшие моменты времени, используя функцию «Forecast.HoltWinters ()» в пакете «R». </font><font style="vertical-align: inherit;">Чтобы использовать функцию forecast.HoltWinters (), сначала нужно установить R-пакет «прогноз» (инструкции по установке R-пакета см. В разделе « </font></font><a class="reference external" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/installr.html#how-to-install-an-r-package"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как установить R-пакет»</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">После того, как вы установили пакет «прогноз» R, вы можете загрузить пакет «прогноз» R, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kn">library</span><span class="p">(</span><span class="s">"forecast"</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Когда в качестве первого аргумента (входного параметра) используется функция forecast.HoltWinters (), вы передаете ей прогнозную модель, которую вы уже использовали, используя функцию HoltWinters (). </font><font style="vertical-align: inherit;">Например, в случае временных рядов осадков мы сохранили прогнозную модель, созданную с помощью HoltWinters (), в переменной «rainseriesforecasts». </font><font class="" style="vertical-align: inherit;">Вы указываете, сколько еще временных моментов вы хотите сделать для прогнозов, используя параметр «h» вcast.HoltWinters (). </font><font style="vertical-align: inherit;">Например, чтобы составить прогноз осадков за 1814–1820 годы (еще 8 лет) с помощью Forecast.HoltWinters (), мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> rainseriesforecasts2 <span class="o">&lt;-</span> forecast.HoltWinters<span class="p">(</span>rainseriesforecasts<span class="p">,</span> h<span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="o">&gt;</span> rainseriesforecasts2
+ Point     Forecast    Lo <span class="m">80</span>    Hi <span class="m">80</span>    Lo <span class="m">95</span>    Hi <span class="m">95</span>
+ <span class="m">1913</span>       <span class="m">24.67819</span> <span class="m">19.17493</span> <span class="m">30.18145</span> <span class="m">16.26169</span> <span class="m">33.09470</span>
+ <span class="m">1914</span>       <span class="m">24.67819</span> <span class="m">19.17333</span> <span class="m">30.18305</span> <span class="m">16.25924</span> <span class="m">33.09715</span>
+ <span class="m">1915</span>       <span class="m">24.67819</span> <span class="m">19.17173</span> <span class="m">30.18465</span> <span class="m">16.25679</span> <span class="m">33.09960</span>
+ <span class="m">1916</span>       <span class="m">24.67819</span> <span class="m">19.17013</span> <span class="m">30.18625</span> <span class="m">16.25434</span> <span class="m">33.10204</span>
+ <span class="m">1917</span>       <span class="m">24.67819</span> <span class="m">19.16853</span> <span class="m">30.18785</span> <span class="m">16.25190</span> <span class="m">33.10449</span>
+ <span class="m">1918</span>       <span class="m">24.67819</span> <span class="m">19.16694</span> <span class="m">30.18945</span> <span class="m">16.24945</span> <span class="m">33.10694</span>
+ <span class="m">1919</span>       <span class="m">24.67819</span> <span class="m">19.16534</span> <span class="m">30.19105</span> <span class="m">16.24701</span> <span class="m">33.10938</span>
+ <span class="m">1920</span>       <span class="m">24.67819</span> <span class="m">19.16374</span> <span class="m">30.19265</span> <span class="m">16.24456</span> <span class="m">33.11182</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Функцияcast.HoltWinters () предоставляет вам прогноз на год, интервал прогнозирования 80% для прогноза и интервал прогнозирования 95% для прогноза. </font><font style="vertical-align: inherit;">Например, прогнозируемое количество осадков в 1920 году составляет около 24,68 дюймов с интервалом прогнозирования 95% (16,24, 33,11).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Для построения прогнозов, сделанных функцией forecast.HoltWinters (), мы можем использовать функцию plot.forecast ():</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.forecast<span class="p">(</span>rainseriesforecasts2<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image12" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image12.png"></p>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Здесь прогнозы на 1913-1920 гг. Изображены в виде синей линии, интервал прогнозирования 80% - как заштрихованная область оранжевого цвета, а интервал прогнозирования 95% - как заштрихованная желтая область.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">«Ошибки прогноза» рассчитываются как наблюдаемые значения минус прогнозные значения для каждой временной точки. </font><font style="vertical-align: inherit;">Мы можем только рассчитать ошибки прогноза для периода времени, охватываемого нашим исходным временным рядом, который для данных об осадках равен 1813-1912. </font><font style="vertical-align: inherit;">Как упомянуто выше, одним из показателей точности прогнозирующей модели является сумма квадратов ошибок (SSE) для ошибок прогноза в выборке.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ошибки прогноза в выборке хранятся в именованном элементе «остатки» переменной списка, возвращаемой функциейcast .HoltWinters (). </font><font style="vertical-align: inherit;">Если прогнозирующая модель не может быть улучшена, не должно быть корреляции между ошибками прогноза для последовательных прогнозов. </font><font style="vertical-align: inherit;">Другими словами, если существуют корреляции между ошибками прогноза для последовательных прогнозов, вполне вероятно, что прогнозы простого экспоненциального сглаживания могут быть улучшены с помощью другого метода прогнозирования.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы выяснить, так ли это, мы можем получить коррелограмму ошибок прогноза в выборке для лагов 1-20. </font><font class="" style="vertical-align: inherit;">Мы можем вычислить коррелограмму ошибок прогноза, используя функцию «acf ()» в R. Чтобы указать максимальное отставание, на которое мы хотим посмотреть, мы используем параметр «lag.max» в acf ().</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, чтобы рассчитать коррелограмму ошибок прогноза в выборке для данных о количестве осадков в Лондоне для лагов 1-20, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>rainseriesforecasts2<span class="o">$</span>residuals<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image13" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image13.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы можете видеть из выборочной коррелограммы, что автокорреляция в лаге 3 просто касается границ значимости. </font><font style="vertical-align: inherit;">Чтобы проверить, есть ли существенные доказательства ненулевых корреляций при лагах 1-20, мы можем выполнить тест Юнга-Бокса. </font><font style="vertical-align: inherit;">Это можно сделать в R с помощью функции «Box.test ()». </font><font style="vertical-align: inherit;">Максимальная задержка, на которую мы хотим посмотреть, указывается с помощью параметра «lag» в функции Box.test (). </font><font style="vertical-align: inherit;">Например, чтобы проверить, есть ли ненулевые автокорреляции с лагом 1-20, для ошибок прогноза в выборке для данных о количестве осадков в Лондоне мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> Box.test<span class="p">(</span>rainseriesforecasts2<span class="o">$</span>residuals<span class="p">,</span> lag<span class="o">=</span><span class="m">20</span><span class="p">,</span> type<span class="o">=</span><span class="s">"Ljung-Box"</span><span class="p">)</span>
+    Box<span class="o">-</span>Ljung test
+  data<span class="o">:</span>  rainseriesforecasts2<span class="o">$</span>residuals
+  X<span class="o">-</span>squared <span class="o">=</span> <span class="m">17.4008</span><span class="p">,</span> df <span class="o">=</span> <span class="m">20</span><span class="p">,</span> p<span class="o">-</span>value <span class="o">=</span> <span class="m">0.6268</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Здесь статистика теста Юнга-Бокса равна 17,4, а значение p равно 0,6, поэтому имеется мало свидетельств ненулевых автокорреляций в погрешностях прогноза в выборке при задержках 1-20.</font></font></p>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Чтобы быть уверенным в том, что прогностическая модель не может быть улучшена, также рекомендуется проверить, распределяются ли ошибки прогноза со средним нулем и постоянной дисперсией. </font><font style="vertical-align: inherit;">Чтобы проверить, имеют ли ошибки прогноза постоянную дисперсию, мы можем составить график временных ошибок прогноза:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>rainseriesforecasts2<span class="o">$</span>residuals<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image18" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image18.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">График показывает, что ошибки прогноза в выборке, по-видимому, имеют примерно постоянную дисперсию во времени, хотя размер колебаний в начале временного ряда (1820-1830) может быть немного меньше, чем в более поздние даты (например, 1840). -1850).</font></font></p>
+<p><font style="vertical-align: inherit;"><font class="" style="vertical-align: inherit;">Чтобы проверить, нормально ли распределены ошибки прогноза со средним нулем, мы можем построить гистограмму ошибок прогноза с наложенной нормальной кривой со средним нулем и тем же стандартным отклонением, что и распределение ошибок прогноза. </font><font style="vertical-align: inherit;">Для этого мы можем определить R-функцию plotForecastErrors () ниже:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plotForecastErrors <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>forecasterrors<span class="p">)</span>
+  <span class="p">{</span>
+     <span class="c1"># make a histogram of the forecast errors:</span>
+     mybinsize <span class="o">&lt;-</span> IQR<span class="p">(</span>forecasterrors<span class="p">)</span><span class="o">/</span><span class="m">4</span>
+     mysd   <span class="o">&lt;-</span> sd<span class="p">(</span>forecasterrors<span class="p">)</span>
+     mymin  <span class="o">&lt;-</span> <span class="kp">min</span><span class="p">(</span>forecasterrors<span class="p">)</span> <span class="o">-</span> mysd<span class="o">*</span><span class="m">5</span>
+     mymax  <span class="o">&lt;-</span> <span class="kp">max</span><span class="p">(</span>forecasterrors<span class="p">)</span> <span class="o">+</span> mysd<span class="o">*</span><span class="m">3</span>
+     <span class="c1"># generate normally distributed data with mean 0 and standard deviation mysd</span>
+     mynorm <span class="o">&lt;-</span> rnorm<span class="p">(</span><span class="m">10000</span><span class="p">,</span> mean<span class="o">=</span><span class="m">0</span><span class="p">,</span> sd<span class="o">=</span>mysd<span class="p">)</span>
+     mymin2 <span class="o">&lt;-</span> <span class="kp">min</span><span class="p">(</span>mynorm<span class="p">)</span>
+     mymax2 <span class="o">&lt;-</span> <span class="kp">max</span><span class="p">(</span>mynorm<span class="p">)</span>
+     <span class="kr">if</span> <span class="p">(</span>mymin2 <span class="o">&lt;</span> mymin<span class="p">)</span> <span class="p">{</span> mymin <span class="o">&lt;-</span> mymin2 <span class="p">}</span>
+     <span class="kr">if</span> <span class="p">(</span>mymax2 <span class="o">&gt;</span> mymax<span class="p">)</span> <span class="p">{</span> mymax <span class="o">&lt;-</span> mymax2 <span class="p">}</span>
+     <span class="c1"># make a red histogram of the forecast errors, with the normally distributed data overlaid:</span>
+     mybins <span class="o">&lt;-</span> <span class="kp">seq</span><span class="p">(</span>mymin<span class="p">,</span> mymax<span class="p">,</span> mybinsize<span class="p">)</span>
+     hist<span class="p">(</span>forecasterrors<span class="p">,</span> col<span class="o">=</span><span class="s">"red"</span><span class="p">,</span> freq<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> breaks<span class="o">=</span>mybins<span class="p">)</span>
+     <span class="c1"># freq=FALSE ensures the area under the histogram = 1</span>
+     <span class="c1"># generate normally distributed data with mean 0 and standard deviation mysd</span>
+     myhist <span class="o">&lt;-</span> hist<span class="p">(</span>mynorm<span class="p">,</span> plot<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> breaks<span class="o">=</span>mybins<span class="p">)</span>
+     <span class="c1"># plot the normal curve as a blue line on top of the histogram of forecast errors:</span>
+     points<span class="p">(</span>myhist<span class="o">$</span>mids<span class="p">,</span> myhist<span class="o">$</span>density<span class="p">,</span> type<span class="o">=</span><span class="s">"l"</span><span class="p">,</span> col<span class="o">=</span><span class="s">"blue"</span><span class="p">,</span> lwd<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+  <span class="p">}</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вам придется скопировать функцию выше в R, чтобы использовать ее. </font><font style="vertical-align: inherit;">Затем вы можете использовать plotForecastErrors () для построения гистограммы (с наложенной нормальной кривой) ошибок прогноза для прогнозов осадков:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plotForecastErrors<span class="p">(</span>rainseriesforecasts2<span class="o">$</span>residuals<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image19" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image19.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">График показывает, что распределение ошибок прогноза примерно центрировано на нуле и более или менее нормально распределено, хотя кажется, что оно немного искажено вправо по сравнению с нормальной кривой. </font><font style="vertical-align: inherit;">Однако правый перекос относительно невелик, поэтому вполне вероятно, что ошибки прогноза обычно распределяются со средним нулем.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Тест Юнга-Бокса показал, что имеется мало свидетельств ненулевых автокорреляций в погрешностях прогноза в выборке, и распределение ошибок прогноза, по-видимому, обычно распределяется со средним нулем. </font><font style="vertical-align: inherit;">Это говорит о том, что простой метод экспоненциального сглаживания обеспечивает адекватную прогностическую модель для количества осадков в Лондоне, которую, вероятно, нельзя улучшить. </font><font style="vertical-align: inherit;">Кроме того, предположения о том, что интервалы прогнозирования 80% и 95% были основаны на (что в ошибках прогноза нет автокорреляций, а ошибки прогноза обычно распределяются со средним нулем и постоянной дисперсией), вероятно, верны.</font></font></p>
+</div>
+<div class="section" id="holt-s-exponential-smoothing">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание Холта </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#holt-s-exponential-smoothing" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если у вас есть временной ряд, который можно описать с помощью аддитивной модели с возрастающим или убывающим трендом и без сезонности, вы можете использовать экспоненциальное сглаживание Холта для создания краткосрочных прогнозов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание Холта оценивает уровень и наклон в текущий момент времени. </font><font style="vertical-align: inherit;">Сглаживание контролируется двумя параметрами: альфа, для оценки уровня в текущий момент времени, и бета, для оценки наклона b компонента тренда в текущий момент времени. </font><font style="vertical-align: inherit;">Как и в случае простого экспоненциального сглаживания, параметры альфа и бета имеют значения от 0 до 1, а значения, близкие к 0, означают, что при самых последних наблюдениях при прогнозировании будущих значений уделяется мало внимания.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Примером временного ряда, который, вероятно, можно описать с использованием аддитивной модели с трендом и без сезонности, является временной ряд годового диаметра женских юбок на подоле с 1866 по 1911 год. Данные доступны в файле </font></font><a class="reference external" href="http://robjhyndman.com/tsdldata/roberts/skirts.dat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http: //robjhyndman.com/tsdldata/roberts/skirts.dat</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> (оригинальные данные Hipel и McLeod, 1994).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем прочитать и построить данные в R, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> skirts <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="s">"http://robjhyndman.com/tsdldata/roberts/skirts.dat"</span><span class="p">,</span>skip<span class="o">=</span><span class="m">5</span><span class="p">)</span>
+  Read <span class="m">46</span> items
+<span class="o">&gt;</span> skirtsseries <span class="o">&lt;-</span> ts<span class="p">(</span>skirts<span class="p">,</span>start<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1866</span><span class="p">))</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>skirtsseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image14" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image14.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из графика видно, что диаметр подола увеличился с 600 в 1866 году до 1050 в 1880 году, и что впоследствии диаметр подола уменьшился до 520 в 1911 году.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы делать прогнозы, мы можем подобрать прогнозирующую модель, используя функцию HoltWinters () в R. Чтобы использовать HoltWinters () для экспоненциального сглаживания Холта, нам нужно установить параметр gamma = FALSE (параметр гаммы используется для экспоненциального сглаживания Холта-Винтерса , как описано ниже).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, чтобы использовать экспоненциальное сглаживание Холта в соответствии с прогнозирующей моделью для диаметра кромки юбки, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> skirtsseriesforecasts <span class="o">&lt;-</span> HoltWinters<span class="p">(</span>skirtsseries<span class="p">,</span> gamma<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="o">&gt;</span> skirtsseriesforecasts
+  Smoothing parameters<span class="o">:</span>
+  alpha<span class="o">:</span>  <span class="m">0.8383481</span>
+  beta <span class="o">:</span>  <span class="m">1</span>
+  <span class="kp">gamma</span><span class="o">:</span>  <span class="kc">FALSE</span>
+  Coefficients<span class="o">:</span>
+    <span class="p">[,</span><span class="m">1</span><span class="p">]</span>
+  a <span class="m">529.308585</span>
+  b   <span class="m">5.690464</span>
+<span class="o">&gt;</span> skirtsseriesforecasts<span class="o">$</span>SSE
+  <span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">16954.18</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Расчетное значение альфа составляет 0,84, а бета - 1,00. </font><font style="vertical-align: inherit;">Они оба являются высокими, что говорит нам о том, что как оценка текущего значения уровня, так и наклона b компонента тренда основаны главным образом на самых последних наблюдениях во временном ряду. </font><font style="vertical-align: inherit;">Это имеет хороший интуитивный смысл, поскольку уровень и наклон временного ряда со временем довольно сильно меняются. </font><font style="vertical-align: inherit;">Значение суммы квадратов ошибок для ошибок прогноза в выборке составляет 16954.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем построить исходный временной ряд в виде черной линии, с прогнозируемыми значениями в виде красной линии поверх этого, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot<span class="p">(</span>skirtsseriesforecasts<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image15" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image15.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из рисунка видно, что прогнозы внутри выборки довольно хорошо согласуются с наблюдаемыми значениями, хотя они имеют тенденцию немного отставать от наблюдаемых значений.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">При желании вы можете указать начальные значения уровня и наклона b компонента тренда, используя аргументы «l.start» и «b.start» для функции HoltWinters (). </font><font style="vertical-align: inherit;">Обычно начальное значение уровня устанавливается равным первому значению во временном ряду (608 для данных юбок), а начальное значение наклона - второму значению минус первое значение (9 для данных юбок). </font><font style="vertical-align: inherit;">Например, чтобы подогнать прогностическую модель к данным кромки юбки, используя экспоненциальное сглаживание Холта, с начальными значениями 608 для уровня и 9 для наклона b компонента тренда, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> HoltWinters<span class="p">(</span>skirtsseries<span class="p">,</span> gamma<span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> l.start<span class="o">=</span><span class="m">608</span><span class="p">,</span> b.start<span class="o">=</span><span class="m">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Что касается простого экспоненциального сглаживания, мы можем составлять прогнозы на будущее время, не охватываемое исходным временным рядом, используя функцию прогноз.HoltWinters () в пакете «прогноз». </font><font style="vertical-align: inherit;">Например, наши данные временных рядов для кромок юбки были за 1866–1911 гг., Поэтому мы можем делать прогнозы на 1912–1930 гг. (Еще 19 точек данных) и строить их, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> skirtsseriesforecasts2 <span class="o">&lt;-</span> forecast.HoltWinters<span class="p">(</span>skirtsseriesforecasts<span class="p">,</span> h<span class="o">=</span><span class="m">19</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.forecast<span class="p">(</span>skirtsseriesforecasts2<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image16" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image16.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Прогнозы показаны синей линией, с интервалами прогнозирования 80% в виде заштрихованной области оранжевого цвета, а интервалы прогнозирования 95% в виде заштрихованной области желтого цвета.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Что касается простого экспоненциального сглаживания, мы можем проверить, можно ли улучшить прогностическую модель, проверив, показывают ли ошибки прогноза в выборке ненулевые автокорреляции с задержками 1-20. </font><font style="vertical-align: inherit;">Например, для данных подола юбки мы можем сделать коррелограмму и выполнить тест Льюнга-Бокса, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>skirtsseriesforecasts2<span class="o">$</span>residuals<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span> Box.test<span class="p">(</span>skirtsseriesforecasts2<span class="o">$</span>residuals<span class="p">,</span> lag<span class="o">=</span><span class="m">20</span><span class="p">,</span> type<span class="o">=</span><span class="s">"Ljung-Box"</span><span class="p">)</span>
+    Box<span class="o">-</span>Ljung test
+  data<span class="o">:</span>  skirtsseriesforecasts2<span class="o">$</span>residuals
+  X<span class="o">-</span>squared <span class="o">=</span> <span class="m">19.7312</span><span class="p">,</span> df <span class="o">=</span> <span class="m">20</span><span class="p">,</span> p<span class="o">-</span>value <span class="o">=</span> <span class="m">0.4749</span>
+</pre></div>
+</div>
+<p><img alt="image17" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image17.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Здесь коррелограмма показывает, что автокорреляция выборки для ошибок прогноза в выборке при лаге 5 превышает границы значимости. </font><font style="vertical-align: inherit;">Тем не менее, мы ожидаем, что одна из 20 автокорреляций для первых двадцати лагов превысит границы значимости 95% только по случайности. </font><font style="vertical-align: inherit;">Действительно, когда мы проводим тест Льюнга-Бокса, значение p составляет 0,47, что указывает на то, что имеется мало свидетельств ненулевых автокорреляций в погрешностях прогноза в выборке при лагах 1-20.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Что касается простого экспоненциального сглаживания, мы также должны проверить, что ошибки прогноза имеют постоянную дисперсию во времени и обычно распределяются со средним нулем. </font><font style="vertical-align: inherit;">Мы можем сделать это, составив временной график ошибок прогноза и гистограмму распределения ошибок прогноза с наложенной нормальной кривой:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>skirtsseriesforecasts2<span class="o">$</span>residuals<span class="p">)</span>            <span class="c1"># make a time plot</span>
+<span class="o">&gt;</span> plotForecastErrors<span class="p">(</span>skirtsseriesforecasts2<span class="o">$</span>residuals<span class="p">)</span> <span class="c1"># make a histogram</span>
+</pre></div>
+</div>
+<p><img alt="image20" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image20.png"></p>
+<p><img alt="image21" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image21.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Временной график ошибок прогноза показывает, что ошибки прогноза имеют примерно постоянную дисперсию во времени. </font><font style="vertical-align: inherit;">Гистограмма ошибок прогноза показывает, что вполне вероятно, что ошибки прогноза обычно распределяются со средним нулем и постоянной дисперсией.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Таким образом, тест Юнга-Бокса показывает, что имеется мало свидетельств автокорреляции в ошибках прогноза, в то время как график времени и гистограмма ошибок прогноза показывают, что вполне вероятно, что ошибки прогноза обычно распределяются со средним нулем и постоянной дисперсией. </font><font style="vertical-align: inherit;">Таким образом, мы можем сделать вывод, что экспоненциальное сглаживание Холта обеспечивает адекватную прогнозирующую модель для диаметров подола юбки, которая, вероятно, не может быть улучшена. </font><font style="vertical-align: inherit;">Кроме того, это означает, что предположения о том, что интервалы прогнозирования 80% и 95% были основаны, вероятно, верны.</font></font></p>
+</div>
+<div class="section" id="holt-winters-exponential-smoothing">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание Холта-Винтерса </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#holt-winters-exponential-smoothing" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если у вас есть временной ряд, который можно описать с использованием аддитивной модели с возрастающим или убывающим трендом и сезонностью, вы можете использовать экспоненциальное сглаживание Холта-Уинтерса для создания краткосрочных прогнозов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Экспоненциальное сглаживание Холта-Уинтерса оценивает уровень, наклон и сезонную составляющую в текущий момент времени. </font><font style="vertical-align: inherit;">Сглаживание контролируется тремя параметрами: альфа, бета и гамма для оценки уровня, наклона b компонента тренда и сезонного компонента, соответственно, в текущий момент времени. </font><font style="vertical-align: inherit;">Все параметры альфа, бета и гамма имеют значения от 0 до 1, а значения, близкие к 0, означают, что относительно недавних наблюдений при прогнозировании будущих значений уделяется относительно небольшое значение.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Примером временного ряда, который, вероятно, можно описать с использованием аддитивной модели с тенденцией и сезонностью, является временной ряд журнала ежемесячных продаж сувенирного магазина в курортном городке на пляже в Квинсленде, Австралия (обсуждалось выше):</font></font></p>
+<p><img alt="image5" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image5.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Для составления прогнозов мы можем подобрать прогностическую модель, используя функцию HoltWinters (). </font><font style="vertical-align: inherit;">Например, чтобы установить прогностическую модель для журнала ежемесячных продаж в сувенирном магазине, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> logsouvenirtimeseries <span class="o">&lt;-</span> <span class="kp">log</span><span class="p">(</span>souvenirtimeseries<span class="p">)</span>
+<span class="o">&gt;</span> souvenirtimeseriesforecasts <span class="o">&lt;-</span> HoltWinters<span class="p">(</span>logsouvenirtimeseries<span class="p">)</span>
+<span class="o">&gt;</span> souvenirtimeseriesforecasts
+  Holt<span class="o">-</span>Winters exponential smoothing with trend and additive seasonal component.
+  Smoothing parameters<span class="o">:</span>
+  alpha<span class="o">:</span>  <span class="m">0.413418</span>
+  beta <span class="o">:</span>  <span class="m">0</span>
+  <span class="kp">gamma</span><span class="o">:</span>  <span class="m">0.9561275</span>
+  Coefficients<span class="o">:</span>
+       <span class="p">[,</span><span class="m">1</span><span class="p">]</span>
+   a   <span class="m">10.37661961</span>
+   b    <span class="m">0.02996319</span>
+   s1  <span class="m">-0.80952063</span>
+   s2  <span class="m">-0.60576477</span>
+   s3   <span class="m">0.01103238</span>
+   s4  <span class="m">-0.24160551</span>
+   s5  <span class="m">-0.35933517</span>
+   s6  <span class="m">-0.18076683</span>
+   s7   <span class="m">0.07788605</span>
+   s8   <span class="m">0.10147055</span>
+   s9   <span class="m">0.09649353</span>
+   s10  <span class="m">0.05197826</span>
+   s11  <span class="m">0.41793637</span>
+   s12  <span class="m">1.18088423</span>
+<span class="o">&gt;</span> souvenirtimeseriesforecasts<span class="o">$</span>SSE
+  <span class="m">2.011491</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Расчетные значения альфа, бета и гамма составляют 0,41, 0,00 и 0,96 соответственно. </font><font style="vertical-align: inherit;">Значение альфа (0,41) является относительно низким, что указывает на то, что оценка уровня в текущий момент времени основана как на недавних наблюдениях, так и на некоторых наблюдениях в более отдаленном прошлом. </font><font style="vertical-align: inherit;">Значение бета равно 0,00, что указывает на то, что оценка наклона b компонента тренда не обновляется во временном ряду, а вместо этого устанавливается равной его начальному значению. </font><font style="vertical-align: inherit;">Это имеет хороший интуитивный смысл, так как уровень изменяется во временном ряду довольно немного, но наклон b компонента тренда остается примерно таким же. </font><font style="vertical-align: inherit;">Напротив, значение гаммы (0,96) является высоким, что указывает на то, что оценка сезонного компонента в текущий момент времени основана только на самых последних наблюдениях.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Что касается простого экспоненциального сглаживания и экспоненциального сглаживания Холта, мы можем построить исходный временной ряд в виде черной линии, с прогнозируемыми значениями в виде красной линии поверх этого:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot<span class="p">(</span>souvenirtimeseriesforecasts<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image22" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image22.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из графика видно, что экспоненциальный метод Холта-Уинтерса очень успешно предсказывает сезонные пики, которые происходят примерно в ноябре каждого года.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы делать прогнозы на будущее время, не включенное в исходный временной ряд, мы используем функцию «Forecast.HoltWinters ()» в пакете «прогноз». </font><font style="vertical-align: inherit;">Например, исходные данные о продажах сувениров за период с января 1987 года по декабрь 1993 года. Если бы мы хотели сделать прогнозы на январь 1994 года - декабрь 1998 года (еще 48 месяцев) и построить прогнозы, мы бы напечатали:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> souvenirtimeseriesforecasts2 <span class="o">&lt;-</span> forecast.HoltWinters<span class="p">(</span>souvenirtimeseriesforecasts<span class="p">,</span> h<span class="o">=</span><span class="m">48</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.forecast<span class="p">(</span>souvenirtimeseriesforecasts2<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image23" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image23.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Прогнозы показаны синей линией, а оранжевые и желтые заштрихованные области показывают интервалы прогнозирования 80% и 95% соответственно.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем исследовать, можно ли улучшить прогностическую модель, проверив, показывают ли ошибки прогноза в выборке ненулевые автокорреляции с задержками 1-20, сделав коррелограмму и выполнив тест Льюнга-Бокса:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>souvenirtimeseriesforecasts2<span class="o">$</span>residuals<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span> Box.test<span class="p">(</span>souvenirtimeseriesforecasts2<span class="o">$</span>residuals<span class="p">,</span> lag<span class="o">=</span><span class="m">20</span><span class="p">,</span> type<span class="o">=</span><span class="s">"Ljung-Box"</span><span class="p">)</span>
+  Box<span class="o">-</span>Ljung test
+  data<span class="o">:</span>  souvenirtimeseriesforecasts2<span class="o">$</span>residuals
+  X<span class="o">-</span>squared <span class="o">=</span> <span class="m">17.5304</span><span class="p">,</span> df <span class="o">=</span> <span class="m">20</span><span class="p">,</span> p<span class="o">-</span>value <span class="o">=</span> <span class="m">0.6183</span>
+</pre></div>
+</div>
+<p><img alt="image24" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image24.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Коррелограмма показывает, что автокорреляции для ошибок прогноза в выборке не превышают границ значимости для лагов 1-20. </font><font style="vertical-align: inherit;">Кроме того, значение p для теста Юнга-Бокса составляет 0,6, что указывает на то, что имеется мало свидетельств ненулевых автокорреляций при лагах 1-20.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем проверить, имеют ли ошибки прогноза постоянную дисперсию во времени и обычно распределяются со средним нулем, путем построения временного графика ошибок прогноза и гистограммы (с наложенной нормальной кривой):</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>souvenirtimeseriesforecasts2<span class="o">$</span>residuals<span class="p">)</span>            <span class="c1"># make a time plot</span>
+<span class="o">&gt;</span> plotForecastErrors<span class="p">(</span>souvenirtimeseriesforecasts2<span class="o">$</span>residuals<span class="p">)</span> <span class="c1"># make a histogram</span>
+</pre></div>
+</div>
+<p><img alt="image25" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image25.png">
+<img alt="image26" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image26.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из графика времени кажется вероятным, что ошибки прогноза имеют постоянную дисперсию во времени. </font><font style="vertical-align: inherit;">Из гистограммы ошибок прогноза кажется вероятным, что ошибки прогноза обычно распределяются со средним нулем.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Таким образом, имеется мало свидетельств автокорреляции с лагом 1-20 для ошибок прогноза, и, по-видимому, ошибки прогноза обычно распределяются со средним нулем и постоянной дисперсией во времени. </font><font style="vertical-align: inherit;">Это говорит о том, что экспоненциальное сглаживание Холт-Винтерса обеспечивает адекватную прогнозную модель журнала продаж в сувенирном магазине, который, вероятно, не может быть улучшен. </font><font style="vertical-align: inherit;">Кроме того, предположения, на которых основывались интервалы прогнозирования, вероятно, верны.</font></font></p>
+</div>
+</div>
+<div class="section" id="arima-models">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ARIMA Модели </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#arima-models" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Методы экспоненциального сглаживания полезны для составления прогнозов и не предполагают корреляции между последовательными значениями временных рядов. </font><font style="vertical-align: inherit;">Однако, если вы хотите сделать интервалы прогнозирования для прогнозов, выполненных с использованием методов экспоненциального сглаживания, интервалы прогнозирования требуют, чтобы ошибки прогноза были некоррелированными и обычно распределялись со средним нулем и постоянной дисперсией.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Хотя методы экспоненциального сглаживания не делают никаких предположений о корреляциях между последовательными значениями временных рядов, в некоторых случаях вы можете создать лучшую прогностическую модель, принимая во внимание корреляции в данных. </font><font style="vertical-align: inherit;">Модели авторегрессионного интегрированного скользящего среднего (ARIMA) включают в себя явную статистическую модель для нерегулярного компонента временного ряда, которая допускает ненулевые автокорреляции в нерегулярном компоненте.</font></font></p>
+<div class="section" id="differencing-a-time-series">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Дифференцирование временного ряда </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#differencing-a-time-series" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Модели ARIMA определены для стационарных временных рядов. </font><font style="vertical-align: inherit;">Поэтому, если вы начинаете с нестационарного временного ряда, вам сначала нужно будет «разнести» временной ряд, пока не получите стационарный временной ряд. </font><font style="vertical-align: inherit;">Если для получения стационарного ряда требуется разность временного ряда d раз, то у вас есть модель ARIMA (p, d, q), где d - это используемый порядок разностей.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы можете различать временные ряды, используя функцию «diff ()» в R. Например, временной ряд годового диаметра женских юбок на подоле с 1866 по 1911 год не является в среднем стационарным, так как уровень сильно меняется через некоторое время:</font></font></p>
+<p><img alt="image14" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image14.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем различить временные ряды (которые мы сохранили в «skirtsseries», см. Выше) один раз и построить разностный ряд, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> skirtsseriesdiff1 <span class="o">&lt;-</span> <span class="kp">diff</span><span class="p">(</span>skirtsseries<span class="p">,</span> differences<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>skirtsseriesdiff1<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image27" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image27.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Результирующий временной ряд первых различий (выше), по-видимому, не является стационарным в среднем. </font><font style="vertical-align: inherit;">Следовательно, мы можем различать временные ряды дважды, чтобы увидеть, дает ли это нам стационарный временной ряд:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> skirtsseriesdiff2 <span class="o">&lt;-</span> <span class="kp">diff</span><span class="p">(</span>skirtsseries<span class="p">,</span> differences<span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>skirtsseriesdiff2<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image28" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image28.png"></p>
+<div class="sidebar">
+<p class="first sidebar-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Формальные тесты на стационарность</font></font></p>
+<p class="last"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Формальные тесты на стационарность, называемые «единичными корневыми тестами», доступны в пакете fUnitRoots, доступном в CRAN, но здесь обсуждаться не будут.</font></font></p>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Временной ряд вторых разностей (выше), кажется, является постоянным в среднем и дисперсии, так как уровень ряда остается примерно постоянным во времени, а дисперсия ряда кажется примерно постоянной во времени. </font><font style="vertical-align: inherit;">Таким образом, оказывается, что нам необходимо дважды отличать временные ряды от диаметра юбок, чтобы получить стационарный ряд.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если вам необходимо различать исходные данные временного ряда d раз для получения стационарного временного ряда, это означает, что вы можете использовать модель ARIMA (p, d, q) для своего временного ряда, где d - это порядок используемых разностей , </font><font style="vertical-align: inherit;">Например, для временных рядов диаметра женских юбок нам пришлось дважды различать временные ряды, и поэтому порядок дифференцирования (d) равен 2. Это означает, что вы можете использовать ARIMA (p, 2, q) модель для вашего временного ряда. </font><font style="vertical-align: inherit;">Следующим шагом является выяснение значений p и q для модели ARIMA.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Другим примером является временной ряд возраста смерти последовательных королей Англии (см. Выше):</font></font></p>
+<p><img alt="image1" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image1.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из графика времени (выше) мы видим, что временной ряд не является стационарным в среднем. </font><font style="vertical-align: inherit;">Чтобы рассчитать временной ряд первых различий и построить его, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> kingtimeseriesdiff1 <span class="o">&lt;-</span> <span class="kp">diff</span><span class="p">(</span>kingstimeseries<span class="p">,</span> differences<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>kingtimeseriesdiff1<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image29" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image29.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Временные ряды первых различий кажутся стационарными по среднему значению и дисперсии, и поэтому модель ARIMA (p, 1, q), вероятно, подходит для временного ряда возраста смерти королей Англии. </font><font style="vertical-align: inherit;">Взяв временные ряды первых различий, мы удалили компонент тренда временных рядов времен смерти царей, и у нас остался нерегулярный компонент. </font><font style="vertical-align: inherit;">Теперь мы можем проверить, существуют ли корреляции между последовательными членами этого нерегулярного компонента; </font><font style="vertical-align: inherit;">если это так, это могло бы помочь нам создать прогностическую модель для эпох смерти царей.</font></font></p>
+</div>
+<div class="section" id="selecting-a-candidate-arima-model">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выбор модели кандидата ARIMA </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#selecting-a-candidate-arima-model" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если ваш временной ряд является стационарным, или если вы преобразовали его в стационарный временной ряд, различая d раз, следующим шагом является выбор подходящей модели ARIMA, что означает поиск значений наиболее подходящих значений p и q для ARIMA. (p, d, q) модель. </font><font style="vertical-align: inherit;">Для этого обычно необходимо изучить коррелограмму и частичную коррелограмму стационарного временного ряда.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы построить коррелограмму и частичную коррелограмму, мы можем использовать функции «acf ()» и «pacf ()» в R соответственно. </font><font style="vertical-align: inherit;">Чтобы получить действительные значения автокорреляций и частичных автокорреляций, мы устанавливаем «plot = FALSE» в функциях «acf ()» и «pacf ()».</font></font></p>
+<div class="section" id="example-of-the-ages-at-death-of-the-kings-of-england">
+<h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример эпохи смерти королей Англии </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#example-of-the-ages-at-death-of-the-kings-of-england" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, чтобы построить коррелограмму для лагов 1–20 разного временного ряда возрастов после смерти королей Англии, и получить значения автокорреляций, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>kingtimeseriesdiff1<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>             <span class="c1"># plot a correlogram</span>
+<span class="o">&gt;</span> acf<span class="p">(</span>kingtimeseriesdiff1<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">,</span> plot<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="c1"># get the autocorrelation values</span>
+  Autocorrelations of series <span class="s">'kingtimeseriesdiff1'</span><span class="p">,</span> by lag
+     <span class="m">0</span>      <span class="m">1</span>      <span class="m">2</span>      <span class="m">3</span>      <span class="m">4</span>      <span class="m">5</span>      <span class="m">6</span>      <span class="m">7</span>      <span class="m">8</span>      <span class="m">9</span>     <span class="m">10</span>
+  <span class="m">1.000</span> <span class="m">-0.360</span> <span class="m">-0.162</span> <span class="m">-0.050</span>  <span class="m">0.227</span> <span class="m">-0.042</span> <span class="m">-0.181</span>  <span class="m">0.095</span>  <span class="m">0.064</span> <span class="m">-0.116</span> <span class="m">-0.071</span>
+     <span class="m">11</span>     <span class="m">12</span>     <span class="m">13</span>     <span class="m">14</span>     <span class="m">15</span>     <span class="m">16</span>     <span class="m">17</span>     <span class="m">18</span>     <span class="m">19</span>     <span class="m">20</span>
+  <span class="m">0.206</span> <span class="m">-0.017</span> <span class="m">-0.212</span>  <span class="m">0.130</span>  <span class="m">0.114</span> <span class="m">-0.009</span> <span class="m">-0.192</span>  <span class="m">0.072</span>  <span class="m">0.113</span> <span class="m">-0.093</span>
+</pre></div>
+</div>
+<p><img alt="image30" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image30.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из коррелограммы мы видим, что автокорреляция в лаге 1 (-0,360) превышает границы значимости, но все другие автокорреляции между лагами 1-20 не превышают границ значимости.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы построить частичную коррелограмму для лагов 1-20 для разностных временных рядов возрастов на момент смерти английских королей и получить значения частичных автокорреляций, мы используем функцию «pacf ()», набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> pacf<span class="p">(</span>kingtimeseriesdiff1<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>             <span class="c1"># plot a partial correlogram</span>
+<span class="o">&gt;</span> pacf<span class="p">(</span>kingtimeseriesdiff1<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">,</span> plot<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="c1"># get the partial autocorrelation values</span>
+  Partial autocorrelations of series <span class="s">'kingtimeseriesdiff1'</span><span class="p">,</span> by lag
+    <span class="m">1</span>      <span class="m">2</span>      <span class="m">3</span>      <span class="m">4</span>      <span class="m">5</span>      <span class="m">6</span>      <span class="m">7</span>      <span class="m">8</span>      <span class="m">9</span>     <span class="m">10</span>     <span class="m">11</span>
+  <span class="m">-0.360</span> <span class="m">-0.335</span> <span class="m">-0.321</span>  <span class="m">0.005</span>  <span class="m">0.025</span> <span class="m">-0.144</span> <span class="m">-0.022</span> <span class="m">-0.007</span> <span class="m">-0.143</span> <span class="m">-0.167</span>  <span class="m">0.065</span>
+    <span class="m">12</span>     <span class="m">13</span>     <span class="m">14</span>     <span class="m">15</span>     <span class="m">16</span>     <span class="m">17</span>     <span class="m">18</span>     <span class="m">19</span>     <span class="m">20</span>
+   <span class="m">0.034</span> <span class="m">-0.161</span>  <span class="m">0.036</span>  <span class="m">0.066</span>  <span class="m">0.081</span> <span class="m">-0.005</span> <span class="m">-0.027</span> <span class="m">-0.006</span> <span class="m">-0.037</span>
+</pre></div>
+</div>
+<p><img alt="image31" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image31.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Частичная коррелограмма показывает, что частичные автокорреляции в лагах 1, 2 и 3 превышают границы значимости, являются отрицательными и медленно уменьшаются по величине с увеличением отставания (лаг 1: -0,360, лаг 2: -0,335, лаг 3: -0,321 ). </font><font style="vertical-align: inherit;">Частичные автокорреляции сводятся к нулю после отставания 3.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Поскольку коррелограмма равна нулю после отставания 1, а частичная коррелограмма сводится к нулю после отставания 3, это означает, что следующие модели ARMA (авторегрессионная скользящая средняя) возможны для временных рядов первых различий:</font></font></p>
+<ul class="simple">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">модель ARMA (3,0), то есть авторегрессионная модель порядка p = 3, поскольку частичная автокоррелограмма равна нулю после отставания 3, а автокоррелограмма сводится к нулю (хотя, возможно, слишком резко, чтобы эта модель не подходила)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">модель ARMA (0,1), то есть модель скользящего среднего порядка q = 1, поскольку автокоррелограмма равна нулю после отставания 1, а частичная автокоррелограмма сводится к нулю</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">модель ARMA (p, q), то есть смешанная модель с p и q больше 0, поскольку автокоррелограмма и частичная коррелограмма сужаются к нулю (хотя коррелограмма, вероятно, слишком резко сужается к нулю, чтобы эта модель была подходящей )</font></font></li>
+</ul>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы используем принцип экономии, чтобы решить, какая модель лучше: то есть, мы предполагаем, что модель с наименьшим количеством параметров является лучшей. </font><font style="vertical-align: inherit;">Модель ARMA (3,0) имеет 3 параметра, модель ARMA (0,1) имеет 1 параметр, а модель ARMA (p, q) имеет как минимум 2 параметра. </font><font style="vertical-align: inherit;">Поэтому модель ARMA (0,1) принимается за лучшую модель.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Модель ARMA (0,1) - это модель скользящего среднего порядка 1 или модели MA (1). </font><font style="vertical-align: inherit;">Эту модель можно записать в виде: X_t - mu = Z_t - (theta * Z_t-1), где X_t - стационарный временной ряд, который мы изучаем (первая разная серия возрастов на момент смерти английских королей), mu - среднее значение временной ряд X_t, Z_t - белый шум со средним нулем и постоянной дисперсией, а тета - это параметр, который можно оценить.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Модель MA (скользящее среднее) обычно используется для моделирования временных рядов, которые показывают кратковременные зависимости между последовательными наблюдениями. </font><font style="vertical-align: inherit;">Интуитивно понятно, что модель МА может быть использована для описания нерегулярного компонента во временном ряду возрастов на момент смерти английских королей, поскольку мы можем ожидать, что возраст на момент смерти конкретного английского короля окажет некоторое влияние на возраст при смерти следующего короля или двух, но не сильно влияет на возраст при смерти королей, которые правят намного дольше после этого.</font></font></p>
+<div class="sidebar">
+<p class="first sidebar-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ярлык: функция auto.arima ()</font></font></p>
+<p class="last"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Функция auto.arima () может использоваться для поиска подходящей модели ARIMA, например, введите «library (прогноз)», затем «auto.arima (kings)». </font><font style="vertical-align: inherit;">Выходные данные говорят, что подходящей моделью является ARIMA (0,1,1).</font></font></p>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Поскольку модель ARMA (0,1) (с p = 0, q = 1) считается лучшей моделью-кандидатом для временного ряда первых различий в возрасте после смерти английских королей, то исходный временной ряд возраст смерти может быть смоделирован с использованием модели ARIMA (0,1,1) (с p = 0, d = 1, q = 1, где d - порядок требуемой разности).</font></font></p>
+</div>
+<div class="section" id="example-of-the-volcanic-dust-veil-in-the-northern-hemisphere">
+<h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример вулканической пылевой завесы в северном полушарии </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#example-of-the-volcanic-dust-veil-in-the-northern-hemisphere" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Давайте рассмотрим другой пример выбора подходящей модели ARIMA. </font><font style="vertical-align: inherit;">Файл файла </font></font><a class="reference external" href="http://robjhyndman.com/tsdldata/annual/dvi.dat"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://robjhyndman.com/tsdldata/annual/dvi.dat</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> содержит данные об индексе завесы вулканической пыли в северном полушарии за 1500-1969 гг. (Оригинальные данные из Hipel and Mcleod, 1994). </font><font style="vertical-align: inherit;">Это мера воздействия выбросов вулканов пыли и аэрозолей в окружающую среду. </font><font style="vertical-align: inherit;">Мы можем прочитать его в R и построить график времени, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> volcanodust <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="s">"http://robjhyndman.com/tsdldata/annual/dvi.dat"</span><span class="p">,</span> skip<span class="o">=</span><span class="m">1</span><span class="p">)</span>
+  Read <span class="m">470</span> items
+<span class="o">&gt;</span> volcanodustseries <span class="o">&lt;-</span> ts<span class="p">(</span>volcanodust<span class="p">,</span>start<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">1500</span><span class="p">))</span>
+<span class="o">&gt;</span> plot.ts<span class="p">(</span>volcanodustseries<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image32" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image32.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из временного графика видно, что случайные флуктуации во временных рядах примерно постоянны по размеру во времени, поэтому аддитивная модель, вероятно, подходит для описания этого временного ряда.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Кроме того, временные ряды кажутся стационарными по среднему значению и дисперсии, поскольку их уровень и дисперсия кажутся примерно постоянными во времени. </font><font style="vertical-align: inherit;">Следовательно, нам не нужно различать эту серию, чтобы соответствовать модели ARIMA, но мы можем подогнать модель ARIMA к исходной серии (порядок требуемой разности d здесь равен нулю).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Теперь мы можем построить коррелограмму и частичную коррелограмму для лагов 1-20, чтобы выяснить, какую модель ARIMA использовать:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>volcanodustseries<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>             <span class="c1"># plot a correlogram</span>
+<span class="o">&gt;</span> acf<span class="p">(</span>volcanodustseries<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">,</span> plot<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span> <span class="c1"># get the values of the autocorrelations</span>
+  Autocorrelations of series <span class="s">'volcanodustseries'</span><span class="p">,</span> by lag
+    <span class="m">0</span>      <span class="m">1</span>      <span class="m">2</span>      <span class="m">3</span>      <span class="m">4</span>      <span class="m">5</span>      <span class="m">6</span>      <span class="m">7</span>      <span class="m">8</span>      <span class="m">9</span>     <span class="m">10</span>
+  <span class="m">1.000</span>  <span class="m">0.666</span>  <span class="m">0.374</span>  <span class="m">0.162</span>  <span class="m">0.046</span>  <span class="m">0.017</span> <span class="m">-0.007</span>  <span class="m">0.016</span>  <span class="m">0.021</span>  <span class="m">0.006</span>  <span class="m">0.010</span>
+    <span class="m">11</span>     <span class="m">12</span>     <span class="m">13</span>     <span class="m">14</span>     <span class="m">15</span>     <span class="m">16</span>     <span class="m">17</span>     <span class="m">18</span>     <span class="m">19</span>     <span class="m">20</span>
+  <span class="m">0.004</span>  <span class="m">0.024</span>  <span class="m">0.075</span>  <span class="m">0.082</span>  <span class="m">0.064</span>  <span class="m">0.039</span>  <span class="m">0.005</span>  <span class="m">0.028</span>  <span class="m">0.108</span>  <span class="m">0.182</span>
+</pre></div>
+</div>
+<p><img alt="image33" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image33.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из коррелограммы мы видим, что автокорреляции для лагов 1, 2 и 3 превышают границы значимости и что автокорреляции уходят в ноль после лага 3. Автокорреляции для лагов 1, 2, 3 положительны и уменьшаются по величине с увеличением лаг (лаг 1: 0,666, лаг 2: 0,374, лаг 3: 0,162).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Автокорреляция для лагов 19 и 20 также превышает границы значимости, но, скорее всего, это связано с случайностью, поскольку они просто превышают границы значимости (особенно для лагов 19), автокорреляции для лагов 4-18 не превышают значимости. границы, и мы ожидаем, что 1 из 20 лагов превысит границы значимости 95% только по случайности.</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> pacf<span class="p">(</span>volcanodustseries<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span> pacf<span class="p">(</span>volcanodustseries<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">,</span> plot<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+  Partial autocorrelations of series <span class="s">'volcanodustseries'</span><span class="p">,</span> by lag
+    <span class="m">1</span>      <span class="m">2</span>      <span class="m">3</span>      <span class="m">4</span>      <span class="m">5</span>      <span class="m">6</span>      <span class="m">7</span>      <span class="m">8</span>      <span class="m">9</span>     <span class="m">10</span>     <span class="m">11</span>
+  <span class="m">0.666</span> <span class="m">-0.126</span> <span class="m">-0.064</span> <span class="m">-0.005</span>  <span class="m">0.040</span> <span class="m">-0.039</span>  <span class="m">0.058</span> <span class="m">-0.016</span> <span class="m">-0.025</span>  <span class="m">0.028</span> <span class="m">-0.008</span>
+    <span class="m">12</span>     <span class="m">13</span>     <span class="m">14</span>     <span class="m">15</span>     <span class="m">16</span>     <span class="m">17</span>     <span class="m">18</span>     <span class="m">19</span>     <span class="m">20</span>
+  <span class="m">0.036</span>  <span class="m">0.082</span> <span class="m">-0.025</span> <span class="m">-0.014</span>  <span class="m">0.008</span> <span class="m">-0.025</span>  <span class="m">0.073</span>  <span class="m">0.131</span>  <span class="m">0.063</span>
+</pre></div>
+</div>
+<p><img alt="image34" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image34.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Из частичной автокоррелограммы мы видим, что частичная автокорреляция в лаге 1 является положительной и превышает границы значимости (0,666), в то время как частичная автокорреляция в лаге 2 является отрицательной и также превышает границы значимости (-0,126). </font><font style="vertical-align: inherit;">Частичные автокорреляции сводятся к нулю после отставания 2.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Так как коррелограмма сводится к нулю после задержки 3, а частичная коррелограмма равна нулю после задержки 2, для временного ряда возможны следующие модели ARMA:</font></font></p>
+<ul class="simple">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">модель ARMA (2,0), так как частичная автокоррелограмма равна нулю после лага 2, а коррелограмма стремится к нулю после лага 3, а частичная коррелограмма равна нулю после лага 2</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">модель ARMA (0,3), поскольку автокоррелограмма равна нулю после отставания 3, а частичная коррелограмма сводится к нулю (хотя, возможно, слишком резко, чтобы эта модель не подходила)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">смешанная модель ARMA (p, q), поскольку коррелограмма и частичная коррелограмма сужаются к нулю (хотя частичная коррелограмма, возможно, слишком резко сужается для этой модели)</font></font></li>
+</ul>
+<div class="sidebar">
+<p class="first sidebar-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ярлык: функция auto.arima ()</font></font></p>
+<p class="last"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Опять же, мы можем использовать auto.arima (), чтобы найти подходящую модель, набрав «auto.arima (volcanodust)», что дает нам ARIMA (1,0,2), которая имеет 3 параметра. </font><font style="vertical-align: inherit;">Однако для выбора модели могут использоваться разные критерии (см. Страницу справки auto.arima ()). </font><font style="vertical-align: inherit;">Если мы используем критерий «bic», который штрафует количество параметров, мы получим ARIMA (2,0,0), то есть ARMA (2,0): «auto.arima (volcanodust, ic =» bic »)» ,</font></font></p>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Модель ARMA (2,0) имеет 2 параметра, модель ARMA (0,3) имеет 3 параметра, а модель ARMA (p, q) имеет как минимум 2 параметра. </font><font style="vertical-align: inherit;">Поэтому, используя принцип экономии, модель ARMA (2,0) и модель ARMA (p, q) являются одинаково хорошими моделями-кандидатами.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Модель ARMA (2,0) - это модель авторегрессии порядка 2 или модель AR (2). </font><font style="vertical-align: inherit;">Эта модель может быть записана как: X_t - mu = (Beta1 * (X_t-1 - mu)) + (Beta2 * (Xt-2 - mu)) + Z_t, где X_t - стационарный временной ряд, который мы изучаем (время ряд индексов завесы вулканической пыли), mu - среднее временного ряда X_t, Beta1 и Beta2 - параметры, которые необходимо оценить, и Z_t - белый шум со средним нулем и постоянной дисперсией.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Модель AR (авторегрессия) обычно используется для моделирования временных рядов, которые показывают более долгосрочные зависимости между последовательными наблюдениями. </font><font style="vertical-align: inherit;">Интуитивно понятно, что модель AR можно использовать для описания временных рядов индекса вулканической пыли, поскольку мы ожидаем, что уровни вулканической пыли и аэрозоля в течение одного года окажут влияние на уровни в последующие годы, поскольку пыль и аэрозоли маловероятны быстро исчезнуть.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Если модель ARMA (2,0) (с p = 2, q = 0) используется для моделирования временных рядов индекса вулканической пыли, это будет означать, что можно использовать модель ARIMA (2,0,0) ( с p = 2, d = 0, q = 0, где d - порядок требуемой разности). </font><font style="vertical-align: inherit;">Аналогичным образом, если используется смешанная модель ARMA (p, q), где p и q оба больше нуля, можно использовать модель ARIMA (p, 0, q).</font></font></p>
+</div>
+</div>
+<div class="section" id="forecasting-using-an-arima-model">
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Прогнозирование с использованием модели ARIMA </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#forecasting-using-an-arima-model" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h3>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">После того, как вы выбрали модель ARIMA (p, d, q) с наилучшими кандидатами для данных временных рядов, вы можете оценить параметры этой модели ARIMA и использовать ее в качестве прогнозной модели для составления прогнозов на будущие значения ваших временных рядов.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы можете оценить параметры модели ARIMA (p, d, q), используя функцию «arima ()» в R.</font></font></p>
+<div class="section" id="id2">
+<h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример эпохи смерти королей Англии </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#id2" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, мы обсуждали выше, что модель ARIMA (0,1,1) кажется правдоподобной моделью для возрастов при смерти королей Англии. </font><font style="vertical-align: inherit;">Вы можете указать значения p, d и q в модели ARIMA, используя аргумент «order» функции «arima ()» в R. Чтобы подогнать модель ARIMA (p, d, q) к этому временному ряду ( который мы сохранили в переменной «kingstimeseries», см. выше), набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> kingstimeseriesarima <span class="o">&lt;-</span> arima<span class="p">(</span>kingstimeseries<span class="p">,</span> order<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span> <span class="c1"># fit an ARIMA(0,1,1) model</span>
+<span class="o">&gt;</span> kingstimeseriesarima
+  ARIMA<span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+  Coefficients<span class="o">:</span>
+          ma1
+        <span class="m">-0.7218</span>
+  s.e.   <span class="m">0.1208</span>
+  sigma<span class="o">^</span><span class="m">2</span> estimated as <span class="m">230.4</span><span class="o">:</span>  log likelihood <span class="o">=</span> <span class="m">-170.06</span>
+  AIC <span class="o">=</span> <span class="m">344.13</span>   AICc <span class="o">=</span> <span class="m">344.44</span>   BIC <span class="o">=</span> <span class="m">347.56</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как упоминалось выше, если мы подгоняем модель ARIMA (0,1,1) к нашему временному ряду, это означает, что мы подгоняем модель ARMA (0,1) к временному ряду первых отличий. </font><font style="vertical-align: inherit;">Модель ARMA (0,1) может быть записана в виде X_t - mu = Z_t - (theta * Z_t-1), где theta - это параметр, подлежащий оценке. </font><font style="vertical-align: inherit;">Исходя из результатов функции «arima ()» (см. Выше), оценочное значение тета (заданное как «ma1» на выходе R) составляет -0,7218 в случае использования модели ARIMA (0,1,1) к временному ряду веков на смерть королей.</font></font></p>
+<div class="sidebar">
+<p class="first sidebar-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Указание уровня достоверности для интервалов прогнозирования</font></font></p>
+<p class="last"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы можете указать уровень достоверности для интервалов прогнозирования в прогнозе. Арима () с помощью аргумента «уровень». </font><font style="vertical-align: inherit;">Например, чтобы получить интервал прогнозирования 99,5%, мы должны набрать «прогноз. Арима (kingstimeseriesarima, h = 5, уровень = c (99,5))».</font></font></p>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Затем мы можем использовать модель ARIMA для составления прогнозов для будущих значений временного ряда, используя функцию «Forecast.Arima ()» в пакете «прогноз» R. </font><font style="vertical-align: inherit;">Например, чтобы предсказать возраст смерти следующих пяти английских королей, мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kn">library</span><span class="p">(</span><span class="s">"forecast"</span><span class="p">)</span> <span class="c1"># load the "forecast" R library</span>
+<span class="o">&gt;</span> kingstimeseriesforecasts <span class="o">&lt;-</span> forecast.Arima<span class="p">(</span>kingstimeseriesarima<span class="p">,</span> h<span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="o">&gt;</span> kingstimeseriesforecasts
+     Point Forecast    Lo <span class="m">80</span>    Hi <span class="m">80</span>    Lo <span class="m">95</span>     Hi <span class="m">95</span>
+  <span class="m">43</span>       <span class="m">67.75063</span> <span class="m">48.29647</span> <span class="m">87.20479</span> <span class="m">37.99806</span>  <span class="m">97.50319</span>
+  <span class="m">44</span>       <span class="m">67.75063</span> <span class="m">47.55748</span> <span class="m">87.94377</span> <span class="m">36.86788</span>  <span class="m">98.63338</span>
+  <span class="m">45</span>       <span class="m">67.75063</span> <span class="m">46.84460</span> <span class="m">88.65665</span> <span class="m">35.77762</span>  <span class="m">99.72363</span>
+  <span class="m">46</span>       <span class="m">67.75063</span> <span class="m">46.15524</span> <span class="m">89.34601</span> <span class="m">34.72333</span> <span class="m">100.77792</span>
+  <span class="m">47</span>       <span class="m">67.75063</span> <span class="m">45.48722</span> <span class="m">90.01404</span> <span class="m">33.70168</span> <span class="m">101.79958</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Оригинальный временной ряд для английских королей включает в себя возраст на момент смерти 42 английских королей. </font><font style="vertical-align: inherit;">Функцияcast.Arima () дает нам прогноз возраста смерти следующих пяти английских королей (короли 43-47), а также интервалы прогнозирования 80% и 95% для этих прогнозов. </font><font style="vertical-align: inherit;">Возраст смерти 42-го английского короля был 56 лет (последнее наблюдаемое значение в нашем временном ряду), а модель ARIMA дает прогнозируемый возраст смерти следующих пяти королей как 67,8 года.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем построить график наблюдаемых возрастов смерти для первых 42 королей, а также возрастов, которые можно было бы прогнозировать для этих 42 королей и для следующих 5 королей, используя нашу модель ARIMA (0,1,1), набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.forecast<span class="p">(</span>kingstimeseriesforecasts<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image35" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image35.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как и в случае моделей экспоненциального сглаживания, целесообразно выяснить, распределяются ли ошибки прогноза модели ARIMA со средним нулем и постоянной дисперсией, и являются ли корреляции между последовательными ошибками прогноза.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Например, мы можем сделать коррелограмму ошибок прогноза для нашей модели ARIMA (0,1,1) для возрастов после смерти королей и выполнить тест Льюнга-Бокса для лагов 1-20, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>kingstimeseriesforecasts<span class="o">$</span>residuals<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span> Box.test<span class="p">(</span>kingstimeseriesforecasts<span class="o">$</span>residuals<span class="p">,</span> lag<span class="o">=</span><span class="m">20</span><span class="p">,</span> type<span class="o">=</span><span class="s">"Ljung-Box"</span><span class="p">)</span>
+  Box<span class="o">-</span>Ljung test
+  data<span class="o">:</span>  kingstimeseriesforecasts<span class="o">$</span>residuals
+  X<span class="o">-</span>squared <span class="o">=</span> <span class="m">13.5844</span><span class="p">,</span> df <span class="o">=</span> <span class="m">20</span><span class="p">,</span> p<span class="o">-</span>value <span class="o">=</span> <span class="m">0.851</span>
+</pre></div>
+</div>
+<p><img alt="image36" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image36.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Поскольку коррелограмма показывает, что ни одна из выборочных автокорреляций для лагов 1-20 не превышает границ значимости, а значение p для теста Юнга-Бокса равно 0,9, мы можем заключить, что существует очень мало доказательств ненулевых автокорреляций в ошибки прогноза при лагах 1-20.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы выяснить, нормально ли распределяются ошибки прогноза со средним нулем и постоянной дисперсией, мы можем составить график времени и гистограмму (с наложенной нормальной кривой) ошибок прогноза:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>kingstimeseriesforecasts<span class="o">$</span>residuals<span class="p">)</span>            <span class="c1"># make time plot of forecast errors</span>
+<span class="o">&gt;</span> plotForecastErrors<span class="p">(</span>kingstimeseriesforecasts<span class="o">$</span>residuals<span class="p">)</span> <span class="c1"># make a histogram</span>
+</pre></div>
+</div>
+<p><img alt="image37" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image37.png"></p>
+<p><img alt="image38" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image38.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Временной график ошибок прогноза в выборке показывает, что дисперсия ошибок прогноза кажется примерно постоянной во времени (хотя, возможно, разница во второй половине временного ряда несколько выше). </font><font style="vertical-align: inherit;">Гистограмма временного ряда показывает, что ошибки прогноза примерно нормально распределены, а среднее значение близко к нулю. </font><font style="vertical-align: inherit;">Поэтому вполне вероятно, что ошибки прогноза обычно распределяются со средним нулем и постоянной дисперсией.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Поскольку последовательные ошибки прогноза, по-видимому, не коррелируют, а ошибки прогноза, по-видимому, обычно распределяются со средним нулем и постоянной дисперсией, ARIMA (0,1,1), по-видимому, обеспечивает адекватную прогностическую модель для возрастов на момент смерти Английские короли</font></font></p>
+</div>
+<div class="section" id="id3">
+<h4><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Пример вулканической пылевой завесы в северном полушарии </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#id3" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Выше мы обсуждали, что подходящей моделью ARIMA для временного ряда индекса вулканической пыли может быть модель ARIMA (2,0,0). </font><font style="vertical-align: inherit;">Чтобы подогнать модель ARIMA (2,0,0) к этому временному ряду, мы можем набрать:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> volcanodustseriesarima <span class="o">&lt;-</span> arima<span class="p">(</span>volcanodustseries<span class="p">,</span> order<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">))</span>
+<span class="o">&gt;</span> volcanodustseriesarima
+  ARIMA<span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">)</span> with non<span class="o">-</span>zero <span class="kp">mean</span>
+  Coefficients<span class="o">:</span>
+     ar1      ar2  intercept
+  <span class="m">0.7533</span>  <span class="m">-0.1268</span>    <span class="m">57.5274</span>
+  s.e.  <span class="m">0.0457</span>   <span class="m">0.0458</span>     <span class="m">8.5958</span>
+  sigma<span class="o">^</span><span class="m">2</span> estimated as <span class="m">4870</span><span class="o">:</span>  log likelihood <span class="o">=</span> <span class="m">-2662.54</span>
+  AIC <span class="o">=</span> <span class="m">5333.09</span>   AICc <span class="o">=</span> <span class="m">5333.17</span>   BIC <span class="o">=</span> <span class="m">5349.7</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Как упоминалось выше, модель ARIMA (2,0,0) может быть записана как: записано как: X_t - mu = (Beta1 * (X_t-1 - mu)) + (Beta2 * (Xt-2 - mu)) + Z_t, где Beta1 и Beta2 являются параметрами для оценки. </font><font style="vertical-align: inherit;">Выходные данные функции arima () говорят нам, что Beta1 и Beta2 оцениваются здесь как 0.7533 и -0.1268 (заданные как ar1 и ar2 в выходных данных arima ()).</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Теперь, когда мы установили модель ARIMA (2,0,0), мы можем использовать модель «Forecast.ARIMA ()» для прогнозирования будущих значений индекса вулканической пыли. </font><font style="vertical-align: inherit;">Исходные данные включают 1500-1969 годы. </font><font style="vertical-align: inherit;">Чтобы сделать прогнозы на 1970-2000 годы (еще 31 год), мы набираем:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> volcanodustseriesforecasts <span class="o">&lt;-</span> forecast.Arima<span class="p">(</span>volcanodustseriesarima<span class="p">,</span> h<span class="o">=</span><span class="m">31</span><span class="p">)</span>
+<span class="o">&gt;</span> volcanodustseriesforecasts
+  Point      Forecast     Lo <span class="m">80</span>    Hi <span class="m">80</span>     Lo <span class="m">95</span>    Hi <span class="m">95</span>
+  <span class="m">1970</span>       <span class="m">21.48131</span> <span class="m">-67.94860</span> <span class="m">110.9112</span> <span class="m">-115.2899</span> <span class="m">158.2526</span>
+  <span class="m">1971</span>       <span class="m">37.66419</span> <span class="m">-74.30305</span> <span class="m">149.6314</span> <span class="m">-133.5749</span> <span class="m">208.9033</span>
+  <span class="m">1972</span>       <span class="m">47.13261</span> <span class="m">-71.57070</span> <span class="m">165.8359</span> <span class="m">-134.4084</span> <span class="m">228.6737</span>
+  <span class="m">1973</span>       <span class="m">52.21432</span> <span class="m">-68.35951</span> <span class="m">172.7881</span> <span class="m">-132.1874</span> <span class="m">236.6161</span>
+  <span class="m">1974</span>       <span class="m">54.84241</span> <span class="m">-66.22681</span> <span class="m">175.9116</span> <span class="m">-130.3170</span> <span class="m">240.0018</span>
+  <span class="m">1975</span>       <span class="m">56.17814</span> <span class="m">-65.01872</span> <span class="m">177.3750</span> <span class="m">-129.1765</span> <span class="m">241.5327</span>
+  <span class="m">1976</span>       <span class="m">56.85128</span> <span class="m">-64.37798</span> <span class="m">178.0805</span> <span class="m">-128.5529</span> <span class="m">242.2554</span>
+  <span class="m">1977</span>       <span class="m">57.18907</span> <span class="m">-64.04834</span> <span class="m">178.4265</span> <span class="m">-128.2276</span> <span class="m">242.6057</span>
+  <span class="m">1978</span>       <span class="m">57.35822</span> <span class="m">-63.88124</span> <span class="m">178.5977</span> <span class="m">-128.0615</span> <span class="m">242.7780</span>
+  <span class="m">1979</span>       <span class="m">57.44283</span> <span class="m">-63.79714</span> <span class="m">178.6828</span> <span class="m">-127.9777</span> <span class="m">242.8634</span>
+  <span class="m">1980</span>       <span class="m">57.48513</span> <span class="m">-63.75497</span> <span class="m">178.7252</span> <span class="m">-127.9356</span> <span class="m">242.9059</span>
+  <span class="m">1981</span>       <span class="m">57.50627</span> <span class="m">-63.73386</span> <span class="m">178.7464</span> <span class="m">-127.9145</span> <span class="m">242.9271</span>
+  <span class="m">1982</span>       <span class="m">57.51684</span> <span class="m">-63.72330</span> <span class="m">178.7570</span> <span class="m">-127.9040</span> <span class="m">242.9376</span>
+  <span class="m">1983</span>       <span class="m">57.52212</span> <span class="m">-63.71802</span> <span class="m">178.7623</span> <span class="m">-127.8987</span> <span class="m">242.9429</span>
+  <span class="m">1984</span>       <span class="m">57.52476</span> <span class="m">-63.71538</span> <span class="m">178.7649</span> <span class="m">-127.8960</span> <span class="m">242.9456</span>
+  <span class="m">1985</span>       <span class="m">57.52607</span> <span class="m">-63.71407</span> <span class="m">178.7662</span> <span class="m">-127.8947</span> <span class="m">242.9469</span>
+  <span class="m">1986</span>       <span class="m">57.52673</span> <span class="m">-63.71341</span> <span class="m">178.7669</span> <span class="m">-127.8941</span> <span class="m">242.9475</span>
+  <span class="m">1987</span>       <span class="m">57.52706</span> <span class="m">-63.71308</span> <span class="m">178.7672</span> <span class="m">-127.8937</span> <span class="m">242.9479</span>
+  <span class="m">1988</span>       <span class="m">57.52723</span> <span class="m">-63.71291</span> <span class="m">178.7674</span> <span class="m">-127.8936</span> <span class="m">242.9480</span>
+  <span class="m">1989</span>       <span class="m">57.52731</span> <span class="m">-63.71283</span> <span class="m">178.7674</span> <span class="m">-127.8935</span> <span class="m">242.9481</span>
+  <span class="m">1990</span>       <span class="m">57.52735</span> <span class="m">-63.71279</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9481</span>
+  <span class="m">1991</span>       <span class="m">57.52737</span> <span class="m">-63.71277</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1992</span>       <span class="m">57.52738</span> <span class="m">-63.71276</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1993</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1994</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1995</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1996</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1997</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1998</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">1999</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+  <span class="m">2000</span>       <span class="m">57.52739</span> <span class="m">-63.71275</span> <span class="m">178.7675</span> <span class="m">-127.8934</span> <span class="m">242.9482</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Мы можем построить исходный временной ряд и прогнозные значения, набрав:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.forecast<span class="p">(</span>volcanodustseriesforecasts<span class="p">)</span>
+</pre></div>
+</div>
+<p><img alt="image39" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image39.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вызывает беспокойство то, что модель предсказала отрицательные значения индекса вулканической пыли, но эта переменная может иметь только положительные значения! </font><font style="vertical-align: inherit;">Причина в том, что функции arima () и прогноз. Арима () не знают, что переменная может принимать только положительные значения. </font><font style="vertical-align: inherit;">Понятно, что это не очень желательная особенность нашей текущей прогностической модели.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Опять же, мы должны выяснить, являются ли ошибки прогноза коррелированными, и распределяются ли они нормально со средним нулем и постоянной дисперсией. </font><font style="vertical-align: inherit;">Чтобы проверить корреляции между последовательными ошибками прогноза, мы можем сделать коррелограмму и использовать тест Льюнга-Бокса:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> acf<span class="p">(</span>volcanodustseriesforecasts<span class="o">$</span>residuals<span class="p">,</span> lag.max<span class="o">=</span><span class="m">20</span><span class="p">)</span>
+<span class="o">&gt;</span> Box.test<span class="p">(</span>volcanodustseriesforecasts<span class="o">$</span>residuals<span class="p">,</span> lag<span class="o">=</span><span class="m">20</span><span class="p">,</span> type<span class="o">=</span><span class="s">"Ljung-Box"</span><span class="p">)</span>
+  Box<span class="o">-</span>Ljung test
+  data<span class="o">:</span>  volcanodustseriesforecasts<span class="o">$</span>residuals
+  X<span class="o">-</span>squared <span class="o">=</span> <span class="m">24.3642</span><span class="p">,</span> df <span class="o">=</span> <span class="m">20</span><span class="p">,</span> p<span class="o">-</span>value <span class="o">=</span> <span class="m">0.2268</span>
+</pre></div>
+</div>
+<p><img alt="image40" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image40.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Коррелограмма показывает, что автокорреляция выборки при лаге 20 превышает границы значимости. </font><font style="vertical-align: inherit;">Однако это, вероятно, связано с случайностью, поскольку мы ожидаем, что одна из 20 выборочных автокорреляций превысит границы значимости 95%. </font><font style="vertical-align: inherit;">Кроме того, p-значение для теста Льюнга-Бокса равно 0,2, что указывает на то, что имеется мало доказательств ненулевых автокорреляций в ошибках прогноза для лагов 1-20.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы проверить, нормально ли распределены ошибки прогноза со средним нулем и постоянной дисперсией, мы строим временную диаграмму ошибок прогноза и гистограмму:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> plot.ts<span class="p">(</span>volcanodustseriesforecasts<span class="o">$</span>residuals<span class="p">)</span>            <span class="c1"># make time plot of forecast errors</span>
+<span class="o">&gt;</span> plotForecastErrors<span class="p">(</span>volcanodustseriesforecasts<span class="o">$</span>residuals<span class="p">)</span> <span class="c1"># make a histogram</span>
+</pre></div>
+</div>
+<p><img alt="image41" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image41.png"></p>
+<p><img alt="image42" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/image42.png"></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Временной график ошибок прогноза показывает, что ошибки прогноза, по-видимому, имеют примерно постоянную дисперсию во времени. </font><font style="vertical-align: inherit;">Однако временные ряды ошибок прогноза, по-видимому, имеют отрицательное среднее значение, а не нулевое среднее. </font><font style="vertical-align: inherit;">Мы можем подтвердить это, рассчитав среднюю ошибку прогноза, которая оказывается около -0,22:</font></font></p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="kp">mean</span><span class="p">(</span>volcanodustseriesforecasts<span class="o">$</span>residuals<span class="p">)</span>
+  <span class="m">-0.2205417</span>
+</pre></div>
+</div>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Гистограмма ошибок прогноза (выше) показывает, что, хотя среднее значение ошибок прогноза является отрицательным, распределение ошибок прогноза смещено вправо по сравнению с нормальной кривой. </font><font style="vertical-align: inherit;">Поэтому кажется, что мы не можем с комфортом сделать вывод, что ошибки прогноза обычно распределяются со средним нулем и постоянной дисперсией! </font><font style="vertical-align: inherit;">Таким образом, вполне вероятно, что наша модель ARIMA (2,0,0) для временного ряда индекса завесы из вулканической пыли - не лучшая модель, которую мы могли бы создать, и которую почти наверняка можно улучшить!</font></font></p>
+</div>
+</div>
+</div>
+<div class="section" id="links-and-further-reading">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ссылки и дальнейшее чтение </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#links-and-further-reading" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вот несколько ссылок для дальнейшего чтения.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Для более подробного ознакомления с R на веб-сайте «Kickstarting R» доступно хорошее онлайн-руководство
+ </font></font><a class="reference external" href="http://cran.r-project.org/doc/contrib/Lemon-kickstart/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cran.r-project.org/doc/contrib/Lemon-kickstart</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">На веб-сайте «Введение в R» есть еще один приятный (чуть более углубленный) учебник по R:
+ </font></font><a class="reference external" href="http://cran.r-project.org/doc/manuals/R-intro.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cran.r-project.org/doc/manuals/R-intro.html</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вы можете найти список пакетов R для анализа данных временных рядов на
+ </font></font><a class="reference external" href="http://cran.r-project.org/web/views/TimeSeries.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">веб-странице Просмотр задач временных рядов CRAN</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Чтобы узнать об анализе временных рядов, я очень рекомендую книгу «Временные ряды» (код продукта M249 / 02) от Открытого университета, которую можно приобрести </font></font><a class="reference external" href="http://www.ouw.co.uk/store/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">в магазине Открытого университета</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">В серии «Используйте R!» Доступны две книги об использовании R для анализа временных рядов, первая - « </font></font><a class="reference external" href="http://www.springer.com/statistics/statistical+theory+and+methods/book/978-0-387-88697-8"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Вводные временные ряды с R»</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+по Каупертвейту и Меткалфу, а вторая - «
+ </font></font><a class="reference external" href="http://www.springer.com/statistics/statistical+theory+and+methods/book/978-0-387-75966-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Анализ интегрированных и коинтегрированных временных рядов с R»</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+по Пфаффу.</font></font></p>
+</div>
+<div class="section" id="acknowledgements">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Acknowledgements </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#acknowledgements" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Я благодарен </font></font><a class="reference external" href="http://robjhyndman.com/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">профессору Робу Хиндману</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> за то, что он позволил мне использовать наборы данных временных рядов из его </font></font><a class="reference external" href="http://robjhyndman.com/TSDL/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">библиотеки данных временных рядов (TSDL)</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> в примерах, приведенных в этом буклете.</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Многие из примеров в этой брошюре вдохновлены примерами из превосходной книги Открытого университета «Временные ряды» (код продукта M249 / 02), которую можно приобрести </font></font><a class="reference external" href="http://www.ouw.co.uk/store/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">в магазине Открытого университета</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Спасибо Рави Аранке за то, что он привлек мое внимание к auto.arima (), и Морису Омане-Аджепонгу за то, что привлек мое внимание к юнит-корневым тестам, и Кристиану Зойберту за то, что он заметил небольшую ошибку в plotForecastErrors (). </font><font style="vertical-align: inherit;">Спасибо за другие комментарии Антуана Бинарда и Билла Джонстона.</font></font></p>
+</div>
+<div class="section" id="contact">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contact </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#contact" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Буду признателен , </font><font style="vertical-align: inherit;">если вы пришлете мне (Avril Колен) поправки или предложения по улучшению на мой адрес электронной почты </font></font><a class="reference external" href="mailto:alc%40sanger.ac.uk"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ALC </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">@</font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Sanger </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ак </font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">. </font></font></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Соединенное Королевство</font></font></a></p>
+</div>
+<div class="section" id="license">
+<h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">License </font></font><a class="headerlink" href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html#license" title="Постоянная ссылка на этот заголовок"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¶</font></font></a></h2>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Содержание этой книги лицензировано на условиях </font></font><a class="reference external" href="http://creativecommons.org/licenses/by/3.0/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">лицензии Creative Commons Attribution 3.0</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="связанная навигация">
+      <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">навигация</font></font></h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/genindex.html" title="Общий индекс"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">показатель</font></font></a></li>
+        <li class="right">
+          <a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/installr.html" title="Как установить R"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">предыдущая</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> |</font></font></li>
+        <li class="nav-item nav-item-0"><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/index.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Документация временного ряда 0.2</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> »</font></font></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+        © Copyright 2010, Аврил Коглан. </font><font style="vertical-align: inherit;">Создано с использованием </font></font><a href="http://sphinx-doc.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sphinx</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 1.7.9.
+    </font></font></div>
+  
+<div id="rtd-fp7v4zro"></div><!-- Inserted RTD Footer -->
+
+<div class="injected">
+
+  
+  <div class="rst-versions rst-badge" data-toggle="rst-versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      <span class="fa fa-book">&nbsp;</span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      в: последние
+      </font></font><span class="fa fa-caret-down"></span>
+    </span>
+    <div class="rst-other-versions">
+      
+
+      
+      
+      
+      <dl>
+        <dt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">версии</font></font></dt>
+        
+         <strong> 
+        <dd><a href="https://a-little-book-of-r-for-time-series.readthedocs.io/en/latest/src/timeseries.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">последний</font></font></a></dd>
+         </strong> 
+        
+      </dl>
+      
+      
+
+      
+      
+      <dl>
+        <dt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Загрузка</font></font></dt>
+        
+        <dd><a href="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/downloads/pdf/latest/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PDF</font></font></a></dd>
+        
+        <dd><a href="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/downloads/htmlzip/latest/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HTML</font></font></a></dd>
+        
+        <dd><a href="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/downloads/epub/latest/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Epub</font></font></a></dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <!-- These are kept as relative links for internal installs that are http -->
+        <dt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">На чтение документов</font></font></dt>
+        <dd>
+          <a href="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Проект Home</font></font></a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/builds/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Она знала</font></font></a>
+        </dd>
+        <dd>
+          <a href="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/downloads/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Загрузка</font></font></a>
+        </dd>
+      </dl>
+      
+
+      
+
+      
+      <dl>
+        <dt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">На GitHub</font></font></dt>
+        <dd>
+          <a href="https://github.com/avrilcoghlan/LittleBookofRTimeSeries/blob/master/src/timeseries.rst"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Посмотреть</font></font></a>
+        </dd>
+        
+      </dl>
+      
+      
+
+      
+      <dl>
+        <dt><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Поиск</font></font></dt>
+        <dd>
+          <div style="padding: 6px;">
+            <form id="flyout-search-form" class="wy-form" target="_blank" action="https://readthedocs.org/projects/a-little-book-of-r-for-time-series/search/" method="get">
+              <input type="text" name="q" placeholder="Search docs">
+              </form>
+          </div>
+        </dd>
+      </dl>
+      
+
+
+
+      <hr>
+      
+        <small>
+          <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Хостинг </font></font><a href="https://readthedocs.org/"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Read the Docs</font></font></a></span>
+          <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> · </font></font></span>
+          <a href="https://docs.readthedocs.io/page/privacy-policy.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Политика конфиденциальности</font></font></a>
+        </small>
+      
+
+      
+    </div>
+  </div>
+  
+
+</div>
+<div at-magnifier-wrapper=""><div class="at-theme-light"><div class="at-base notranslate" translate="no"></div></div></div><div id="goog-gt-tt" class="goog-tooltip skiptranslate" dir="ltr" style="visibility: hidden; left: 354px; top: 14364px; display: none;"><div style="padding: 8px;"><div><div class="logo"><img src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/translate_24dp.png" width="20" height="20" alt="Google Перекладач"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Оригінальний текст</h1></div><div class="middle" style="padding: 8px;"><div class="original-text">We can calculate a correlogram of the forecast errors using the “acf()” function in R. To specify the maximum lag that we want to look at, we use the “lag.max” parameter in acf().</div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Запропонувати кращий переклад</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none; opacity: 0;"></div></div><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Меню языков виджета &quot;Переводчик&quot;" style="visibility: visible; box-sizing: content-box; width: 1170px; height: 263px; left: 367.922px; top: 0px; display: none;" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/saved_resource(1).html"></iframe><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Меню языков виджета &quot;Переводчик&quot;" style="visibility: visible; box-sizing: content-box; width: 242px; height: 69px; display: none;" src="./Использование R для анализа временных рядов - документация временного ряда 0.2_files/saved_resource(2).html"></iframe></body></html>

@@ -1,0 +1,33 @@
+typeof Aura === "undefined" && (Aura = {});
+Aura.StaticResourceMap = {"cancel":{"AyPrice":1424685237000},"Delete":{"AyPrice":1424685237000},"New":{"AyPrice":1424685237000},"dupcheckAssets":{"dupcheck":1571984555000},"EngageAlertsDownload":{"pi":1572397710000},"Outlook":{"pi":1572397713000},"Edit":{"AyPrice":1424685237000},"NMTjs":{"LEXMAGICMOVER":1551196659000},"Excel":{"AyPrice":1424685237000},"jQueryUI":{"AyPrice":1430880539000},"LeadDeck":{"pi":1572397711000},"logo_addinsoft":{"":1559904329000},"dc3Assets":{"dupcheck":1571984555000},"jquery_2_1_1_js":{"pi":1552571935000},"addToNurtureListIcon":{"pi":1552571935000},"slds":{"dupcheck":1571984556000},"quotecss":{"":1559915961000},"ckeditorSalesReach":{"pi":1572397715000},"add":{"AyPrice":1424685237000},"jsonStripeWebHook":{"":1565766627000},"Logo1":{"AyPrice":1424685237000},"UpdateDiscount":{"AyPrice":1424685237000},"font_awesome_4_2_0":{"pi":1572397715000},"loading":{"AyPrice":1424685237000},"jsonPaymentLink":{"":1568025694000},"signature_addinsoft":{"":1443431796000},"trash":{"AyPrice":1424685237000},"jquerytreeview":{"AyPrice":1430880539000},"Promise":{"pi":1572397714000},"NMTicon":{"LEXMAGICMOVER":1551196659000},"pageViews":{"pi":1552571935000},"ckEditor":{"SDOC":1430135845000},"Price":{"AyPrice":1430880539000},"PardotRedirectSuccessMessageImg":{"pi":1552571935000},"header":{"GCU":1424705245000},"LegacyPardot":{"pi":1572397711000},"Save":{"AyPrice":1424685237000},"jsonCryptlexMockLicenceCreation":{"":1563867179000},"SCE_LicenseAssignmentPage":{"pi":1552571935000},"pdfPriceList":{"AyPrice":1424685237000},"SalesEdgeErrPage":{"pi":1572397714000},"EngageSalesTools":{"pi":1572397710000},"jQueryUIResource":{"AyPrice":1430880539000},"Discount":{"AyPrice":1424685237000},"SDoc":{"SDOC":1430135845000},"Email_XLSTAT_Logo":{"":1437395138000},"footer":{"GCU":1424705245000},"jquery_time_ago":{"pi":1572397716000},"js_zip":{"":1446116530000},"jquery_ui_1_11_1_custom_has_dialog":{"pi":1572397716000},"cometd":{"DESKSCMT":1553243662000},"MarketingActions":{"pi":1572397712000},"MicroCampaign":{"pi":1572397712000},"jquery_ui_1_12_1":{"pi":1572397716000},"JQuery_UI_Custom":{"AyPrice":1430880539000},"Lead_Deck":{"pi":1552571935000},"Refresh":{"AyPrice":1424685237000},"GraphicsPackExample":{"":1424703745000},"Pdf":{"AyPrice":1424685237000},"FeatureFlagDefaults":{"pi":1552571935000},"GraphicsPack":{"":1430880539000},"loadingSpinner":{"pi":1552571935000},"jQuery2":{"":1484396924000},"Mobile_Design_Templates":{"pi":1572397713000},"PardotLightningDesignSystem_unversioned":{"pi":1572397714000},"deskApexSetting":{"DESKSCMT":1553243662000},"ProximaNovaSoft":{"pi":1572397714000},"SiteSamples":{"":1560358405000},"Poppins_Font":{"":1562674652000},"ImportBuddy":{"sftplib":1424700550000},"EngagementHistory":{"pi":1572397710000},"icon_utility":{"pi":1572397716000},"favicon":{"":1568739641000},"Open_Sans":{"":1444399904000},"Error":{"pi":1572397711000},"MigrationWizard":{"DESKSCMT":1555340883000},"inclusivePayload":{"pi":1552571935000},"step2":{"GCU":1424705245000},"JqGrid":{"AyPrice":1430880539000},"jsonStripeWebHookPaymentIntent":{"":1565766628000},"Logo":{"AyPrice":1430880539000},"step1":{"GCU":1424705245000},"advancedpdfresource":{"":1481965060000},"jQuery":{"":1484396924000},"Jtreeview":{"AyPrice":1430880539000}};
+
+(function() { 
+	function initResourceGVP() {
+		 if (!$A.getContext() || !$A.get('$Resource')) { 
+			 $A.addValueProvider('$Resource', 
+			 { 
+				 merge : function() {}, 
+				 isStorable : function() { return false; }, 
+				 get : function(resource) { 
+					 var modStamp, rel, abs, name, ns;
+					 var nsDelim = resource.indexOf('__');
+					 if (nsDelim >= 0) { ns = resource.substring(0, nsDelim); name = resource.substring(nsDelim + 2); } else { name = resource; }
+					 var srMap = Aura.StaticResourceMap[name];
+					 modStamp = srMap && srMap[ns = ns || Object.keys(srMap)[0]];
+					 if (!modStamp) { return; }
+					 rel = $A.get('$SfdcSite.pathPrefix');
+					 abs = $A.get('$Absolute.url');
+					 return [abs || rel || '', '/resource/', modStamp, '/', ns === '' ? name : ns + '__' + name].join('');
+				 } 
+			 }); 
+		 } 
+	 }
+if(Aura.frameworkJsReady)initResourceGVP();else{Aura.beforeFrameworkInit=Aura.beforeFrameworkInit||[],Aura.beforeFrameworkInit.push(initResourceGVP)}
+})();
+(function() { 
+	 function initAccessResources() {
+;			 $A.componentService.addModule('markup://force:customPerms', 'force/customPerms', ['exports'], null, {}); 
+			 $A.componentService.addModule('markup://force:userPerms', 'force/userPerms', ['exports'], null, {}); 
+	 }
+;	 if(Aura.frameworkJsReady)initAccessResources();else{Aura.beforeFrameworkInit=Aura.beforeFrameworkInit||[],Aura.beforeFrameworkInit.push(initAccessResources)}
+})(); 

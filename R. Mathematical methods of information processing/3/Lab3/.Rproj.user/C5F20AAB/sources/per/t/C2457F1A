@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1572448487376.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2765421998",
+    "id" : "C2457F1A",
+    "lastKnownWriteTime" : 1572448530,
+    "last_content_update" : 1572458061010,
+    "path" : "G:/1A_KNU/Математичні методи обробки інформації/3/Lab3/3 test.R",
+    "project_path" : "3 test.R",
+    "properties" : {
+        "cursorPosition" : "87,0",
+        "scrollLine" : "60",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

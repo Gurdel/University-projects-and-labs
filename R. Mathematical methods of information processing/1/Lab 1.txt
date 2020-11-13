@@ -1,0 +1,47 @@
+> x <- c(8999, 9999, 6399, 6799, 5499, 5999, 7999, 7989, 4999, 9099, 5199, 10499, 10349, 10999, 9999, 18524, 9475, 8899, 20899, 8999, 12349, 6899, 12999, 10599, 10799, 17999, 14849, 8445, 14849, 14259, 10529, 14249, 14249, 6099, 8999, 10529, 8899, 8279, 5299, 5499, 7599, 7699, 5699, 9799, 4699, 5399, 7999, 10799, 8199, 7399, 11499, 11399, 5299, 5599, 5699, 5799, 8099)
+> mean(x) #vibirkove ser
+[1] 9350.526
+> median(x) #mediana
+[1] 8899
+> 1/mean(1/x) #ser garmoniine
+[1] 8222.657
+> prod(x)^(1/length(x)) #ser geom
+[1] 8750.857
+> var(x) #dispersiya
+[1] 12923723
+> sd(x) #standartne vidhilennya
+[1] 3594.958
+> sd(x)/mean(x)*100 #koef variacii
+[1] 38.44658
+> quantile(x) #pyatitockova harakteristica
+   0%   25%   50%   75%  100% 
+ 4699  6399  8899 10799 20899 
+> summary(x) #osnovni harakteristiki
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   4699    6399    8899    9351   10799   20899 
+> range(x) #max i min
+[1]  4699 20899
+> range(x) #min i max
+[1]  4699 20899
+> diff(range(x)) #max-min
+[1] 16200
+> IQR(x) #interkvantilnii rozmah
+[1] 4400
+> boxplot(x, main="Prices of popular washing machines on Rozetka.com.ua", xlab="Price", col="brown", horizontal=TRUE, notch=TRUE)
+
+> install.packages("moments")
+> library(moments)
+
+> skewness(x) #koef asimetrii
+[1] 1.101117
+> kurtosis(x) #koef ekscesu
+[1] 4.118439
+> quantile(x,probs=c(0.1,0.9)) #1 ta 9 decili
+  10%   90% 
+ 5459 14253 
+> quantile(x,p=seq(0,1,0.1))
+     0%     10%     20%     30%     40%     50%     60%     70%     80%     90% 
+ 4699.0  5459.0  5839.0  7299.0  8039.0  8899.0  9669.4 10529.0 11319.0 14253.0 
+   100% 
+20899.0 
+> hist(x)

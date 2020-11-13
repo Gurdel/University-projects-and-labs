@@ -1,0 +1,32 @@
+install.packages("fBasics")
+library(fBasics)
+x <- c(8999, 9999, 6399, 6799, 5499, 5999, 7999, 7989, 4999, 9099, 5199, 10499, 10349, 10999, 9999, 18524, 9475, 8899, 20899, 8999, 12349, 6899, 12999, 10599, 10799, 17999, 14849, 8445, 14849, 14259, 10529, 14249, 14249, 6099, 8999, 10529, 8899, 8279, 5299, 5499, 7599, 7699, 5699, 9799, 4699, 5399, 7999, 10799, 8199, 7399, 11499, 11399, 5299, 5599, 5699, 5799, 8099)
+hist(x, breaks = 7, freq = FALSE, col = "brown",
+     xlab = "ціна",
+     ylab = "щільність",
+     main = "гістограма")
+lines(density(x), col = "pink", lwd = 2)
+
+n1<- (3.5)*sd(x)*57^(-1/3)
+hist(x, breaks = n1, freq = FALSE, col = "brown",
+     xlab = "ціна",
+     ylab = "щільність",
+     main = "правило Скотта")
+lines(density(x), col = "pink", lwd = 2)
+n2<-2*IQR(x)*57^(-1/3)
+hist(x, breaks = n2, freq = FALSE, col = "brown",
+     xlab = "ціна",
+     ylab = "щільність",
+     main = "правило Фрідмана-Діаконіса")
+lines(density(x), col = "pink", lwd = 2)
+
+qqnorm(x)
+qqline(x)
+
+plot(ppoints(length(x)),
+     sort(pnorm(x,mean(x),sd(x))))
+abline(0,1)
+
+normalTest(x, method = "sw")
+normalTest(x, method = "jb")
+normalTest(x, method ="ks")
