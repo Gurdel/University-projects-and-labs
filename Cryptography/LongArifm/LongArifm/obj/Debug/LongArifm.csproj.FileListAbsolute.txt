@@ -1,0 +1,14 @@
+C:\Users\Admin\Desktop\LongArifm\LongArifm\bin\Debug\LongArifm.exe.config
+C:\Users\Admin\Desktop\LongArifm\LongArifm\bin\Debug\LongArifm.exe
+C:\Users\Admin\Desktop\LongArifm\LongArifm\bin\Debug\LongArifm.pdb
+C:\Users\Admin\Desktop\LongArifm\LongArifm\obj\Debug\LongArifm.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\LongArifm\LongArifm\obj\Debug\LongArifm.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\LongArifm\LongArifm\obj\Debug\LongArifm.exe
+C:\Users\Admin\Desktop\LongArifm\LongArifm\obj\Debug\LongArifm.pdb
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\bin\Debug\LongArifm.exe.config
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\bin\Debug\LongArifm.exe
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\bin\Debug\LongArifm.pdb
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\obj\Debug\LongArifm.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\obj\Debug\LongArifm.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\obj\Debug\LongArifm.exe
+C:\Users\Admin\Desktop\Криптографія\LongArifm\LongArifm\obj\Debug\LongArifm.pdb

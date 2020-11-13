@@ -1,0 +1,13 @@
+C:\Users\maksy\Desktop\kurs\kurs\bin\Debug\netcoreapp3.1\kurs.exe
+C:\Users\maksy\Desktop\kurs\kurs\bin\Debug\netcoreapp3.1\kurs.deps.json
+C:\Users\maksy\Desktop\kurs\kurs\bin\Debug\netcoreapp3.1\kurs.runtimeconfig.json
+C:\Users\maksy\Desktop\kurs\kurs\bin\Debug\netcoreapp3.1\kurs.runtimeconfig.dev.json
+C:\Users\maksy\Desktop\kurs\kurs\bin\Debug\netcoreapp3.1\kurs.dll
+C:\Users\maksy\Desktop\kurs\kurs\bin\Debug\netcoreapp3.1\kurs.pdb
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.csprojAssemblyReference.cache
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.csproj.CoreCompileInputs.cache
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.AssemblyInfoInputs.cache
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.AssemblyInfo.cs
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.dll
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.pdb
+C:\Users\maksy\Desktop\kurs\kurs\obj\Debug\netcoreapp3.1\kurs.genruntimeconfig.cache

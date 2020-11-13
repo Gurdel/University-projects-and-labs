@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\bin\Debug\Lab 4 komp mod.exe.config
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\bin\Debug\Lab 4 komp mod.exe
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\bin\Debug\Lab 4 komp mod.pdb
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\obj\Debug\Lab 4 komp mod.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\obj\Debug\Lab 4 komp mod.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\obj\Debug\Lab 4 komp mod.exe
+C:\Users\Admin\Desktop\Lab 4 komp mod\Lab 4 komp mod\obj\Debug\Lab 4 komp mod.pdb

@@ -1,0 +1,255 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System.ComponentModel;
+using System.Linq;
+
+namespace kurs
+{
+    class Tokenizator
+    {
+        static List<string> comment = new List<string>();
+        static List<string> text = new List<string>();
+        static List<string> punctuator = new List<string>();
+        static List<string> programKeywords = new List<string>();
+        static List<string> grammarKeywords = new List<string>();
+        static List<string> numbers = new List<string>();
+        static Dictionary<string, string> keywordsDictionary = new Dictionary<string, string>();
+        static string tokensAlphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+
+        public string GetToken(string code, string language)
+        {
+            //Відкрити файл із граматикою потрібної мови
+            string filePath = "universalGrammar.txt";
+            switch (language)
+            {
+                case "C#":
+                case "c#":
+                case "#":
+                    filePath = "GrammarC#.txt";
+                    break;
+            }
+            ReadGrammar(filePath);
+            FindUserKeywords(code);
+            FillDictionary();
+            return TokenizeCode(code);
+        }
+
+        private string TokenizeCode(string code)
+        {
+            Console.WriteLine(code);
+            code = RemoveComments(code);
+            code = RemoveText(code);
+            numbers.Sort(CompareStringLength);
+            foreach (string s in numbers)
+                code = code.Replace(s, "#number#");
+            code = code.Replace("#number#.#number#", "#number#");
+            code = code.Replace("#number#,#number#", "#number#");
+            code = code.Replace("#number#", keywordsDictionary[grammarKeywords[0]]);
+            programKeywords.Sort(CompareStringLength);
+            foreach (string s in programKeywords)
+                code = code.Replace(s, keywordsDictionary[s]);
+            Console.WriteLine(code);
+            return code;
+        }
+
+        private int CompareStringLength(string a, string b)
+        {
+            if (a.Length == b.Length)
+                return 0;
+            if (a.Length > b.Length)
+                return -1;
+            return 1;
+        }
+
+        private void FillDictionary()
+        {
+            int tokenIndex = -1;
+            foreach(string s in grammarKeywords)
+            {
+                if (!keywordsDictionary.ContainsKey(s))
+                {
+                    bool added = false;
+                    while (!added)
+                    {
+                        ++tokenIndex;
+                        string bufToken = "";
+                        int bufTokenIndex = tokenIndex;
+                        while (bufTokenIndex > tokensAlphabet.Length - 1)
+                        {
+                            bufToken += tokensAlphabet[bufTokenIndex % tokensAlphabet.Length];
+                            bufTokenIndex /= tokensAlphabet.Length;
+                        }
+                        bufToken += tokensAlphabet[bufTokenIndex];
+                        if (!keywordsDictionary.ContainsValue(bufToken))
+                        {
+                            keywordsDictionary.Add(s, bufToken);
+                            added = true;
+                        }
+                    }
+                }
+            }
+
+            bool allKeyworsAdded = true;
+            do
+            {
+                for (int i = 1; i < programKeywords.Count; ++i)
+                {
+                    if (!keywordsDictionary.ContainsKey(programKeywords[i]))
+                    {
+                        if (keywordsDictionary.ContainsKey(programKeywords[i - 1]))
+                        {
+                            keywordsDictionary.Add(programKeywords[i], keywordsDictionary[programKeywords[i - 1]]);
+                        }
+                        else
+                        {
+                            if (keywordsDictionary.ContainsKey(programKeywords[i + 1]))
+                            {
+                                keywordsDictionary.Add(programKeywords[i], keywordsDictionary[programKeywords[i + 1]]);
+                            }
+                            else
+                            {
+                                allKeyworsAdded = false;
+                            }
+                        }
+                    }
+                }
+            }
+            while (!allKeyworsAdded);
+        }
+
+        private void ReadGrammar(string path)
+        {
+            StreamReader sr = new StreamReader(path);
+
+            string separator = sr.ReadLine();
+            //
+            string line = sr.ReadLine();
+            while (!line.Equals(separator))
+            {
+                comment.Add(line);
+                line = sr.ReadLine();
+            }
+            line = sr.ReadLine();
+            while (!line.Equals(separator))
+            {
+                text.Add(line);
+                line = sr.ReadLine();
+            }
+            line = sr.ReadLine();
+            while (!line.Equals(separator))
+            {
+                punctuator.Add(line);
+                line = sr.ReadLine();
+            }
+            line = sr.ReadLine();
+            while (!line.Equals(separator))
+            {
+                string[] spl = line.Split(separator);
+                string[] buf = spl[0].Split(' ');
+                if (spl.Length > 1) 
+                {
+                    foreach(string s in buf)
+                    {
+                        keywordsDictionary.Add(s, spl[1]);
+                    }
+                }
+                grammarKeywords.AddRange(spl[0].Split(' '));
+                line = sr.ReadLine();
+            }
+            sr.Close();
+        }
+
+        private void FindUserKeywords(string code)
+        {
+            code = RemoveComments(code);
+            code = RemoveText(code);
+            code = code.Replace("\n", " ");
+            code = code.Replace("\r", " ");
+            foreach (string s in punctuator)
+                code = code.Replace(s, " ");
+            code = code.Replace("  ", " ");
+            string[] splitCode = code.Split(' ');
+            foreach (string s in splitCode)
+            {
+                if (s.Length > 0 && !programKeywords.Contains(s))
+                {
+                    if (!IsNumber(s))
+                    {
+                        programKeywords.Add(s);
+                    }
+                    else 
+                    { 
+                        if(!numbers.Contains(s))
+                            numbers.Add(s); 
+                    }
+                }
+            }
+        }
+
+        private bool IsNumber(string n)
+        {
+            if (!Char.IsNumber(n[0]))
+                return false;
+            for (int i = 1; i < n.Length; ++i)
+                if (!Char.IsNumber(n[i]))
+                    return false;
+            return true;
+        }
+
+        private string RemoveComments(string code)
+        {
+            //видалення коментарів виду //текст
+            while (code.Contains("//"))
+            {
+                int i = code.IndexOf("//");
+                string buf1 = code.Substring(0, i);
+                string buf2 = code.Remove(0, i + 2);
+                i = buf2.IndexOf("\n");
+                if (i != -1) buf2 = buf2.Remove(0, i);
+                code = buf1 + buf2;
+            }
+
+            //видалення коментарів виду /*текст*/
+            while (code.Contains("/*"))
+            {
+                int i = code.IndexOf("/*");
+                string buf1 = code.Substring(0, i);
+                string buf2 = code.Remove(0, i + 2);
+                i = buf2.IndexOf("*/");
+                if (i != -1) buf2 = buf2.Remove(0, i + 2);
+                code = buf1 + "\n" + buf2;
+            }
+
+            return code;
+        }
+
+        private string RemoveText(string code)
+        {
+            //видалення тексту виду "текст"
+            while (code.Contains("\""))
+            {
+                int i = code.IndexOf("\"");
+                string buf1 = code.Substring(0, i);
+                string buf2 = code.Remove(0, i + 1);
+                i = buf2.IndexOf("\"");
+                if (i != -1) buf2 = buf2.Remove(0, i + 1);
+                code = buf1 + buf2;
+            }
+
+            //видалення символів виду 'с'
+            while (code.Contains("\'"))
+            {
+                int i = code.IndexOf("\'");
+                string buf1 = code.Substring(0, i);
+                string buf2 = code.Remove(0, i + 1);
+                i = buf2.IndexOf("\'");
+                if (i != -1) buf2 = buf2.Remove(0, i + 1);
+                code = buf1 + buf2;
+            }
+
+            return code;
+        }
+    }
+}
