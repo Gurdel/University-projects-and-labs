@@ -1,0 +1,13 @@
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.exe
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.deps.json
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.runtimeconfig.json
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.runtimeconfig.dev.json
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.dll
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.pdb
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.csprojAssemblyReference.cache
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.csproj.CoreCompileInputs.cache
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.AssemblyInfoInputs.cache
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.AssemblyInfo.cs
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.dll
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.pdb
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.genruntimeconfig.cache

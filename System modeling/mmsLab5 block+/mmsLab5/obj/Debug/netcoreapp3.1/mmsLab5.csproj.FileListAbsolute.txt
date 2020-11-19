@@ -1,0 +1,26 @@
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.exe
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.deps.json
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.runtimeconfig.json
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.runtimeconfig.dev.json
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.dll
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.pdb
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.csprojAssemblyReference.cache
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.csproj.CoreCompileInputs.cache
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.AssemblyInfoInputs.cache
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.AssemblyInfo.cs
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.dll
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.pdb
+D:\1A_KNU\Методи моделювання систем\mmsLab5\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.genruntimeconfig.cache
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.exe
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.deps.json
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.runtimeconfig.json
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.runtimeconfig.dev.json
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.dll
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\bin\Debug\netcoreapp3.1\mmsLab5.pdb
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.csprojAssemblyReference.cache
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.csproj.CoreCompileInputs.cache
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.AssemblyInfoInputs.cache
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.AssemblyInfo.cs
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.dll
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.pdb
+C:\Users\maksy\Desktop\mmsLab5 block+\mmsLab5\obj\Debug\netcoreapp3.1\mmsLab5.genruntimeconfig.cache
