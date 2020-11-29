@@ -1,0 +1,65 @@
+﻿@model FilmLab2._2.Models.Film
+
+@{
+    ViewData["Title"] = "Деталі фільму";
+}
+
+<h1>Детальна інформація про фільм</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Назва
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Рік
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class="col-sm-2">
+            Продюсер
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Producer.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Жанри
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                @foreach (var item in Model.FilmsGenres)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Genre.Name)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+        <dt class="col-sm-2">
+            Актори
+        </dt>
+        <dd class="col-sm-10">
+            <table class="table">
+                @foreach (var item in Model.FilmsActors)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Actor.Name)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Редагувати</a> |
+    <a asp-action="Index">Список фільмів</a>
+</div>

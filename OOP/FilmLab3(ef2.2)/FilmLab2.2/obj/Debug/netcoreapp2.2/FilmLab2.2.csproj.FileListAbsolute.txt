@@ -1,0 +1,124 @@
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.deps.json
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.runtimeconfig.json
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.dll
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.pdb
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.Views.dll
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.Views.pdb
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorAssemblyInfo.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorAssemblyInfo.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.AssemblyInfo.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.TagHelpers.input.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.TagHelpers.output.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorCoreGenerate.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorTargetAssemblyInfo.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorTargetAssemblyInfo.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.Views.pdb
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.dll
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.pdb
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.csproj.CopyComplete
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Create.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Delete.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Details.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Create.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Delete.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Details.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Create.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Delete.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Details.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Create.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Delete.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Details.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Create.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Delete.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Details.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Index.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Create.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Delete.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Details.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Edit.g.cshtml.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Index.g.cshtml.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\appsettings.json
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.deps.json
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.runtimeconfig.json
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.runtimeconfig.dev.json
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.dll
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.pdb
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.Views.dll
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\bin\Debug\netcoreapp2.2\FilmLab2.2.Views.pdb
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.csprojAssemblyReference.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.AssemblyInfoInputs.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.AssemblyInfo.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.csproj.CoreCompileInputs.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorAssemblyInfo.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorAssemblyInfo.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.TagHelpers.input.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.TagHelpers.output.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorCoreGenerate.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Create.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Delete.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Details.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Edit.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Actors\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Create.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Delete.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Details.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Edit.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsActors\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Create.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Delete.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Details.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Edit.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\FilmsGenres\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Create.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Delete.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Details.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Edit.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Films\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Create.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Delete.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Details.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Edit.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Genres\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Create.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Delete.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Details.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Edit.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Producers\Index.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\Razor\Views\_ViewStart.cshtml.g.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorTargetAssemblyInfo.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.RazorTargetAssemblyInfo.cs
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.Views.pdb
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.dll
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.pdb
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.genruntimeconfig.cache
+D:\1A_KNU\ООП Омельчук\FilmLab3(ef2.2)\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab2.2.csproj.CopyComplete

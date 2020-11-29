@@ -1,0 +1,81 @@
+﻿@model IEnumerable<FilmLab2._2.Models.Actor>
+
+@{
+    ViewData["Title"] = "Актори";
+}
+
+<h1>Актори</h1>
+
+<p>
+    <a asp-action="Create">Додати нового актора</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <h4>
+            Пошук акторів
+        </h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Ім'я
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="SearchName" value="@ViewData["filterName"]" />
+            </dd>
+            <dt class="col-sm-2">
+                Рік народження
+            </dt>
+            <dd class="col-sm-10">
+                <input type="number" name="SearchBirth" value="@ViewData["filterBirth"]" />
+            </dd>
+            <dt class="col-sm-2">
+                Рік смерті
+            </dt>
+            <dd class="col-sm-10">
+                <input type="number" name="SearchDeath" value="@ViewData["filterDeath"]" />
+            </dd>
+        </dl>
+        <p>
+            <input type="submit" value="Шукати" class="btn btn-dark" /> |
+            <a asp-action="Index">Очистити фільтри</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ім'я
+            </th>
+            <th>
+                Рік народження
+            </th>
+            <th>
+                Рік смерті
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Birth)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Death)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Редагувати</a> |
+                    <!--<a asp-action="Details" asp-route-id="@item.ID">Details</a> |-->
+                    <a asp-action="Delete" asp-route-id="@item.ID">Видалити</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

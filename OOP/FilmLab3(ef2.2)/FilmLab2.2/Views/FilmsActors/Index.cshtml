@@ -1,0 +1,66 @@
+﻿@model IEnumerable<FilmLab2._2.Models.FilmActor>
+
+@{
+    ViewData["Title"] = "Фільми-Актори";
+}
+
+<h1>Фільми-Актори</h1>
+
+<p>
+    <a asp-action="Create">Додати актора до фільму</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <h4>
+            Пошук
+        </h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Фільм
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="SearchFilm" value="@ViewData["filterFilm"]" />
+            </dd>
+            <dt class="col-sm-2">
+                Актор
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="SearchActor" value="@ViewData["filterActor"]" />
+            </dd>
+        </dl>
+        <p>
+            <input type="submit" value="Шукати" class="btn btn-dark" /> |
+            <a asp-action="Index">Очистити фільтри</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Фільм
+            </th>
+            <th>
+                Актор
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor.Name)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.FilmActorID">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

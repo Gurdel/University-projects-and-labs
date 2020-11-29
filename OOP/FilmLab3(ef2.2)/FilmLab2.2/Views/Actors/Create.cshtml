@@ -1,0 +1,44 @@
+﻿@model FilmLab2._2.Models.Actor
+
+@{
+    ViewData["Title"] = "Новий актор";
+}
+
+<h1>Новий актор</h1>
+
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+<p class="text-danger">@ViewData["ValidationErrorMessage"]</p>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label">Ім'я</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Birth" class="control-label">Рік народження</label>
+                <input asp-for="Birth" class="form-control" />
+                <span asp-validation-for="Birth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Death" class="control-label">Рік смерті</label>
+                <input asp-for="Death" class="form-control" />
+                <span asp-validation-for="Death" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Створити" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Скасувати</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

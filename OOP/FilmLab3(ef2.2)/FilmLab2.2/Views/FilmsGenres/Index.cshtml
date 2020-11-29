@@ -1,0 +1,66 @@
+﻿@model IEnumerable<FilmLab2._2.Models.FilmGenre>
+
+@{
+    ViewData["Title"] = "Фільми-Жанри";
+}
+
+<h1>Фільми-Жанри</h1>
+
+<p>
+    <a asp-action="Create">Додати жанр до фільму</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <h4>
+            Пошук
+        </h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Фільм
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="SearchFilm" value="@ViewData["filterFilm"]" />
+            </dd>
+            <dt class="col-sm-2">
+                Жанр
+            </dt>
+            <dd class="col-sm-10">
+                <input type="text" name="SearchGenre" value="@ViewData["filterGenre"]" />
+            </dd>
+        </dl>
+        <p>
+            <input type="submit" value="Шукати" class="btn btn-dark" /> |
+            <a asp-action="Index">Очистити фільтри</a>
+        </p>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Фільм
+            </th>
+            <th>
+                Жанр
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Film.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                <a asp-action="Delete" asp-route-id="@item.FilmGenreID">Видалити</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

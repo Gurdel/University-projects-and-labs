@@ -1,0 +1,38 @@
+﻿@model FilmLab2._2.Models.Actor
+
+@{
+    ViewData["Title"] = "Видалення актора";
+}
+
+<h1>Видалення актора</h1>
+<p class="text-danger">@ViewData["ErrorMessage"]</p>
+<h3>Ви впевнені, що хочете видалити цього актора?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Ім'я
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Рік народження
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Birth)
+        </dd>
+        <dt class = "col-sm-2">
+            Рік смерті
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Death)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Видалити" class="btn btn-danger" /> |
+        <a asp-action="Index">Скасувати</a>
+    </form>
+</div>

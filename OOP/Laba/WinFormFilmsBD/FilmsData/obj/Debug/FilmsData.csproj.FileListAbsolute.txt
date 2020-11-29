@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\bin\Debug\FilmsData.dll.config
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\bin\Debug\FilmsData.dll
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\bin\Debug\FilmsData.pdb
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\obj\Debug\FilmsData.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\obj\Debug\FilmsData.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\obj\Debug\FilmsData.dll
+C:\Users\Admin\Desktop\Laba\WinFormFilmsBD\FilmsData\obj\Debug\FilmsData.pdb

@@ -1,0 +1,3 @@
+E:\1A_KNU\XML\Test\Test\StudentsDataBase\obj\Debug\StudentsDataBase.csprojAssemblyReference.cache
+E:\1A_KNU\XML\Test\Test\StudentsDataBase\obj\Debug\StudentsDataBase.Form1.resources
+E:\1A_KNU\XML\Test\Test\StudentsDataBase\obj\Debug\StudentsDataBase.csproj.GenerateResource.cache

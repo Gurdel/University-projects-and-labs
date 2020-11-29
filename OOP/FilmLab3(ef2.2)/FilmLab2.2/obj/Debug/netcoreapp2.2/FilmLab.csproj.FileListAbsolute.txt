@@ -1,0 +1,6 @@
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab.RazorAssemblyInfo.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab.RazorAssemblyInfo.cs
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\FilmLab2.2\FilmLab2.2\obj\Debug\netcoreapp2.2\FilmLab.AssemblyInfo.cs

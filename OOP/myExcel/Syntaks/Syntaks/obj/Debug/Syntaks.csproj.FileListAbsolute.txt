@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\bin\Debug\Syntaks.exe.config
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\bin\Debug\Syntaks.exe
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\bin\Debug\Syntaks.pdb
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\obj\Debug\Syntaks.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\obj\Debug\Syntaks.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\obj\Debug\Syntaks.exe
+C:\Users\Admin\Desktop\Excel\Syntaks\Syntaks\obj\Debug\Syntaks.pdb

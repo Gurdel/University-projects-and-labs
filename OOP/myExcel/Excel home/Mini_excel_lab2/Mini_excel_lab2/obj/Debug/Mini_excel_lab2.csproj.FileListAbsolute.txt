@@ -1,0 +1,20 @@
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\bin\Debug\Mini_excel_lab2.exe.config
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\bin\Debug\Mini_excel_lab2.exe
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\bin\Debug\Mini_excel_lab2.pdb
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.csprojAssemblyReference.cache
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.Form1.resources
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.Properties.Resources.resources
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.csproj.GenerateResource.cache
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.csproj.CoreCompileInputs.cache
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.exe
+D:\Прога\C#\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.pdb
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\bin\Debug\Mini_excel_lab2.exe.config
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\bin\Debug\Mini_excel_lab2.exe
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\bin\Debug\Mini_excel_lab2.pdb
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.csprojAssemblyReference.cache
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.Form1.resources
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.Properties.Resources.resources
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.csproj.GenerateResource.cache
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.csproj.CoreCompileInputs.cache
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.exe
+F:\111_KNU_NEW\Excel\Excel home\Mini_excel_lab2\Mini_excel_lab2\obj\Debug\Mini_excel_lab2.pdb

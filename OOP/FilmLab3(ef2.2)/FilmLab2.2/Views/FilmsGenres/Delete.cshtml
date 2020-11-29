@@ -1,0 +1,32 @@
+﻿@model FilmLab2._2.Models.FilmGenre
+
+@{
+    ViewData["Title"] = "Видалення зв'язку";
+}
+
+<h1>Видалення жанру із фільму</h1>
+
+<h3>Ви впевнені, що хочете видалити цей жанр із цього фільму?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Фільм
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Film.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Жанр
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre.Name)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="FilmGenreID" />
+        <input type="submit" value="Видалити" class="btn btn-danger" /> |
+        <a asp-action="Index">Скасувати</a>
+    </form>
+</div>

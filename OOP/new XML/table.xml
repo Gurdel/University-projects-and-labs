@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<knuDatabase>
+	<faculty FACULTNAME="Cybernetics">
+		<chair CHAIRNAME="TTP">
+			<student SURNAME="Shevchenko" NAME="Maksym" PATRINYMIC="Oleksiyovych">
+				<lesson LESSONNAME="OOP" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="Math logic" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="Other from TTP" RATE="5">
+				</lesson>
+			</student>
+			<student SURNAME="Volohovych" NAME="Ihor" PATRINYMIC="Ihrykovych">
+				<lesson LESSONNAME="OOP" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="Math logic" RATE="4">
+				</lesson>
+				<lesson LESSONNAME="Other from TTP" RATE="4">
+				</lesson>
+			</student>
+			<student SURNAME="Hutarevych" NAME="Sanya" PATRINYMIC="Eshaesovych">
+				<lesson LESSONNAME="OOP" RATE="1">
+				</lesson>
+				<lesson LESSONNAME="Math logic" RATE="1">
+				</lesson>
+				<lesson LESSONNAME="Other from TTP" RATE="1">
+				</lesson>
+			</student>
+		</chair>
+		<chair CHAIRNAME="not TTP">
+			<student SURNAME="Klishch" NAME="Andriy" PATRINYMIC="Hotunatetepevych">
+				<lesson LESSONNAME="Math" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="Langue" RATE="4">
+				</lesson>
+			</student>
+		</chair>
+	</faculty>
+
+	<faculty FACULTNAME="Biology">
+		<chair CHAIRNAME="Animals">
+			<student SURNAME="S1" NAME="N1" PATRINYMIC="P1">
+				<lesson LESSONNAME="L1" RATE="3">
+				</lesson>
+				<lesson LESSONNAME="L2" RATE="4">
+				</lesson>
+			</student>
+			<student SURNAME="S2" NAME="N2" PATRINYMIC="P2">
+				<lesson LESSONNAME="L1" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="L2" RATE="1">
+				</lesson>
+			</student>
+		</chair>
+	</faculty>
+
+	<faculty FACULTNAME="Chemistry">
+		<chair CHAIRNAME="Magic">
+			<student SURNAME="Travychka" NAME="Oleg" PATRINYMIC="Kosyakovych">
+				<lesson LESSONNAME="Meth" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="Tide" RATE="5">
+				</lesson>
+				<lesson LESSONNAME="Space" RATE="2">
+				</lesson>
+			</student>
+		</chair>
+	</faculty>
+</knuDatabase>

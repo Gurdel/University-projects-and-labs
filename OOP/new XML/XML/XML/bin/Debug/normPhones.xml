@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phones>
+
+<phone 
+FIRM="Meizu"
+MODEL="M6"
+RAM="2"
+ROM="16"
+BATTERY="3070"
+PROCESSOR="MediaTek MT6750"
+OS="Android 7.1"
+DIAGONAL="5.2"
+RESOLUTION="HD"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Meizu"
+MODEL="M6 Note"
+RAM="3"
+ROM="32"
+BATTERY="4000"
+PROCESSOR="Snapdragon 625"
+OS="Android 7.1"
+DIAGONAL="5.5"
+RESOLUTION="FHD"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Xiaomi"
+MODEL="Mi 8 SE"
+RAM="4"
+ROM="64"
+BATTERY="3120"
+PROCESSOR="Snapdragon 710"
+OS="Android 8.1"
+DIAGONAL="5.88"
+RESOLUTION="FHD+"
+MATRIX="AMOLED">
+</phone>
+
+<phone 
+FIRM="Meizu"
+MODEL="16x"
+RAM="6"
+ROM="64"
+BATTERY="3100"
+PROCESSOR="Snapdragon 710"
+OS="Android 8.0"
+DIAGONAL="6"
+RESOLUTION="FHD+"
+MATRIX="Super AMOLED">
+</phone>
+
+<phone 
+FIRM="Meizu"
+MODEL="16x"
+RAM="6"
+ROM="128"
+BATTERY="3100"
+PROCESSOR="Snapdragon 710"
+OS="Android 8.0"
+DIAGONAL="6"
+RESOLUTION="FHD+"
+MATRIX="Super AMOLED">
+</phone>
+
+<phone 
+FIRM="Samsung"
+MODEL="Galaxy A8s"
+RAM="6"
+ROM="128"
+BATTERY="3400"
+PROCESSOR="Snapdragon 710"
+OS="Android 9.0"
+DIAGONAL="6.39"
+RESOLUTION="FHD+"
+MATRIX="Super AMOLED">
+</phone>
+
+<phone 
+FIRM="Meizu"
+MODEL="M6 Note"
+RAM="4"
+ROM="64"
+BATTERY="4000"
+PROCESSOR="Snapdragon 625"
+OS="Android 7.1"
+DIAGONAL="5.5"
+RESOLUTION="FHD"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Honor"
+MODEL="10"
+RAM="4"
+ROM="128"
+BATTERY="3400"
+PROCESSOR="Kirin 970"
+OS="Android 8.1"
+DIAGONAL="5.84"
+RESOLUTION="FHD+"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Xiaomi"
+MODEL="Redmi Note 4x"
+RAM="3"
+ROM="32"
+BATTERY="4100"
+PROCESSOR="Snapdragon 625"
+OS="Android 6.0"
+DIAGONAL="5.5"
+RESOLUTION="FHD"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Huawei"
+MODEL="P20"
+RAM="4"
+ROM="128"
+BATTERY="3400"
+PROCESSOR="Kirin 970"
+OS="Android 8.1"
+DIAGONAL="5.8"
+RESOLUTION="FHD+"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Samsung"
+MODEL="Galaxy S8"
+RAM="4"
+ROM="64"
+BATTERY="3000"
+PROCESSOR="Exynos 8895"
+OS="Android 7.0"
+DIAGONAL="5.8"
+RESOLUTION="2K"
+MATRIX="Super AMOLED">
+</phone>
+
+
+<phone 
+FIRM="Samsung"
+MODEL="Galaxy S8 Plus"
+RAM="4"
+ROM="64"
+BATTERY="3500"
+PROCESSOR="Exynos 8895"
+OS="Android 7.0"
+DIAGONAL="6.2"
+RESOLUTION="2K"
+MATRIX="Super AMOLED">
+</phone>
+
+<phone 
+FIRM="Asus"
+MODEL="Zenfone Max Plus M1"
+RAM="3"
+ROM="32"
+BATTERY="4130"
+PROCESSOR="MediaTek MT6750"
+OS="Android 7.0"
+DIAGONAL="5.7"
+RESOLUTION="FHD+"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Apple"
+MODEL="iPhone 7 Plus"
+RAM="3"
+ROM="128"
+BATTERY="2900"
+PROCESSOR="Apple A10 Fusion"
+OS="iOS"
+DIAGONAL="5.5"
+RESOLUTION="FHD"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Apple"
+MODEL="iPhone 8 Plus"
+RAM="3"
+ROM="64"
+BATTERY="2675"
+PROCESSOR="Apple A11 Bionic"
+OS="iOS"
+DIAGONAL="5.5"
+RESOLUTION="FHD"
+MATRIX="IPS">
+</phone>
+
+<phone 
+FIRM="Apple"
+MODEL="iPhone 7 Plus"
+RAM="3"
+ROM="32"
+BATTERY="2900"
+PROCESSOR="Apple A10 Fusion"
+OS="iOS"
+DIAGONAL="5.5"
+RESOLUTION="FHD"
+MATRIX="IPS">
+</phone>
+
+
+</phones>

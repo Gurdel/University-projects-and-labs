@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<studentsDataBase>
+  <faculty ID="1" NAME="Faculty of Computer Science and Cybernetics">
+    <course Course="1">
+      <speciality  SPEC ="Computer science">
+        <group GROUP="K-17">
+          <student ID="1"
+               NAME="sdsfdsfs"
+               IDCARD="KYBIK001"
+               SUBJECTS="Матан,Нематан, Ще щось"
+               TESTTYPE="Екзамен, Екзамен, Залік"
+               MARK="91, 76, 80"
+               TYPEMARK="відмінно, добре, зараховано"
+               DATE="27/01/2018, 27/04/2018, 27/12/2077">
+          </student>
+          <student ID="2"
+                NAME="Визванов Иоаді АЛлиь"
+                IDCARD="KYBIK002"
+                SUBJECTS="Математичний аналіз, Програмування, Вступ до університетських студій"
+                TESTTYPE="Екзамен, Екзамен, Залік"
+                MARK="60, 96, 70"
+                TYPEMARK="задовільно, відмінно, зараховано"
+                DATE="11/01/1939, 15/01/1939, 25/12/1856">
+          </student>
+        </group>
+      </speciality>
+    </course>
+    <course Course="2">
+    </course>
+  </faculty>
+  <faculty ID="2" NAME="The Educational and Scientific Centre Institute of Biology">
+    <speciality  SPEC ="Biology">
+      <course Course="2">
+        <group GROUP="1">
+          <student ID="1"
+               NAME="Rfgtkzyjdbx Vfrcbv Vfcrbcbjdb "
+               IDCARD="DUNNO001"
+               SUBJECTS="Загальна цитологія та гістологія, Хімія біоорганічна, Вступ до університетських студій"
+               TESTTYPE="Екзамен, Екзамен, Залік"
+               MARK="91, 85, 90"
+               TYPEMARK="відмінно, добре, зараховано"
+               DATE="11/01/1939, 15/01/1939, 25/12/1856">
+          </student>
+          <student ID="2"
+                NAME="Lelrf Fyfcnfcsz Fyfcnfcs]dyf"
+                IDCARD="DUNNO002"
+                SUBJECTS="Цитологія та гістологія, Хімія біоорганічна, Вступ до університетських студій"
+                TESTTYPE="Екзамен, Екзамен, Залік"
+                MARK="60, 96, 70"
+                TYPEMARK="задовільно, відмінно, зараховано"
+                DATE="11/01/1939, 15/01/1939, 25/12/1856">
+          </student>
+         </group>
+      </course>
+      </speciality>
+      </faculty>
+</studentsDataBase>

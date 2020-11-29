@@ -1,0 +1,40 @@
+C:\Users\Admin\Desktop\new XML\XML\XML\bin\Debug\XML.exe.config
+C:\Users\Admin\Desktop\new XML\XML\XML\bin\Debug\XML.exe
+C:\Users\Admin\Desktop\new XML\XML\XML\bin\Debug\XML.pdb
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.Form1.resources
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.Properties.Resources.resources
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.exe
+C:\Users\Admin\Desktop\new XML\XML\XML\obj\Debug\XML.pdb
+F:\111_KNU_NEW\new XML\XML\XML\bin\Debug\XML.exe.config
+F:\111_KNU_NEW\new XML\XML\XML\bin\Debug\XML.exe
+F:\111_KNU_NEW\new XML\XML\XML\bin\Debug\XML.pdb
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.csprojAssemblyReference.cache
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.Form1.resources
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.Properties.Resources.resources
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.csproj.GenerateResource.cache
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.csproj.CoreCompileInputs.cache
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.exe
+F:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.pdb
+H:\111_KNU_NEW\new XML\XML\XML\bin\Debug\XML.exe.config
+H:\111_KNU_NEW\new XML\XML\XML\bin\Debug\XML.exe
+H:\111_KNU_NEW\new XML\XML\XML\bin\Debug\XML.pdb
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.csprojAssemblyReference.cache
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.Form1.resources
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.Properties.Resources.resources
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.csproj.GenerateResource.cache
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.csproj.CoreCompileInputs.cache
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.exe
+H:\111_KNU_NEW\new XML\XML\XML\obj\Debug\XML.pdb
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\bin\Debug\XML.exe.config
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\bin\Debug\XML.exe
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\bin\Debug\XML.pdb
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.csprojAssemblyReference.cache
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.Form1.resources
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.Properties.Resources.resources
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.csproj.GenerateResource.cache
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.csproj.CoreCompileInputs.cache
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.exe
+D:\1A_KNU\ООП Омельчук\new XML\XML\XML\obj\Debug\XML.pdb
