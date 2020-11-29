@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FilmsBDModelStoreContainer" CdmEntityContainer="FilmsBDEntities">
+    <EntitySetMapping Name="Actors">
+      <EntityTypeMapping TypeName="FilmsBDModel.Actor">
+        <MappingFragment StoreEntitySet="Actors">
+          <ScalarProperty Name="a_id" ColumnName="a_id" />
+          <ScalarProperty Name="a_name" ColumnName="a_name" />
+          <ScalarProperty Name="a_birth" ColumnName="a_birth" />
+          <ScalarProperty Name="a_death" ColumnName="a_death" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Films">
+      <EntityTypeMapping TypeName="FilmsBDModel.Film">
+        <MappingFragment StoreEntitySet="Films">
+          <ScalarProperty Name="f_id" ColumnName="f_id" />
+          <ScalarProperty Name="d_name" ColumnName="d_name" />
+          <ScalarProperty Name="f_year" ColumnName="f_year" />
+          <ScalarProperty Name="f_producer" ColumnName="f_producer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmsActors">
+      <EntityTypeMapping TypeName="FilmsBDModel.FilmsActor">
+        <MappingFragment StoreEntitySet="FilmsActors">
+          <ScalarProperty Name="fa_id" ColumnName="fa_id" />
+          <ScalarProperty Name="fa_f_id" ColumnName="fa_f_id" />
+          <ScalarProperty Name="fa_a_id" ColumnName="fa_a_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmsGenres">
+      <EntityTypeMapping TypeName="FilmsBDModel.FilmsGenre">
+        <MappingFragment StoreEntitySet="FilmsGenres">
+          <ScalarProperty Name="fg_id" ColumnName="fg_id" />
+          <ScalarProperty Name="fg_f_id" ColumnName="fg_f_id" />
+          <ScalarProperty Name="fg_g_id" ColumnName="fg_g_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genres">
+      <EntityTypeMapping TypeName="FilmsBDModel.Genre">
+        <MappingFragment StoreEntitySet="Genres">
+          <ScalarProperty Name="g_id" ColumnName="g_id" />
+          <ScalarProperty Name="g_name" ColumnName="g_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Producers">
+      <EntityTypeMapping TypeName="FilmsBDModel.Producer">
+        <MappingFragment StoreEntitySet="Producers">
+          <ScalarProperty Name="p_id" ColumnName="p_id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_birth" ColumnName="p_birth" />
+          <ScalarProperty Name="p_death" ColumnName="p_death" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Viewers">
+      <EntityTypeMapping TypeName="FilmsBDModel.Viewer">
+        <MappingFragment StoreEntitySet="Viewers">
+          <ScalarProperty Name="v_id" ColumnName="v_id" />
+          <ScalarProperty Name="v_name" ColumnName="v_name" />
+          <ScalarProperty Name="v_username" ColumnName="v_username" />
+          <ScalarProperty Name="v_password" ColumnName="v_password" />
+          <ScalarProperty Name="v_mail" ColumnName="v_mail" />
+          <ScalarProperty Name="v_admin" ColumnName="v_admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewersFilms">
+      <EntityTypeMapping TypeName="FilmsBDModel.ViewersFilm">
+        <MappingFragment StoreEntitySet="ViewersFilms">
+          <ScalarProperty Name="vf_id" ColumnName="vf_id" />
+          <ScalarProperty Name="vf_f_id" ColumnName="vf_f_id" />
+          <ScalarProperty Name="vf_v_id" ColumnName="vf_v_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FilmsBDModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Actors">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="a_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="a_birth" Type="int" Nullable="false" />
+          <Property Name="a_death" Type="int" />
+        </EntityType>
+        <EntityType Name="Films">
+          <Key>
+            <PropertyRef Name="f_id" />
+          </Key>
+          <Property Name="f_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="d_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="f_year" Type="int" Nullable="false" />
+          <Property Name="f_producer" Type="int" />
+        </EntityType>
+        <EntityType Name="FilmsActors">
+          <Key>
+            <PropertyRef Name="fa_id" />
+          </Key>
+          <Property Name="fa_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fa_f_id" Type="int" Nullable="false" />
+          <Property Name="fa_a_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilmsGenres">
+          <Key>
+            <PropertyRef Name="fg_id" />
+          </Key>
+          <Property Name="fg_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fg_f_id" Type="int" Nullable="false" />
+          <Property Name="fg_g_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genres">
+          <Key>
+            <PropertyRef Name="g_id" />
+          </Key>
+          <Property Name="g_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="g_name" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Producers">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="p_name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="p_birth" Type="int" Nullable="false" />
+          <Property Name="p_death" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Viewers">
+          <Key>
+            <PropertyRef Name="v_id" />
+          </Key>
+          <Property Name="v_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="v_name" Type="nvarchar(max)" />
+          <Property Name="v_username" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="v_password" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="v_mail" Type="nvarchar(max)" />
+          <Property Name="v_admin" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ViewersFilms">
+          <Key>
+            <PropertyRef Name="vf_id" />
+          </Key>
+          <Property Name="vf_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vf_f_id" Type="int" Nullable="false" />
+          <Property Name="vf_v_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Films_Producers">
+          <End Role="Producers" Type="Self.Producers" Multiplicity="0..1" />
+          <End Role="Films" Type="Self.Films" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producers">
+              <PropertyRef Name="p_id" />
+            </Principal>
+            <Dependent Role="Films">
+              <PropertyRef Name="f_producer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsActors_Actors">
+          <End Role="Actors" Type="Self.Actors" Multiplicity="1" />
+          <End Role="FilmsActors" Type="Self.FilmsActors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actors">
+              <PropertyRef Name="a_id" />
+            </Principal>
+            <Dependent Role="FilmsActors">
+              <PropertyRef Name="fa_a_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsActors_FilmsActors">
+          <End Role="Films" Type="Self.Films" Multiplicity="1" />
+          <End Role="FilmsActors" Type="Self.FilmsActors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="f_id" />
+            </Principal>
+            <Dependent Role="FilmsActors">
+              <PropertyRef Name="fa_f_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsGenres_Films">
+          <End Role="Films" Type="Self.Films" Multiplicity="1" />
+          <End Role="FilmsGenres" Type="Self.FilmsGenres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="f_id" />
+            </Principal>
+            <Dependent Role="FilmsGenres">
+              <PropertyRef Name="fg_f_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsGenres_Genres">
+          <End Role="Genres" Type="Self.Genres" Multiplicity="1" />
+          <End Role="FilmsGenres" Type="Self.FilmsGenres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genres">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="FilmsGenres">
+              <PropertyRef Name="fg_g_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViewersFilms_Films">
+          <End Role="Films" Type="Self.Films" Multiplicity="1" />
+          <End Role="ViewersFilms" Type="Self.ViewersFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="f_id" />
+            </Principal>
+            <Dependent Role="ViewersFilms">
+              <PropertyRef Name="vf_f_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViewersFilms_Viewers">
+          <End Role="Viewers" Type="Self.Viewers" Multiplicity="1" />
+          <End Role="ViewersFilms" Type="Self.ViewersFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Viewers">
+              <PropertyRef Name="v_id" />
+            </Principal>
+            <Dependent Role="ViewersFilms">
+              <PropertyRef Name="vf_v_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FilmsBDModel2StoreContainer">
+          <EntitySet Name="Actors" EntityType="Self.Actors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Films" EntityType="Self.Films" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilmsActors" EntityType="Self.FilmsActors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilmsGenres" EntityType="Self.FilmsGenres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genres" EntityType="Self.Genres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Producers" EntityType="Self.Producers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Viewers" EntityType="Self.Viewers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewersFilms" EntityType="Self.ViewersFilms" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Films_Producers" Association="Self.FK_Films_Producers">
+            <End Role="Producers" EntitySet="Producers" />
+            <End Role="Films" EntitySet="Films" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsActors_Actors" Association="Self.FK_FilmsActors_Actors">
+            <End Role="Actors" EntitySet="Actors" />
+            <End Role="FilmsActors" EntitySet="FilmsActors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsActors_FilmsActors" Association="Self.FK_FilmsActors_FilmsActors">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="FilmsActors" EntitySet="FilmsActors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsGenres_Films" Association="Self.FK_FilmsGenres_Films">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="FilmsGenres" EntitySet="FilmsGenres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsGenres_Genres" Association="Self.FK_FilmsGenres_Genres">
+            <End Role="Genres" EntitySet="Genres" />
+            <End Role="FilmsGenres" EntitySet="FilmsGenres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViewersFilms_Films" Association="Self.FK_ViewersFilms_Films">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="ViewersFilms" EntitySet="ViewersFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViewersFilms_Viewers" Association="Self.FK_ViewersFilms_Viewers">
+            <End Role="Viewers" EntitySet="Viewers" />
+            <End Role="ViewersFilms" EntitySet="ViewersFilms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FilmsBDModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Actor">
+          <Key>
+            <PropertyRef Name="a_id" />
+          </Key>
+          <Property Name="a_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="a_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="a_birth" Type="Int32" Nullable="false" />
+          <Property Name="a_death" Type="Int32" />
+          <NavigationProperty Name="FilmsActors" Relationship="Self.FK_FilmsActors_Actors" FromRole="Actors" ToRole="FilmsActors" />
+        </EntityType>
+        <EntityType Name="Film">
+          <Key>
+            <PropertyRef Name="f_id" />
+          </Key>
+          <Property Name="f_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="d_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="f_year" Type="Int32" Nullable="false" />
+          <Property Name="f_producer" Type="Int32" />
+          <NavigationProperty Name="Producer" Relationship="Self.FK_Films_Producers" FromRole="Films" ToRole="Producers" />
+          <NavigationProperty Name="FilmsActors" Relationship="Self.FK_FilmsActors_FilmsActors" FromRole="Films" ToRole="FilmsActors" />
+          <NavigationProperty Name="FilmsGenres" Relationship="Self.FK_FilmsGenres_Films" FromRole="Films" ToRole="FilmsGenres" />
+          <NavigationProperty Name="ViewersFilms" Relationship="Self.FK_ViewersFilms_Films" FromRole="Films" ToRole="ViewersFilms" />
+        </EntityType>
+        <EntityType Name="FilmsActor">
+          <Key>
+            <PropertyRef Name="fa_id" />
+          </Key>
+          <Property Name="fa_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fa_f_id" Type="Int32" Nullable="false" />
+          <Property Name="fa_a_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Actor" Relationship="Self.FK_FilmsActors_Actors" FromRole="FilmsActors" ToRole="Actors" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_FilmsActors_FilmsActors" FromRole="FilmsActors" ToRole="Films" />
+        </EntityType>
+        <EntityType Name="FilmsGenre">
+          <Key>
+            <PropertyRef Name="fg_id" />
+          </Key>
+          <Property Name="fg_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fg_f_id" Type="Int32" Nullable="false" />
+          <Property Name="fg_g_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_FilmsGenres_Films" FromRole="FilmsGenres" ToRole="Films" />
+          <NavigationProperty Name="Genre" Relationship="Self.FK_FilmsGenres_Genres" FromRole="FilmsGenres" ToRole="Genres" />
+        </EntityType>
+        <EntityType Name="Genre">
+          <Key>
+            <PropertyRef Name="g_id" />
+          </Key>
+          <Property Name="g_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="g_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FilmsGenres" Relationship="Self.FK_FilmsGenres_Genres" FromRole="Genres" ToRole="FilmsGenres" />
+        </EntityType>
+        <EntityType Name="Producer">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="p_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="p_birth" Type="Int32" Nullable="false" />
+          <Property Name="p_death" Type="Int32" />
+          <NavigationProperty Name="Films" Relationship="Self.FK_Films_Producers" FromRole="Producers" ToRole="Films" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Viewer">
+          <Key>
+            <PropertyRef Name="v_id" />
+          </Key>
+          <Property Name="v_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="v_name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="v_username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="v_password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="v_mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="v_admin" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ViewersFilms" Relationship="Self.FK_ViewersFilms_Viewers" FromRole="Viewers" ToRole="ViewersFilms" />
+        </EntityType>
+        <EntityType Name="ViewersFilm">
+          <Key>
+            <PropertyRef Name="vf_id" />
+          </Key>
+          <Property Name="vf_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vf_f_id" Type="Int32" Nullable="false" />
+          <Property Name="vf_v_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Film" Relationship="Self.FK_ViewersFilms_Films" FromRole="ViewersFilms" ToRole="Films" />
+          <NavigationProperty Name="Viewer" Relationship="Self.FK_ViewersFilms_Viewers" FromRole="ViewersFilms" ToRole="Viewers" />
+        </EntityType>
+        <Association Name="FK_FilmsActors_Actors">
+          <End Role="Actors" Type="Self.Actor" Multiplicity="1" />
+          <End Role="FilmsActors" Type="Self.FilmsActor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Actors">
+              <PropertyRef Name="a_id" />
+            </Principal>
+            <Dependent Role="FilmsActors">
+              <PropertyRef Name="fa_a_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Films_Producers">
+          <End Role="Producers" Type="Self.Producer" Multiplicity="0..1" />
+          <End Role="Films" Type="Self.Film" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producers">
+              <PropertyRef Name="p_id" />
+            </Principal>
+            <Dependent Role="Films">
+              <PropertyRef Name="f_producer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsActors_FilmsActors">
+          <End Role="Films" Type="Self.Film" Multiplicity="1" />
+          <End Role="FilmsActors" Type="Self.FilmsActor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="f_id" />
+            </Principal>
+            <Dependent Role="FilmsActors">
+              <PropertyRef Name="fa_f_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsGenres_Films">
+          <End Role="Films" Type="Self.Film" Multiplicity="1" />
+          <End Role="FilmsGenres" Type="Self.FilmsGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="f_id" />
+            </Principal>
+            <Dependent Role="FilmsGenres">
+              <PropertyRef Name="fg_f_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViewersFilms_Films">
+          <End Role="Films" Type="Self.Film" Multiplicity="1" />
+          <End Role="ViewersFilms" Type="Self.ViewersFilm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Films">
+              <PropertyRef Name="f_id" />
+            </Principal>
+            <Dependent Role="ViewersFilms">
+              <PropertyRef Name="vf_f_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmsGenres_Genres">
+          <End Role="Genres" Type="Self.Genre" Multiplicity="1" />
+          <End Role="FilmsGenres" Type="Self.FilmsGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genres">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="FilmsGenres">
+              <PropertyRef Name="fg_g_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ViewersFilms_Viewers">
+          <End Role="Viewers" Type="Self.Viewer" Multiplicity="1" />
+          <End Role="ViewersFilms" Type="Self.ViewersFilm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Viewers">
+              <PropertyRef Name="v_id" />
+            </Principal>
+            <Dependent Role="ViewersFilms">
+              <PropertyRef Name="vf_v_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FilmsBDEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Actors" EntityType="Self.Actor" />
+          <EntitySet Name="Films" EntityType="Self.Film" />
+          <EntitySet Name="FilmsActors" EntityType="Self.FilmsActor" />
+          <EntitySet Name="FilmsGenres" EntityType="Self.FilmsGenre" />
+          <EntitySet Name="Genres" EntityType="Self.Genre" />
+          <EntitySet Name="Producers" EntityType="Self.Producer" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Viewers" EntityType="Self.Viewer" />
+          <EntitySet Name="ViewersFilms" EntityType="Self.ViewersFilm" />
+          <AssociationSet Name="FK_FilmsActors_Actors" Association="Self.FK_FilmsActors_Actors">
+            <End Role="Actors" EntitySet="Actors" />
+            <End Role="FilmsActors" EntitySet="FilmsActors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Films_Producers" Association="Self.FK_Films_Producers">
+            <End Role="Producers" EntitySet="Producers" />
+            <End Role="Films" EntitySet="Films" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsActors_FilmsActors" Association="Self.FK_FilmsActors_FilmsActors">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="FilmsActors" EntitySet="FilmsActors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsGenres_Films" Association="Self.FK_FilmsGenres_Films">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="FilmsGenres" EntitySet="FilmsGenres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViewersFilms_Films" Association="Self.FK_ViewersFilms_Films">
+            <End Role="Films" EntitySet="Films" />
+            <End Role="ViewersFilms" EntitySet="ViewersFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmsGenres_Genres" Association="Self.FK_FilmsGenres_Genres">
+            <End Role="Genres" EntitySet="Genres" />
+            <End Role="FilmsGenres" EntitySet="FilmsGenres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ViewersFilms_Viewers" Association="Self.FK_ViewersFilms_Viewers">
+            <End Role="Viewers" EntitySet="Viewers" />
+            <End Role="ViewersFilms" EntitySet="ViewersFilms" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FilmsBDModel2StoreContainer" CdmEntityContainer="FilmsBDEntities2">
+          <EntitySetMapping Name="Actors">
+            <EntityTypeMapping TypeName="FilmsBDModel2.Actor">
+              <MappingFragment StoreEntitySet="Actors">
+                <ScalarProperty Name="a_id" ColumnName="a_id" />
+                <ScalarProperty Name="a_name" ColumnName="a_name" />
+                <ScalarProperty Name="a_birth" ColumnName="a_birth" />
+                <ScalarProperty Name="a_death" ColumnName="a_death" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Films">
+            <EntityTypeMapping TypeName="FilmsBDModel2.Film">
+              <MappingFragment StoreEntitySet="Films">
+                <ScalarProperty Name="f_id" ColumnName="f_id" />
+                <ScalarProperty Name="d_name" ColumnName="d_name" />
+                <ScalarProperty Name="f_year" ColumnName="f_year" />
+                <ScalarProperty Name="f_producer" ColumnName="f_producer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilmsActors">
+            <EntityTypeMapping TypeName="FilmsBDModel2.FilmsActor">
+              <MappingFragment StoreEntitySet="FilmsActors">
+                <ScalarProperty Name="fa_id" ColumnName="fa_id" />
+                <ScalarProperty Name="fa_f_id" ColumnName="fa_f_id" />
+                <ScalarProperty Name="fa_a_id" ColumnName="fa_a_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilmsGenres">
+            <EntityTypeMapping TypeName="FilmsBDModel2.FilmsGenre">
+              <MappingFragment StoreEntitySet="FilmsGenres">
+                <ScalarProperty Name="fg_id" ColumnName="fg_id" />
+                <ScalarProperty Name="fg_f_id" ColumnName="fg_f_id" />
+                <ScalarProperty Name="fg_g_id" ColumnName="fg_g_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genres">
+            <EntityTypeMapping TypeName="FilmsBDModel2.Genre">
+              <MappingFragment StoreEntitySet="Genres">
+                <ScalarProperty Name="g_id" ColumnName="g_id" />
+                <ScalarProperty Name="g_name" ColumnName="g_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producers">
+            <EntityTypeMapping TypeName="FilmsBDModel2.Producer">
+              <MappingFragment StoreEntitySet="Producers">
+                <ScalarProperty Name="p_id" ColumnName="p_id" />
+                <ScalarProperty Name="p_name" ColumnName="p_name" />
+                <ScalarProperty Name="p_birth" ColumnName="p_birth" />
+                <ScalarProperty Name="p_death" ColumnName="p_death" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FilmsBDModel2.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Viewers">
+            <EntityTypeMapping TypeName="FilmsBDModel2.Viewer">
+              <MappingFragment StoreEntitySet="Viewers">
+                <ScalarProperty Name="v_id" ColumnName="v_id" />
+                <ScalarProperty Name="v_name" ColumnName="v_name" />
+                <ScalarProperty Name="v_username" ColumnName="v_username" />
+                <ScalarProperty Name="v_password" ColumnName="v_password" />
+                <ScalarProperty Name="v_mail" ColumnName="v_mail" />
+                <ScalarProperty Name="v_admin" ColumnName="v_admin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewersFilms">
+            <EntityTypeMapping TypeName="FilmsBDModel2.ViewersFilm">
+              <MappingFragment StoreEntitySet="ViewersFilms">
+                <ScalarProperty Name="vf_id" ColumnName="vf_id" />
+                <ScalarProperty Name="vf_f_id" ColumnName="vf_f_id" />
+                <ScalarProperty Name="vf_v_id" ColumnName="vf_v_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

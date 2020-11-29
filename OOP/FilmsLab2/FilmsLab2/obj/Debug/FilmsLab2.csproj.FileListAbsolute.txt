@@ -1,0 +1,4 @@
+D:\1A_KNU\ООП Омельчук\FilmsLab2\FilmsLab2\obj\Debug\FilmsLab2.csprojAssemblyReference.cache
+D:\1A_KNU\ООП Омельчук\FilmsLab2\FilmsLab2\obj\Debug\FilmsLab2.FormFilms.resources
+D:\1A_KNU\ООП Омельчук\FilmsLab2\FilmsLab2\obj\Debug\FilmsLab2.InfoAboutFilm.resources
+D:\1A_KNU\ООП Омельчук\FilmsLab2\FilmsLab2\obj\Debug\FilmsLab2.csproj.GenerateResource.cache
