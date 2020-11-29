@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1521907029 source:e:\corelation\corel.cpp
+	<iostream>
+	<math.h>
+
+1521903304 e:\corelation\corel.hpp
+	"Corel.cpp"
+
+1521902830 e:\corelation\consts.hpp
+
+1522449826 source:e:\corelation\main.cpp
+	<iostream>
+	"Corel.cpp"
+
+1522450046 e:\corelation\corel.cpp
+	<iostream>
+	<math.h>
+

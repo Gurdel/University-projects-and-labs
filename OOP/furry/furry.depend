@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1522606511 source:e:\furry\cfurry.cpp
+	<iostream>
+	<cmath>
+
+1522509232 source:e:\furry\main.cpp
+	<iostream>
+	"cfurry.cpp"
+
+1522606511 e:\furry\cfurry.cpp
+	<iostream>
+	<cmath>
+

@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1525520658 source:f:\calc\main.cpp
+	"mana.hpp"
+
+1525520374 f:\calc\mana.hpp
+	<iostream>
+	<string>
+	<sstream>
+	<cstdlib>
+	<cmath>
+
+1525988441 source:e:\calc 2\main.cpp
+	"mana.hpp"
+
+1525812090 e:\calc 2\mana.hpp
+	<iostream>
+	<string>
+	<sstream>
+	<cstdlib>
+	<cmath>
+
