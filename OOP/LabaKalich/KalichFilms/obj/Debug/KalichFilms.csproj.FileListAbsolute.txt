@@ -1,0 +1,6 @@
+C:\Users\Admin\Desktop\LabaKalich\KalichFilms\bin\Debug\KalichFilms.dll
+C:\Users\Admin\Desktop\LabaKalich\KalichFilms\bin\Debug\KalichFilms.pdb
+C:\Users\Admin\Desktop\LabaKalich\KalichFilms\obj\Debug\KalichFilms.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\LabaKalich\KalichFilms\obj\Debug\KalichFilms.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\LabaKalich\KalichFilms\obj\Debug\KalichFilms.dll
+C:\Users\Admin\Desktop\LabaKalich\KalichFilms\obj\Debug\KalichFilms.pdb
