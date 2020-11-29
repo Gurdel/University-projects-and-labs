@@ -1,0 +1,9 @@
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\bin\Release\OGKGlab.exe.config
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\bin\Release\OGKGlab.exe
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\bin\Release\OGKGlab.pdb
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\obj\Release\OGKGlab.Form1.resources
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\obj\Release\OGKGlab.Properties.Resources.resources
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\obj\Release\OGKGlab.csproj.GenerateResource.cache
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\obj\Release\OGKGlab.csproj.CoreCompileInputs.cache
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\obj\Release\OGKGlab.exe
+C:\Users\maksy\Desktop\OGKGlab\OGKGlab\obj\Release\OGKGlab.pdb
