@@ -1,0 +1,6 @@
+e
+S->AbS AC
+A->BD
+C->Sa e
+B->BC e
+D->aB BA

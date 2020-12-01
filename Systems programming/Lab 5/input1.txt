@@ -1,0 +1,6 @@
+e
+S->BA
+A->+BA e
+B->DC
+C->*DC e
+D->(S) a
