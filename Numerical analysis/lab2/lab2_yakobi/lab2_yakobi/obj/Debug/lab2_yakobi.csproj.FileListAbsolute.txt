@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\bin\Debug\lab2_yakobi.exe.config
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\bin\Debug\lab2_yakobi.exe
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\bin\Debug\lab2_yakobi.pdb
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\obj\Debug\lab2_yakobi.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\obj\Debug\lab2_yakobi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\obj\Debug\lab2_yakobi.exe
+C:\Users\Admin\Desktop\чм\lab2_yakobi\lab2_yakobi\obj\Debug\lab2_yakobi.pdb

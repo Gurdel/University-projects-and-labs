@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\obj\Debug\chmD.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\obj\Debug\chmD.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\bin\Debug\chmD.exe.config
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\bin\Debug\chmD.exe
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\bin\Debug\chmD.pdb
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\obj\Debug\chmD.exe
+C:\Users\Admin\Desktop\Ch M\chmD\chmD\obj\Debug\chmD.pdb

@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\bin\Debug\laba3_znov.exe.config
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\bin\Debug\laba3_znov.exe
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\bin\Debug\laba3_znov.pdb
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\obj\Debug\laba3_znov.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\obj\Debug\laba3_znov.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\obj\Debug\laba3_znov.exe
+C:\Users\Admin\Desktop\laba3_znov\laba3_znov\obj\Debug\laba3_znov.pdb

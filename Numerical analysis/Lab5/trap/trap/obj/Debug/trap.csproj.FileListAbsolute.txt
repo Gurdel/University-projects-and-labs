@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\Lab5\trap\trap\bin\Debug\trap.exe.config
+C:\Users\Admin\Desktop\Lab5\trap\trap\bin\Debug\trap.exe
+C:\Users\Admin\Desktop\Lab5\trap\trap\bin\Debug\trap.pdb
+C:\Users\Admin\Desktop\Lab5\trap\trap\obj\Debug\trap.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Lab5\trap\trap\obj\Debug\trap.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Lab5\trap\trap\obj\Debug\trap.exe
+C:\Users\Admin\Desktop\Lab5\trap\trap\obj\Debug\trap.pdb

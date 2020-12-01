@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\bin\Debug\lab3_obert_yakobi.exe.config
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\bin\Debug\lab3_obert_yakobi.exe
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\bin\Debug\lab3_obert_yakobi.pdb
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\obj\Debug\lab3_obert_yakobi.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\obj\Debug\lab3_obert_yakobi.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\obj\Debug\lab3_obert_yakobi.exe
+C:\Users\Admin\Desktop\чм\lab3\lab3_obert_yakobi\lab3_obert_yakobi\obj\Debug\lab3_obert_yakobi.pdb

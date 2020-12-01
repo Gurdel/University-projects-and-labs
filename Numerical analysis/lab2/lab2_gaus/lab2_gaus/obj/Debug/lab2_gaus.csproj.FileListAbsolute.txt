@@ -1,0 +1,7 @@
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\bin\Debug\lab2_gaus.exe.config
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\bin\Debug\lab2_gaus.exe
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\bin\Debug\lab2_gaus.pdb
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\obj\Debug\lab2_gaus.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\obj\Debug\lab2_gaus.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\obj\Debug\lab2_gaus.exe
+C:\Users\Admin\Desktop\чм\lab2_gaus\lab2_gaus\obj\Debug\lab2_gaus.pdb

@@ -1,0 +1,14 @@
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\bin\Debug\chmN.exe.config
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\bin\Debug\chmN.exe
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\bin\Debug\chmN.pdb
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\obj\Debug\chmN.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\obj\Debug\chmN.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\obj\Debug\chmN.exe
+C:\Users\Admin\Desktop\Ch M\chmN\chmN\obj\Debug\chmN.pdb
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\bin\Debug\chmN.exe.config
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\bin\Debug\chmN.exe
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\bin\Debug\chmN.pdb
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\obj\Debug\chmN.csprojAssemblyReference.cache
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\obj\Debug\chmN.csproj.CoreCompileInputs.cache
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\obj\Debug\chmN.exe
+E:\1A_KNU\Чисельні методи\Ch M\chmN\chmN\obj\Debug\chmN.pdb
