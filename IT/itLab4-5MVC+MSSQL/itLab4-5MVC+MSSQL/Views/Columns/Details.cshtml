@@ -1,0 +1,47 @@
+﻿@model itLab4_5MVC_MSSQL.Column
+
+@{
+    ViewData["Title"] = "Open";
+}
+
+<h1>Open</h1>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<div>
+    @{
+        List<string> paths = new List<string>(ViewBag.Paths);
+        List<string> texts = new List<string>(ViewBag.Texts);
+        if (paths[0] == null)
+        {
+            <h3>No file found¯\_(ツ)_/¯</h3>
+        }
+        else
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        @foreach (var p in paths)
+                        {
+                            <th>
+                                @p
+                            </th>
+                        }
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @foreach (var p in texts)
+                        {
+                            <td>
+                                @p
+                            </td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        }
+    }
+
+</div>

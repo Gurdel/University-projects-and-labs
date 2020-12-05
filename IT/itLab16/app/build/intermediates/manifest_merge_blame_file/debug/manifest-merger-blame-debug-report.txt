@@ -1,0 +1,61 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="android.informationtechnology.androidclient"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="15"
+8-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="26" />
+9-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:5:5-83
+11-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:5:22-64
+12
+13    <application
+13-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:7:5-21:19
+14        android:allowBackup="true"
+14-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:8:13-39
+15        android:debuggable="true"
+16        android:icon="@mipmap/ic_launcher"
+16-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:9:13-47
+17        android:label="@string/app_name"
+17-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:10:13-45
+18        android:roundIcon="@mipmap/ic_launcher_round"
+18-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:11:13-58
+19        android:supportsRtl="true"
+19-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:12:13-39
+20        android:theme="@style/AppTheme" >
+20-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:13:13-44
+21        <activity android:name="android.informationtechnology.androidclient.DbmsActivity" >
+21-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:14:9-20:20
+21-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:14:19-47
+22            <intent-filter>
+22-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:15:13-19:29
+23                <action android:name="android.intent.action.MAIN" />
+23-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:16:17-68
+23-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:16:25-66
+24
+25                <category android:name="android.intent.category.LAUNCHER" />
+25-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:18:17-76
+25-->C:\Users\maksy\Desktop\itLab16\app\src\main\AndroidManifest.xml:18:27-74
+26            </intent-filter>
+27        </activity>
+28
+29        <meta-data
+29-->[com.android.support:appcompat-v7:26.1.0] C:\Users\maksy\.gradle\caches\transforms-2\files-2.1\1d67b5cd9d66be257c30d877687a2b06\appcompat-v7-26.1.0\AndroidManifest.xml:26:9-28:38
+30            android:name="android.support.VERSION"
+30-->[com.android.support:appcompat-v7:26.1.0] C:\Users\maksy\.gradle\caches\transforms-2\files-2.1\1d67b5cd9d66be257c30d877687a2b06\appcompat-v7-26.1.0\AndroidManifest.xml:27:13-51
+31            android:value="26.1.0" />
+31-->[com.android.support:appcompat-v7:26.1.0] C:\Users\maksy\.gradle\caches\transforms-2\files-2.1\1d67b5cd9d66be257c30d877687a2b06\appcompat-v7-26.1.0\AndroidManifest.xml:28:13-35
+32        <meta-data
+32-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\maksy\.gradle\caches\transforms-2\files-2.1\2866a802edd10d0352ff68229e14ce56\runtime-1.0.0\AndroidManifest.xml:25:9-27:47
+33            android:name="android.arch.lifecycle.VERSION"
+33-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\maksy\.gradle\caches\transforms-2\files-2.1\2866a802edd10d0352ff68229e14ce56\runtime-1.0.0\AndroidManifest.xml:26:13-58
+34            android:value="27.0.0-SNAPSHOT" />
+34-->[android.arch.lifecycle:runtime:1.0.0] C:\Users\maksy\.gradle\caches\transforms-2\files-2.1\2866a802edd10d0352ff68229e14ce56\runtime-1.0.0\AndroidManifest.xml:27:13-44
+35    </application>
+36
+37</manifest>

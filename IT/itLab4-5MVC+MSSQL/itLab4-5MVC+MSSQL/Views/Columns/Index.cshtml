@@ -1,0 +1,59 @@
+﻿@model IEnumerable<itLab4_5MVC_MSSQL.Column>
+
+@{
+    ViewData["Title"] = "testDB";
+}
+
+<h1>testTable</h1>
+
+<form method="post">
+    <input type="submit" name="search" value="Search" />
+    <input type="text" name="textToSearch" />
+</form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            @foreach (var col in Model)
+            {
+                <th>
+                    @Html.DisplayFor(modelItem => col.Name)
+                </th>
+            }
+            <th></th>
+        </tr>
+    </thead>
+
+    @{
+        List<List<string>> transpTableData = new List<List<string>>();
+        int colCount = -1;
+        List<int> corInd = new List<int>(ViewBag.CorRowId);
+    }
+    @foreach (var item in Model.OrderBy(i => i.Id))
+    {
+        transpTableData.Add(new List<string>());
+        ++colCount;
+        foreach (var d in item.Data.Where(d => corInd.Contains(d.RowId)).OrderBy(i => i.RowId))
+        {
+            transpTableData[colCount].Add(d.Data1);
+        }
+    }
+
+    <tbody>
+        @for (int i = 0; i < transpTableData[0].Count(); ++i)
+        {
+            <tr>
+                @for (int j = 0; j <= colCount; ++j)
+                {
+                    <td>
+                        @transpTableData[j][i]
+                    </td>
+                }
+                <td>
+                    <a asp-action="Details" asp-route-id="@corInd[i]">Open</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
