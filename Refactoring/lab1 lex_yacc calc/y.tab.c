@@ -1596,7 +1596,7 @@ yyreturn:
 #line 28 "calc.y"
 
 void yyerror(char *s) {
-fprintf(stderr, "%s\n", s);
+fprintf(stderr, "%sError\n", s);
 return;
 }
 int main(void) {
