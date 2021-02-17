@@ -1,0 +1,20 @@
+mother('Olena', 'Viktor').
+father('Oleg', 'Viktor').
+
+mother('Olena', 'Vika').
+father('Oleg', 'Vika').
+
+mother('Kira', 'Olena').
+father('Makar', 'Olena').
+
+mother('Lilya', 'Oleg').
+father('Mykola', 'Oleg').
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+grandmother(X, Y):-mother(X, Z), (mother(Z, Y); father(Z, Y)).
+grandfather(X, Y):-father(X, Z), (mother(Z, Y); father(Z, Y)).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+?:father(_,'Oleg').
