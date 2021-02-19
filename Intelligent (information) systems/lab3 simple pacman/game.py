@@ -18,21 +18,23 @@ class Game:
                     self.target = Target(x, y)
 
     def play(self):
-        #print(f'\n\nResult:', *self.pacman.bfs(self.field, self.target), sep=' > ')
-        print(f'\n\nResult:', *self.pacman.Astar(self.field, self.target), sep=' > ')
+        print(f'\nResult:', *self.pacman.bfs(self.field, self.target), sep=' > ', end='\n\n')
+        print(f'\nResult:', *self.pacman.dfs(self.field, self.target), sep=' > ', end='\n\n')
+        print(f'\nResult:', *self.pacman.Astar(self.field, self.target), sep=' > ', end='\n\n')
+        print(f'\nResult:', *self.pacman.greedy(self.field, self.target), sep=' > ', end='\n\n')
 
 
 class Target:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        print(f'Target x={x} y={y}')
+        print(f'Target x={x} y={y}') #консольний вивід для дебагу
 
 class Pacman:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        print(f'Pacman x={x} y={y}')
+        print(f'Pacman x={x} y={y}') #консольний вивід для дебагу
     
     #пошук у ширину
     def bfs(self, field, target):
@@ -46,6 +48,7 @@ class Pacman:
             #якщо на якомусь шляху потрапляємо в шукану вершину, повертаємо цей шлях
             for path in paths:
                 if path[-1] == trgt:
+                    print('bfs') #консольний вивід для дебагу
                     return path
 
             #інакше для кожного шляху переглядаємо всі досяжні вершини
@@ -78,6 +81,7 @@ class Pacman:
         while True:
             #повертаємо шлях, якщо потрапили в шукану вершину
             if path[-1] == trgt:
+                print('dfs') #консольний вивід для дебагу
                 return path
             
             #шукаємо наступну досяжну вершину
@@ -113,6 +117,7 @@ class Pacman:
             cur = min(open, key=lambda x: f[x]) #обираємо вершину з найменшим f
 
             if cur == trgt: #якщо потрапили в шукану вершину, відновлюємо шлях
+                print('A*********************************')
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
@@ -139,6 +144,45 @@ class Pacman:
                     f[neighbour] = g[neighbour] + self.h(neighbour, trgt)
                 if neighbour not in open: #додаємо вершину до відомих
                     open.append(neighbour)
+
+        return False #якщо дійшли сюди, то побудувати шлях не вийшло
+
+    #жадібний алгоритм Дейкстрим
+    def greedy(self, field, target):
+        trgt = (target.x, target.y) #координати цілі
+        start = (self.x, self.y) #початкова вершина
+        enable = {start} #вершини з вартістю переходу в них <inf
+        visited = set()
+        route = {} #з якої вершини перейшли
+        d = {start: 0} #ціна шляху у вершину
+
+        while enable:
+            cur = min(enable-visited, key=lambda x: d[x]) #обираємо вершину, у якій ще не були, з найменшим d
+            visited.add(cur)
+
+            if cur == trgt: #якщо потрапили в шукану вершину, відновлюємо шлях
+                print('greeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedy') #консольний вивід для дебагу
+                res = [trgt]
+                while res[-1] != start:
+                    res.append(route[res[-1]])
+                return reversed(res)
+
+            #досліджуємо всіх сусідів
+            neighbours = [(cur[0]+1, cur[1]), (cur[0]-1, cur[1]), (cur[0], cur[1]+1), (cur[0], cur[1]-1)]
+            for neighbour in neighbours:
+                #не можемо перейти у вершину
+                if field[neighbour[1]][neighbour[0]] == 'X':
+                    continue
+
+                #вартість переходу до нащадка
+                temp_d = d[cur] + 1 #dist(cur, neigbour) == const == 1
+                #якщо шлях до нащадка через теперішню вершину дешевший
+                #змінюємо маршрут
+                #neighbour not in enable <=> d[neighbour]==inf
+                if (neighbour not in enable) or (temp_d < d[neighbour]):
+                    route[neighbour] = cur
+                    d[neighbour] = temp_d
+                    enable.add(neighbour)
 
         return False #якщо дійшли сюди, то побудувати шлях не вийшло
 
