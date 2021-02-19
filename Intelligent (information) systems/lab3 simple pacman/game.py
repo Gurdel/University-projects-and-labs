@@ -18,7 +18,8 @@ class Game:
                     self.target = Target(x, y)
 
     def play(self):
-        print(f'\n\nResult:', *self.pacman.dfs(self.field, self.target), sep=' > ')
+        #print(f'\n\nResult:', *self.pacman.bfs(self.field, self.target), sep=' > ')
+        print(f'\n\nResult:', self.pacman.Astar(self.field, self.target), sep=' > ')
 
 
 class Target:
@@ -94,6 +95,43 @@ class Pacman:
                 
             #консольний вивід для дебагу
             print(*path, sep=' > ')
+
+    #евристика для А*
+    def h(self, start, end):
+        return (start[0]-end[0])**2 + (start[1]-end[1])**2
+    #A*
+    def Astar(self, field, target):
+        trgt = (target.x, target.y) #координати цілі
+        start = (self.x, self.y)
+        closed = []
+        open = [start]
+        route = {}
+        g = {start: 0}
+        f = {start: g[start] + self.h(start, trgt)}
+
+        while open:
+            cur = min(open, key=lambda x: f[x])
+            if cur == trgt:
+                return True
+            open.remove(cur)
+            closed += cur
+
+        neighbours = [(cur[0]+1, cur[1]), (cur[0]-1, cur[1]), (cur[0], cur[1]+1), (cur[0], cur[1]-1)]
+        for neighbour in neighbours:
+            if neighbour in closed:
+                continue
+
+            temp_g = g[cur] + 1 #dist(cur, neigbour) == const == 1
+            if neighbour not in open or temp_g < g[neighbour]:
+                route[neighbour] = cur
+                g[neighbour] = temp_g
+                f[neighbour] = g[neighbour] + self.h(neighbour, trgt)
+            if neighbour not in open:
+                open += neighbour
+
+        return False
+
+
 
 
 
