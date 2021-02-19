@@ -19,7 +19,7 @@ class Game:
 
     def play(self):
         #print(f'\n\nResult:', *self.pacman.bfs(self.field, self.target), sep=' > ')
-        print(f'\n\nResult:', self.pacman.Astar(self.field, self.target), sep=' > ')
+        print(f'\n\nResult:', *self.pacman.Astar(self.field, self.target), sep=' > ')
 
 
 class Target:
@@ -102,34 +102,45 @@ class Pacman:
     #A*
     def Astar(self, field, target):
         trgt = (target.x, target.y) #координати цілі
-        start = (self.x, self.y)
-        closed = []
-        open = [start]
-        route = {}
-        g = {start: 0}
-        f = {start: g[start] + self.h(start, trgt)}
+        start = (self.x, self.y) #початкова вершина
+        closed = [] #досліджені вершини
+        open = [start] #відомі вершини
+        route = {} #з якої вершини перейшли
+        g = {start: 0} #ціна переходу
+        f = {start: g[start] + self.h(start, trgt)} #ф-ція ціни маршруту
 
         while open:
-            cur = min(open, key=lambda x: f[x])
-            if cur == trgt:
-                return True
+            cur = min(open, key=lambda x: f[x]) #обираємо вершину з найменшим f
+
+            if cur == trgt: #якщо потрапили в шукану вершину, відновлюємо шлях
+                res = [trgt]
+                while res[-1] != start:
+                    res.append(route[res[-1]])
+                return reversed(res)
+            
             open.remove(cur)
-            closed += cur
+            closed.append(cur)
 
-        neighbours = [(cur[0]+1, cur[1]), (cur[0]-1, cur[1]), (cur[0], cur[1]+1), (cur[0], cur[1]-1)]
-        for neighbour in neighbours:
-            if neighbour in closed:
-                continue
+            #досліджуємо всіх сусідів
+            neighbours = [(cur[0]+1, cur[1]), (cur[0]-1, cur[1]), (cur[0], cur[1]+1), (cur[0], cur[1]-1)]
+            for neighbour in neighbours:
+                if field[neighbour[1]][neighbour[0]] == 'X': #не можемо перейти у вершину
+                    continue
+                if neighbour in closed: #вершина вже досліджена
+                    continue
 
-            temp_g = g[cur] + 1 #dist(cur, neigbour) == const == 1
-            if neighbour not in open or temp_g < g[neighbour]:
-                route[neighbour] = cur
-                g[neighbour] = temp_g
-                f[neighbour] = g[neighbour] + self.h(neighbour, trgt)
-            if neighbour not in open:
-                open += neighbour
+                #вартість переходу до нащадка
+                temp_g = g[cur] + 1 #dist(cur, neigbour) == const == 1
+                #якщо нащадок не відомий або шлях до нього через теперішню вершину дешевший
+                #змінюємо маршрут
+                if (neighbour not in open) or (temp_g < g[neighbour]):
+                    route[neighbour] = cur
+                    g[neighbour] = temp_g
+                    f[neighbour] = g[neighbour] + self.h(neighbour, trgt)
+                if neighbour not in open: #додаємо вершину до відомих
+                    open.append(neighbour)
 
-        return False
+        return False #якщо дійшли сюди, то побудувати шлях не вийшло
 
 
 
