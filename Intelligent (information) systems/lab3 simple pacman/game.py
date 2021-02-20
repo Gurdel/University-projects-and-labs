@@ -1,6 +1,9 @@
 import time
+from multiprocessing import freeze_support
+from memory_profiler import memory_usage, profile
 
 BLOCK_SIZE = 20
+SLEEP = 0.01
 
 class Game:
     def __init__(self, field):
@@ -16,28 +19,49 @@ class Game:
                     self.pacman = Pacman(x, y)
                 elif self.field[y][x] == '1':
                     self.target = Target(x, y)
+    
+    
+    def test_memory(self):
+        if __name__ == '__main__':
+            freeze_support()
+            print(memory_usage((self.pacman.bfs, (self.field, self.target)), timeout=0.1))
+            print(memory_usage((self.pacman.dfs, (self.field, self.target)), timeout=0.1))
+            print(memory_usage((self.pacman.Astar, (self.field, self.target)), timeout=0.1))
+            print(memory_usage((self.pacman.greedy, (self.field, self.target)), timeout=0.1))
 
-    def play(self):
+    @profile
+    def test(self):
         print(f'\nResult:', *self.pacman.bfs(self.field, self.target), sep=' > ', end='\n\n')
         print(f'\nResult:', *self.pacman.dfs(self.field, self.target), sep=' > ', end='\n\n')
         print(f'\nResult:', *self.pacman.Astar(self.field, self.target), sep=' > ', end='\n\n')
         print(f'\nResult:', *self.pacman.greedy(self.field, self.target), sep=' > ', end='\n\n')
+        
+    @profile
+    def test_memory_2(self):
+        self.pacman.bfs(self.field, self.target)
+        self.pacman.dfs(self.field, self.target)
+        self.pacman.Astar(self.field, self.target)
+        self.pacman.greedy(self.field, self.target)
 
 
 class Target:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        print(f'Target x={x} y={y}') #консольний вивід для дебагу
+        #print(f'Target x={x} y={y}') #консольний вивід для дебагу
 
 class Pacman:
     def __init__(self, x, y):
         self.x = x
         self.y = y
-        print(f'Pacman x={x} y={y}') #консольний вивід для дебагу
+        #print(f'Pacman x={x} y={y}') #консольний вивід для дебагу
     
     #пошук у ширину
     def bfs(self, field, target):
+        print('bfs') #консольний вивід для дебагу
+        time_start = time.time()
+        time.sleep(SLEEP)
+
         trgt = (target.x, target.y) #координати цілі
         paths = [[(self.x, self.y)]] #шляхи, по яких проходимо
         visited = [(self.x, self.y)] #відвідані вершини
@@ -48,7 +72,7 @@ class Pacman:
             #якщо на якомусь шляху потрапляємо в шукану вершину, повертаємо цей шлях
             for path in paths:
                 if path[-1] == trgt:
-                    print('bfs') #консольний вивід для дебагу
+                    print(f'time: {time.time()-time_start-SLEEP} sec')
                     return path
 
             #інакше для кожного шляху переглядаємо всі досяжні вершини
@@ -69,11 +93,15 @@ class Pacman:
             
             paths = buf_paths
             #консольний вивід для дебагу
-            print('**********************************************************************')
-            print(*paths, sep='\n')
+            #print('**********************************************************************')
+            #print(*paths, sep='\n')
 
     #пошук у глибину
     def dfs(self, field, target):
+        print('dfs') #консольний вивід для дебагу
+        time_start = time.time()
+        time.sleep(SLEEP)
+        
         trgt = (target.x, target.y) #координати цілі
         path = [(self.x, self.y)] #шлях, по якому проходимо
         visited = [(self.x, self.y)] #відвідані вершини
@@ -81,7 +109,7 @@ class Pacman:
         while True:
             #повертаємо шлях, якщо потрапили в шукану вершину
             if path[-1] == trgt:
-                print('dfs') #консольний вивід для дебагу
+                print(f'time: {time.time()-time_start-SLEEP} sec')
                 return path
             
             #шукаємо наступну досяжну вершину
@@ -98,13 +126,17 @@ class Pacman:
                 path.pop()
                 
             #консольний вивід для дебагу
-            print(*path, sep=' > ')
+            #print(*path, sep=' > ')
 
     #евристика для А*
     def h(self, start, end):
         return (start[0]-end[0])**2 + (start[1]-end[1])**2
     #A*
     def Astar(self, field, target):
+        print('A*') #консольний вивід для дебагу
+        time_start = time.time()
+        time.sleep(SLEEP)
+
         trgt = (target.x, target.y) #координати цілі
         start = (self.x, self.y) #початкова вершина
         closed = [] #досліджені вершини
@@ -117,10 +149,10 @@ class Pacman:
             cur = min(open, key=lambda x: f[x]) #обираємо вершину з найменшим f
 
             if cur == trgt: #якщо потрапили в шукану вершину, відновлюємо шлях
-                print('A*********************************')
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
+                print(f'time: {time.time()-time_start-SLEEP} sec')
                 return reversed(res)
             
             open.remove(cur)
@@ -149,6 +181,10 @@ class Pacman:
 
     #жадібний алгоритм Дейкстрим
     def greedy(self, field, target):
+        print('greedy') #консольний вивід для дебагу
+        time_start = time.time()
+        time.sleep(SLEEP)
+
         trgt = (target.x, target.y) #координати цілі
         start = (self.x, self.y) #початкова вершина
         enable = {start} #вершини з вартістю переходу в них <inf
@@ -161,10 +197,10 @@ class Pacman:
             visited.add(cur)
 
             if cur == trgt: #якщо потрапили в шукану вершину, відновлюємо шлях
-                print('greeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeedy') #консольний вивід для дебагу
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
+                print(f'time: {time.time()-time_start-SLEEP} sec')
                 return reversed(res)
 
             #досліджуємо всіх сусідів
@@ -196,6 +232,7 @@ def read_field(inp):
     field = [[s for s in line] for line in x]
     return Game(field)
 
-game = read_field('test_field.txt')
-print(*game.field, game.X, game.Y, sep='\n')
-game.play()
+if __name__ == '__main__':
+    game = read_field('test_field.txt')
+    #print(*game.field, game.X, game.Y, sep='\n')
+    game.test_memory_2()
