@@ -4,7 +4,7 @@ from tkinter import Tk, Canvas
 
 BLOCK_SIZE = 20
 PAC_SIZE = 3
-ANIMATION_SPEED = 0.5
+ANIMATION_SPEED = 0.1
 
 def run_alg(func, arg={}):
     tracemalloc.start()
@@ -28,9 +28,11 @@ class Game:
         tk.resizable(0, 0) #заборона зміни розміру
         tk.wm_attributes('-topmost', 1) #розміщуємо вікно зверху
         canvas = Canvas(tk, width=self.X*BLOCK_SIZE, height=self.Y*BLOCK_SIZE, highlightthickness=0)
+        canvas.pack()
         tk.update()
 
         for point in path:
+            canvas.delete("all")
             canvas.create_rectangle( #заливаємо повністю поверхню
                 0, 0, self.X*BLOCK_SIZE, self.Y*BLOCK_SIZE,
                 outline='#fb0', fill='#f50'
@@ -69,7 +71,7 @@ class Game:
         return True
 
     def test_visual(self):
-        self.visual_path(self.pacman.dfs(self.field, self.target))
+        self.visual_path(self.pacman.Astar(self.field, self.target))
     
     def find_elems(self):
         for x in range(self.X):
@@ -215,7 +217,7 @@ class Pacman:
                 while res[-1] != start:
                     res.append(route[res[-1]])
                 print(f'iterations count: {iter_count}')
-                return reversed(res)
+                return res[::-1]
             
             open.remove(cur)
             closed.append(cur)
@@ -299,5 +301,5 @@ if __name__ == '__main__':
     game = read_field('test_field.txt')
     #print(*game.field, game.X, game.Y, sep='\n')
     #game.test_memory()
-    #game.test_search()
+    game.test_search()
     game.test_visual()
