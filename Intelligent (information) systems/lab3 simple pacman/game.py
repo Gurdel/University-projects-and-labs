@@ -1,8 +1,10 @@
-from time import time
+from time import time, sleep
 import tracemalloc
+from tkinter import Tk, Canvas
 
 BLOCK_SIZE = 20
-SLEEP = 0.01
+PAC_SIZE = 3
+ANIMATION_SPEED = 0.5
 
 def run_alg(func, arg={}):
     tracemalloc.start()
@@ -19,13 +21,64 @@ class Game:
         self.Y = len(field)
         self.field = field
         self.find_elems()
+
+    def visual_path(self, path):
+        tk = Tk()
+        tk.title('Path visualization')
+        tk.resizable(0, 0) #заборона зміни розміру
+        tk.wm_attributes('-topmost', 1) #розміщуємо вікно зверху
+        canvas = Canvas(tk, width=self.X*BLOCK_SIZE, height=self.Y*BLOCK_SIZE, highlightthickness=0)
+        tk.update()
+
+        for point in path:
+            canvas.create_rectangle( #заливаємо повністю поверхню
+                0, 0, self.X*BLOCK_SIZE, self.Y*BLOCK_SIZE,
+                outline='#fb0', fill='#f50'
+            )
+            for x in range(self.X):
+                for y in range(self.Y):
+                    if self.field[y][x] == '.': #порожня клітинка
+                        canvas.create_rectangle(
+                            x*BLOCK_SIZE, y*BLOCK_SIZE, (x+1)*BLOCK_SIZE, (y+1)*BLOCK_SIZE,
+                            fill='#4d443f', outline='black'
+                        )
+                    elif self.field[y][x] == 'X': #малюємо стіну
+                        canvas.create_rectangle(
+                            x*BLOCK_SIZE, y*BLOCK_SIZE, (x+1)*BLOCK_SIZE, (y+1)*BLOCK_SIZE,
+                            fill='black', outline='blue'
+                        )
+                    else:
+                        pass
+
+            canvas.create_arc( #малюємо пакмена
+                point[0]*BLOCK_SIZE + PAC_SIZE, point[1]*BLOCK_SIZE + PAC_SIZE,
+                (point[0]+1)*BLOCK_SIZE - PAC_SIZE, (point[1]+1)*BLOCK_SIZE - PAC_SIZE,
+                start=30, extent=300, fill='yellow', outline='yellow'
+            )
+                        
+            canvas.create_oval( #малюємо ціль
+                path[-1][0]*BLOCK_SIZE + 2*PAC_SIZE, path[-1][1]*BLOCK_SIZE + 2*PAC_SIZE,
+                (path[-1][0]+1)*BLOCK_SIZE - 2*PAC_SIZE, (path[-1][1]+1)*BLOCK_SIZE - 2*PAC_SIZE,
+                fill='orange', outline='green'
+            )        
+
+            tk.update()
+            sleep(ANIMATION_SPEED)
+
+        #input()
+        return True
+
+    def test_visual(self):
+        self.visual_path(self.pacman.dfs(self.field, self.target))
     
     def find_elems(self):
         for x in range(self.X):
             for y in range(self.Y):
                 if self.field[y][x] == 'P':
                     self.pacman = Pacman(x, y)
+                    self.field[y][x] = '.'
                 elif self.field[y][x] == '1':
+                    self.field[y][x] = '.'
                     self.target = Target(x, y)
 
     def test_search(self):
@@ -64,18 +117,20 @@ class Pacman:
     
     #пошук у ширину
     def bfs(self, field, target):
+        iter_count = 0
         print('bfs') #консольний вивід для дебагу
 
         trgt = (target.x, target.y) #координати цілі
         paths = [[(self.x, self.y)]] #шляхи, по яких проходимо
         visited = [(self.x, self.y)] #відвідані вершини
 
-        while True:
+        while paths:
             buf_paths = []
             
             #якщо на якомусь шляху потрапляємо в шукану вершину, повертаємо цей шлях
             for path in paths:
                 if path[-1] == trgt:
+                    print(f'iterations count: {iter_count}')
                     return path
 
             #інакше для кожного шляху переглядаємо всі досяжні вершини
@@ -91,6 +146,7 @@ class Pacman:
                     if field[node[1]][node[0]] == 'X':
                         continue
                     #якщо не відвідували та вершина доступна
+                    iter_count += 1
                     visited += [node] #позначаємо вершину відвіданою
                     buf_paths.append(path+[node]) #додаємо шлях із новою вершиною
             
@@ -99,17 +155,21 @@ class Pacman:
             #print('**********************************************************************')
             #print(*paths, sep='\n')
 
+        return False #якщо дійшли сюди, то побудувати шлях не вийшло
+
     #пошук у глибину
     def dfs(self, field, target):
+        iter_count = 0
         print('dfs') #консольний вивід для дебагу
         
         trgt = (target.x, target.y) #координати цілі
         path = [(self.x, self.y)] #шлях, по якому проходимо
         visited = [(self.x, self.y)] #відвідані вершини
 
-        while True:
+        while path:
             #повертаємо шлях, якщо потрапили в шукану вершину
             if path[-1] == trgt:
+                print(f'iterations count: {iter_count}')
                 return path
             
             #шукаємо наступну досяжну вершину
@@ -120,6 +180,7 @@ class Pacman:
                 if node not in visited and field[node[1]][node[0]] != 'X':
                     visited += [node] #відмічаємо вершину відвіданою
                     path.append(node) #переходимо в неї
+                    iter_count += 1
                     break #завершуємо ітерацію
             else:
                 #якщо з теперішньої вершини не можемо перейти в наступну, то повертаємося назад
@@ -127,12 +188,15 @@ class Pacman:
                 
             #консольний вивід для дебагу
             #print(*path, sep=' > ')
+        
+        return False #якщо дійшли сюди, то побудувати шлях не вийшло
 
     #евристика для А*
     def h(self, start, end):
         return (start[0]-end[0])**2 + (start[1]-end[1])**2
     #A*
     def Astar(self, field, target):
+        iter_count = 0
         print('A*') #консольний вивід для дебагу
 
         trgt = (target.x, target.y) #координати цілі
@@ -150,6 +214,7 @@ class Pacman:
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
+                print(f'iterations count: {iter_count}')
                 return reversed(res)
             
             open.remove(cur)
@@ -171,6 +236,7 @@ class Pacman:
                     route[neighbour] = cur
                     g[neighbour] = temp_g
                     f[neighbour] = g[neighbour] + self.h(neighbour, trgt)
+                    iter_count += 1
                 if neighbour not in open: #додаємо вершину до відомих
                     open.append(neighbour)
 
@@ -178,6 +244,7 @@ class Pacman:
 
     #жадібний алгоритм Дейкстрим
     def greedy(self, field, target):
+        iter_count = 0
         print('greedy') #консольний вивід для дебагу
 
         trgt = (target.x, target.y) #координати цілі
@@ -195,6 +262,7 @@ class Pacman:
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
+                print(f'iterations count: {iter_count}')
                 return reversed(res)
 
             #досліджуємо всіх сусідів
@@ -213,6 +281,7 @@ class Pacman:
                     route[neighbour] = cur
                     d[neighbour] = temp_d
                     enable.add(neighbour)
+                    iter_count += 1
 
         return False #якщо дійшли сюди, то побудувати шлях не вийшло
 
@@ -230,4 +299,5 @@ if __name__ == '__main__':
     game = read_field('test_field.txt')
     #print(*game.field, game.X, game.Y, sep='\n')
     #game.test_memory()
-    game.test_search()
+    #game.test_search()
+    game.test_visual()
