@@ -1,9 +1,17 @@
-import time
-from multiprocessing import freeze_support
-from memory_profiler import memory_usage, profile
+from time import time
+import tracemalloc
 
 BLOCK_SIZE = 20
 SLEEP = 0.01
+
+def run_alg(func, arg={}):
+    tracemalloc.start()
+    func(**arg) if arg else func()
+    snapshot = tracemalloc.take_snapshot()
+    stats = snapshot.statistics('lineno')
+    total = sum([s.size for s in stats])
+    print(f"\tTotal memory usage: {total/10**3}MB")
+    tracemalloc.stop()
 
 class Game:
     def __init__(self, field):
@@ -19,29 +27,27 @@ class Game:
                     self.pacman = Pacman(x, y)
                 elif self.field[y][x] == '1':
                     self.target = Target(x, y)
-    
+
+    def test_search(self):
+        time_start = time()
+        print(f'Result:', *self.pacman.bfs(self.field, self.target), sep=' > ')
+        print(f'time: {time()-time_start}\n')
+        time_start = time()
+        print(f'Result:', *self.pacman.dfs(self.field, self.target), sep=' > ')
+        print(f'time: {time()-time_start}\n')
+        time_start = time()
+        print(f'Result:', *self.pacman.Astar(self.field, self.target), sep=' > ')
+        print(f'time: {time()-time_start}\n')
+        time_start = time()
+        print(f'Result:', *self.pacman.greedy(self.field, self.target), sep=' > ')
+        print(f'time: {time()-time_start}\n')
+        
     
     def test_memory(self):
-        if __name__ == '__main__':
-            freeze_support()
-            print(memory_usage((self.pacman.bfs, (self.field, self.target)), timeout=0.1))
-            print(memory_usage((self.pacman.dfs, (self.field, self.target)), timeout=0.1))
-            print(memory_usage((self.pacman.Astar, (self.field, self.target)), timeout=0.1))
-            print(memory_usage((self.pacman.greedy, (self.field, self.target)), timeout=0.1))
-
-    @profile
-    def test(self):
-        print(f'\nResult:', *self.pacman.bfs(self.field, self.target), sep=' > ', end='\n\n')
-        print(f'\nResult:', *self.pacman.dfs(self.field, self.target), sep=' > ', end='\n\n')
-        print(f'\nResult:', *self.pacman.Astar(self.field, self.target), sep=' > ', end='\n\n')
-        print(f'\nResult:', *self.pacman.greedy(self.field, self.target), sep=' > ', end='\n\n')
-        
-    @profile
-    def test_memory_2(self):
-        self.pacman.bfs(self.field, self.target)
-        self.pacman.dfs(self.field, self.target)
-        self.pacman.Astar(self.field, self.target)
-        self.pacman.greedy(self.field, self.target)
+        run_alg(self.pacman.bfs, {'field': self.field, 'target': self.target})
+        run_alg(self.pacman.dfs, {'field': self.field, 'target': self.target})
+        run_alg(self.pacman.Astar, {'field': self.field, 'target': self.target})
+        run_alg(self.pacman.greedy, {'field': self.field, 'target': self.target})
 
 
 class Target:
@@ -59,8 +65,6 @@ class Pacman:
     #пошук у ширину
     def bfs(self, field, target):
         print('bfs') #консольний вивід для дебагу
-        time_start = time.time()
-        time.sleep(SLEEP)
 
         trgt = (target.x, target.y) #координати цілі
         paths = [[(self.x, self.y)]] #шляхи, по яких проходимо
@@ -72,7 +76,6 @@ class Pacman:
             #якщо на якомусь шляху потрапляємо в шукану вершину, повертаємо цей шлях
             for path in paths:
                 if path[-1] == trgt:
-                    print(f'time: {time.time()-time_start-SLEEP} sec')
                     return path
 
             #інакше для кожного шляху переглядаємо всі досяжні вершини
@@ -99,8 +102,6 @@ class Pacman:
     #пошук у глибину
     def dfs(self, field, target):
         print('dfs') #консольний вивід для дебагу
-        time_start = time.time()
-        time.sleep(SLEEP)
         
         trgt = (target.x, target.y) #координати цілі
         path = [(self.x, self.y)] #шлях, по якому проходимо
@@ -109,7 +110,6 @@ class Pacman:
         while True:
             #повертаємо шлях, якщо потрапили в шукану вершину
             if path[-1] == trgt:
-                print(f'time: {time.time()-time_start-SLEEP} sec')
                 return path
             
             #шукаємо наступну досяжну вершину
@@ -134,8 +134,6 @@ class Pacman:
     #A*
     def Astar(self, field, target):
         print('A*') #консольний вивід для дебагу
-        time_start = time.time()
-        time.sleep(SLEEP)
 
         trgt = (target.x, target.y) #координати цілі
         start = (self.x, self.y) #початкова вершина
@@ -152,7 +150,6 @@ class Pacman:
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
-                print(f'time: {time.time()-time_start-SLEEP} sec')
                 return reversed(res)
             
             open.remove(cur)
@@ -182,8 +179,6 @@ class Pacman:
     #жадібний алгоритм Дейкстрим
     def greedy(self, field, target):
         print('greedy') #консольний вивід для дебагу
-        time_start = time.time()
-        time.sleep(SLEEP)
 
         trgt = (target.x, target.y) #координати цілі
         start = (self.x, self.y) #початкова вершина
@@ -200,7 +195,6 @@ class Pacman:
                 res = [trgt]
                 while res[-1] != start:
                     res.append(route[res[-1]])
-                print(f'time: {time.time()-time_start-SLEEP} sec')
                 return reversed(res)
 
             #досліджуємо всіх сусідів
@@ -235,4 +229,5 @@ def read_field(inp):
 if __name__ == '__main__':
     game = read_field('test_field.txt')
     #print(*game.field, game.X, game.Y, sep='\n')
-    game.test_memory_2()
+    #game.test_memory()
+    game.test_search()
