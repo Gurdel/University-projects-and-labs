@@ -4,7 +4,7 @@ from tkinter import Tk, Canvas
 
 BLOCK_SIZE = 20
 PAC_SIZE = 3
-ANIMATION_SPEED = 0.1
+ANIMATION_SPEED = 0.5
 
 def run_alg(func, arg={}):
     tracemalloc.start()
@@ -195,9 +195,10 @@ class Pacman:
 
     #евристика для А*
     def h(self, start, end):
-        return (start[0]-end[0])**2 + (start[1]-end[1])**2
+        return ((start[0]-end[0])**2 + (start[1]-end[1])**2) ** 0.5
     #A*
     def Astar(self, field, target):
+
         iter_count = 0
         print('A*') #консольний вивід для дебагу
 
@@ -211,6 +212,7 @@ class Pacman:
 
         while open:
             cur = min(open, key=lambda x: f[x]) #обираємо вершину з найменшим f
+            #print(cur, f[cur]) #консольний вивід для дебагу
 
             if cur == trgt: #якщо потрапили в шукану вершину, відновлюємо шлях
                 res = [trgt]
@@ -298,7 +300,7 @@ def read_field(inp):
     return Game(field)
 
 if __name__ == '__main__':
-    game = read_field('test_field.txt')
+    game = read_field('big_field.txt')
     #print(*game.field, game.X, game.Y, sep='\n')
     #game.test_memory()
     game.test_search()
