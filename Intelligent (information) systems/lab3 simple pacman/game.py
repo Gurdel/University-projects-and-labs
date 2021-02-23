@@ -4,7 +4,7 @@ from tkinter import Tk, Canvas
 
 BLOCK_SIZE = 20
 PAC_SIZE = 3
-ANIMATION_SPEED = 0.5
+ANIMATION_SPEED = 0.1
 
 def run_alg(func, arg={}):
     tracemalloc.start()
@@ -71,7 +71,10 @@ class Game:
         return True
 
     def test_visual(self):
+        self.visual_path(self.pacman.bfs(self.field, self.target))
+        self.visual_path(self.pacman.dfs(self.field, self.target))
         self.visual_path(self.pacman.Astar(self.field, self.target))
+        self.visual_path(self.pacman.greedy(self.field, self.target))
     
     def find_elems(self):
         for x in range(self.X):
@@ -267,7 +270,7 @@ class Pacman:
                 while res[-1] != start:
                     res.append(route[res[-1]])
                 print(f'iterations count: {iter_count}')
-                return reversed(res)
+                return res[::-1]
 
             #досліджуємо всіх сусідів
             neighbours = [(cur[0]+1, cur[1]), (cur[0]-1, cur[1]), (cur[0], cur[1]+1), (cur[0], cur[1]-1)]
@@ -302,6 +305,6 @@ def read_field(inp):
 if __name__ == '__main__':
     game = read_field('big_field.txt')
     #print(*game.field, game.X, game.Y, sep='\n')
-    #game.test_memory()
+    game.test_memory()
     game.test_search()
     game.test_visual()
