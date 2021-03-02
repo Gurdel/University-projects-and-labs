@@ -1,11 +1,11 @@
-from collections import namedtuple
+from collections import namedtuple, defaultdict
 from typing import List
 import time
 
 weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", }
 times = {1: "8:40-10:15", 2: "10:35-12:10", 3: "12:20-13:55", }
 
-# Main data classes
+#  Main data classes
 Classroom = namedtuple("Classroom", "room is_big")
 Time = namedtuple("Time", "weekday time")
 Teacher = namedtuple("Teacher", "name")
@@ -28,7 +28,7 @@ def gen_repr(g: Gene):
     return output
 Gene.__repr__ = lambda g: gen_repr(g)
 
-# Semple data for schedule
+#  Sample data for schedule
 classrooms = [
     Classroom(43, True),
     Classroom(42, True),
@@ -36,7 +36,7 @@ classrooms = [
     Classroom(228, False),
     Classroom(217, False),
     Classroom(206, False),
-    #Classroom(205, False),
+    #  Classroom(205, False),
 ]
 
 schedule = [Time(w, n) for w in range(1, len(weekdays.keys()) + 1)
@@ -56,7 +56,7 @@ groups = [Group(name) for name in
           ("0 MI-1", "1 MI-2", "2 TTP-1", "3 TTP-2", "4 TK-1", "5 TK-2", )]
 
 lessons = [
-    #MI
+    #  MI
     Lesson(teachers[0], subjects[0], groups[0:2], False, 2),
     Lesson(teachers[0], subjects[0], groups[0:2], False, 2),
     Lesson(teachers[1], subjects[1], groups[0:6], True, 1),
@@ -73,7 +73,7 @@ lessons = [
     Lesson(teachers[7], subjects[5], groups[0], False, 1),
     Lesson(teachers[8], subjects[6], groups[1:6:2], True, 1),
     Lesson(teachers[9], subjects[6], groups[1], False, 1),
-    #TTP
+    #  TTP
     Lesson(teachers[5], subjects[4], groups[2], False, 1),
     Lesson(teachers[5], subjects[4], groups[3], False, 1),
     Lesson(teachers[8], subjects[7], groups[2:4], False, 2),
@@ -87,7 +87,7 @@ lessons = [
     Lesson(teachers[10], subjects[10], groups[2:4], True, 2),
     Lesson(teachers[7], subjects[5], groups[2], False, 1),
     Lesson(teachers[9], subjects[6], groups[3], False, 1),
-    #TK
+    #  TK
     Lesson(teachers[13], subjects[11], groups[4:6], False, 1),
     Lesson(teachers[16], subjects[11], groups[4:6], True, 1),
     Lesson(teachers[1], subjects[1], groups[4:6], False, 1),
@@ -117,8 +117,7 @@ def print_schedule(solution: Gene, ):
                         print(solution.lessons[i], end='')
 
 #############################################################
-def mrv(pool: List[Lesson]) -> Gene:
-    """Minimum Ramaining Value"""
+def heuristic(pool: List[Lesson]) -> Gene:
     schedule = Gene([], [], [])
 
     for lesson in pool:
@@ -130,7 +129,7 @@ def mrv(pool: List[Lesson]) -> Gene:
                 for room in classrooms:
                     duplicate = False
                     for i in range(len(schedule.lessons)):
-                        # if room is booked at this time or teacher is busy
+                        #  if room is booked at this time or teacher is busy
                         if (schedule.times[i].weekday == day and schedule.times[i].time == time) and \
                                 (schedule.classrooms[i].room == room.room or schedule.lessons[i].teacher.name == lesson.teacher.name):
                             duplicate = True
@@ -147,13 +146,25 @@ def mrv(pool: List[Lesson]) -> Gene:
     assert len(pool) == len(schedule.lessons)
     return schedule
 
-def test():
-    lessons.sort(key=lambda l: 0 if l.is_lecture else 1)
 
-    #  MRV
+
+
+def test():
+    #  Minimum Remaining Values
     time_start = time.time()
-    schedule = mrv(lessons)
+    lessons.sort(key=lambda l: 0 if l.is_lecture else 1)
+    schedule = heuristic(lessons)
     print(f"MRV: {time.time()-time_start}")
+    #  print_schedule(schedule)
+
+    #  Least Constraining Value
+    time_start = time.time()
+    counter = defaultdict(int)
+    for lesson in lessons:
+        counter[lesson.teacher.name] += 1
+    lessons.sort(key=lambda l: counter[l.teacher.name] + int(l.is_lecture), reverse=True)
+    schedule = heuristic(lessons)
+    print(f"LCV: {time.time()-time_start}")
     #  print_schedule(schedule)
 
 test()
