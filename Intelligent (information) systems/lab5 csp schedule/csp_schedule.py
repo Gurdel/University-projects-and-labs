@@ -186,7 +186,7 @@ def test():
     lessons.sort(key=lambda l: 0 if l.is_lecture else 1)
     schedule = heuristic(lessons)
     print(f"MRV: {get_cur_time()-start_time}")
-    #  print_schedule(schedule)
+    print_schedule(schedule)
 
     #  Least Constraining Value
     start_time = get_cur_time()
