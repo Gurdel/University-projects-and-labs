@@ -1,12 +1,6 @@
 from collections import namedtuple
-from random import choice, choices, randrange
-from copy import deepcopy
 from typing import List
-
-START_POPULATION = 100
-ELITE_POPULATION = 10
-CHILDREN_PER_GENE = (START_POPULATION - ELITE_POPULATION) // ELITE_POPULATION
-MAX_STEPS = 50
+import time
 
 weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", }
 times = {1: "8:40-10:15", 2: "10:35-12:10", 3: "12:20-13:55", }
@@ -108,50 +102,6 @@ lessons = [
     Lesson(teachers[9], subjects[6], groups[5], False, 1),
 ]
 
-def create_population(lessons_: List[Lesson], classrooms_: List[Classroom], times: List[Time]) -> List[Gene]:
-    """Create starting population."""
-    population = []
-    for _ in range(START_POPULATION):
-        g_rooms = choices(classrooms_, k=len(lessons_))
-        g_times = choices(times, k=len(lessons_))
-        population.append(Gene(lessons_, g_rooms, g_times))
-
-    return population
-
-
-def heuristic(gene: Gene) -> int:
-    """Value function for gene."""
-    output = 0
-    booked_rooms = set()
-    teacher_times = set()
-    for i in range(len(gene.lessons)):
-        if gene.lessons[i].is_lecture and not gene.classrooms[i].is_big:
-            output += 1
-        teacher_times.add((gene.lessons[i].teacher, gene.times[i]))
-        booked_rooms.add((gene.classrooms[i], gene.times[i]))
-    output += (len(gene.lessons) - len(booked_rooms))
-    output += (len(gene.lessons) - len(teacher_times))
-    return output
-
-
-def mutate(gene: Gene, classrooms_: List[Classroom], times: List[Time]) -> Gene:
-    """Make random mutations."""
-    gene = deepcopy(gene)
-    rand_class = randrange(0, len(gene.lessons))
-    rand_time = randrange(0, len(gene.lessons))
-    gene.classrooms[rand_class] = choice(classrooms_)
-    gene.times[rand_time] = choice(times)
-    return gene
-
-
-def children(gens: List[Gene], classrooms_, times):
-    new_pop = []
-    for g in gens:
-        for _ in range(CHILDREN_PER_GENE):
-            new_pop.append(mutate(g, classrooms_, times))
-    return new_pop
-
-
 #################################################################
 def print_schedule(solution: Gene, ):
     for day in weekdays:
@@ -165,16 +115,46 @@ def print_schedule(solution: Gene, ):
                     if solution.times[i].weekday == day and solution.times[i].time == time and \
                             solution.classrooms[i].room == c.room:
                         print(solution.lessons[i], end='')
-                        
-population = create_population(lessons, classrooms, schedule)
 
-steps = 0
-while heuristic(population[0]) and MAX_STEPS - steps:
-    population.sort(key=heuristic)
-    population = population[:ELITE_POPULATION]
-    population += children(population, classrooms, schedule)
-    steps += 1
-    print(steps)
+#############################################################
+def mrv(pool: List[Lesson]) -> Gene:
+    """Minimum Ramaining Value"""
+    schedule = Gene([], [], [])
 
-solution = population[0]
-print_schedule(solution)
+    for lesson in pool:
+        found = False
+        for day in weekdays:
+            if found: break
+            for time in times:
+                if found: break
+                for room in classrooms:
+                    duplicate = False
+                    for i in range(len(schedule.lessons)):
+                        # if room is booked at this time or teacher is busy
+                        if (schedule.times[i].weekday == day and schedule.times[i].time == time) and \
+                                (schedule.classrooms[i].room == room.room or schedule.lessons[i].teacher.name == lesson.teacher.name):
+                            duplicate = True
+                    if duplicate: continue
+                    if found: break
+                    if not lesson.is_lecture or room.is_big:
+                        chosen_time = Time(day, time)
+                        classroom = Classroom(room.room, room.is_big)
+                        found = True
+                        schedule.times.append(chosen_time)
+                        schedule.classrooms.append(classroom)
+                        schedule.lessons.append(lesson)
+
+    assert len(pool) == len(schedule.lessons)
+    return schedule
+
+def test():
+    lessons.sort(key=lambda l: 0 if l.is_lecture else 1)
+
+    #  MRV
+    time_start = time.time()
+    schedule = mrv(lessons)
+    print(f"MRV: {time.time()-time_start}")
+    #  print_schedule(schedule)
+
+test()
+
