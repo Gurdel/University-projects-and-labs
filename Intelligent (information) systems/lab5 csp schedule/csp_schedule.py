@@ -4,7 +4,7 @@ from time import time as get_cur_time
 from random import shuffle
 from copy import copy
 
-weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", }
+weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday"}
 times = {1: "8:40-10:15", 2: "10:35-12:10", 3: "12:20-13:55", }
 
 #  Main data classes
@@ -19,7 +19,7 @@ Gene = namedtuple("Gene", "lessons classrooms times")
 Classroom.__repr__ = lambda c: f"{c.room} ({'big' if c.is_big else 'small'})"
 Teacher.__repr__ = lambda t: f"{t.name.split()[1]}"
 Subject.__repr__ = lambda s: f"{s.name.split()[1]}"
-Group.__repr__ = lambda g: f"{g.name.split()[1]}"
+Group.__repr__ = lambda g: f"{g.name}"
 Lesson.__repr__ = lambda l: f"{l.teacher} | {l.subject} | {l.group} | " \
                             f"{'Lecture' if l.is_lecture else 'Seminar'} {l.per_week}/week"
 
@@ -55,7 +55,7 @@ subjects = [Subject(name) for name in
              "12 Rozpiznavannya", "13 OS", "14 Interface", )]
 
 groups = [Group(name) for name in
-          ("0 MI-1", "1 MI-2", "2 TTP-1", "3 TTP-2", "4 TK-1", "5 TK-2", )]
+          ("MI-1", "MI-2", "TTP-1", "TTP-2", "TK-1", "TK-2", )]
 
 lessons = [
     #  MI
@@ -128,21 +128,20 @@ def heuristic(pool: List[Lesson]) -> Gene:
             if found: break
             for time in times:
                 if found: break
-                for room in classrooms:
+                for clas in classrooms:
+                    if found: break
                     duplicate = False
                     for i in range(len(schedule.lessons)):
                         #  if room is booked at this time or teacher is busy
                         if (schedule.times[i].weekday == day and schedule.times[i].time == time) and \
-                                (schedule.classrooms[i].room == room.room or schedule.lessons[i].teacher.name == lesson.teacher.name):
+                                (schedule.classrooms[i].room == clas.room or schedule.lessons[i].teacher.name == lesson.teacher.name or \
+                                    set(map(str, schedule.lessons[i].group)) & set(map(str, lesson.group)) ):
                             duplicate = True
                     if duplicate: continue
-                    if found: break
-                    if not lesson.is_lecture or room.is_big:
-                        chosen_time = Time(day, time)
-                        classroom = Classroom(room.room, room.is_big)
+                    if not lesson.is_lecture or clas.is_big:
                         found = True
-                        schedule.times.append(chosen_time)
-                        schedule.classrooms.append(classroom)
+                        schedule.times.append(Time(day, time))
+                        schedule.classrooms.append(Classroom(clas.room, clas.is_big))
                         schedule.lessons.append(lesson)
 
     assert len(pool) == len(schedule.lessons)
@@ -186,7 +185,7 @@ def test():
     lessons.sort(key=lambda l: 0 if l.is_lecture else 1)
     schedule = heuristic(lessons)
     print(f"MRV: {get_cur_time()-start_time}")
-    print_schedule(schedule)
+    #  print_schedule(schedule)
 
     #  Least Constraining Value
     start_time = get_cur_time()
@@ -220,7 +219,7 @@ def test():
 
     schedule = forward_checking(domain, lessons)
     print(f"Forward: {get_cur_time()-start_time}")
-    #  print_schedule(schedule)
+    print_schedule(schedule)
 
 test()
 
