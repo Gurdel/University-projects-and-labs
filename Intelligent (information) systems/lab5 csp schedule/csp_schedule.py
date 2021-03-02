@@ -1,6 +1,8 @@
 from collections import namedtuple, defaultdict
 from typing import List
-import time
+from time import time as get_cur_time
+from random import shuffle
+from copy import copy
 
 weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", }
 times = {1: "8:40-10:15", 2: "10:35-12:10", 3: "12:20-13:55", }
@@ -146,25 +148,78 @@ def heuristic(pool: List[Lesson]) -> Gene:
     assert len(pool) == len(schedule.lessons)
     return schedule
 
+def forward_checking(domain: list, pool: List[Lesson], schedule=Gene([], [], []), previous_d=False):
+    if len(pool) == 0:
+        return schedule
+    pool = copy(pool)
+    shuffle(pool)
+    shuffle(domain)
+    lesson = pool.pop()
+    for d in domain:
+        if d == previous_d:
+            pass
+        if lesson.teacher == d.teacher and (not lesson.is_lecture or d.room.is_big):
+            new_domain = clear_domain(domain, d.day, d.time, d.room, d.teacher)
+            schedule.lessons.append(lesson)
+            schedule.classrooms.append(d.room)
+            schedule.times.append(Time(d.day, d.time))
+            return forward_checking(new_domain, pool, schedule=schedule, previous_d=d)
+
+    # step back
+    if len(schedule.lessons):
+        schedule.lessons.pop()
+        schedule.classrooms.pop()
+        schedule.times.pop()
+        return forward_checking(domain, pool, schedule=schedule, previous_d=previous_d)
 
 
+def clear_domain(domain: list, day: int, time_: int, room: Classroom, teacher: Teacher):
+    new_domain = []
+    for d in domain:
+        if not(d.day == day and d.time == time_ and (d.teacher == teacher or d.room == room)):
+            new_domain.append(d)
+    return new_domain
 
 def test():
     #  Minimum Remaining Values
-    time_start = time.time()
+    start_time = get_cur_time()
     lessons.sort(key=lambda l: 0 if l.is_lecture else 1)
     schedule = heuristic(lessons)
-    print(f"MRV: {time.time()-time_start}")
+    print(f"MRV: {get_cur_time()-start_time}")
     #  print_schedule(schedule)
 
     #  Least Constraining Value
-    time_start = time.time()
+    start_time = get_cur_time()
     counter = defaultdict(int)
     for lesson in lessons:
         counter[lesson.teacher.name] += 1
     lessons.sort(key=lambda l: counter[l.teacher.name] + int(l.is_lecture), reverse=True)
     schedule = heuristic(lessons)
-    print(f"LCV: {time.time()-time_start}")
+    print(f"LCV: {get_cur_time()-start_time}")
+    #  print_schedule(schedule)
+
+    #  Degree heuristic
+    start_time = get_cur_time()
+    counter = defaultdict(int)
+    for lesson in lessons:
+        counter[lesson.teacher.name] += 1
+    lessons.sort(key=lambda l: counter[l.teacher.name])
+    schedule = heuristic(lessons)
+    print(f"Degree: {get_cur_time()-start_time}")
+    #  print_schedule(schedule)
+
+    #  Forward checking
+    start_time = get_cur_time()
+    DomainEl = namedtuple("DomainEl", "day time room teacher")
+    domain = []
+    for day in weekdays.keys():
+        for time in times.keys():
+            for room in classrooms:
+                for teacher in teachers:
+                    domain.append(DomainEl(day, time, room, teacher))
+
+    schedule = forward_checking(domain, lessons)
+    print(f"Forward: {get_cur_time()-start_time}")
     #  print_schedule(schedule)
 
 test()
