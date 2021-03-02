@@ -11,7 +11,7 @@ MAX_STEPS = 50
 weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", }
 times = {1: "8:40-10:15", 2: "10:35-12:10", 3: "12:20-13:55", }
 
-# Main data classes
+#  Main data classes
 Classroom = namedtuple("Classroom", "room is_big")
 Time = namedtuple("Time", "weekday time")
 Teacher = namedtuple("Teacher", "name")
@@ -34,7 +34,7 @@ def gen_repr(g: Gene):
     return output
 Gene.__repr__ = lambda g: gen_repr(g)
 
-# Semple data for schedule
+#  Sample data for schedule
 classrooms = [
     Classroom(43, True),
     Classroom(42, True),
@@ -42,7 +42,7 @@ classrooms = [
     Classroom(228, False),
     Classroom(217, False),
     Classroom(206, False),
-    #Classroom(205, False),
+    #  Classroom(205, False),
 ]
 
 schedule = [Time(w, n) for w in range(1, len(weekdays.keys()) + 1)
@@ -62,7 +62,7 @@ groups = [Group(name) for name in
           ("0 MI-1", "1 MI-2", "2 TTP-1", "3 TTP-2", "4 TK-1", "5 TK-2", )]
 
 lessons = [
-    #MI
+    #  MI
     Lesson(teachers[0], subjects[0], groups[0:2], False, 2),
     Lesson(teachers[0], subjects[0], groups[0:2], False, 2),
     Lesson(teachers[1], subjects[1], groups[0:6], True, 1),
@@ -79,7 +79,7 @@ lessons = [
     Lesson(teachers[7], subjects[5], groups[0], False, 1),
     Lesson(teachers[8], subjects[6], groups[1:6:2], True, 1),
     Lesson(teachers[9], subjects[6], groups[1], False, 1),
-    #TTP
+    #  TTP
     Lesson(teachers[5], subjects[4], groups[2], False, 1),
     Lesson(teachers[5], subjects[4], groups[3], False, 1),
     Lesson(teachers[8], subjects[7], groups[2:4], False, 2),
@@ -93,7 +93,7 @@ lessons = [
     Lesson(teachers[10], subjects[10], groups[2:4], True, 2),
     Lesson(teachers[7], subjects[5], groups[2], False, 1),
     Lesson(teachers[9], subjects[6], groups[3], False, 1),
-    #TK
+    #  TK
     Lesson(teachers[13], subjects[11], groups[4:6], False, 1),
     Lesson(teachers[16], subjects[11], groups[4:6], True, 1),
     Lesson(teachers[1], subjects[1], groups[4:6], False, 1),
