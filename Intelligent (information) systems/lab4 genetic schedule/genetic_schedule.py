@@ -6,9 +6,9 @@ from typing import List
 START_POPULATION = 100
 ELITE_POPULATION = 10
 CHILDREN_PER_GENE = (START_POPULATION - ELITE_POPULATION) // ELITE_POPULATION
-MAX_STEPS = 50
+MAX_STEPS = 200
 
-weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", }
+weekdays = {1: "Monday", 2: "Tuesday", 3: "Wednesday", 4: "Thursday", 5: "Friday"}
 times = {1: "8:40-10:15", 2: "10:35-12:10", 3: "12:20-13:55", }
 
 #  Main data classes
@@ -23,7 +23,7 @@ Gene = namedtuple("Gene", "lessons classrooms times")
 Classroom.__repr__ = lambda c: f"{c.room} ({'big' if c.is_big else 'small'})"
 Teacher.__repr__ = lambda t: f"{t.name.split()[1]}"
 Subject.__repr__ = lambda s: f"{s.name.split()[1]}"
-Group.__repr__ = lambda g: f"{g.name.split()[1]}"
+Group.__repr__ = lambda g: f"{g.name}"
 Lesson.__repr__ = lambda l: f"{l.teacher} | {l.subject} | {l.group} | " \
                             f"{'Lecture' if l.is_lecture else 'Seminar'} {l.per_week}/week"
 
@@ -59,7 +59,7 @@ subjects = [Subject(name) for name in
              "12 Rozpiznavannya", "13 OS", "14 Interface", )]
 
 groups = [Group(name) for name in
-          ("0 MI-1", "1 MI-2", "2 TTP-1", "3 TTP-2", "4 TK-1", "5 TK-2", )]
+          ("MI-1", "MI-2", "TTP-1", "TTP-2", "TK-1", "TK-2", )]
 
 lessons = [
     #  MI
@@ -108,6 +108,8 @@ lessons = [
     Lesson(teachers[9], subjects[6], groups[5], False, 1),
 ]
 
+###############################################################################################
+
 def create_population(lessons_: List[Lesson], classrooms_: List[Classroom], times: List[Time]) -> List[Gene]:
     """Create starting population."""
     population = []
@@ -118,19 +120,22 @@ def create_population(lessons_: List[Lesson], classrooms_: List[Classroom], time
 
     return population
 
-
+GROUP_LESSONS_COUNT = sum([len(lesson.group) for lesson in lessons]) #  80
 def heuristic(gene: Gene) -> int:
     """Value function for gene."""
     output = 0
     booked_rooms = set()
     teacher_times = set()
+    group_time = set()
     for i in range(len(gene.lessons)):
         if gene.lessons[i].is_lecture and not gene.classrooms[i].is_big:
             output += 1
         teacher_times.add((gene.lessons[i].teacher, gene.times[i]))
         booked_rooms.add((gene.classrooms[i], gene.times[i]))
+        group_time.update([(str(gr), gene.times[i]) for gr in gene.lessons[i].group])
     output += (len(gene.lessons) - len(booked_rooms))
     output += (len(gene.lessons) - len(teacher_times))
+    output += GROUP_LESSONS_COUNT - len(group_time)
     return output
 
 
@@ -151,8 +156,6 @@ def children(gens: List[Gene], classrooms_, times):
             new_pop.append(mutate(g, classrooms_, times))
     return new_pop
 
-
-#################################################################
 def print_schedule(solution: Gene, ):
     for day in weekdays:
         print('\n' + '=' * 100)
@@ -169,12 +172,14 @@ def print_schedule(solution: Gene, ):
 population = create_population(lessons, classrooms, schedule)
 
 steps = 0
-while heuristic(population[0]) and MAX_STEPS - steps:
+while heuristic(population[0]) and MAX_STEPS-steps:
     population.sort(key=heuristic)
     population = population[:ELITE_POPULATION]
     population += children(population, classrooms, schedule)
     steps += 1
-    print(steps)
+    #  print(steps)
 
 solution = population[0]
 print_schedule(solution)
+
+print(f'\n((((((((((((((((((((((((((((((((((((((({heuristic(solution)}))))))))))))))))))))))))))))))))))))))))))))))))')
