@@ -177,7 +177,7 @@ while heuristic(population[0]) and MAX_STEPS-steps:
     population = population[:ELITE_POPULATION]
     population += children(population, classrooms, schedule)
     steps += 1
-    #  print(steps)
+    print(steps)
 
 solution = population[0]
 print_schedule(solution)
