@@ -130,14 +130,13 @@ def heuristic(pool: List[Lesson]) -> Gene:
                 if found: break
                 for clas in classrooms:
                     if found: break
-                    duplicate = False
+                    conflict = False
                     for i in range(len(schedule.lessons)):
-                        #  if room is booked at this time or teacher is busy
                         if (schedule.times[i].weekday == day and schedule.times[i].time == time) and \
                                 (schedule.classrooms[i].room == clas.room or schedule.lessons[i].teacher.name == lesson.teacher.name or \
                                     set(map(str, schedule.lessons[i].group)) & set(map(str, lesson.group)) ):
-                            duplicate = True
-                    if duplicate: continue
+                            conflict = True
+                    if conflict: continue
                     if not lesson.is_lecture or clas.is_big:
                         found = True
                         schedule.times.append(Time(day, time))
@@ -157,8 +156,8 @@ def forward_checking(domain: list, pool: List[Lesson], schedule=Gene([], [], [])
     for d in domain:
         if d == previous_d:
             pass
-        if lesson.teacher == d.teacher and (not lesson.is_lecture or d.room.is_big):
-            new_domain = clear_domain(domain, d.day, d.time, d.room, d.teacher)
+        if lesson.teacher == d.lesson.teacher and (not lesson.is_lecture or d.room.is_big) and (set(map(str, lesson.group))&set(map(str, d.lesson.group))):
+            new_domain = clear_domain(domain, d.day, d.time, d.room, d.lesson)
             schedule.lessons.append(lesson)
             schedule.classrooms.append(d.room)
             schedule.times.append(Time(d.day, d.time))
@@ -172,10 +171,10 @@ def forward_checking(domain: list, pool: List[Lesson], schedule=Gene([], [], [])
         return forward_checking(domain, pool, schedule=schedule, previous_d=previous_d)
 
 
-def clear_domain(domain: list, day: int, time_: int, room: Classroom, teacher: Teacher):
+def clear_domain(domain: list, day: int, time_: int, room: Classroom, lesson: Lesson):
     new_domain = []
     for d in domain:
-        if not(d.day == day and d.time == time_ and (d.teacher == teacher or d.room == room)):
+        if not(d.day == day and d.time == time_ and (d.lesson == lesson or d.room == room)):
             new_domain.append(d)
     return new_domain
 
@@ -209,17 +208,17 @@ def test():
 
     #  Forward checking
     start_time = get_cur_time()
-    DomainEl = namedtuple("DomainEl", "day time room teacher")
+    DomainEl = namedtuple("DomainEl", "day time room lesson")
     domain = []
     for day in weekdays.keys():
         for time in times.keys():
             for room in classrooms:
-                for teacher in teachers:
-                    domain.append(DomainEl(day, time, room, teacher))
+                for lesson in lessons:
+                    domain.append(DomainEl(day, time, room, lesson))
 
     schedule = forward_checking(domain, lessons)
     print(f"Forward: {get_cur_time()-start_time}")
-    print_schedule(schedule)
+    #  print_schedule(schedule)
 
 test()
 
