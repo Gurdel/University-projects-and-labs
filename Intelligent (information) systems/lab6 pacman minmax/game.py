@@ -2,15 +2,19 @@ from time import sleep
 import random
 from tkinter import Tk, Canvas
 
+SCORE_FOR_POINT = 100
 BLOCK_SIZE = 20
 PAC_SIZE = 3
 ANIMATION_SPEED = 1
-DEEP = 5
+DEEP = 10
 POINTS_COUNT = 0
 field = []
 X, Y = 21, 27
 levels = [
     'level_1_0.txt',
+    'level_1_1.txt',
+    'level_1_2.txt',
+    'level_1_3.txt',
 ]
 pacman = (0, 0)
 spirits = []
@@ -160,7 +164,7 @@ def make_move():
         pac_benefit[path] = 0
         for point in path:
             if field[point[1]][point[0]] == '1':
-                pac_benefit[path] += 1
+                pac_benefit[path] += SCORE_FOR_POINT
         
         for spirit_possible_moves in spirits_possible_moves:
             for sp_path in spirit_possible_moves:

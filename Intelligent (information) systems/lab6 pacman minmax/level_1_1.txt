@@ -1,10 +1,10 @@
 XXXXXXXXXX
-XS.X.....X
+X..X.....X
 X....XX.SX
 XX.X.SX..X
 X..XXXX.XX
 X..X..XS.X
 X..X.XX.XX
-XX.11..P.X
+XXS11..P.X
 X...X..X.X
 XXXXXXXXXX
