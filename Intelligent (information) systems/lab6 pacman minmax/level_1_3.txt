@@ -3,7 +3,7 @@ X.1X1111.X
 X....XX..X
 XX.XSSX..X
 X..XXXX.XX
-X..X11X..X
+X..X1.X..X
 X..X.XX.XX
 XX.1111P.X
 X...X..X.X
