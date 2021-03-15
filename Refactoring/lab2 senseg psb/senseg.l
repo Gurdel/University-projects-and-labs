@@ -64,9 +64,6 @@ INDICES {
     }
     return INDICES;
 }
-PUNCHEDCARD {
-    return PUNCHEDCARD;
-}
 
 
 [0-9]+          {
@@ -77,9 +74,6 @@ PUNCHEDCARD {
     } else {
         return NUM;
     }
-//    if (yyleng == 8)
-//    return PUNCHEDCARD;
-//    else
 
 }
 [a-zA-Z_][a-zA-Z0-9_]* {
@@ -92,18 +86,11 @@ PUNCHEDCARD {
     return ID;
 }
 <STR>[^\\\n"]+  {
-
-        ///*
         
         for (int i = 0; i < yyleng; i++) {
             yytext[i] = ' ';
         }
         BEGIN 0;
-        //*/
-        
-        ///*
-            //strncat(yyval, yytext, 72);
-        //*/
         
         yylval += yytext;
 }
