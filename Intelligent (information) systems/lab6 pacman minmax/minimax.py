@@ -17,6 +17,14 @@ random_move_counter = 0    #    К-сть зроблених кроків при
 field = []    #    Поле
 X, Y = 21, 27    #    Розміри поля
 levels = [
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
     'level_1_0.txt',
     'level_1_1.txt',    #    На цьому рівні пакмен точно програє
     'level_1_2.txt',
@@ -154,6 +162,8 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
         sp_benefit = {tuple(move): minimax((position[0], move), depth+1, True, score, prev_pos)[0] \
             for move in sp_pos_moves}
         min_benefit = min(sp_benefit.values())
+        if depth==0:
+            print('spirits benefit', sp_benefit)
         best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
         sp_next = random.choice(best_strategies)
         return (min_benefit, position[0], sp_next)
@@ -215,6 +225,8 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
                 break
         
         min_benefit = min(sp_benefit.values())
+        if depth==0:
+            print('spirits benefit', sp_benefit)
         best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
         sp_next = random.choice(best_strategies)
         return (min_benefit, position[0], sp_next)
@@ -234,9 +246,11 @@ for level in levels:
     print('\n\n',level) #   Output for debuging
     visual_move(pacman, spirits)
     while PAC_ALIVE:
-        pacman_next = alpha_beta((pacman, spirits))
-        spirits_next = alpha_beta((pacman, spirits), maximizing=False)
-        print(pacman_next, spirits_next)    #   Output for debaging
+        f = alpha_beta
+        pacman_next = f((pacman, spirits))
+        spirits_next = f((pacman, spirits), maximizing=False)
+        print(pacman_next, spirits_next, '\n', minimax((pacman, spirits)), 
+            minimax((pacman, spirits), maximizing=False), '\n')    #   Output for debaging
         pacman_next = pacman_next[1]
         spirits_next = spirits_next[2]
         #pacman_next = minimax((pacman, spirits))[1]
