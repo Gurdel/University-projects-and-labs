@@ -4,12 +4,13 @@ from tkinter import Tk, Canvas
 
 SCORE_FOR_POINT = 5    #    Винагорода за з'їдену ціль
 RANDOM_MOVE = 5    #    К-сть ходів привидів перед рандомним ходом одного з них
-BADLENESS = 5    #    Штраф за смерть пакмена
+BADLENESS = 9    #    Штраф за смерть пакмена
 SPIRIT_PROFIT = 2    #    Винагорода за з'їденого пакмена
+INF = 99999999999999999999999999999999999999999999999
 BLOCK_SIZE = 20    #    Розмір блоку для візуалізації
 PAC_SIZE = 3    #    На скільки пікселів пакмен менший блоків
-ANIMATION_SPEED = 0.1    #    Час затримки між кроками
-DEEP = 5    #    Глибина пошуку стратегій
+ANIMATION_SPEED = 0.5    #    Час затримки між кроками
+DEEP = 10    #    Глибина пошуку стратегій
 POINTS_COUNT = 0    #    К-сть точок на рівні, які треба з'їсти
 eated_points = 0    #    К-сть з'їдених точок
 random_move_counter = 0    #    К-сть зроблених кроків привидами
@@ -17,7 +18,7 @@ field = []    #    Поле
 X, Y = 21, 27    #    Розміри поля
 levels = [
     'level_1_0.txt',
-    #'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
     'level_1_2.txt',
     'level_1_3.txt',
     'level_2_0.txt',
@@ -78,42 +79,6 @@ def visual_move(pcmn, sprts):
     tk.update()
     sleep(ANIMATION_SPEED)
 
-#  Пошук у ширину
-def bfs(spirit, trgt):
-    paths = [[(spirit[0], spirit[1])]] #шляхи, по яких проходимо
-    visited = [(spirit[0], spirit[1])] #відвідані вершини
-
-    while paths:
-        buf_paths = []
-        
-        #якщо на якомусь шляху потрапляємо в шукану вершину, повертаємо цей шлях
-        for path in paths:
-            if path[-1] == trgt:
-                return path
-
-        #інакше для кожного шляху переглядаємо всі досяжні вершини
-        for path in paths:
-            #досяжні вершини цього шляху
-            next_node = [(path[-1][0]+1, path[-1][1]), (path[-1][0]-1, path[-1][1]),
-                (path[-1][0], path[-1][1]+1), (path[-1][0], path[-1][1]-1)]
-            
-            #перевірка, чи можемо зайти в цю вершину
-            for node in next_node:
-                if node in visited:
-                    continue
-                if field[node[1]][node[0]] == 'X':
-                    continue
-                #якщо не відвідували та вершина доступна
-                visited += [node] #позначаємо вершину відвіданою
-                buf_paths.append(path+[node]) #додаємо шлях із новою вершиною
-        
-        paths = buf_paths
-        #консольний вивід для дебагу
-        #print('**********************************************************************')
-        #print(*paths, sep='\n')
-
-    return spirit #якщо дійшли сюди, то побудувати шлях не вийшло
-
 def read_field(inp):
     global field
     global X
@@ -146,82 +111,114 @@ def find_elems():
                 spirits.append((x, y))
 
 def possible_moves(point):
+    #досяжні вершини цього шляху
+    next_nodes = [(point[0]+1, point[1]), (point[0]-1, point[1]),
+        (point[0], point[1]+1), (point[0], point[1]-1)]
+    return [node for node in next_nodes if field[node[1]][node[0]]!='X']
+
+def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
+    stop_game = False
+    if prev_pos and depth%2==0:
+        for i in range(len(position[1])):
+            if position[1][i] == position[0] or \
+                    (position[1][i]==prev_pos[0] and prev_pos[1][i]==position[0]):
+                stop_game = True
+                score -= BADLENESS**(DEEP-depth)
+
+    if depth % 2 == 0:
+        prev_pos = position
     
-    paths = [[point]]
-    for _ in range(DEEP):
-        buf_paths = []
-        for path in paths:
-            #досяжні вершини цього шляху
-            next_nodes = [(path[-1][0]+1, path[-1][1]), (path[-1][0]-1, path[-1][1]),
-                (path[-1][0], path[-1][1]+1), (path[-1][0], path[-1][1]-1)]
-            
-            #перевірка, чи можемо зайти в цю вершину
-            for node in next_nodes:
-                if field[node[1]][node[0]] == 'X':
-                    continue
-                buf_paths.append(path+[node]) #додаємо шлях із новою вершиною
-            
-            paths = buf_paths
-    return [tuple(p) for p in paths]
+    if field[position[0][1]][position[0][0]] == '1':
+        score += SCORE_FOR_POINT
+        if eated_points + score//SCORE_FOR_POINT >= POINTS_COUNT:
+            score += SCORE_FOR_POINT**(DEEP-depth)
+            stop_game = True
 
-def make_move():
-    pacman_possible_moves = possible_moves(pacman)
-    spirits_possible_moves = [possible_moves(spirit) for spirit in spirits]
+    if depth==DEEP or stop_game:
+        return (score, position[0], position[1])
 
-    pac_benefit = {}
-    for path in pacman_possible_moves:
-        pac_benefit[path] = 0
-        for point in path:
-            if field[point[1]][point[0]] == '1':
-                pac_benefit[path] += SCORE_FOR_POINT
-        if eated_points + pac_benefit[path]//SCORE_FOR_POINT >= POINTS_COUNT:
-            pac_benefit[path] += SCORE_FOR_POINT**10
+    if maximizing:  #   This is pacman's move
+        pac_benefit = {move: minimax((move, position[1]), depth+1, False, score, prev_pos)[0] \
+            for move in possible_moves(position[0])}
+        max_benefit = max(pac_benefit.values())
+        best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
+        pacman_next = random.choice(best_strategies)
+        return (max_benefit, pacman_next, position[1])
+    else:   #   This is spirits move
+        sp_pos_moves = [[]]
+        for spirit in position[1]:
+            buf = []
+            for move in possible_moves(spirit):
+                buf += [m+[move] for m in sp_pos_moves]
+            sp_pos_moves = buf
+        sp_benefit = {tuple(move): minimax((position[0], move), depth+1, True, score, prev_pos)[0] \
+            for move in sp_pos_moves}
+        min_benefit = min(sp_benefit.values())
+        best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
+        sp_next = random.choice(best_strategies)
+        return (min_benefit, position[0], sp_next)
+    return (score, pacman, spirits)
 
-        for spirit_possible_moves in spirits_possible_moves:
-            for sp_path in spirit_possible_moves:
-                for i in range(1, len(sp_path)):
-                    if path[i] == sp_path[i]:
-                        pac_benefit[path] -= BADLENESS**(DEEP-i)
-                        break
-                for i in range(2, len(sp_path)):
-                    if (path[i]==sp_path[i-1] and path[i-1]==sp_path[i]):
-                        pac_benefit[path] -= BADLENESS**(DEEP-i)
-                        break
-    max_benefit = max(pac_benefit.values())
-    best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
-    pacman_next = random.choice(best_strategies)
+def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-INF, beta=INF):
+    stop_game = False
+    if prev_pos and depth%2==0:
+        for i in range(len(position[1])):
+            if position[1][i] == position[0] or \
+                    (position[1][i]==prev_pos[0] and prev_pos[1][i]==position[0]):
+                stop_game = True
+                score -= BADLENESS**(DEEP-depth)
 
-    spirits_next = []
-    use_different_strategy = False
-    for spirit_possible_moves in spirits_possible_moves:
-        spirit_benefit = {}
-        use_different_strategy = False if use_different_strategy else True
-        if use_different_strategy:
-            global random_move_counter
-            random_move_counter += 1
-            if random_move_counter >= RANDOM_MOVE:
-                spirits_next.append(random.choice(spirit_possible_moves)[1])
-                random_move_counter = 0
-                continue
-            for path in spirit_possible_moves:
-                spirit_benefit[path] = 0
-                for pac_path in pacman_possible_moves:
-                    for i in range(1, len(pac_path)):
-                        if path[i] == pac_path[i]:
-                            spirit_benefit[path] += SPIRIT_PROFIT**(DEEP-i)
-                            break
-                    for i in range(2, len(pac_path)):
-                        if (path[i]==pac_path[i-1] and path[i-1]==pac_path[i]):
-                            spirit_benefit[path] += SPIRIT_PROFIT**(DEEP-i)
-                            break
-            max_profit = max(spirit_benefit.values())
-            best_strategies = list(filter(lambda x: spirit_benefit[x]==max_profit, spirit_benefit.keys()))
-            spirits_next.append(random.choice(best_strategies)[1])
-        else:
-            spirits_next.append(bfs(spirit_possible_moves[0][0], pacman)[1])
+    if depth % 2 == 0:
+        prev_pos = position
+    
+    if field[position[0][1]][position[0][0]] == '1':
+        score += SCORE_FOR_POINT
+        if eated_points + score//SCORE_FOR_POINT >= POINTS_COUNT:
+            score += SCORE_FOR_POINT**(DEEP-depth)
+            stop_game = True
 
-    return pacman_next[1], spirits_next
+    if depth==DEEP or stop_game:
+        return (score, position[0], position[1])
 
+    if maximizing:  #   This is pacman's move
+        max_eval = -INF
+        pac_benefit = {}
+        for move in possible_moves(position[0]):
+            ev = alpha_beta((move, position[1]), depth+1, False, score, prev_pos, alpha, beta)[0]
+            pac_benefit[move] = ev
+            max_eval = max(max_eval, ev)
+            alpha = max(alpha, ev)
+            if beta <= alpha:
+                break
+        
+        max_benefit = max(pac_benefit.values())
+        best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
+        pacman_next = random.choice(best_strategies)
+        return (max_benefit, pacman_next, position[1])
+    
+    else:   #   This is spirits move
+        sp_pos_moves = [[]]
+        for spirit in position[1]:
+            buf = []
+            for move in possible_moves(spirit):
+                buf += [m+[move] for m in sp_pos_moves]
+            sp_pos_moves = buf
+        
+        min_eval = INF
+        sp_benefit = {}
+        for move in sp_pos_moves:
+            ev = alpha_beta((position[0], move), depth+1, True, score, prev_pos, alpha, beta)[0]
+            sp_benefit[tuple(move)] = ev
+            min_eval = min(min_eval, ev)
+            beta = min(beta, ev)
+            if beta <= alpha:
+                break
+        
+        min_benefit = min(sp_benefit.values())
+        best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
+        sp_next = random.choice(best_strategies)
+        return (min_benefit, position[0], sp_next)
+    return (score, pacman, spirits)
 
 #######################################################################################  
 PAC_ALIVE = True
@@ -234,9 +231,17 @@ for level in levels:
         sleep(2)
         break
     
+    print('\n\n',level) #   Output for debuging
     visual_move(pacman, spirits)
     while PAC_ALIVE:
-        pacman_next, spirits_next = make_move()
+        pacman_next = alpha_beta((pacman, spirits))
+        spirits_next = alpha_beta((pacman, spirits), maximizing=False)
+        print(pacman_next, spirits_next)    #   Output for debaging
+        pacman_next = pacman_next[1]
+        spirits_next = spirits_next[2]
+        #pacman_next = minimax((pacman, spirits))[1]
+        #spirits_next = minimax((pacman, spirits), maximizing=False)[2]
+
         if field[pacman_next[1]][pacman_next[0]] == '1':
             eated_points += 1
             field[pacman_next[1]][pacman_next[0]] = '.'
