@@ -1,0 +1,91 @@
+INHERITANCE.
+
+psb-object:
+   <psb-unit; psb; pcb-unit; pcb; sen-stm: <senseg; senfld>; key-value>.
+key-value:
+   <key-value-symbol; key-value-symbol-slash; key-value-integer;
+key-value-real; key-value-string; key-value-string-x; key-value-string-c;
+key-value-star; key-value-list; key-value-empty>.
+
+
+SYNTAX.
+
+  psb-unit::=   "end"  en-eol :*eol*=>symbol;
+	      
+   psb-unit::=  
+                "psbgen"  psbgen => psb 
+  	       [ "end" en-eol :*eol*=>symbol ]!;
+  
+   psb-unit::=   [ pcbs => pcb-unit] + "" 
+               [ "psbgen"  psbgen => psb ]!
+  	       [ "end"  en-eol :*eol*=>symbol ] ;
+ 
+
+    psb::= 
+    [
+       "psbname"  "=" psb-psbname  => key-value
+     | "lang"     "=" psb-lang     => key-value
+     | "maxq"     "=" psb-maxq     => key-value
+     | "cmpat"    "=" psb-cmpat    => key-value
+     | "ioasize"  "=" psb-ioasize  => key-value
+     | "ssasize"  "=" psb-ssasize  => key-value
+     | "ioeropn"  "=" psb-ioeropn  => key-value
+     | "olic"     "=" psb-olic     => key-value
+     | "gsrolbok" "=" psb-gsrolbok => key-value
+     | "lockmax"  "=" psb-lockmax  => key-value
+     | ","
+     ] + "" 
+        psb-eol :*eol*=>symbol  ;	
+
+    pcb-unit::= pcb-head => pcb [sens => sens-stm] * "" ;  
+    pcb::= [pcb-label: *label* => symbol]! 
+	"pcb"
+    [
+       "type"    "=" pcb-type     => key-value
+     | "lterm"   "=" pcb-lterm    => key-value
+     | "dbdname" "=" pcb-dbdname  => key-value
+     | "name"    "=" pcb-name     => key-value
+     | "procopt" "=" pcb-procopt  => key-value
+     | "altresp" "=" pcb-altresp  => key-value
+     | "sametrm" "=" pcb-sametrm  => key-value
+     | "sb"      "=" pcb-sb       => key-value
+     | "keylen"  "=" pcb-keylen   => key-value
+     | "procseq" "=" pcb-procseq  => key-value
+     | "view"    "=" pcb-view     => key-value
+     | "pos"     "=" pcb-pos      => key-value
+     | "modify"  "=" pcb-modify   => key-value
+     | "express" "=" pcb-express  => key-value
+     | "pcbname" "=" pcb-pcbname  => key-value
+     | "list"    "=" pcb-list     => key-value
+     | ","
+     ] + ""
+	pcb-eol :*eol*=>symbol ;
+
+    senseg::=  "senseg"
+    [
+        "name"    "="  senseg-name     => key-value
+     |  "parent"  "="  senseg-parent   => key-value
+     |  "procopt" "="  senseg-procopt  => key-value
+     |  "ssptr"   "="  senseg-ssptr    => key-value
+     |  "indices" "="  senseg-indices  => key-value
+     |  ","
+     ] + ""
+	sseg-eol:*eol*=>symbol;	
+ 
+   senfld::= "senfld"
+    [
+       "name"    "="  senfld-name     => key-value
+     | "start"   "="  senfld-start    => key-value
+     | "replace" "="  senfld-replace  => key-value
+     | ","
+     ] + ""
+	sfld-eol   :*eol*=>symbol;
+
+       
+	key-item-symbol::=  key-id      => symbol;
+	key-item-integer::= key-integer => integer;
+	key-item-string::=  key-string  => string;
+	key-item-char::=    key-char    => char;
+	key-item-star::=   "*";
+        key-value-list::= "(" [key-items => key-value] + "," ")"	
+ 
