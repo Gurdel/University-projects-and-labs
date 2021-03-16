@@ -17,18 +17,10 @@ random_move_counter = 0    #    К-сть зроблених кроків при
 field = []    #    Поле
 X, Y = 21, 27    #    Розміри поля
 levels = [
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
     'level_1_0.txt',
-    'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    'level_1_2.txt',
-    'level_1_3.txt',
+    #'level_1_1.txt',    #    На цьому рівні пакмен точно програє
+    #'level_1_2.txt',
+    #'level_1_3.txt',
     'level_2_0.txt',
     'level_2_1.txt',
     'level_2_2.txt',
@@ -77,11 +69,12 @@ def visual_move(pcmn, sprts):
         start=30, extent=300, fill='yellow', outline='yellow'
     )
 
-    for sp in sprts:
+    colors = ['blue', 'pink', 'gray', ]
+    for i in range(len(sprts)):
         canvas.create_arc( #малюємо привида
-            sp[0]*BLOCK_SIZE + PAC_SIZE, sp[1]*BLOCK_SIZE + PAC_SIZE,
-            (sp[0]+1)*BLOCK_SIZE - PAC_SIZE, (sp[1]+1)*BLOCK_SIZE - PAC_SIZE,
-            start=200, extent=300, fill='blue', outline='blue'
+            sprts[i][0]*BLOCK_SIZE + PAC_SIZE, sprts[i][1]*BLOCK_SIZE + PAC_SIZE,
+            (sprts[i][0]+1)*BLOCK_SIZE - PAC_SIZE, (sprts[i][1]+1)*BLOCK_SIZE - PAC_SIZE,
+            start=200, extent=300, fill=colors[i], outline=colors[i]
         )
 
     tk.update()
@@ -151,8 +144,6 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
         max_benefit = max(pac_benefit.values())
         best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
         pacman_next = random.choice(best_strategies)
-        if depth==1:
-            print('mm pacman benefit', pac_benefit)
         return (max_benefit, pacman_next, position[1])
     else:   #   This is spirits move
         sp_pos_moves = [[]]
@@ -164,8 +155,6 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
         sp_benefit = {tuple(move): minimax((position[0], move), depth+1, True, score, prev_pos)[0] \
             for move in sp_pos_moves}
         min_benefit = min(sp_benefit.values())
-        if depth==0:
-            print('mm spirits benefit', sp_benefit)
         best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
         sp_next = random.choice(best_strategies)
         return (min_benefit, position[0], sp_next)
@@ -205,9 +194,7 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
         
         max_benefit = max(pac_benefit.values())
         best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
-        pacman_next = random.choice(best_strategies)
-        if depth==1:
-            print('ab pacman benefit', pac_benefit)
+        pacman_next = best_strategies[0] if len(best_strategies)!=len(pac_benefit) else random.choice(best_strategies)
         return (max_eval, pacman_next, position[1])
     
     else:   #   This is spirits move
@@ -229,10 +216,8 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
                 break
         
         min_benefit = min(sp_benefit.values())
-        if depth==0:
-            print('ab spirits benefit', sp_benefit)
         best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
-        sp_next = random.choice(best_strategies)
+        sp_next = best_strategies[0] if len(best_strategies)!=len(sp_benefit) else random.choice(best_strategies)
         return (min_eval, position[0], sp_next)
     return (score, pacman, spirits)
 
@@ -247,18 +232,11 @@ for level in levels:
         sleep(2)
         break
     
-    print('\n\n',level) #   Output for debuging
     visual_move(pacman, spirits)
     while PAC_ALIVE:
         f = alpha_beta
-        pacman_next = f((pacman, spirits))
-        spirits_next = f((pacman, spirits), maximizing=False)
-        print(pacman_next, spirits_next, '\n', minimax((pacman, spirits)), 
-            minimax((pacman, spirits), maximizing=False), '\n----------------------\n\n')    #   Output for debaging
-        pacman_next = pacman_next[1]
-        spirits_next = spirits_next[2]
-        #pacman_next = minimax((pacman, spirits))[1]
-        #spirits_next = minimax((pacman, spirits), maximizing=False)[2]
+        pacman_next = f((pacman, spirits))[1]
+        spirits_next = f((pacman, spirits), maximizing=False)[2]
 
         if field[pacman_next[1]][pacman_next[0]] == '1':
             eated_points += 1
