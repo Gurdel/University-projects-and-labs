@@ -68,11 +68,12 @@ def visual_move(pcmn, sprts):
         start=30, extent=300, fill='yellow', outline='yellow'
     )
 
-    for sp in sprts:
+    colors = ['blue', 'pink', 'gray', ]
+    for i in range(len(sprts)):
         canvas.create_arc( #малюємо привида
-            sp[0]*BLOCK_SIZE + PAC_SIZE, sp[1]*BLOCK_SIZE + PAC_SIZE,
-            (sp[0]+1)*BLOCK_SIZE - PAC_SIZE, (sp[1]+1)*BLOCK_SIZE - PAC_SIZE,
-            start=200, extent=300, fill='blue', outline='blue'
+            sprts[i][0]*BLOCK_SIZE + PAC_SIZE, sprts[i][1]*BLOCK_SIZE + PAC_SIZE,
+            (sprts[i][0]+1)*BLOCK_SIZE - PAC_SIZE, (sprts[i][1]+1)*BLOCK_SIZE - PAC_SIZE,
+            start=300, extent=300, fill=colors[i], outline=colors[i]
         )
 
     tk.update()

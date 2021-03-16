@@ -19,8 +19,8 @@ X, Y = 21, 27    #    Розміри поля
 levels = [
     'level_1_0.txt',
     #'level_1_1.txt',    #    На цьому рівні пакмен точно програє
-    #'level_1_2.txt',
-    #'level_1_3.txt',
+    'level_1_2.txt',
+    'level_1_3.txt',
     'level_2_0.txt',
     'level_2_1.txt',
     'level_2_2.txt',
@@ -74,7 +74,7 @@ def visual_move(pcmn, sprts):
         canvas.create_arc( #малюємо привида
             sprts[i][0]*BLOCK_SIZE + PAC_SIZE, sprts[i][1]*BLOCK_SIZE + PAC_SIZE,
             (sprts[i][0]+1)*BLOCK_SIZE - PAC_SIZE, (sprts[i][1]+1)*BLOCK_SIZE - PAC_SIZE,
-            start=200, extent=300, fill=colors[i], outline=colors[i]
+            start=300, extent=300, fill=colors[i], outline=colors[i]
         )
 
     tk.update()
