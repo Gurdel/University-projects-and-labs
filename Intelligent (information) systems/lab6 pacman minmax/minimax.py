@@ -151,6 +151,8 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
         max_benefit = max(pac_benefit.values())
         best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
         pacman_next = random.choice(best_strategies)
+        if depth==1:
+            print('mm pacman benefit', pac_benefit)
         return (max_benefit, pacman_next, position[1])
     else:   #   This is spirits move
         sp_pos_moves = [[]]
@@ -163,7 +165,7 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
             for move in sp_pos_moves}
         min_benefit = min(sp_benefit.values())
         if depth==0:
-            print('spirits benefit', sp_benefit)
+            print('mm spirits benefit', sp_benefit)
         best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
         sp_next = random.choice(best_strategies)
         return (min_benefit, position[0], sp_next)
@@ -204,7 +206,9 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
         max_benefit = max(pac_benefit.values())
         best_strategies = list(filter(lambda x: pac_benefit[x]==max_benefit, pac_benefit.keys()))
         pacman_next = random.choice(best_strategies)
-        return (max_benefit, pacman_next, position[1])
+        if depth==1:
+            print('ab pacman benefit', pac_benefit)
+        return (max_eval, pacman_next, position[1])
     
     else:   #   This is spirits move
         sp_pos_moves = [[]]
@@ -226,10 +230,10 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
         
         min_benefit = min(sp_benefit.values())
         if depth==0:
-            print('spirits benefit', sp_benefit)
+            print('ab spirits benefit', sp_benefit)
         best_strategies = list(filter(lambda x: sp_benefit[x]==min_benefit, sp_benefit.keys()))
         sp_next = random.choice(best_strategies)
-        return (min_benefit, position[0], sp_next)
+        return (min_eval, position[0], sp_next)
     return (score, pacman, spirits)
 
 #######################################################################################  
@@ -250,7 +254,7 @@ for level in levels:
         pacman_next = f((pacman, spirits))
         spirits_next = f((pacman, spirits), maximizing=False)
         print(pacman_next, spirits_next, '\n', minimax((pacman, spirits)), 
-            minimax((pacman, spirits), maximizing=False), '\n')    #   Output for debaging
+            minimax((pacman, spirits), maximizing=False), '\n----------------------\n\n')    #   Output for debaging
         pacman_next = pacman_next[1]
         spirits_next = spirits_next[2]
         #pacman_next = minimax((pacman, spirits))[1]
