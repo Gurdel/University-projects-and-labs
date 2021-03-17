@@ -36,26 +36,26 @@ canvas = Canvas(tk, width=X*BLOCK_SIZE, height=Y*BLOCK_SIZE, highlightthickness=
 canvas.pack()
 tk.update()
 
-def visual_move(pcmn, sprts):
+def visual_move(pcmn, sprts):   #   Візуалізація поля з пакменом та привидами
     canvas.delete("all")
-    canvas.create_rectangle( #заливаємо повністю поверхню
+    canvas.create_rectangle(    #   Заливаємо повністю поверхню
         0, 0, X*BLOCK_SIZE, Y*BLOCK_SIZE,
         outline='#fb0', fill='#f50'
     )
     for x in range(X):
         for y in range(Y):
-            if field[y][x] == '.': #порожня клітинка
+            if field[y][x] == '.':  #   Порожня клітинка
                 canvas.create_rectangle(
                     x*BLOCK_SIZE, y*BLOCK_SIZE, (x+1)*BLOCK_SIZE, (y+1)*BLOCK_SIZE,
                     fill='#4d443f', outline='black'
                 )
-            elif field[y][x] == 'X': #малюємо стіну
+            elif field[y][x] == 'X':    #   Малюємо стіну
                 canvas.create_rectangle(
                     x*BLOCK_SIZE, y*BLOCK_SIZE, (x+1)*BLOCK_SIZE, (y+1)*BLOCK_SIZE,
                     fill='black', outline='blue'
                 )
             elif field[y][x] == '1':                
-                canvas.create_oval( #малюємо ціль
+                canvas.create_oval( #   Малюємо ціль
                     x*BLOCK_SIZE + 2*PAC_SIZE, y*BLOCK_SIZE + 2*PAC_SIZE,
                     (x+1)*BLOCK_SIZE - 2*PAC_SIZE, (y+1)*BLOCK_SIZE - 2*PAC_SIZE,
                     fill='orange', outline='green'
@@ -63,7 +63,7 @@ def visual_move(pcmn, sprts):
             else:
                 pass
 
-    canvas.create_arc( #малюємо пакмена
+    canvas.create_arc(  #   Малюємо пакмена
         pcmn[0]*BLOCK_SIZE + PAC_SIZE, pcmn[1]*BLOCK_SIZE + PAC_SIZE,
         (pcmn[0]+1)*BLOCK_SIZE - PAC_SIZE, (pcmn[1]+1)*BLOCK_SIZE - PAC_SIZE,
         start=30, extent=300, fill='yellow', outline='yellow'
@@ -71,7 +71,7 @@ def visual_move(pcmn, sprts):
 
     colors = ['blue', 'pink', 'gray', ]
     for i in range(len(sprts)):
-        canvas.create_arc( #малюємо привида
+        canvas.create_arc(  #   Малюємо привида
             sprts[i][0]*BLOCK_SIZE + PAC_SIZE, sprts[i][1]*BLOCK_SIZE + PAC_SIZE,
             (sprts[i][0]+1)*BLOCK_SIZE - PAC_SIZE, (sprts[i][1]+1)*BLOCK_SIZE - PAC_SIZE,
             start=300, extent=300, fill=colors[i], outline=colors[i]
@@ -80,7 +80,7 @@ def visual_move(pcmn, sprts):
     tk.update()
     sleep(ANIMATION_SPEED)
 
-def read_field(inp):
+def read_field(inp):    #   Зчитує поле з файлу
     global field
     global X
     global Y
@@ -92,7 +92,7 @@ def read_field(inp):
     X = len(field[0])
     Y = len(field)
 
-def find_elems():
+def find_elems():   #   Шукає координати пакмена та привидів
     global pacman
     global spirits
     global POINTS_COUNT
@@ -111,27 +111,30 @@ def find_elems():
                 field[y][x] = '.'
                 spirits.append((x, y))
 
-def possible_moves(point):
-    #досяжні вершини цього шляху
+def possible_moves(point):  #   Шукає всі досяжні вершини із заданої точки
     next_nodes = [(point[0]+1, point[1]), (point[0]-1, point[1]),
         (point[0], point[1]+1), (point[0], point[1]-1)]
     return [node for node in next_nodes if field[node[1]][node[0]]!='X']
 
 def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
+    #   Мінімаксний алгоритм пошуку оптимального шляху
+
     stop_game = False
-    if prev_pos and depth%2==0:
+    if prev_pos and depth%2==0: #   Перевірка, чи з'їдають привиди пакмена
         for i in range(len(position[1])):
             if position[1][i] == position[0] or \
                     (position[1][i]==prev_pos[0] and prev_pos[1][i]==position[0]):
                 stop_game = True
                 score -= BADLENESS**(DEEP-depth)
 
-    if depth % 2 == 0:
+    if depth % 2 == 0:  #   І пакмен, і привиди зробили крок
         prev_pos = position
     
+    #   Пакмен з'їдає точку
     if field[position[0][1]][position[0][0]] == '1':
         score += SCORE_FOR_POINT
         if eated_points + score//SCORE_FOR_POINT >= POINTS_COUNT:
+            #   Пакмен з'їв усі точки
             score += SCORE_FOR_POINT**(DEEP-depth)
             stop_game = True
 
@@ -139,6 +142,7 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
         return (score, position[0], position[1])
 
     if maximizing:  #   This is pacman's move
+        #   Можливі ходи пакмена та рахунок, який він може отримати
         pac_benefit = {move: minimax((move, position[1]), depth+1, False, score, prev_pos)[0] \
             for move in possible_moves(position[0])}
         max_benefit = max(pac_benefit.values())
@@ -146,12 +150,14 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
         pacman_next = random.choice(best_strategies)
         return (max_benefit, pacman_next, position[1])
     else:   #   This is spirits move
+        #   Заповнюємо всі можливі комбінації переміщень привидів
         sp_pos_moves = [[]]
         for spirit in position[1]:
             buf = []
             for move in possible_moves(spirit):
                 buf += [m+[move] for m in sp_pos_moves]
             sp_pos_moves = buf
+        #   Переміщення привидів та рахунок, який можна здобути
         sp_benefit = {tuple(move): minimax((position[0], move), depth+1, True, score, prev_pos)[0] \
             for move in sp_pos_moves}
         min_benefit = min(sp_benefit.values())
@@ -161,20 +167,24 @@ def minimax(position, depth=0, maximizing=True, score=0, prev_pos=()):
     return (score, pacman, spirits)
 
 def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-INF, beta=INF):
+    #   Альфа-бета відтинання
+
     stop_game = False
-    if prev_pos and depth%2==0:
+    if prev_pos and depth%2==0: #   Перевірка, чи з'їдають привиди пакмена
         for i in range(len(position[1])):
             if position[1][i] == position[0] or \
                     (position[1][i]==prev_pos[0] and prev_pos[1][i]==position[0]):
                 stop_game = True
                 score -= BADLENESS**(DEEP-depth)
 
-    if depth % 2 == 0:
+    if depth % 2 == 0:  #   І пакмен, і привиди зробили крок
         prev_pos = position
     
+    #   Пакмен з'їдає точку
     if field[position[0][1]][position[0][0]] == '1':
         score += SCORE_FOR_POINT
         if eated_points + score//SCORE_FOR_POINT >= POINTS_COUNT:
+            #   Пакмен з'їв усі точки
             score += SCORE_FOR_POINT**(DEEP-depth)
             stop_game = True
 
@@ -183,7 +193,7 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
 
     if maximizing:  #   This is pacman's move
         max_eval = -INF
-        pac_benefit = {}
+        pac_benefit = {}    #   Можливі комбінації
         for move in possible_moves(position[0]):
             ev = alpha_beta((move, position[1]), depth+1, False, score, prev_pos, alpha, beta)[0]
             pac_benefit[move] = ev
@@ -206,7 +216,7 @@ def alpha_beta(position, depth=0, maximizing=True, score=0, prev_pos=(), alpha=-
             sp_pos_moves = buf
         
         min_eval = INF
-        sp_benefit = {}
+        sp_benefit = {} #   Можливі комбінації
         for move in sp_pos_moves:
             ev = alpha_beta((position[0], move), depth+1, True, score, prev_pos, alpha, beta)[0]
             sp_benefit[tuple(move)] = ev
